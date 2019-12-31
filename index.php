@@ -33,19 +33,22 @@
     <header class="container-fluid">
         <nav class="row d-flex">
             <!-- left ul -->
-            <div class="left col-12 col-sm-5 ">
+            <div class="left col-5 ">
                 <ul class="row d-flex">
-                    <li class="col"><a class="text-white p-2" href="#" target="_self">درباره ما</a></li>
-                    <li class="col"><a class="text-white p-2" href="#" target="_self">تماس با ما</a></li>
-                    <li class="col"><a class="text-white p-2" href="#" target="_self">محصولات</a></li>
+                    <li class="col"><a class="text-white p-2" href="#" target="_self">پرده</a></li>
+                    <li class="col"><a class="text-white p-2" href="#" target="_self">تابلو فرش</a></li>
+                    <li class="col"><a class="text-white p-2" href="#" target="_self">كالاي خواب</a></li>
                 </ul>
             </div>
             <!-- logo -->
             <div class="logo col-sm-2 text-center"><img src="images/Dior_logo.png" alt="Dior Home logo"></div>
             <!-- right ul -->
-            <div class="right col-12 col-sm-5">
+            <div class="right col-5">
                 <ul class="row d-flex ">
-                    <li class="col"><input class="p-1" type="search" name="search" id="search" placeholder="جستجو..."></<input></li>
+                    <li class="col">
+                        <input class="p-1" type="search" name="search" id="search" placeholder="جستجو..."/>
+                        <i class="fa fa-search"></i>
+                    </li>
                     <li class="col"><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                     <li class="col"><a href="#"><i class="fa fa-user"></i></a></li>
                 </ul>
