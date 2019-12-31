@@ -22,6 +22,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="images/fav_icon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <!-- font awesome -->
     <link rel="stylesheet" href="CSS/all.min.css">
     <link rel="stylesheet" href="CSS/bootstrap.min.css"/>
     <link rel="stylesheet" href="CSS/Normalizer.css">
@@ -41,7 +42,7 @@
                 </ul>
             </div>
             <!-- logo -->
-            <div class="logo col-sm-2 text-center"><img src="images/Dior_logo.png" alt="Dior Home logo"></div>
+            <div class="logo col-2 text-center"><img src="images/Dior_logo.png" alt="Dior Home logo"></div>
             <!-- right ul -->
             <div class="right col-5">
                 <ul class="row d-flex ">
@@ -49,7 +50,7 @@
                         <input class="p-1" type="search" name="search" id="search" placeholder="جستجو..."/>
                         <i class="fa fa-search"></i>
                     </li>
-                    <li class="col"><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                    <li class="col"><a href="homepage.php"><i class="fa fa-shopping-cart"></i></a></li>
                     <li class="col"><a href="#"><i class="fa fa-user"></i></a></li>
                 </ul>
             </div>
