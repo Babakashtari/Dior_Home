@@ -22,6 +22,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="images/fav_icon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="CSS/all.min.css">
     <link rel="stylesheet" href="CSS/bootstrap.min.css"/>
     <link rel="stylesheet" href="CSS/Normalizer.css">
     <link rel="stylesheet" href="Css/fonts.css">
@@ -29,16 +30,32 @@
     <title>Dior Home</title>
 </head>
 <body>
-    <header>
-        <ul class="container-fluid d-flex flex-row-reverse">
-            <li><img src="images/Dior_logo.png" alt="Dior Home logo"></li>
-            <li class="d-flex justify-content-center align-items-center"><a href="#" target="_self">درباره ما</a></li>
-            <li class="d-flex justify-content-center align-items-center"><a href="#" target="_self">تماس با ما</a></li>
-            <li class="d-flex justify-content-center align-items-center"><a href="#" target="_self">محصولات</a></li>
-        </ul>
+    <header class="container-fluid">
+        <nav class="row d-flex">
+            <!-- left ul -->
+            <div class="left col-12 col-sm-5 ">
+                <ul class="row d-flex">
+                    <li class="col"><a class="text-white p-2" href="#" target="_self">درباره ما</a></li>
+                    <li class="col"><a class="text-white p-2" href="#" target="_self">تماس با ما</a></li>
+                    <li class="col"><a class="text-white p-2" href="#" target="_self">محصولات</a></li>
+                </ul>
+            </div>
+            <!-- logo -->
+            <div class="logo col-sm-2 text-center"><img src="images/Dior_logo.png" alt="Dior Home logo"></div>
+            <!-- right ul -->
+            <div class="right col-12 col-sm-5">
+                <ul class="row d-flex ">
+                    <li class="col"><input class="p-1" type="search" name="search" id="search" placeholder="جستجو..."></<input></li>
+                    <li class="col"><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                    <li class="col"><a href="#"><i class="fa fa-user"></i></a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
     <?php canvas_generator() ?>
     <script src="JS/canvas.js"></script>
+    <script src="JS/jquery.min.js"></script>
     <script src="JS/bootstrap.min.js"></script>
+    <script src="JS/index.js"></script>
 </body>
 </html>
