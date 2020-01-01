@@ -32,7 +32,6 @@
     <script src="JS/jquery.min.js"></script>
     <script src="JS/bootstrap.min.js"></script>
 
-
     <title>Dior Home</title>
 </head>
 <body>
@@ -41,12 +40,16 @@
         <p>به سایت رسمی شرکت پیشگامان پودینه خوش آمدید.</p>
     </div>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top" role="navigation">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark" role="navigation">
 
         <a class="navbar-brand"><img src="images/Dior_logo.png" alt="Dior_home_logo" width="100px" height="auto"></a>
         <!-- <span class="navbar-text">Dior Home</span> -->
-        <button  class="navbar-toggler" data-toggle="collapse" data-target="#hamburger_menu" >
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#hamburger_menu" >
+            <div class="navbar-toggler-icon" id="hamburger">
+                <span class="bg-light"></span>
+                <span class="bg-light"></span>
+                <span class="bg-light"></span>
+            </div>
         </button>
 
         <div class="collapse navbar-collapse" id="hamburger_menu">
