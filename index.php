@@ -31,21 +31,39 @@
     <title>Dior Home</title>
 </head>
 <body>
+<div class="jumbotron mb-0">
+        <h1>پیشگامان پودینه</h1>
+        <p>به سایت رسمی شرکت پیشگامان پودینه خوش آمدید.</p>
+    </div>
     <header class="container-fluid">
-        <nav class="row d-flex">
+        <nav class="row">
             <!-- left ul -->
             <div class="left col-5 ">
-                <ul class="row d-flex">
-                    <li class="col"><a class="text-white p-2" href="#" target="_self">پرده</a></li>
-                    <li class="col"><a class="text-white p-2" href="#" target="_self">تابلو فرش</a></li>
-                    <li class="col"><a class="text-white p-2" href="#" target="_self">كالاي خواب</a></li>
+                <ul class="d-flex hamburger_menu">
+                    <li class="col">
+                        <div class="hamburger_button">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </li>
+                    <li class="col">
+                        <a class="text-white pb-2 pt-2" href="#" target="_self">
+                            <i class="fa fa-search"></i>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="row">
+                    <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">پرده</a></li>
+                    <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">تابلو فرش</a></li>
+                    <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">كالاي خواب</a></li>
                 </ul>
             </div>
             <!-- logo -->
             <div class="logo col-2 text-center"><img src="images/Dior_logo.png" alt="Dior Home logo"></div>
             <!-- right ul -->
             <div class="right col-5">
-                <ul class="row d-flex ">
+                <ul class="row">
                     <li class="col">
                         <input class="p-1" type="search" name="search" id="search" placeholder="جستجو..."/>
                         <i class="fa fa-search"></i>
