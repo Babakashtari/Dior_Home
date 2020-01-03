@@ -31,7 +31,7 @@
     <title>Dior Home</title>
 </head>
 <body>
-<div class="jumbotron mb-0">
+<div class="jumbotron mb-0 bg-light text-dark">
         <h1>پیشگامان پودینه</h1>
         <p>به سایت رسمی شرکت پیشگامان پودینه خوش آمدید.</p>
     </div>
@@ -39,6 +39,7 @@
         <nav class="row">
             <!-- left ul -->
             <div class="left col-5 ">
+                <!-- hamburger menu for small screens -->
                 <ul class="d-flex hamburger_menu">
                     <li class="col">
                         <div class="hamburger_button">
@@ -54,9 +55,9 @@
                     </li>
                 </ul>
                 <ul class="row">
-                    <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">پرده</a></li>
+                    <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">چاپ خانگی</a></li>
                     <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">تابلو فرش</a></li>
-                    <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">كالاي خواب</a></li>
+                    <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">كالای خواب</a></li>
                 </ul>
             </div>
             <!-- logo -->
@@ -66,12 +67,16 @@
                 <ul class="row">
                     <li class="col">
                         <input class="p-1" type="search" name="search" id="search" placeholder="جستجو..."/>
-                        <i class="fa fa-search"></i>
                     </li>
                     <li class="col"><a href="homepage.php"><i class="fa fa-shopping-cart"></i></a></li>
                     <li class="col"><a href="#"><i class="fa fa-user"></i></a></li>
                 </ul>
             </div>
+            <ul class="hamburger_opened_menu">
+                <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">چاپ خانگی</a></li>
+                <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">تابلو فرش</a></li>
+                <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">كالای خواب</a></li>
+            </ul>
         </nav>
     </header>
     <?php canvas_generator() ?>
