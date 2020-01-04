@@ -24,6 +24,7 @@
     <meta name="theme-color" content="#ffffff">
     <!-- font awesome -->
     <link rel="stylesheet" href="CSS/all.min.css">
+    <link rel="stylesheet" href="CSS/bootstrap.min.css.map">
     <link rel="stylesheet" href="CSS/bootstrap.min.css"/>
     <link rel="stylesheet" href="CSS/Normalizer.css">
     <link rel="stylesheet" href="Css/fonts.css">
@@ -48,16 +49,16 @@
                             <span></span>
                         </div>
                     </li>
-                    <li class="col">
-                        <a class="text-white pb-2 pt-2" href="#" target="_self">
+                    <li class="col search">
+                        <a class="text-white pb-2 pt-2" href="#">
                             <i class="fa fa-search"></i>
                         </a>
                     </li>
                 </ul>
                 <ul class="row">
-                    <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">چاپ خانگی</a></li>
-                    <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">تابلو فرش</a></li>
-                    <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">كالای خواب</a></li>
+                    <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">محصولات</a></li>
+                    <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">درباره ما</a></li>
+                    <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">صفحه اصلي </a></li>
                 </ul>
             </div>
             <!-- logo -->
@@ -65,20 +66,33 @@
             <!-- right ul -->
             <div class="right col-5">
                 <ul class="row">
-                    <li class="col">
-                        <input class="p-1" type="search" name="search" id="search" placeholder="جستجو..."/>
+                    <li class="col search">
+                            <input class="p-1" type="search" name="search" id="search" placeholder="جستجو...">
+                            </input>
                     </li>
                     <li class="col"><a href="homepage.php"><i class="fa fa-shopping-cart"></i></a></li>
                     <li class="col"><a href="#"><i class="fa fa-user"></i></a></li>
                 </ul>
             </div>
             <ul class="hamburger_opened_menu">
-                <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">چاپ خانگی</a></li>
-                <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">تابلو فرش</a></li>
-                <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">كالای خواب</a></li>
+                <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">محصولات</a></li>
+                <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">درباره ما</a></li>
+                <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">صفحه اصلي</a></li>
             </ul>
         </nav>
     </header>
+
+    <main></main>
+    <!-- search modal -->
+    <div class="modal_box hidden">
+        <div class="modal_content">
+            <div id="modal_search_head">
+                <input type="search" name="search" id="search_head" placeholder="جستجو">
+            </div>
+            <div class="products_gallery"></div>
+        </div>
+    </div>
+
     <?php canvas_generator() ?>
     <script src="JS/canvas.js"></script>
     <script src="JS/jquery.min.js"></script>
