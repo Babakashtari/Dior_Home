@@ -86,9 +86,10 @@
     <!-- search modal -->
     <div class="modal_box hidden">
         <div class="modal_content">
-            <div id="modal_search_head">
+            <form action="#" method="GET" id="modal_search_head">
                 <input type="search" name="search" id="search_head" placeholder="جستجو">
-            </div>
+                <input type="submit" value="Search">
+            </form>
             <div class="products_gallery"></div>
         </div>
     </div>
