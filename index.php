@@ -88,9 +88,20 @@
         <div class="modal_content">
             <form action="#" method="GET" id="modal_search_head">
                 <input type="search" name="search" id="search_head" placeholder="جستجو">
-                <input type="submit" value="Search">
+                <button type="submit">
+                    <i class="fa fa-search"></i>
+                </button>
             </form>
-            <div class="products_gallery"></div>
+            <div class="products_gallery">
+                <div class="card">
+                    <img class="card-img-top" src="images/search_images/cushion2.jpg" alt="cushion" >
+                    <div class="card-body">
+                        <h4 class="card-title">چاپ ديجيتالي كوسن</h4>
+                        <p class="card-text">چاپ ديجيتالي رو بالشي و انواع كوسن </p>
+                        <a href="#" class="btn btn-primary">برو به صفحه</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
