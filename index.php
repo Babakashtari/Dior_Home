@@ -50,7 +50,7 @@
                         </div>
                     </li>
                     <li class="col search">
-                        <a class="text-white pb-2 pt-2" href="#">
+                        <a class="text-white pb-2 pt-2 " href="#">
                             <i class="fa fa-search"></i>
                         </a>
                     </li>
@@ -58,7 +58,7 @@
                 <ul class="row">
                     <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">محصولات</a></li>
                     <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">درباره ما</a></li>
-                    <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">صفحه اصلي </a></li>
+                    <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">صفحه اصلی </a></li>
                 </ul>
             </div>
             <!-- logo -->
@@ -67,7 +67,7 @@
             <div class="right col-5">
                 <ul class="row">
                     <li class="col search">
-                            <input class="p-1" type="search" name="search" id="search" placeholder="جستجو...">
+                            <input class="p-1 " type="search" name="search" placeholder="جستجو...">
                             </input>
                     </li>
                     <li class="col"><a href="homepage.php"><i class="fa fa-shopping-cart"></i></a></li>
@@ -77,38 +77,30 @@
             <ul class="hamburger_opened_menu">
                 <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">محصولات</a></li>
                 <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">درباره ما</a></li>
-                <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">صفحه اصلي</a></li>
+                <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">صفحه اصلی</a></li>
             </ul>
         </nav>
     </header>
-
-    <main></main>
     <!-- search modal -->
     <div class="modal_box hidden">
+        <span class="close">&times;</span>
         <div class="modal_content">
-            <form action="#" method="GET" id="modal_search_head">
-                <input type="search" name="search" id="search_head" placeholder="جستجو">
-                <button type="submit">
-                    <i class="fa fa-search"></i>
-                </button>
+            <form class="form-inline" action="#" method="get">
+                <input class="form-control col-11" type="search" name="search" placeholder="جستجو">
+                <button class="col-1 text-left" type="submit"><i class="fa fa-search"></i></button>
             </form>
-            <div class="products_gallery">
-                <div class="card">
-                    <img class="card-img-top" src="images/search_images/cushion2.jpg" alt="cushion" >
-                    <div class="card-body">
-                        <h4 class="card-title">چاپ ديجيتالي كوسن</h4>
-                        <p class="card-text">چاپ ديجيتالي رو بالشي و انواع كوسن </p>
-                        <a href="#" class="btn btn-primary">برو به صفحه</a>
-                    </div>
-                </div>
-            </div>
+            <div class="products_gallery d-flex">
+                <?php card_generator();?>
+            </div>            
         </div>
     </div>
+    <main></main>
 
     <?php canvas_generator() ?>
     <script src="JS/canvas.js"></script>
     <script src="JS/jquery.min.js"></script>
     <script src="JS/bootstrap.min.js"></script>
     <script src="JS/index.js"></script>
+
 </body>
 </html>
