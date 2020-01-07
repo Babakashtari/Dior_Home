@@ -67,7 +67,7 @@
             <div class="right col-5">
                 <ul class="row">
                     <li class="col search">
-                            <input class="p-1 " type="search" name="search" placeholder="جستجو...">
+                            <input class="p-1" type="search" name="search" placeholder="جستجو...">
                             </input>
                     </li>
                     <li class="col"><a href="homepage.php"><i class="fa fa-shopping-cart"></i></a></li>
@@ -89,7 +89,7 @@
                 <input class="form-control col-11" type="search" name="search" placeholder="جستجو">
                 <button class="col-1 text-left" type="submit"><i class="fa fa-search"></i></button>
             </form>
-            <div class="products_gallery d-flex">
+            <div class="products_gallery d-flex flex-wrap">
                 <?php card_generator();?>
             </div>            
         </div>
