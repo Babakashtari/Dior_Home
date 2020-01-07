@@ -7,9 +7,9 @@ function canvas_generator(){
 }
 
 function card_generator(){
-    $card_images = ["images/search_images/cushion2.jpg", "images/search_images/carpet3.jpg", "images/search_images/sleeping_products2.jpg", "images/search_images/curtain.jpg", "images/search_images/towel_printing.jpg", "images/search_images/fabric_printing3.jpg", "images/search_images/T_shirt.jpg"];
-    $card_header = ["مبلمان", "تابلو فرش", "کالای خواب", "پرده اي", "كالاي استحمام", "چاپ پارچه", "چاپ روي لباس"];
-    $card_text = ["کوسن، رومبلی، روبالشی", "طبیعت، چهره، عکس، نقاشی", "روتختی، روبالشی، ملافه", "چاپ طرح ملحفه و پرده", "چاپ طرح روي حوله همه سايز", "چاپ انواع پارچه همه سايز","چاپ انواع الگو و طرح روي پوشاك"];
+    $card_images = ["images/search_images/cushion2.jpg", "images/search_images/carpet3.jpg", "images/search_images/sleeping_products2.jpg", "images/search_images/curtain.jpg", "images/search_images/towel_printing.jpg", "images/search_images/fabric_printing3.jpg", "images/search_images/T_shirt.jpg", "images/search_images/stationery.jpg", "images/search_images/purse.png", "images/search_images/boxer.jpg", "images/search_images/plate.jpg"];
+    $card_header = ["مبلمان", "تابلو فرش", "کالای خواب", "پرده اي", "كالاي استحمام", "چاپ پارچه", "چاپ روي لباس", "لوازم التحریر", "چاپ روی چرم", "زیر پوش", "ظروف آشپزخانه"];
+    $card_text = ["کوسن، رومبلی، روبالشی", "طبیعت، چهره، عکس، نقاشی", "روتختی، روبالشی، ملافه", "چاپ طرح ملحفه و پرده", "چاپ طرح روي حوله همه سايز", "چاپ طرح های متفاوت روی انواع پارچه","چاپ انواع الگو و طرح روي پوشاك", "چاپ روی کتاب، دفتر، قلم، گیره ", "چاپ روی کیف و کفش و کوله و جاقلمی", " چاپ روی انواع زیرپوش و لباس زیر", "چاپ لوگو و عکس روی ظروف چینی و ملامین"];
 
     for($i=0; $i<count($card_images); $i++){
         echo '<div class="card col-xs-12 col-sm-4 col-md-3">';
