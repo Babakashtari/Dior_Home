@@ -82,14 +82,14 @@
         </nav>
     </header>
     <!-- search modal -->
-    <div class="modal_box hidden">
-        <span class="close">&times;</span>
+    <div class="modal_box hidden position-relative py-5 px-5">
+        <span class="close position-absolute">&times;</span>
         <div class="modal_content">
             <form class="form-inline" action="#" method="get">
                 <input class="form-control col-11" type="search" name="search" placeholder="جستجو">
                 <button class="col-1 text-left" type="submit"><i class="fa fa-search"></i></button>
             </form>
-            <div class="products_gallery d-flex flex-wrap">
+            <div class="products_gallery d-flex flex-wrap pt-2 justify-content-between">
                 <?php card_generator();?>
             </div>            
         </div>
