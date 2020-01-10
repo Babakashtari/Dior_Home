@@ -36,7 +36,7 @@
         <h1>پیشگامان پودینه</h1>
         <p>به سایت رسمی شرکت پیشگامان پودینه خوش آمدید.</p>
     </div>
-    <header class="container-fluid">
+    <header class="container-fluid sticky-top">
         <nav class="row">
             <!-- left ul -->
             <div class="left col-5 ">
@@ -62,7 +62,10 @@
                 </ul>
             </div>
             <!-- logo -->
-            <div class="logo col-2 text-center"><img src="images/Dior_logo.png" alt="Dior Home logo"></div>
+            <div class="logo col-2 text-center">
+                <img src="images/Dior_logo.png" alt="Dior Home logo">
+                <p class="">Dior Home</p>
+            </div>
             <!-- right ul -->
             <div class="right col-5">
                 <ul class="row">
@@ -83,13 +86,13 @@
     </header>
     <!-- search modal -->
     <div class="modal_box hidden position-relative py-5 px-5">
-        <span class="close position-absolute">&times;</span>
+        <span class="close position-absolute text-red">&times;</span>
         <div class="modal_content">
             <form class="form-inline" action="#" method="get">
                 <input class="form-control col-11" type="search" name="search" placeholder="جستجو">
                 <button class="col-1 text-left" type="submit"><i class="fa fa-search"></i></button>
             </form>
-            <div class="products_gallery d-flex flex-wrap pt-2 justify-content-between">
+            <div class="products_gallery d-flex flex-wrap pt-2 justify-content-around">
                 <?php card_generator();?>
             </div>            
         </div>

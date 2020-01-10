@@ -12,7 +12,7 @@ function card_generator(){
     $card_text = ["کوسن، رومبلی، روبالشی", "طبیعت، چهره، عکس، نقاشی", "روتختی، روبالشی، ملافه", "چاپ طرح ملحفه و پرده", "چاپ طرح روي حوله همه سايز", "چاپ طرح های متفاوت روی انواع پارچه","چاپ انواع الگو و طرح روي پوشاك", "چاپ روی کتاب، دفتر، قلم، گیره ", "چاپ روی کیف و کفش و کوله و جاقلمی", " چاپ روی انواع زیرپوش و لباس زیر", "چاپ لوگو و عکس روی ظروف چینی و ملامین", "چاپ انواع تابلو و پستر تبليغاتي"];
 
     for($i=0; $i<count($card_images); $i++){
-        echo '<div class="col-xs-12 col-sm-4 col-lg-3 p-2">';
+        echo '<div class="px-1">';
         echo    '<div class="card border border-primary">';
         echo        '<img class="card-img-top" src="' . $card_images[$i]. '" alt="'. $card_header[$i] . '">';
         echo        '<div class="card-body text-center d-flex flex-column justify-content-between">';
