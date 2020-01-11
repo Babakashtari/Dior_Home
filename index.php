@@ -63,8 +63,8 @@
             </div>
             <!-- logo -->
             <div class="logo col-2 text-center">
-                <img src="images/Dior_logo.png" alt="Dior Home logo">
                 <p class="">Dior Home</p>
+                <img src="images/Dior_logo.png" alt="Dior Home logo">
             </div>
             <!-- right ul -->
             <div class="right col-5">
