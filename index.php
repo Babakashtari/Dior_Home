@@ -56,7 +56,7 @@
                     </li>
                 </ul>
                 <ul class="row">
-                    <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">محصولات</a></li>
+                    <li class="col"><a class=" text-white pb-2 pt-2" data-toggle="collapse" href="#products">محصولات</a></li>
                     <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">درباره ما</a></li>
                     <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">صفحه اصلی </a></li>
                 </ul>
@@ -82,6 +82,11 @@
                 <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">درباره ما</a></li>
                 <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">صفحه اصلی</a></li>
             </ul>
+
+                    <!-- products collapse bar: -->
+            <div class="collapse bg-success" id='products'>
+                <p>I am a collapse paragraph. I am about to become a bootstrap panel</p>
+            </div>
         </nav>
     </header>
     <!-- search modal -->
