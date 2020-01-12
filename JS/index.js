@@ -9,6 +9,11 @@ const modal_box_search = document.querySelector('div.modal_box>div.modal_content
 const logo = document.querySelector(".logo>img");
 const logo_paragraph = document.querySelector(".logo>p");
 const jumbotron = document.querySelector("div.jumbotron");
+const products_collapse_cards = document.querySelectorAll("header>nav>div.collapse>div.card");
+const products_collapse_headers = document.querySelectorAll("header>nav>div.collapse>div.card>div.card-header");
+const products_collapse_bodies = document.querySelectorAll("header>nav>div.collapse>div.card>div.card-body");
+const products_collapse_image = document.querySelector("header>nav>div.collapse>div.card>div.card-body>a>img");
+console.log(products_collapse_image);
 
 // hamburger button animation generator:
 hamburger_button.addEventListener("click", () => {
@@ -67,5 +72,37 @@ const showLogo = () => {
         logo_paragraph.style.transform = "translateX(-50%) scale(0)";
     }
 };
+
 window.addEventListener("load", showLogo);
 window.addEventListener("scroll", showLogo);
+
+// products menu hover effect
+(() => {
+    const menu_images_src = [
+        "images/products_menu_images/sleeping_products.jpg",
+        "images/products_menu_images/home_furniture.jpg",
+        "images/products_menu_images/stationery.jpg",
+        "images/products_menu_images/kitchen_utensils.jpg",
+        "images/products_menu_images/clothes.jpg",
+        "images/products_menu_images/application_form.jpg"
+    ];
+    for (let i = 0; i < products_collapse_cards.length; i++) {
+        products_collapse_cards[i].addEventListener("mouseenter", event => {
+            for (let s = 0; s < products_collapse_headers.length; s++) {
+                if (event.currentTarget === products_collapse_cards[s]) {
+                    products_collapse_headers[s].style.borderBottom = "3px solid red";
+                    products_collapse_image.setAttribute("src", menu_images_src[s]);
+                }
+            }
+        });
+    }
+    for (let l = 0; l < products_collapse_cards.length; l++) {
+        products_collapse_cards[l].addEventListener("mouseleave", event => {
+            for (let m = 0; m < products_collapse_headers.length; m++) {
+                if (event.currentTarget === products_collapse_cards[m]) {
+                    products_collapse_headers[m].style.borderBottom = "3px solid lightgreen";
+                }
+            }
+        });
+    }
+})();
