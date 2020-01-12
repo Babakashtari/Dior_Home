@@ -39,7 +39,7 @@
     <header class="container-fluid sticky-top">
         <nav class="row">
             <!-- left ul -->
-            <div class="left col-5 ">
+            <div class="left col-5">
                 <!-- hamburger menu for small screens -->
                 <ul class="d-flex hamburger_menu">
                     <li class="col">
@@ -56,9 +56,9 @@
                     </li>
                 </ul>
                 <ul class="row">
-                    <li class="col"><a class=" text-white pb-2 pt-2" data-toggle="collapse" href="#products">محصولات</a></li>
-                    <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">درباره ما</a></li>
-                    <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">صفحه اصلی </a></li>
+                    <li class="col"><a class=" text-white pb-2 pt-2" data-toggle="collapse" href="#products_household">لوازم منزل</a></li>
+                    <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">پوشاك</a></li>
+                    <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">پارچه</a></li>
                 </ul>
             </div>
             <!-- logo -->
@@ -78,14 +78,63 @@
                 </ul>
             </div>
             <ul class="hamburger_opened_menu">
-                <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">محصولات</a></li>
-                <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">درباره ما</a></li>
-                <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">صفحه اصلی</a></li>
+                <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">لوازم منزل</a></li>
+                <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">پوشاك</a></li>
+                <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">پارچه</a></li>
             </ul>
 
-                    <!-- products collapse bar: -->
-            <div class="collapse bg-success" id='products'>
-                <p>I am a collapse paragraph. I am about to become a bootstrap panel</p>
+                    <!-- products collapse bars: -->
+            <div class="collapse text-white border border-top-1 p-2" id='products_household'>
+                <div class="panel-group">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <a href="#">كالاي خواب</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="#">روبالشي</a>
+                            <a href="#"> روتختي</a>
+                            <a href="#">ملحفه</a>
+                            <a href="#">پتو</a>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <a href="#">test</a>
+                        </div>
+                        <div class="panel-body">
+
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <a href="#">پوستر</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="#">تابلو ديواري</a>
+                            <a href="#">تبليغاتي</a>
+                            <a href="#">نمونه كارها</a>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <a href="#">تابلو فرش</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="#">چاپ عكس</a>
+                            <a href="#">چاپ منظره</a>
+                            <a href="#">نمونه كارها</a>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <a href="#">رو مبلي</a>
+                        </div>
+                        <div class="panel-body">
+                        <a href="#">نمونه كارها</a>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
