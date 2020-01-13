@@ -115,7 +115,7 @@
                             <li><a href="#">کتاب</a></li>
                             <li><a href="#">دفتر تلفن</a></li>
                             <li><a href="#">تقویم</a></li>
-                            <li><a href="#">آلبوم عکس</a></li>
+                            <li><a href="#">آلبوم</a></li>
                             <li><a href="#">جامدادی</a></li>
                         </ul>
                     </div>
@@ -125,7 +125,7 @@
                     <div class="card-body">
                         <ul>
                             <li><a href="#">پیشبند</a></li>
-                            <li><a href="#">دستمال سفره</a></li>
+                            <li><a href="#">دستمال</a></li>
                             <li><a href="#">رومیزی</a></li>
                             <li><a href="#">کاسه بشقاب</a></li>
                             <li><a href="#">زیر بشقابی</a></li>
@@ -136,20 +136,18 @@
                     <div class="card-header text-dark"><a href="#">پوشاک</a></div>
                     <div class="card-body">
                         <ul>
-                            <li><a href="#">شال و روسری</a></li>
+                            <li><a href="#">بانوان</a></li>
                             <li><a href="#">تی شرت</a></li>
                             <li><a href="#">شلوار</a></li>
                             <li><a href="#">زیرپوش</a></li>
-                            <li><a href="#">وسایل جانبی</a></li>
+                            <li><a href="#">متفرقه</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="card col border border-right-1">
-                    <div class="card-header text-center text-dark"><a href="#">ثبت سفارش</a></div>
+                    <div class="card-header text-center text-dark"><a href="#">سفارشي</a></div>
                     <div class="card-body">
-                        <a href="#">
-                            <img src="images/products_menu_images/sleeping_products.jpg" alt="محصولات شرکت پارس پودینه" width="100%" height="150px">
-                        </a>
+                        <a href="#">ثبت سفارش</a>
                     </div>
                 </div>
             </div>
