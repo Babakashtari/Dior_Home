@@ -56,7 +56,7 @@
                     </li>
                 </ul>
                 <ul class="row">
-                    <li class="col"><a class=" text-white pb-2 pt-2" data-toggle="collapse" href="#products">محصولات</a></li>
+                    <li class="col"><a id="products_link" class=" text-white pb-2 pt-2" data-toggle="collapse" href="#products">محصولات</a></li>
                     <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">درباره ما</a></li>
                     <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">خانه</a></li>
                 </ul>
