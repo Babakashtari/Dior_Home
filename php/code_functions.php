@@ -7,9 +7,9 @@ function canvas_generator(){
 }
 
 function Search_card_generator(){
-    $card_images = ["images/search_images/cushion2.jpg", "images/search_images/carpet3.jpg", "images/search_images/sleeping_products2.jpg", "images/search_images/curtain.jpg", "images/search_images/towel_printing.jpg", "images/search_images/fabric_printing3.jpg", "images/search_images/T_shirt.jpg", "images/search_images/stationery.jpg", "images/search_images/purse.png", "images/search_images/boxer.jpg", "images/search_images/plate.jpg", "images/search_images/poster.jpg"];
-    $card_header = ["مبلمان", "تابلو فرش", "کالای خواب", "پرده اي", "كالاي استحمام", "چاپ پارچه", "چاپ روي لباس", "لوازم التحریر", "چاپ روی چرم", "زیر پوش", "ظروف آشپزخانه", "پستر"];
-    $card_text = ["کوسن، رومبلی، روبالشی", "طبیعت، چهره، عکس، نقاشی", "روتختی، روبالشی، ملافه", "چاپ طرح ملحفه و پرده", "چاپ طرح روي حوله همه سايز", "چاپ طرح های متفاوت روی انواع پارچه","چاپ انواع الگو و طرح روي پوشاك", "چاپ روی کتاب، دفتر، قلم، گیره ", "چاپ روی کیف و کفش و کوله و جاقلمی", " چاپ روی انواع زیرپوش و لباس زیر", "چاپ لوگو و عکس روی ظروف چینی و ملامین", "چاپ انواع تابلو و پستر تبليغاتي"];
+    $card_images = ["images/search_images/sleeping_products3.jpg", "images/search_images/bedsheet.jpg", "images/search_images/pillow2.jpg", "images/search_images/home_furniture.jpg", "images/search_images/cushion4.jpg", "images/search_images/table_cloth.jpeg", "images/search_images/curtain.jpg", "images/search_images/fabric_printing.jpg", "images/search_images/carpet_printing.jpg", "images/search_images/carpet_cover.jpg", "images/search_images/carpet_board.jpg", "images/search_images/order.jpg"];
+    $card_header = ["انواع کالای خواب", "روتختی", "روبالشی", "رومبلی", "کوسن", "رومیزی", "پرده" , "طرح پارچه", "چاپ انواع فرش", "روفرشی", "تابلو فرش", "سفارش"];
+    $card_text = ["چاپ طرح روبالشی، روتختی و کوسن", "چاپ انواع طرح و الگوی روتختی", "چاپ انواع طرح و الگوی روبالشی", "چاپ انواع الگو و طرح برای رومبلی", "چاپ انواع طرح و الگو روی کوسن", "طراحی و چاپ انواع عکس و الگوی رومیزی", "چاپ الگو و طرح ملحفه پرده ای", "طراحی و چاپ انواع عکس و الگو روی پارچه ", "چاپ الگو، طرح و عکس روی فرش، روفرشی و تابلوفرش", "چاپ انواع طرح و عکس برای روفرشی", "چاپ دیجیتالی عکس و الگو جهت تابلوفرش", "پذیرش هرگونه طرح و الگوی جدید جهت چاپ"];
 
     for($i=0; $i<count($card_images); $i++){
         echo '<div class="px-1">';

@@ -86,70 +86,49 @@
                     <!-- products collapse bars: -->
             <!-- <div class="container_fluid"> -->
                 <div class="collapse text-white m-0 row flex-row-reverse" id="products">
-                    <div class="card col-sm-4 col-md-2 border border-right-1">
+                    <div class="card col-6 col-sm-3 border border-right-1">
                         <div class="card-header text-dark"><a href="#">کالای خواب</a></div>
                         <div class="card-body">
                             <ul>
                                 <li><a href="#">روبالشی</a></li>
                                 <li><a href="#">روتختی</a></li>
-                                <li><a href="#">ملافه ای</a></li>
-                                <li><a href="#">پتو</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card col-sm-4 col-md-2 border border-right-1">
-                        <div class="card-header text-dark"><a href="#">اتاق نشیمن</a></div>
-                        <div class="card-body">
-                            <ul>
-                                <li><a href="#">پستر</a></li>
-                                <li><a href="#">تابلو فرش</a></li>
-                                <li><a href="#">پرده</a></li>
-                                <li><a href="#">رومبلی</a></li>
+                                <li><a href="#">ملافه</a></li>
                                 <li><a href="#">کوسن</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="card col-sm-4 col-md-2 border border-right-1">
-                        <div class="card-header text-dark"><a href="#">نوشت افزار</a></div>
+                    <div class="card col-6 col-sm-3 border border-right-1">
+                        <div class="card-header text-dark"><a href="#">اتاق نشیمن</a></div>
                         <div class="card-body">
                             <ul>
-                                <li><a href="#">دفتر</a></li>
-                                <li><a href="#">کتاب</a></li>
-                                <li><a href="#">دفتر تلفن</a></li>
-                                <li><a href="#">تقویم</a></li>
-                                <li><a href="#">آلبوم</a></li>
-                                <li><a href="#">جامدادی</a></li>
+                                <li><a href="#">پرده</a></li>
+                                <li><a href="#">رومبلی</a></li>
+                                <li><a href="#">کوسن</a></li>
+                                <li><a href="#">رومیزی</a></li> 
                             </ul>
                         </div>
                     </div>
-                    <div class="card col-sm-4 col-md-2 border border-right-1">
-                        <div class="card-header text-dark"><a href="#">آشپزخانه</a></div>
+                    <div class="card col-6 col-sm-3 border border-right-1">
+                        <div class="card-header text-dark"><a href="#">فرش</a></div>
                         <div class="card-body">
                             <ul>
-                                <li><a href="#">پیشبند</a></li>
-                                <li><a href="#">دستمال</a></li>
-                                <li><a href="#">رومیزی</a></li>
-                                <li><a href="#">کاسه بشقاب</a></li>
-                                <li><a href="#">زیر بشقابی</a></li>
+                                <li><a href="#">فرش</a></li>
+                                <li><a href="#">تابلوفرش</a></li>
+                                <li><a href="#">روفرشی</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="card col-sm-4 col-md-2 border border-right-1">
-                        <div class="card-header text-dark"><a href="#">پوشاک</a></div>
+                    <div class="card col-6 col-sm-3 border border-right-1">
+                        <div class="card-header text-dark"><a href="#">خدمات</a></div>
                         <div class="card-body">
                             <ul>
-                                <li><a href="#">بانوان</a></li>
-                                <li><a href="#">تی شرت</a></li>
-                                <li><a href="#">شلوار</a></li>
-                                <li><a href="#">زیرپوش</a></li>
-                                <li><a href="#">متفرقه</a></li>
+                                <li>
+                                    <a href="#">طاقه پیچی و ارسال </a>
+                                </li>
+                                <li>
+                                    <a href="#">پذیرش سفارش</a>
+                                </li>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="card col-sm-4 col-md-2 border border-right-1">
-                        <div class="card-header text-dark"><a href="#">سفارش</a></div>
-                        <div class="card-body">
-                            <a href="#">ایده از شما اجرا از ما</a>
                         </div>
                     </div>
                 </div>
