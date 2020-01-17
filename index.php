@@ -50,8 +50,8 @@
                         </div>
                     </li>
                     <li class="col search">
-                        <a class="text-white pb-2 pt-2 " href="#">
-                            <i class="fa fa-search"></i>
+                        <a class="modal-closable text-white pb-2 pt-2 " href="#">
+                            <i class="modal-closable fa fa-search"></i>
                         </a>
                     </li>
                 </ul>
@@ -70,7 +70,7 @@
             <div class="right col-5">
                 <ul class="row">
                     <li class="col search">
-                            <input class="p-1" type="search" name="search" placeholder="جستجو...">
+                            <input class="modal-closable p-1" type="search" name="search" placeholder="جستجو...">
                             </input>
                     </li>
                     <li class="col"><a href="homepage.php"><i class="fa fa-shopping-cart"></i></a></li>
@@ -136,14 +136,14 @@
         </nav>
     </header>
     <!-- search modal -->
-    <div class="modal_box hidden position-relative py-5 px-5">
+    <div class="modal-closable modal_box hidden position-relative py-5 px-5">
         <span class="close position-absolute text-red">&times;</span>
-        <div class="modal_content">
-            <form class="form-inline" action="#" method="get">
-                <input class="form-control col-11" type="search" name="search" placeholder="جستجو">
-                <button class="col-1 text-left" type="submit"><i class="fa fa-search"></i></button>
+        <div class="modal-closable modal_content">
+            <form class="modal-closable form-inline" action="#" method="get">
+                <input class="modal-closable form-control col-11" type="search" name="search" placeholder="جستجو">
+                <button class="modal-closable col-1 text-left" type="submit"><i class="modal-closable fa fa-search"></i></button>
             </form>
-            <div class="products_gallery d-flex flex-wrap pt-2 justify-content-around">
+            <div class="modal-closable products_gallery d-flex flex-wrap pt-2 justify-content-around">
                 <?php Search_card_generator();?>
             </div>            
         </div>

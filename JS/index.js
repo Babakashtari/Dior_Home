@@ -3,6 +3,8 @@ const hamburger_button = document.querySelector(".hamburger_button");
 const hamburger_spans = hamburger_button.querySelectorAll("span");
 const hamburger_opened_menu = document.querySelector("header>nav>ul.hamburger_opened_menu");
 const search_lists = document.querySelectorAll(".search");
+const search_link = search_lists[0].querySelector("a");
+const search_input = search_lists[1].querySelector("input");
 const modal_box = document.querySelector("div.modal_box");
 const search_close_span = document.querySelector("div.modal_box > span.close");
 const modal_box_search = document.querySelector('div.modal_box>div.modal_content>form>input[type="search"]');
@@ -29,6 +31,16 @@ const products_collapse_card_header_links = products_collapse_menu.querySelector
     }
 })();
 
+// for closing the search modal box:
+const search_modal_box_close = () => {
+    if (!modal_box.classList.contains("hidden")) {
+        modal_box.classList.remove("modal_box_scale");
+        setTimeout(() => {
+            modal_box.classList.add("hidden");
+            search_li.style.visibility = "visible";
+        }, 1000);
+    }
+};
 // hamburger button animation generator:
 hamburger_button.addEventListener("click", () => {
     if (hamburger_spans[0].classList.contains("clicked")) {
@@ -40,35 +52,37 @@ hamburger_button.addEventListener("click", () => {
         for (let i = 0; i < hamburger_spans.length; i++) {
             hamburger_spans[i].classList.add("clicked");
         }
-        hamburger_opened_menu.style.display = "flex";
-        if (!modal_box.classList.contains("hidden")) {
-            modal_box.classList.add("hidden");
-        }
+        hamburger_opened_menu.style.display = "block";
+        // closing search modal box when hamburger button is clicked:
+        search_modal_box_close();
     }
 });
 
 // search modal open click generator:
 (() => {
-    for (let i = 0; i < search_lists.length; i++) {
-        search_lists[i].addEventListener("click", () => {
-            if (modal_box.classList.contains("hidden")) {
-                modal_box.classList.remove("hidden");
-                modal_box_search.focus();
-                search_li.style.visibility = "hidden";
-                if (hamburger_spans[0].classList.contains("clicked")) {
-                    for (let i = 0; i < hamburger_spans.length; i++) {
-                        hamburger_spans[i].classList.remove("clicked");
-                    }
-                    hamburger_opened_menu.style.display = "none";
+    const modal_search_generator = () => {
+        if (modal_box.classList.contains("hidden")) {
+            modal_box.classList.remove("hidden");
+            modal_box_search.focus();
+            search_li.style.visibility = "hidden";
+            setTimeout(() => {
+                modal_box.classList.add("modal_box_scale");
+            }, 1);
+            // close the products hamburger menu if already opened:
+            if (hamburger_spans[0].classList.contains("clicked")) {
+                for (let i = 0; i < hamburger_spans.length; i++) {
+                    hamburger_spans[i].classList.remove("clicked");
                 }
+                hamburger_opened_menu.style.display = "none";
             }
-        });
-    }
-    search_close_span.addEventListener("click", () => {
-        if (!modal_box.classList.contains("hidden")) {
-            modal_box.classList.add("hidden");
-            search_li.style.visibility = "visible";
         }
+    };
+    search_input.addEventListener("click", modal_search_generator);
+    search_link.addEventListener("click", modal_search_generator);
+
+    // X button in the search modal_box for closing event:
+    search_close_span.addEventListener("click", () => {
+        search_modal_box_close();
     });
 })();
 // scroll event:
@@ -90,7 +104,7 @@ const showLogo = () => {
 window.addEventListener("load", showLogo);
 window.addEventListener("scroll", showLogo);
 
-//products menu hover effect
+//products menu background-image hover effect
 (() => {
     const menu_images_src = [
         "images/products_menu_images/bedroom.jpg",
@@ -103,6 +117,11 @@ window.addEventListener("scroll", showLogo);
             for (let s = 0; s < products_collapse_cards.length; s++) {
                 if (event.currentTarget === products_collapse_cards[s]) {
                     products_collapse_menu.style.backgroundImage = "url(" + menu_images_src[s] + ")";
+                    products_collapse_headers[s].style.borderBottom = "3px solid red";
+                    products_collapse_card_header_links[s].style.color = "red";
+                } else {
+                    products_collapse_headers[s].style.borderBottom = "3px solid white";
+                    products_collapse_card_header_links[s].style.color = "white";
                 }
             }
         });
@@ -111,7 +130,7 @@ window.addEventListener("scroll", showLogo);
 
 // closing events on outside clicks:
 window.addEventListener("click", event => {
-    // products menu closing event:
+    // Products menu closing event:
     if (
         !event.target.classList.contains("products-closable") &&
         !event.target.classList.contains("card") &&
@@ -122,5 +141,9 @@ window.addEventListener("click", event => {
         products_collapse_menu.classList.remove("show");
         products_opening_tab.setAttribute("aria-expanded", false);
         products_opening_tab.classList.add("collapsed");
+    }
+    //  search modal div closing event:
+    if (!event.target.classList.contains("modal-closable")) {
+        search_modal_box_close();
     }
 });
