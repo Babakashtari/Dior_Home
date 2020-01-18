@@ -1,7 +1,12 @@
+const head = document.querySelector("body>header");
+const main = document.querySelector("main");
+const footer = document.querySelector("footer");
 const search_li = document.querySelector("header>nav>div.right>ul>li:first-of-type");
+const header_menu_links = document.querySelectorAll("header>nav>div>ul>li>a");
 const hamburger_button = document.querySelector(".hamburger_button");
 const hamburger_spans = hamburger_button.querySelectorAll("span");
-const hamburger_opened_menu = document.querySelector("header>nav>ul.hamburger_opened_menu");
+const hamburger_opened_menu = document.querySelector("section>ul.hamburger_opened_menu");
+const hamburger_opened_menu_li = hamburger_opened_menu.querySelectorAll("li");
 const search_lists = document.querySelectorAll(".search");
 const search_link = search_lists[0].querySelector("a");
 const search_input = search_lists[1].querySelector("input");
@@ -20,6 +25,7 @@ const products_collapse_card_body_links = products_collapse_menu.querySelectorAl
 const products_collapse_card_body_list_items = products_collapse_menu.querySelectorAll("div.card>div.card-body>ul>li");
 const products_collapse_card_header_links = products_collapse_menu.querySelectorAll("div.card > div.card-header>a");
 
+console.log(header_menu_links);
 // for closing the products menu:
 (() => {
     for (let i = 0; i < products_collapse_card_body_links.length; i++) {
@@ -41,22 +47,55 @@ const search_modal_box_close = () => {
         }, 1000);
     }
 };
-// hamburger button animation generator:
-hamburger_button.addEventListener("click", () => {
+
+// for opening/closing the products small screens hamburger menu:
+const activate_hamburger_menu = () => {
     if (hamburger_spans[0].classList.contains("clicked")) {
         for (let i = 0; i < hamburger_spans.length; i++) {
             hamburger_spans[i].classList.remove("clicked");
         }
-        hamburger_opened_menu.style.display = "none";
+        hamburger_opened_menu.classList.remove("appear");
+        for (let x = 0; x < hamburger_opened_menu_li.length; x++) {
+            hamburger_opened_menu_li[x].style.visibility = "hidden";
+        }
+        jumbotron.classList.remove("open_menu_translate");
+        head.classList.remove("open_menu_translate");
+        main.classList.remove("open_menu_translate");
+        footer.classList.remove("open_menu_translate");
+        logo.style.display = "block";
+        logo_paragraph.style.display = "block";
+        if (window.innerWidth < 352) {
+            for (let l = 0; l < header_menu_links.length; l++) {
+                header_menu_links[l].style.display = "block";
+            }
+        }
     } else {
         for (let i = 0; i < hamburger_spans.length; i++) {
             hamburger_spans[i].classList.add("clicked");
         }
-        hamburger_opened_menu.style.display = "block";
+        hamburger_opened_menu.classList.add("appear");
+        for (let x = 0; x < hamburger_opened_menu_li.length; x++) {
+            setTimeout(() => {
+                hamburger_opened_menu_li[x].style.visibility = "visible";
+            }, 500);
+        }
+        jumbotron.classList.add("open_menu_translate");
+        head.classList.add("open_menu_translate");
+        main.classList.add("open_menu_translate");
+        footer.classList.add("open_menu_translate");
+        logo.style.display = "none";
+        logo_paragraph.style.display = "none";
+        if (window.innerWidth < 352) {
+            for (let m = 0; m < header_menu_links.length; m++) {
+                header_menu_links[m].style.display = "none";
+            }
+        }
         // closing search modal box when hamburger button is clicked:
         search_modal_box_close();
     }
-});
+};
+// hamburger button for small screens animation generator:
+hamburger_button.addEventListener("click", activate_hamburger_menu);
 
 // search modal open click generator:
 (() => {
@@ -70,10 +109,7 @@ hamburger_button.addEventListener("click", () => {
             }, 1);
             // close the products hamburger menu if already opened:
             if (hamburger_spans[0].classList.contains("clicked")) {
-                for (let i = 0; i < hamburger_spans.length; i++) {
-                    hamburger_spans[i].classList.remove("clicked");
-                }
-                hamburger_opened_menu.style.display = "none";
+                activate_hamburger_menu();
             }
         }
     };
@@ -94,7 +130,13 @@ const showLogo = () => {
         logo.setAttribute("src", "images/Dior_logo_small.png");
         logo_paragraph.style.transform = "translateX(-50%) scale(1)";
     } else {
-        logo.style.height = "200%";
+        if (window.innerWidth < 690 && window.innerWidth >= 462) {
+            logo.style.height = "150%";
+        } else if (window.innerWidth < 462) {
+            logo.style.height = "100%";
+        } else {
+            logo.style.height = "200%";
+        }
         logo.style.boxShadow = "0 1px 8px white";
         logo.setAttribute("src", "images/Dior_logo.png");
         logo_paragraph.style.transform = "translateX(-50%) scale(0)";
@@ -145,5 +187,9 @@ window.addEventListener("click", event => {
     //  search modal div closing event:
     if (!event.target.classList.contains("modal-closable")) {
         search_modal_box_close();
+    }
+    // products hamburger menu for small screens closing event:
+    if (!event.target.classList.contains("hamburger-close") && hamburger_spans[0].classList.contains("clicked")) {
+        activate_hamburger_menu();
     }
 });

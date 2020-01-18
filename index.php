@@ -32,21 +32,21 @@
     <title>Dior Home</title>
 </head>
 <body>
-<div class="jumbotron mb-0 bg-light text-dark">
-        <h1>پیشگامان پودینه</h1>
-        <p>به سایت رسمی شرکت پیشگامان پودینه خوش آمدید.</p>
+    <div class="jumbotron mb-0 mx-sm-0 bg-light text-dark">
+        <h1 class="mx-0 px-0 ">پیشگامان پودینه</h1>
+        <p class="mx-0 px-0 ">به سایت رسمی شرکت پیشگامان پودینه خوش آمدید.</p>
     </div>
-    <header class="container-fluid sticky-top">
+    <header class="container-fluid sticky-top mx-0">
         <nav class="row">
             <!-- left ul -->
             <div class="left col-5">
                 <!-- hamburger menu for small screens -->
                 <ul class="d-flex hamburger_menu">
                     <li class="col">
-                        <div class="hamburger_button">
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                        <div class="hamburger_button hamburger-close">
+                            <span class="hamburger-close"></span>
+                            <span class="hamburger-close"></span>
+                            <span class="hamburger-close"></span>
                         </div>
                     </li>
                     <li class="col search">
@@ -70,71 +70,71 @@
             <div class="right col-5">
                 <ul class="row">
                     <li class="col search">
-                            <input class="modal-closable p-1" type="search" name="search" placeholder="جستجو...">
-                            </input>
+                            <input class="modal-closable p-1" type="search" name="search" placeholder="جستجو..." />
                     </li>
                     <li class="col"><a href="homepage.php"><i class="fa fa-shopping-cart"></i></a></li>
                     <li class="col"><a href="#"><i class="fa fa-user"></i></a></li>
                 </ul>
             </div>
-            <ul class="hamburger_opened_menu">
-                <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">لوازم منزل</a></li>
-                <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">پوشاك</a></li>
-                <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">پارچه</a></li>
-            </ul>
-
-                    <!-- products collapse bars: -->
-            <!-- <div class="container_fluid"> -->
-                <div class="collapse text-white m-0 row flex-row-reverse" id="products">
-                    <div class="card col-6 col-sm-3 border border-right-1">
-                        <div class="card-header text-dark"><a href="#">کالای خواب</a></div>
-                        <div class="card-body">
-                            <ul>
-                                <li><a href="#">روبالشی</a></li>
-                                <li><a href="#">روتختی</a></li>
-                                <li><a href="#">ملافه</a></li>
-                                <li><a href="#">کوسن</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card col-6 col-sm-3 border border-right-1">
-                        <div class="card-header text-dark"><a href="#">اتاق نشیمن</a></div>
-                        <div class="card-body">
-                            <ul>
-                                <li><a href="#">پرده</a></li>
-                                <li><a href="#">رومبلی</a></li>
-                                <li><a href="#">کوسن</a></li>
-                                <li><a href="#">رومیزی</a></li> 
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card col-6 col-sm-3 border border-right-1">
-                        <div class="card-header text-dark"><a href="#">فرش</a></div>
-                        <div class="card-body">
-                            <ul>
-                                <li><a href="#">فرش</a></li>
-                                <li><a href="#">تابلوفرش</a></li>
-                                <li><a href="#">روفرشی</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card col-6 col-sm-3 border border-right-1">
-                        <div class="card-header text-dark"><a href="#">خدمات</a></div>
-                        <div class="card-body">
-                            <ul>
-                                <li>
-                                    <a href="#">طاقه پیچی و ارسال </a>
-                                </li>
-                                <li>
-                                    <a href="#">پذیرش سفارش</a>
-                                </li>
-                            </ul>
-                        </div>
+<!-- products collapse bars: -->
+            <div class="collapse text-white m-0 row flex-row-reverse" id="products">
+                <div class="card col-6 col-sm-3 border border-right-1">
+                    <div class="card-header text-dark"><a href="#">کالای خواب</a></div>
+                    <div class="card-body">
+                        <ul>
+                            <li><a href="#">روبالشی</a></li>
+                            <li><a href="#">روتختی</a></li>
+                            <li><a href="#">ملافه</a></li>
+                            <li><a href="#">کوسن</a></li>
+                        </ul>
                     </div>
                 </div>
-            <!-- </div> -->
+                <div class="card col-6 col-sm-3 border border-right-1">
+                    <div class="card-header text-dark"><a href="#">اتاق نشیمن</a></div>
+                    <div class="card-body">
+                        <ul>
+                            <li><a href="#">پرده</a></li>
+                            <li><a href="#">رومبلی</a></li>
+                            <li><a href="#">کوسن</a></li>
+                            <li><a href="#">رومیزی</a></li> 
+                        </ul>
+                    </div>
+                </div>
+                <div class="card col-6 col-sm-3 border border-right-1">
+                    <div class="card-header text-dark"><a href="#">فرش</a></div>
+                    <div class="card-body">
+                        <ul>
+                            <li><a href="#">فرش</a></li>
+                            <li><a href="#">تابلوفرش</a></li>
+                            <li><a href="#">روفرشی</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card col-6 col-sm-3 border border-right-1">
+                    <div class="card-header text-dark"><a href="#">خدمات</a></div>
+                    <div class="card-body">
+                        <ul>
+                            <li>
+                                <a href="#">طاقه پیچی و ارسال </a>
+                            </li>
+                            <li>
+                                <a href="#">پذیرش سفارش</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </nav>
     </header>
+    <section class="hamburger-close">
+        <ul class="hamburger_opened_menu hamburger-close bg-dark ">
+            <li class="hamburger-close d-flex justify-content-center align-items-center"><a class="hamburger-close text-white py-1" href="#" target="_self">کالای خواب</a></li>
+            <li class="hamburger-close d-flex justify-content-center align-items-center"><a class="hamburger-close text-white py-1" href="#" target="_self">اتاق نشیمن</a></li>
+            <li class="hamburger-close d-flex justify-content-center align-items-center"><a class="hamburger-close text-white py-1" href="#" target="_self">فرش</a></li>
+            <li class="hamburger-close d-flex justify-content-center align-items-center"><a class="hamburger-close text-white py-1" href="#" target="_self">خدمات طاقه پیچی</a></li>
+            <li class="hamburger-close d-flex justify-content-center align-items-center"><a class="hamburger-close text-white py-1" href="#" target="_self">پذیرش سفارش</a></li>
+        </ul>
+    </section>
     <!-- search modal -->
     <div class="modal-closable modal_box hidden position-relative py-5 px-5">
         <span class="close position-absolute text-red">&times;</span>
@@ -149,7 +149,7 @@
         </div>
     </div>
     <main></main>
-
+    <footer></footer>
     <?php canvas_generator() ?>
     <script src="JS/canvas.js"></script>
     <script src="JS/jquery.min.js"></script>
