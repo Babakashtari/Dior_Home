@@ -35,9 +35,20 @@
 <body>
     <?php head(); ?>
     <main>
-        <section>
-            <p class="p-2">اتاق خواب و نشيمن خود را آنگونه كه مي پسنديد طراحي كنيد. پيشگامان پودينه از سال 1380 و با بيش از 20 سال تجربه به كمك 80 طرح و الگوي متنوع زينت بخش محل سكونت مشتريان گرامي و همچنين مرجعي براي تحقق پرو‍‍‍زه هاي خلاقانه و هنري عزيزان است.</p>
+        <section class="container-fluid px-0 position-relative main_image">
+            <img src="images/index_images/frontpage.jpg" alt="پرده، کوسن و رومبلی اتاق نشیمن">
+            <h3 class="position-absolute p-1 p-sm-3">خلاقیت از شما</h3>
+            <h3 class="position-absolute p-1 p-sm-3">تولید با کیفیت و زیبا از ما</h3>
         </section>
+        <!-- <section class="container p-2 creativity">
+            <div class="row">
+                <div><img src="" alt=""></div>
+                <div><img src="" alt=""></div>
+                <div><img src="" alt=""></div>
+            </div>
+            <h3>ایده از شما، کار از ما</h3>
+            <p class="p-2">اتاق خواب و نشيمن خود را آنگونه كه مي پسنديد طراحي كنيد. پيشگامان پودينه از سال 1380 و با بيش از 20 سال تجربه به كمك 80 طرح و الگوي متنوع زينت بخش محل سكونت شما عزيزان می باشد.</p>
+        </section> -->
     </main>
     <footer></footer>
     <?php canvas_generator() ?>

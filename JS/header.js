@@ -152,7 +152,7 @@ window.addEventListener("scroll", showLogo);
         "images/products_menu_images/bedroom.jpg",
         "images/products_menu_images/living_room5.jpg",
         "images/products_menu_images/carpet.jpg",
-        "images/products_menu_images/thinking_room.jpg"
+        "images/products_menu_images/taghe.jpg"
     ];
     for (let i = 0; i < products_collapse_cards.length; i++) {
         products_collapse_cards[i].addEventListener("mouseenter", event => {

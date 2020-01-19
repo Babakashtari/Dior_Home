@@ -133,7 +133,7 @@ function Search_card_generator(){
 
 function search_menu_generator(){
     echo '    <!-- search modal -->
-                <div class="modal-closable modal_box hidden position-relative py-5 px-5">
+                <div class="modal-closable modal_box hidden position-absolute py-5 px-5">
                     <span class="close position-absolute text-red">&times;</span>
                     <div class="modal-closable modal_content">
                         <form class="modal-closable form-inline" action="#" method="get">
