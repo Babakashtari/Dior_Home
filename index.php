@@ -40,15 +40,41 @@
             <h3 class="position-absolute p-1 p-sm-3">خلاقیت از شما</h3>
             <h3 class="position-absolute p-1 p-sm-3">تولید با کیفیت و زیبا از ما</h3>
         </section>
-        <!-- <section class="container p-2 creativity">
-            <div class="row">
-                <div><img src="" alt=""></div>
-                <div><img src="" alt=""></div>
-                <div><img src="" alt=""></div>
+        <section class="container p-2 my-2 creativity">
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-header">
+                        <img src="images/index_images/bedsheet.png" alt="bedsheet" >
+                    </div>
+                    <div class="card-body">
+                        <a href="#">اثاثيه منزل</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <img src="images/index_images/carpet.png" alt="carpet">
+                    </div>
+                    <div class="card-body">
+                        <a href="#">پرده</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <img src="images/index_images/carpet.png" alt="carpet">
+                    </div>
+                    <div class="card-body">
+                        <a href="#">روفرشي</a>
+                    </div>
+                </div>
+                <!-- <div class="card">
+                    <div class="card-body">
+                        <p></p>
+                    </div>
+                </div> -->
             </div>
             <h3>ایده از شما، کار از ما</h3>
-            <p class="p-2">اتاق خواب و نشيمن خود را آنگونه كه مي پسنديد طراحي كنيد. پيشگامان پودينه از سال 1380 و با بيش از 20 سال تجربه به كمك 80 طرح و الگوي متنوع زينت بخش محل سكونت شما عزيزان می باشد.</p>
-        </section> -->
+            <p class="p-2">اثاثيه اتاق خواب و نشيمن خود را آنگونه كه مي پسنديد طراحي كنيد و به ما بدهيد تا برايتان توليد كنيم. پيشگامان پودينه از سال 1380 و با بيش از 20 سال تجربه به كمك 80 طرح و الگوي متنوع رو تختي، روبالشي، كوسن،‌ رومبلي،‌ فرش، روفرشي و پرده، زينت بخش محل سكونت شما عزيزان می باشد.</p>
+        </section>
     </main>
     <footer></footer>
     <?php canvas_generator() ?>
