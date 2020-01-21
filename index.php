@@ -41,29 +41,28 @@
             <h3 class="position-absolute p-1 p-sm-3">تولید با کیفیت و مرغوب از ما</h3>
         </section>
         <section class="container my-4 py-4 creativity">
+                <h3 class="p-2 p-md-4 mx-2 mx-md-4 bg-dark">ایده از شما، کار از ما</h3>
+                <p class="p-2 px-md-4 pb-4 mx-2 mx-md-4 mb-4 bg-dark">اثاثيه اتاق خواب و نشيمن خود را آنگونه كه می پسنديد طراحی كنيد و به ما بدهيد تا برايتان توليد كنيم. پيشگامان پودينه از سال 1380 و با بيش از 20 سال تجربه، طرح و الگوی شما را به صورت سفارشی دریافت و برایتان به صورت چاپ دیجیتالی روی پارچه تولید می کند.</p>
                 <table class="container px-1">
                     <tr class="row">
-                        <td class="col-6 py-2 px-2 px-md-4"><a href="#"><img class="border border-dark" src="images/index_images/carpet_board.jpg" alt="روتختی نمونه کار پیشگامان پودینه"></a></td>
-                        <td class="col-3 py-2 px-2 px-md-4"><a href="#"><img class="border border-dark" src="images/index_images/curtain2.jpg" alt="پرده نمونه چاپی پیشگامان پودینه"></a></td>
-                        <td class="col-3 py-2 px-2 px-md-4"><a href="#"><img class="border border-dark" src="images/index_images/sleeping_products.jpg" alt="كالاي خواب شامل كوسن، روتختي و روملافه اي"></a></td>
+                        <td class="col-6 py-2 px-2 px-md-4"><a href="#"><img class="border border-primary" src="images/index_images/carpet_board1.jpg" alt="روتختی نمونه کار پیشگامان پودینه"></a></td>
+                        <td class="col-3 py-2 px-2 px-md-4"><a href="#"><img class="border border-primary" src="images/index_images/curtain2.jpg" alt="پرده نمونه چاپی پیشگامان پودینه"></a></td>
+                        <td class="col-3 py-2 px-2 px-md-4"><a href="#"><img class="border border-primary" src="images/index_images/sleeping_products.jpg" alt="كالاي خواب شامل كوسن، روتختي و روملافه اي"></a></td>
                     </tr>
                     <tr class="row label">
                         <td class="col-6 py-2 px-2 px-md-4"><a href="#">تابلوفرش</a></td>
-                        <td class="col-3 py-2 px-2 px-md-4"><a href="#">پرده اي</a></td>
-                        <td class="col-3 py-2 px-2 px-md-4"><a href="#">كالاي خواب</a></td>
+                        <td class="col-3 py-2 px-2 px-md-4"><a href="#">پرده ای</a></td>
+                        <td class="col-3 py-2 px-2 px-md-4"><a href="#">كالای خواب</a></td>
                     </tr>
                     <tr class="row">
-                        <td class="col-6 py-2 px-2 px-md-4"><a href="#"><img class="border border-dark" src="images/index_images/carpet2.jpg" alt="روفرشی تولید پیشگامان پودینه"></a></td>
-                        <td class="col-6 py-2 px-2 px-md-4"><a href="#"><img class="border border-dark" src="images/index_images/sofa_cover.jpg" alt="رومبلی تولید پیشگامان پودینه"></a></td>
+                        <td class="col-6 py-2 px-2 px-md-4"><a href="#"><img class="border border-primary" src="images/index_images/carpet3.jpg" alt="روفرشی تولید پیشگامان پودینه"></a></td>
+                        <td class="col-6 py-2 px-2 px-md-4"><a href="#"><img class="border border-primary" src="images/index_images/sofa_cover.jpg" alt="رومبلی تولید پیشگامان پودینه"></a></td>
                     </tr>
                     <tr class='row label'>
-                        <td class="col-6 py-2 px-2 px-md-4"><a href="#">روفرشي</a></td>
-                        <td class="col-6 py-2 px-2 px-md-4"><a href="#">رومبلي</a></td>
+                        <td class="col-6 py-2 px-2 px-md-4"><a href="#">روفرشی</a></td>
+                        <td class="col-6 py-2 px-2 px-md-4"><a href="#">رومبلی</a></td>
                     </tr>
                 </table>
-                <hr>
-                <h3 class="p-2">ایده از شما، کار از ما</h3>
-                <p class="py-2 px-4">اثاثيه اتاق خواب و نشيمن خود را آنگونه كه مي پسنديد طراحي كنيد و به ما بدهيد تا برايتان توليد كنيم. پيشگامان پودينه از سال 1380 و با بيش از 20 سال تجربه به كمك 80 طرح و الگوي متنوع رو تختي، روبالشي، كوسن،‌ رومبلي،‌ فرش، روفرشي و پرده، زينت بخش محل سكونت شما عزيزان می باشد.</p>
         </section>
     </main>
     <footer></footer>

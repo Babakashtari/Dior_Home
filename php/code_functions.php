@@ -7,7 +7,7 @@ function jumbotron_generator(){
         ';
 }
 function header_generator(){
-    echo '    <header class="container-fluid sticky-top mx-0">
+    echo '    <header class="container-fluid sticky-top mx-0 py-1">
     <nav class="row">
         <!-- left ul -->
         <div class="left col-5">
