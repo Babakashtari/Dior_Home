@@ -1,13 +1,13 @@
-const canvas = document.querySelector("canvas");
+const background_canvas = document.querySelector("html>body>canvas.background-canvas");
 const body = document.querySelector("body");
-const context = canvas.getContext("2d");
+const context = background_canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+background_canvas.width = window.innerWidth;
+background_canvas.height = window.innerHeight;
 
 window.addEventListener("resize", () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    background_canvas.width = window.innerWidth;
+    background_canvas.height = window.innerHeight;
     star_generator();
 });
 
