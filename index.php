@@ -36,24 +36,34 @@
     <?php head(); ?>
     <main>
         <section class="container-fluid px-0 position-relative main_image">
-            <img src="images/index_images/frontpage.jpg" alt="پرده، کوسن و رومبلی اتاق نشیمن">
+            <img class="border border-dark" src="images/index_images/frontpage.jpg" alt="پرده، کوسن و رومبلی اتاق نشیمن">
             <h3 class="position-absolute p-1 p-sm-3">خلاقیت از شما</h3>
             <h3 class="position-absolute p-1 p-sm-3">تولید با کیفیت و مرغوب از ما</h3>
         </section>
-        <section class="container my-2 p-0 creativity">
-            <table class="container">
-                <tr class="row">
-                    <td class="col-8 p-4"><a href="#"><img class="border border-primary" src="images/index_images/bedsheet.jpg" alt="روتختی نمونه کار پیشگامان پودینه"></a></td>
-                    <td rowsapn="2" class="col-4 p-4"><a href="#"><img class="border border-primary" src="images/index_images/curtain.jpg" alt="پرده نمونه چاپی پیشگامان پودینه"></a></td>
-                </tr>
-                <tr class="row">
-                    <td class="col-12 p-4"><a href="#"><img class="border border-primary" src="images/index_images/carpet.jpg" alt="روفرشی تولید پیشگامان پودینه"></a></td>
-                    <!-- <td class="col-4 p-4"><a href="#"><img class="border border-primary" src="images/index_images/sofa.jpg" alt="رومبلی تولید پیشگامان پودینه"></a></td> -->
-
-                </tr>
-            </table>
-            <h3>ایده از شما، کار از ما</h3>
-            <p class="p-2">اثاثيه اتاق خواب و نشيمن خود را آنگونه كه مي پسنديد طراحي كنيد و به ما بدهيد تا برايتان توليد كنيم. پيشگامان پودينه از سال 1380 و با بيش از 20 سال تجربه به كمك 80 طرح و الگوي متنوع رو تختي، روبالشي، كوسن،‌ رومبلي،‌ فرش، روفرشي و پرده، زينت بخش محل سكونت شما عزيزان می باشد.</p>
+        <section class="container my-4 py-4 creativity">
+                <table class="container px-1">
+                    <tr class="row">
+                        <td class="col-6 py-2 px-2 px-md-4"><a href="#"><img class="border border-dark" src="images/index_images/carpet_board.jpg" alt="روتختی نمونه کار پیشگامان پودینه"></a></td>
+                        <td class="col-3 py-2 px-2 px-md-4"><a href="#"><img class="border border-dark" src="images/index_images/curtain2.jpg" alt="پرده نمونه چاپی پیشگامان پودینه"></a></td>
+                        <td class="col-3 py-2 px-2 px-md-4"><a href="#"><img class="border border-dark" src="images/index_images/sleeping_products.jpg" alt="كالاي خواب شامل كوسن، روتختي و روملافه اي"></a></td>
+                    </tr>
+                    <tr class="row label">
+                        <td class="col-6 py-2 px-2 px-md-4"><a href="#">تابلوفرش</a></td>
+                        <td class="col-3 py-2 px-2 px-md-4"><a href="#">پرده اي</a></td>
+                        <td class="col-3 py-2 px-2 px-md-4"><a href="#">كالاي خواب</a></td>
+                    </tr>
+                    <tr class="row">
+                        <td class="col-6 py-2 px-2 px-md-4"><a href="#"><img class="border border-dark" src="images/index_images/carpet2.jpg" alt="روفرشی تولید پیشگامان پودینه"></a></td>
+                        <td class="col-6 py-2 px-2 px-md-4"><a href="#"><img class="border border-dark" src="images/index_images/sofa_cover.jpg" alt="رومبلی تولید پیشگامان پودینه"></a></td>
+                    </tr>
+                    <tr class='row label'>
+                        <td class="col-6 py-2 px-2 px-md-4"><a href="#">روفرشي</a></td>
+                        <td class="col-6 py-2 px-2 px-md-4"><a href="#">رومبلي</a></td>
+                    </tr>
+                </table>
+                <hr>
+                <h3 class="p-2">ایده از شما، کار از ما</h3>
+                <p class="py-2 px-4">اثاثيه اتاق خواب و نشيمن خود را آنگونه كه مي پسنديد طراحي كنيد و به ما بدهيد تا برايتان توليد كنيم. پيشگامان پودينه از سال 1380 و با بيش از 20 سال تجربه به كمك 80 طرح و الگوي متنوع رو تختي، روبالشي، كوسن،‌ رومبلي،‌ فرش، روفرشي و پرده، زينت بخش محل سكونت شما عزيزان می باشد.</p>
         </section>
     </main>
     <footer></footer>
