@@ -42,7 +42,7 @@
         </section>
         <section class="container my-4 py-4 creativity">
                 <h3 class="p-2 p-md-4 mx-2 mx-md-4 ">ایده از شما، کار از ما</h3>
-                <p class="p-2 px-md-4 pb-4 mx-2 mx-md-4 mb-4 ">اثاثيه اتاق خواب و نشيمن خود را آنگونه كه می پسنديد طراحی كنيد و به ما بدهيد تا برايتان توليد كنيم. پيشگامان پودينه از سال 1380 و با بيش از 20 سال تجربه، طرح و الگوی شما را به صورت سفارشی دریافت و برایتان به صورت چاپ دیجیتالی روی پارچه تولید می کند.</p>
+                <p class="p-2 px-md-4 pb-4 mx-2 mx-md-4 mb-4 ">اثاثيه اتاق خواب و نشيمن خود را آنگونه كه می پسنديد طراحی كنيد و به ما بدهيد تا برايتان توليد كنيم. پيشگامان پودينه از سال 1380 و با بيش از 18 سال تجربه، طرح و الگوی شما را به صورت سفارشی دریافت و برایتان به صورت چاپ دیجیتالی روی پارچه تولید می کند.</p>
                 <table class="container px-1">
                     <tr class="row">
                         <td class="col-6 py-2 px-2 px-md-4"><a href="#"><img class="border border-primary" src="images/index_images/carpet_board1.jpg" alt="روتختی نمونه کار پیشگامان پودینه"></a></td>
@@ -66,23 +66,35 @@
         </section>
         <section class="cooperation">
             <div>
-                <h3 class="py-2 text-center">همكاري با ما</h3>
+                <h3 class="py-2 text-center">تولیدی ها و شرکت های عمده فروشی</h3>
                 <!-- <img src="images/index_images/agreement.svg" alt="همكاري" width="30px" height="30px"> -->
-                <p class="">شركت پيشگامان پودينه آماده همكاري با شركت هاي عمده فروشي و توليدي هاي پارچه جهت انجام انواع چاپ هاي ديجيتالي و سابليميشن به صورت تيراژ روي پارچه مي باشد. از جمله تسهيلات در نظر گرفته شده براي اين همكاران خدمات طاقه پيچي پارچه و تحويل آن به صورت طاقه است كه نزد عمده فروشي ها از اهميت بسيار بالايي برخوردار است. پيشگامان پودينه همچنين طرح هاي چاپ شده روي پارچه را به فرمت سابليميشن براي دفعات بعدي در اختيار مشتري قرار مي دهد و لذا هيچگونه تجديد چاپ الگو در پيشگامان پودينه شامل هزينه مجدد طراحي نمي شود. </p>
+                <p class="px-4">عمده فعالیت شركت پيشگامان پودينه همکاری با شركت های عمده فروشی و توليدی های پارچه است که جهت انجام انواع چاپ های ديجيتالی و سابليميشن روی پارچه در تيراژ بالا به پیشگامان پودینه مراجعه می کنند. از جمله تسهيلات در نظر گرفته شده برای اين همكاران می توان به خدمات طاقه پيچی پارچه و ترنسفر آن به صورت طاقه اشاره کرد كه نزد مشتریان عمده فروش از اهميت بسيار بالايی برخوردار است. پيشگامان پودينه همچنين طرح های چاپ شده روی پارچه را به فرمت سابليميشن برای دفعات بعدی در اختيار مشتری قرار می دهد و لذا هيچگونه تجديد چاپ الگو در پيشگامان پودينه شامل هزينه مجدد طراحی نمي شود. </p>
+                <div class="customers container border border-primary d-flex flex-row">
+                    <div class="col mx-1"><a href="#"><img src="images/logos/army_logo.png" alt="ارتش جمهوری اسلامی ایران" width="100%" height="100%"></a></div>
+                    <div class="col mx-1"><a href="#"><img src="images/logos/Kowsarbaft_logo.png" alt="کوثر بافت نوین" width="100%" height="100%"></a></div>
+                    <div class="col mx-1"><a href="#"><img src="images/logos/Institute_of_Childrens_Education.png" alt="کانون پرورش فکری کودکان و نوجوانان" width="100%" height="100%"></a></div>
+                    <div class="col mx-1"><a href="#"><img src="images/logos/Social_security.jpg" alt="سازمان تامین اجتماعی" width="100%" height="100%"></a></div>
+                    <div class="col mx-1"><a href="#"><img src="images/logos/municipality.jpg" alt="شهرداری تهران" width="100%" height="100%"></a></div>
+                </div>
             </div>
-        </section>
-        <section class="cooperation-talented">
-            <div>
-                <h3 class="text-center">همكاري با نيروي متخصص</h3>
-                <p class="text-justify">
-                  سرمايه پيشگامان پودينه نيروهاي متخصص و خلاقي است كه مشغول همكاري با آن هستند.  در صورتي كه در موارد زير متخصص هستيد و تمايل به همكاري با ما به صورت دوركاري را داريد، با ما تماس بگيريد.
-                </p>
-                <ul class="row">
-                    <li class="col col-x-12 col-sm-3 ">طراحي ديجيتال</li>
-                    <li class="col col-x-12 col-sm-3 ">عكاسي</li>
-                    <li class="col col-x-12 col-sm-3 ">(فتوشاپ و...)تدوين عكس</li>
-                    <li class="col col-x-12 col-sm-3 ">كورل</li>
-                </ul>
+            <div class="cooperation-talented container my-4">
+                <div class="container">
+                    <h3 class="text-center pt-4 pb-2"> کادر مجرب</h3>
+                    <img src="images/index_images/expertise.jpg" alt="همکاری با نیروی متخصص" width="100%" height="auto">
+                    <p class="text-justify py-4">
+                  سرمايه پيشگامان پودينه به نيروهای متخصص و خلاق آن است.  در صورتی كه در هر یک از موارد زير متخصص هستيد و تمايل به همكاری با ما به صورت دوركاری را داريد، رزومه کاری خود را همراه با نمونه کار هایتان برایمان ارسال کنید.
+                    </p>
+                    <ul class="row">
+                        <li class=" col-xs-12 col-sm-6 col-md-3 ">نقاشی</li>
+                        <li class=" col-xs-12 col-sm-6 col-md-3 ">طراحی سیاه قلم</li>
+                        <li class=" col-xs-12 col-sm-6 col-md-3 ">تصویر برداری</li>
+                        <li class=" col-xs-12 col-sm-6 col-md-3 ">طراحی انیمیشنی </li>
+                        <li class=" col-xs-12 col-sm-6 col-md-3 ">طراحی سه بعدی</li>
+                        <li class=" col-xs-12 col-sm-6 col-md-3 ">فتوشاپ</li>
+                        <li class=" col-xs-12 col-sm-6 col-md-3 ">کورل</li>
+                        <li class=" col-xs-12 col-sm-6 col-md-3 ">ایلاستریتور</li>
+                    </ul>
+                </div>
             </div>
         </section>
     </main>
