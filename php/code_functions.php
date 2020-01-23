@@ -160,5 +160,13 @@ function canvas_generator(){
     echo "<canvas class='background-canvas' style='z-index: -1;position:fixed;top:0;left:0;right:0;bottom:0;background-color:black;'>your browser does not support canvas</canvas>";
 }
 
+function customers_logo_generator(){
+    $customers_logo_src = ['images/logos/army_logo.png','images/logos/Kowsarbaft_logo.png', 'images/logos/Institute_of_Childrens_Education.png', 'images/logos/Social_security.jpg', 'images/logos/municipality.jpg', 'images/logos/Saipa_logo.png', 'images/logos/seda_logo.png', 'images/logos/iran_air.jpg', 'images/logos/ata_airlines.jpg', 'images/logos/erfan_hospital.jpg'];
+    $customers_logo_alts = ['ارتش جمهوري اسلامي ايران', 'کوثر بافت نوین', 'کانون پرورش فکری کودکان و نوجوانان', 'سازمان تامین اجتماعی', 'شهرداری تهران', 'سايپا خودرو', 'صدا و سيماي جمهوري اسلامي ايران', 'هما جمهوري اسلامي ايران', 'شركت هواپيمايي آتا','بيمارستان عرفان'];
+    $customers_logo_hrefs = ['https://aja.ir', "https://kowsarbaft.ir", 'https://kanoonnews.ir', 'https://tamin.ir', 'https://tehran.ir', 'https://saipacorp.com', 'https://irib.ir', 'https://iranair.com', 'https://ataair.ir', 'https://erfanhospital.ir'];
+    for($i = 0 ; $i<count($customers_logo_src) ; $i++){
+        echo '<a href="' . $customers_logo_hrefs[$i] .'"><img class="mx-1" src="' . $customers_logo_src[$i] . '" alt="' . $customers_logo_alts[$i] . '" width="100%" height="100%"></a>';
+    }
+}
 
 ?>

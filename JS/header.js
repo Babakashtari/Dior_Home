@@ -25,7 +25,6 @@ const products_collapse_card_body_links = products_collapse_menu.querySelectorAl
 const products_collapse_card_body_list_items = products_collapse_menu.querySelectorAll("div.card>div.card-body>ul>li");
 const products_collapse_card_header_links = products_collapse_menu.querySelectorAll("div.card > div.card-header>a");
 
-console.log(header_menu_links);
 // for closing the products menu:
 (() => {
     for (let i = 0; i < products_collapse_card_body_links.length; i++) {

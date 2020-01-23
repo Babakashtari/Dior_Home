@@ -67,14 +67,11 @@
         <section class="cooperation">
             <div>
                 <h3 class="py-2 text-center">تولیدی ها و شرکت های عمده فروشی</h3>
-                <!-- <img src="images/index_images/agreement.svg" alt="همكاري" width="30px" height="30px"> -->
                 <p class="px-4">عمده فعالیت شركت پيشگامان پودينه همکاری با شركت های عمده فروشی و توليدی های پارچه است که جهت انجام انواع چاپ های ديجيتالی و سابليميشن روی پارچه در تيراژ بالا به پیشگامان پودینه مراجعه می کنند. از جمله تسهيلات در نظر گرفته شده برای اين همكاران می توان به خدمات طاقه پيچی پارچه و ترنسفر آن به صورت طاقه اشاره کرد كه نزد مشتریان عمده فروش از اهميت بسيار بالايی برخوردار است. پيشگامان پودينه همچنين طرح های چاپ شده روی پارچه را به فرمت سابليميشن برای دفعات بعدی در اختيار مشتری قرار می دهد و لذا هيچگونه تجديد چاپ الگو در پيشگامان پودينه شامل هزينه مجدد طراحی نمي شود. </p>
-                <div class="customers container border border-primary d-flex flex-row">
-                    <div class="col mx-1"><a href="#"><img src="images/logos/army_logo.png" alt="ارتش جمهوری اسلامی ایران" width="100%" height="100%"></a></div>
-                    <div class="col mx-1"><a href="#"><img src="images/logos/Kowsarbaft_logo.png" alt="کوثر بافت نوین" width="100%" height="100%"></a></div>
-                    <div class="col mx-1"><a href="#"><img src="images/logos/Institute_of_Childrens_Education.png" alt="کانون پرورش فکری کودکان و نوجوانان" width="100%" height="100%"></a></div>
-                    <div class="col mx-1"><a href="#"><img src="images/logos/Social_security.jpg" alt="سازمان تامین اجتماعی" width="100%" height="100%"></a></div>
-                    <div class="col mx-1"><a href="#"><img src="images/logos/municipality.jpg" alt="شهرداری تهران" width="100%" height="100%"></a></div>
+                <div class="customers container border border-primary justify-content-center">
+                    <div class="customers-container">
+                        <?php customers_logo_generator(); ?>
+                    </div>
                 </div>
             </div>
             <div class="cooperation-talented container my-4">
