@@ -3,6 +3,11 @@ function jumbotron_generator(){
     echo '  <div class="jumbotron mb-0 mx-sm-0 bg-light text-dark">
                 <h1 class="mx-0 px-0 ">پیشگامان پودینه</h1>
                 <p class="mx-0 px-0 ">به سایت رسمی شرکت پیشگامان پودینه خوش آمدید.</p>
+                <div itemscope itemtype="https://schema.org/LocalBusiness">
+                    <p itemprop="name">
+                        <span itemprop="telephone"><a class="text-dark" href="tel:02155158815"> 55158815 21<i class="fa fa-phone px-1"></i></a></span>
+                    </p>
+                </div>
             </div>
         ';
 }
@@ -118,7 +123,7 @@ function Search_card_generator(){
     $card_text = ["چاپ طرح روبالشی، روتختی و کوسن", "چاپ انواع طرح و الگوی روتختی", "چاپ انواع طرح و الگوی روبالشی", "چاپ انواع الگو و طرح روی پارچه مبل", "طراحی و چاپ انواع عکس، الگو و لوگو برای رومبلی", "چاپ انواع طرح و الگو روی کوسن", "طراحی و چاپ انواع عکس و الگوی رومیزی", "چاپ الگو و طرح ملحفه پرده ای", "چاپ الگو، طرح و عکس روی فرش، روفرشی و تابلوفرش", "چاپ انواع طرح و عکس برای روفرشی", "چاپ دیجیتالی عکس و الگو جهت تابلوفرش", "پذیرش هرگونه طرح و الگوی جدید جهت چاپ"];
 
     for($i=0; $i<count($card_images); $i++){
-        echo '<div class="modal-closable px-1">';
+        echo '<div class="modal-closable">';
         echo    '<div class="modal-closable card border border-primary">';
         echo        '<img class="modal-closable card-img-top" src="' . $card_images[$i]. '" alt="'. $card_header[$i] . '">';
         echo        '<div class="modal-closable card-body text-center d-flex flex-column justify-content-between">';
@@ -161,12 +166,21 @@ function canvas_generator(){
 }
 
 function customers_logo_generator(){
-    $customers_logo_src = ['images/logos/army_logo.png','images/logos/Kowsarbaft_logo.png', 'images/logos/Institute_of_Childrens_Education.png', 'images/logos/Social_security.jpg', 'images/logos/municipality.jpg', 'images/logos/Saipa_logo.png', 'images/logos/seda_logo.png', 'images/logos/iran_air.jpg', 'images/logos/ata_airlines.jpg', 'images/logos/erfan_hospital.jpg'];
-    $customers_logo_alts = ['ارتش جمهوري اسلامي ايران', 'کوثر بافت نوین', 'کانون پرورش فکری کودکان و نوجوانان', 'سازمان تامین اجتماعی', 'شهرداری تهران', 'سايپا خودرو', 'صدا و سيماي جمهوري اسلامي ايران', 'هما جمهوري اسلامي ايران', 'شركت هواپيمايي آتا','بيمارستان عرفان'];
-    $customers_logo_hrefs = ['https://aja.ir', "https://kowsarbaft.ir", 'https://kanoonnews.ir', 'https://tamin.ir', 'https://tehran.ir', 'https://saipacorp.com', 'https://irib.ir', 'https://iranair.com', 'https://ataair.ir', 'https://erfanhospital.ir'];
-    for($i = 0 ; $i<count($customers_logo_src) ; $i++){
-        echo '<a href="' . $customers_logo_hrefs[$i] .'"><img class="mx-1" src="' . $customers_logo_src[$i] . '" alt="' . $customers_logo_alts[$i] . '" width="100%" height="100%"></a>';
-    }
+    $customers_logo_src = ['images/logos/army_logo.png','images/logos/Kowsarbaft_logo.png', 'images/logos/Institute_of_Childrens_Education.png', 'images/logos/Social_security.jpg', 'images/logos/municipality.jpg', 'images/logos/Saipa_logo.png', 'images/logos/seda_logo.png', 'images/logos/iran_air.jpg', 'images/logos/ata_airlines.jpg', 'images/logos/erfan_hospital.jpg', "images/logos/erfan_niyayesh_hospital.png", 'images/logos/fire_fighting_logo.jpg', 'images/logos/Ministry_of_Education.png'];
+    $customers_logo_alts = ['ارتش جمهوري اسلامي ايران', 'کوثر بافت نوین', 'کانون پرورش فکری کودکان و نوجوانان', 'سازمان تامین اجتماعی', 'شهرداری تهران', 'سايپا خودرو', 'صدا و سيماي جمهوري اسلامي ايران', 'هما جمهوري اسلامي ايران', 'شركت هواپيمايي آتا','بيمارستان عرفان', 'بیمارستان عرفان نیایش', 'سازمان آتش نشانی تهران', 'آموزش و پرورش استان تهران'];
+    $customers_logo_hrefs = ['https://aja.ir', "https://kowsarbaft.ir", 'https://kanoonnews.ir', 'https://tamin.ir', 'https://tehran.ir', 'https://saipacorp.com', 'https://irib.ir', 'https://iranair.com', 'https://ataair.ir', 'https://erfanhospital.ir', 'https:///niayeshhospital.ir', 'https://fa.wikipedia.org/wiki/%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86_%D8%A2%D8%AA%D8%B4%E2%80%8C%D9%86%D8%B4%D8%A7%D9%86%DB%8C', 'https://medu.ir' ];
+    
+    echo '<div class="customers-container d-flex justify-content-around">';
+        for($i = 0 ; $i<count($customers_logo_src) ; $i++){
+            echo '<a target="_blank" href="' . $customers_logo_hrefs[$i] .'"><img class="" src="' . $customers_logo_src[$i] . '" alt="' . $customers_logo_alts[$i] . '"></a>';
+        }
+    echo '</div>';
+}
+
+function footer_generator(){
+    echo '<footer class="container-fluid d-flex ">';
+    echo    '';
+    echo '</footer>';
 }
 
 ?>

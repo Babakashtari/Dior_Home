@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth;
+}
 h1,
 h2,
 h3,
@@ -16,11 +19,40 @@ a {
     text-overflow: ellipsis;
 }
 body > div.jumbotron {
+    position: relative;
     direction: rtl;
     text-align: right;
     -webkit-transition: 1s;
     transition: 1s;
     border-radius: 5px 5px 0 0;
+}
+body > div.jumbotron > div > p {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    margin: 0;
+    padding: 0.25rem 1rem 0.25rem 1rem;
+    text-align: center;
+    font-size: 1.25rem;
+    font-style: italic;
+    border-bottom: 3px solid #343a40;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+body > div.jumbotron > div > p > span > a {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+body > div.jumbotron > div > p:hover {
+    border-bottom: 3px solid blue;
+}
+body > div.jumbotron > div > p:hover > span > a {
+    color: blue !important;
+    text-decoration: none;
+}
+body > div.jumbotron > div > p > span > a > i {
+    -webkit-transform: rotate(145deg);
+    transform: rotate(145deg);
 }
 header > nav > div.logo > img {
     width: auto;
@@ -338,7 +370,14 @@ div.modal_box > div.modal_content > div.products_gallery > div > div.card > div.
 div.modal_box > div.modal_content > div.products_gallery > div > div.card > div.card-body > p {
     font-size: 0.75rem;
 }
-
+@media screen and (min-width: 1603px) {
+    div.modal_box > div.modal_content > div.products_gallery > div {
+        width: 23%;
+    }
+    div.modal_box > div.modal_content > div.products_gallery > div > div > img {
+        width: 100% !important;
+    }
+}
 @media screen and (max-width: 946px) {
     header > nav > div.collapse > div.card > div.card-body,
     header > nav > div.collapse > div.card > div.card-header {
@@ -400,11 +439,15 @@ div.modal_box > div.modal_content > div.products_gallery > div > div.card > div.
     }
 }
 @media screen and (max-width: 576px) {
-    div.jumbotron > h1 {
+    body > div.jumbotron > h1 {
         font-size: 1.25rem;
     }
-    div.jumbotron > p {
+    body > div.jumbotron > p {
         font-size: 0.75rem;
+    }
+    body > div.jumbotron > div > p {
+        font-size: 0.75rem;
+        bottom: 8px;
     }
 }
 @media screen and (max-width: 310px) {

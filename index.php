@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="CSS/Normalizer.css">
     <link rel="stylesheet" href="Css/fonts.css">
     <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/footer.css">
     <link rel="stylesheet" href="CSS/index.css">
     <title>Dior Home</title>
 </head>
@@ -67,10 +68,10 @@
         <section class="cooperation">
             <div>
                 <h3 class="py-2 text-center">تولیدی ها و شرکت های عمده فروشی</h3>
-                <p class="px-4">عمده فعالیت شركت پيشگامان پودينه همکاری با شركت های عمده فروشی و توليدی های پارچه است که جهت انجام انواع چاپ های ديجيتالی و سابليميشن روی پارچه در تيراژ بالا به پیشگامان پودینه مراجعه می کنند. از جمله تسهيلات در نظر گرفته شده برای اين همكاران می توان به خدمات طاقه پيچی پارچه و ترنسفر آن به صورت طاقه اشاره کرد كه نزد مشتریان عمده فروش از اهميت بسيار بالايی برخوردار است. پيشگامان پودينه همچنين طرح های چاپ شده روی پارچه را به فرمت سابليميشن برای دفعات بعدی در اختيار مشتری قرار می دهد و لذا هيچگونه تجديد چاپ الگو در پيشگامان پودينه شامل هزينه مجدد طراحی نمي شود. </p>
-                <div class="customers container border border-primary justify-content-center">
-                    <div class="customers-container">
-                        <?php customers_logo_generator(); ?>
+                <p class="px-4 pb-2 container">عمده فعالیت شركت پيشگامان پودينه همکاری با شركت های عمده فروشی و توليدی های پارچه است که جهت انجام انواع چاپ های ديجيتالی و سابليميشن روی پارچه در تيراژ بالا به پیشگامان پودینه مراجعه می کنند. از جمله تسهيلات در نظر گرفته شده برای اين همكاران می توان به خدمات طاقه پيچی پارچه و ترنسفر آن به صورت طاقه اشاره کرد كه نزد مشتریان عمده فروش از اهميت بسيار بالايی برخوردار است. پيشگامان پودينه همچنين طرح ها و لوگو های چاپ شده روی پارچه را به فرمت سابليميشن برای دفعات بعدی در اختيار مشتریان گرامی قرار می دهد و لذا هيچگونه تجديد چاپ الگو در پيشگامان پودينه شامل هزينه مجدد طراحی نمي شود. </p>
+                <div class="container">
+                    <div class="customers mx-3">
+                        <?php customers_logo_generator();customers_logo_generator();  ?>
                     </div>
                 </div>
             </div>
@@ -95,7 +96,7 @@
             </div>
         </section>
     </main>
-    <footer></footer>
+    <?php footer_generator(); ?>
     <?php canvas_generator() ?>
     <script src="JS/canvas.js"></script>
     <script src="JS/jquery.min.js"></script>

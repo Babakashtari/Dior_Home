@@ -44,6 +44,8 @@ const search_modal_box_close = () => {
             modal_box.classList.add("hidden");
             search_li.style.visibility = "visible";
         }, 1000);
+        main.classList.remove("hidden");
+        footer.classList.remove("hidden");
     }
 };
 
@@ -103,6 +105,10 @@ hamburger_button.addEventListener("click", activate_hamburger_menu);
             modal_box.classList.remove("hidden");
             modal_box_search.focus();
             search_li.style.visibility = "hidden";
+            // document.body.scrollTop = 0;
+            // document.documentElement.scrollTop = 0;
+            main.classList.add("hidden");
+            footer.classList.add("hidden");
             setTimeout(() => {
                 modal_box.classList.add("modal_box_scale");
             }, 1);
@@ -142,8 +148,21 @@ const showLogo = () => {
     }
 };
 
-window.addEventListener("load", showLogo);
+const no_sticky_top = () => {
+    // removing sticky positioning for small screens:
+    if (window.innerWidth < 690) {
+        head.classList.contains("sticky-top") && head.classList.remove("sticky-top");
+    } else {
+        !head.classList.contains("sticky-top") && head.classList.add("sticky-top");
+    }
+};
+const page_loaded = () => {
+    showLogo();
+    no_sticky_top();
+};
+window.addEventListener("load", page_loaded);
 window.addEventListener("scroll", showLogo);
+window.addEventListener("resize", no_sticky_top);
 
 //products menu background-image hover effect
 (() => {
