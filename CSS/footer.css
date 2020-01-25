@@ -1,38 +1,30 @@
 footer {
-  background-color: darkslategrey;
-  border-radius: 5px;
-  direction: rtl;
+    background-color: darkslategrey;
+    border-radius: 5px;
+    direction: rtl;
 }
-footer ul {
-  list-style-type: none;
+footer > section > div > p {
+    border-bottom: 3px solid white;
 }
-footer a,
-footer p,
-footer i {
-  color: white;
+footer > section > div > img {
+    position: absolute;
+    z-index: 1;
+    top: 1%;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 50%;
+    width: 10%;
+    height: auto;
+    background-color: black;
+    box-shadow: 0 1px 8px white;
 }
-footer a:hover {
-  text-decoration: underline;
-  color: yellowgreen;
+footer > section:nth-of-type(2) > div > div > p {
+    border-bottom: 3px solid red;
 }
-footer > nav > section.row > div:nth-of-type(1) > ul > li {
-  text-align: right;
-  font-size: 1.25rem;
+footer > section:nth-of-type(2) > div > div > ul {
+    list-style-type: none;
 }
-footer > nav > section.row > div:nth-of-type(1) > ul > li > a > i {
-  font-size: 2rem;
-}
-footer > nav > section.row > div:nth-of-type(2) > ul > li > iframe#map {
-  width: 100%;
-  height: 100%;
-  border: 3px solid white !important;
-  border-radius: 5px;
-}
-footer > nav > section.row > div:nth-of-type(2) > ul > li > div {
-  border: 1px solid white;
-  text-align: right;
-  width: 100%;
-}
-footer > nav > section.row > div:nth-of-type(2) > ul > li > div.container > div > div > i {
-  font-size: 2rem;
+footer > section:nth-of-type(2) > div > div > ul > li {
+    border-bottom: 3px solid gray;
 }

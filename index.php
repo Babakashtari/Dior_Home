@@ -96,7 +96,34 @@
             </div>
         </section>
     </main>
-    <?php footer_generator(); ?>
+    <footer class="container-fluid position-relative">
+        <section class="container">
+            <div class="row">
+                <p class="col-12 text-light text-right py-2 px-1"><i class="px-2 fas fa-tags"></i>دسترسی سریع</p>
+                <img src="images/Dior_logo.png" alt="لوگوی پیشگامان پودینه">
+            </div>
+        </section>
+        <section class="container">
+            <div class="row">
+                <div class="col-3">
+                    <p class="text-light text-right">پیشگامان پودینه:</p>
+                    <ul>
+                        <li class="text-right py-2"><a class="text-light" href="#">ارتباط با ما</a></li>
+                        <li class="text-right py-2"><a class="text-light" href="#">درباره ما</a></li>
+                        <li class="container py-2">
+                            <div class="row text-right">
+                                <a class=" text-light" href="#"><i class="col-3 fab fa-telegram"></i></a>
+                                <a class=" text-light" href="#"><i class="col-3 fab fa-whatsapp-square"></i></a>
+                                <a class=" text-light" href="#"><i class="col-3 fab fa-instagram"></i></a>
+                                <a class=" text-light" href="#"><i class="col-3 fab fa-facebook"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </footer>
     <?php canvas_generator() ?>
     <script src="JS/canvas.js"></script>
     <script src="JS/jquery.min.js"></script>

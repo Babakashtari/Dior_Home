@@ -178,19 +178,20 @@ function customers_logo_generator(){
 }
 
 function footer_generator(){
-    echo '<footer class="container-fluid d-flex p-4">';
+    echo '<footer class="container-fluid d-flex p-4 position-relative">';
+    echo    '<div class="row border border-primary">
+                <a href="#"><img src="images/Dior_logo.png" alt="لوگوی پیشگامان پودینه"></a>
+                <p class="col-12 text-light text-center">دسترسی سریع</p>
+            </div>';
     echo    '<nav class="container">';
     echo        '<section class="row">';
     // footer first column:
     echo            '<div class="col">';
+    echo                '<h3 class="text-right text-light">پیشگامان پودینه</h3>';
     echo                '<ul>';
     echo                    '<li><a class="py-3 px-1" href="#">درباره ما</a></li>';
-    echo                    '<li><a class="py-3 px-1" href="#">خدمات</a></li>';
-    echo                    '<li><a class="py-3 px-1" href="#">كاتالوگ محصولات</a></li>';
-    echo                    '<li><a class="py-3 px-1" href="#">پيشنهادات وي‍‍‍زه</a></li>';
-    echo                    '<li><a class="py-3 px-1" href="#">خدمات عمده فروشي</a></li>';
+    echo                    '<li><a class="py-3 px-1" href="#">ارتباط با ما</a></li>';
     echo                    '<li class="d-flex justify-content-between">
-                                <hr>
                                 <a  class="p-1" href="#"><i class="fab fa-telegram"></i></a>
                                 <a  class="p-1" href="#"><i class="fab fa-whatsapp-square"></i></a>
                                 <a  class="p-1" href="#"><i class="fab fa-instagram"></i></a>
@@ -199,27 +200,45 @@ function footer_generator(){
     echo                '</ul>';
     echo            '</div>';
     // footer second column:
-    echo            '<div class="col col-6">';
-    echo                '<ul>';
-    echo                    '<li>';
-    echo                        '<iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d810.286884581503!2d51.420977829182945!3d35.67336899876224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQwJzI0LjEiTiA1McKwMjUnMTcuNSJF!5e0!3m2!1sen!2sus!4v1579936178686!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>';
-    echo                    '</li>';
-    echo                    '<li>';
-    echo                            '<div class="container">';
-    echo                                '<div class="row">';
-    echo                                    '<div class="col-2 border border-primary"><i class=" px-1 fas fa-address-card"></i></div>';
-    echo                                    '<div class="col-10 border border-primary"><p>آدرس: تهران، بازار بزرگ، عباس آباد، سراي آزادي، نبش دالون دوم، پلاك 320، پيشگامان پودينه</p></div>';
-    echo                                '</div>';
-    echo                                '<div class="row">';
-    echo                                    '<div class="col-2 border border-primary"><i class=" px-1 fas fa-phone-square"></i></div>';
-    echo                                    '<div class="col-10 border border-primary"><p>09121158204 - 55158815 - 33789024</p></div>';
-    echo                                '</div>';
+    echo            '<div class="col col text-center">';
+    echo                    '<ul>';
+    echo                        '<li class="container">';
+    echo                            '<div class="row">';
+    echo                                '<div class="col-12 d-flex align-items-center justify-content-center"><p class="m-1 text-light">دفتر مرکزی</p></div>';
     echo                            '</div>';
-    echo                    '</li>';
-    echo                '</ul>';
+    echo                        '</li>';
+    echo                        '<li class="container">';
+    echo                            '<div class="row">';
+    echo                                '<div class="col-2  d-flex align-items-center justify-content-start"><i class=" px-1 fas fa-address-card"></i></div>';
+    echo                                '<div class="col-10  d-flex align-items-center justify-content-start"><p class="m-0">آدرس: تهران، بازار بزرگ، عباس آباد، سرای آزادی، نبش دالان دوم، پلاك 320، پيشگامان پودينه</p></div>';
+    echo                            '</div>';
+    echo                        '</li>';
+    echo                        '<li class="container">';
+    echo                            '<div class="row">';
+    echo                                '<div class="col-12 d-flex align-items-center justify-content-center"><p class="m-1 text-light">کارخانه</p></div>';
+    echo                            '</div>';
+    echo                        '</li>';
+    echo                        '<li class="container">';
+    echo                            '<div class="row">';
+    echo                                '<div class="col-2 d-flex align-items-center justify-content-start"><i class=" px-1 fas fa-address-card"></i></div>';
+    echo                                '<div class="col-10 d-flex align-items-center justify-content-start"><p class="m-0">آدرس: تهران، بازار بزرگ، عباس آباد، سرای آزادی، نبش دالان دوم، پلاك 320، پيشگامان پودينه</p></div>';
+    echo                            '</div>';
+    echo                        '</li>';
+    echo                        '<li class="container">';
+    echo                            '<div class="row">';
+    echo                                '<div class="col-2 d-flex align-items-center justify-content-start"><i class=" px-1 fas fa-phone-square"></i></div>';
+    echo                                '<div class="col-10 d-flex align-items-center justify-content-start"><p class="m-0">09121158204 - 55158815 - 33789024</p></div>';
+    echo                            '</div>';
+    echo                        '</li>';
+    echo                    '</ul>';
     echo            '</div>';
     // footer third column:
     echo            '<div class="col">';
+    echo                '<ul>';
+    // echo                    '<li>';
+    // echo                        '<iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d810.286884581503!2d51.420977829182945!3d35.67336899876224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQwJzI0LjEiTiA1McKwMjUnMTcuNSJF!5e0!3m2!1sen!2sus!4v1579936178686!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>';
+    // echo                    '</li>';
+    echo                '</ul>';
     echo            '</div>';
     echo        '</section>';
     echo    '</nav>';
