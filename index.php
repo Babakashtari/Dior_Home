@@ -97,21 +97,22 @@
         </section>
     </main>
     <footer class="container-fluid position-relative">
-        <section class="container">
+        <img src="images/Dior_logo.png" alt="لوگوی پیشگامان پودینه">
+        <div id="devider" class="container py-2">
             <div class="row">
-                <p class="col-12 text-light text-right py-2 px-1"><i class="px-2 fas fa-tags"></i>دسترسی سریع</p>
-                <img src="images/Dior_logo.png" alt="لوگوی پیشگامان پودینه">
+                <p class="col-12 text-right text-light py-3"><span class="bg-primary p-2"><i class="px-2 fas fa-tags"></i>دسترسی سریع</span><span class=" p-2 mr-2"><i class="px-2 fas fa-map-marker-alt"></i> کارخانه و دفاتر زیر مجموعه</span></p>
             </div>
-        </section>
+        </div>
         <section class="container">
             <div class="row">
-                <div class="col-3">
-                    <p class="text-light text-right">پیشگامان پودینه:</p>
+                <div class="col-6 col-sm-4">
+                    <p class="text-light text-right font-weight-bold"><span>پیشگامان پودینه:</span></p>
                     <ul>
-                        <li class="text-right py-2"><a class="text-light" href="#">ارتباط با ما</a></li>
-                        <li class="text-right py-2"><a class="text-light" href="#">درباره ما</a></li>
-                        <li class="container py-2">
-                            <div class="row text-right">
+                        <li class="text-right py-2"><a class="text-light font-weight-italic" href="#">ارتباط با ما</a></li>
+                        <li class="text-right py-2"><a class="text-light font-weight-italic" href="#">درباره ما</a></li>
+                        <li class="text-right py-2"><a class="text-light font-weight-italic" href="#">مقالات و اخبار</a></li>
+                        <li class="container py-sm-3 py-md-2">
+                            <div class="row flex-nowrap text-right py-3 py-sm-0">
                                 <a class=" text-light" href="#"><i class="col-3 fab fa-telegram"></i></a>
                                 <a class=" text-light" href="#"><i class="col-3 fab fa-whatsapp-square"></i></a>
                                 <a class=" text-light" href="#"><i class="col-3 fab fa-instagram"></i></a>
@@ -120,9 +121,49 @@
                         </li>
                     </ul>
                 </div>
+                <div class="col-6 col-sm-4">
+                    <p class="text-light text-right font-weight-bold"><span>خدمات:</span></p>
+                    <ul>
+                        <li class="text-right py-2"><a class="text-light " href="#">کاتالوگ محصولات</a></li>
+                        <li class="text-right py-2 "><a class="text-light " href="#">چاپ دیجیتال/سابلیمیشن</a></li>
+                        <li class="text-right py-2"><a class="text-light " href="#">ثبت سفارش</a></li>
+                        <li class="text-right py-2"><a class="text-light " href="#">پیشنهادات ویژه</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-4 d-flex flex-column justify-content-between">
+                    <p class="text-light text-right font-weight-bold"><span>نقشه کارخانه :</span></p>
+                    <div class="" id="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d810.2831043967619!2d51.42120381698916!3d35.673741347670784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQwJzI0LjAiTiA1McKwMjUnMTcuNSJF!5e0!3m2!1sen!2s!4v1580028290659!5m2!1sen!2s"  frameborder="0" style="border:0;" allowfullscreen="" width="100%" height="180px"></iframe>
+                    </div>
+                </div>
             </div>
         </section>
-
+        <section class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6">
+                    <p class="text-light text-right font-weight-bold"><span>کارخانه:</span></p>
+                    <ul>
+                        <li class="text-right py-2"><p class="text-light text-right"><i class="fas fa-address-card pl-2"></i>آدرس: اردبیل، شهرک صنعتی فجر، ساختمان قائم پلاک50</p></li>
+                        <li class="text-right py-2 "><p class="text-light text-right"><i class="fas fa-phone pl-2"></i>تلفن: 22785456 - 44558821 - 06127621031</p></li>
+                        <li class="text-right py-2"><p class="text-light text-right"><i class="fas fa-envelope pl-2"></i>ایمیل: factory@diorhome.com</p></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <p class="text-light text-right font-weight-bold"><span>دفتر مرکزی:</span></p>
+                    <ul>
+                        <li class="text-right py-2"><p class="text-light text-right"><i class="fas fa-address-card pl-2"></i>آدرس: تهران بازار بزرگ، بازار عباس آباد، سرای آزادی، دالان دوم پلاک 302 پلاک50</p></li>
+                        <li class="text-right py-2 "><p class="text-light text-right"><i class="fas fa-phone pl-2"></i>تلفن: 22785456 - 44558821 - 06127621031</p></li>
+                        <li class="text-right py-2"><p class="text-light text-right"><i class="fas fa-envelope pl-2"></i>ایمیل: burreau@diorhome.com</p></li>
+                    </ul>
+                </div>
+                <!-- <div class="col-12 col-sm-4 d-flex flex-column justify-content-between">
+                    <p class="text-light text-right font-weight-bold">نقشه دفتر مرکزی :</p>
+                    <div class="" id="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d810.2831043967619!2d51.42120381698916!3d35.673741347670784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQwJzI0LjAiTiA1McKwMjUnMTcuNSJF!5e0!3m2!1sen!2s!4v1580028290659!5m2!1sen!2s"  frameborder="0" style="border:0;" allowfullscreen="" width="100%" height="180px"></iframe>
+                    </div>
+                </div> -->
+            </div>
+        </section>
     </footer>
     <?php canvas_generator() ?>
     <script src="JS/canvas.js"></script>
@@ -130,5 +171,6 @@
     <script src="JS/bootstrap.min.js"></script>
     <script src="JS/header.js"></script>
     <script src="JS/index.js"></script>
+    <script src="JS/footer.js"></script>
 </body>
 </html>
