@@ -97,7 +97,7 @@ main > section.creativity > table tr > td > a > img {
 }
 main > section.cooperation {
     border-radius: 5px;
-    padding: 1rem;
+    padding: 1rem 1rem 4rem 1rem;
     direction: rtl;
     text-align: justify;
     color: white;
