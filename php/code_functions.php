@@ -5,7 +5,7 @@ function jumbotron_generator(){
                 <p class="mx-0 px-0 ">به سایت رسمی شرکت پیشگامان پودینه خوش آمدید.</p>
                 <div itemscope itemtype="https://schema.org/LocalBusiness">
                     <p itemprop="name">
-                        <span itemprop="telephone"><a class="text-dark" href="tel:02155158815"> 55158815 21<i class="fa fa-phone px-1"></i></a></span>
+                        <span itemprop="telephone"><a class="text-dark" href="tel:02155158815"><span class="Yekan">55158815 21</span><i class="fa fa-phone px-1"></i></a></span>
                     </p>
                 </div>
             </div>
@@ -178,71 +178,72 @@ function customers_logo_generator(){
 }
 
 function footer_generator(){
-    echo '<footer class="container-fluid d-flex p-4 position-relative">';
-    echo    '<div class="row border border-primary">
-                <a href="#"><img src="images/Dior_logo.png" alt="لوگوی پیشگامان پودینه"></a>
-                <p class="col-12 text-light text-center">دسترسی سریع</p>
-            </div>';
-    echo    '<nav class="container">';
-    echo        '<section class="row">';
-    // footer first column:
-    echo            '<div class="col">';
-    echo                '<h3 class="text-right text-light">پیشگامان پودینه</h3>';
-    echo                '<ul>';
-    echo                    '<li><a class="py-3 px-1" href="#">درباره ما</a></li>';
-    echo                    '<li><a class="py-3 px-1" href="#">ارتباط با ما</a></li>';
-    echo                    '<li class="d-flex justify-content-between">
-                                <a  class="p-1" href="#"><i class="fab fa-telegram"></i></a>
-                                <a  class="p-1" href="#"><i class="fab fa-whatsapp-square"></i></a>
-                                <a  class="p-1" href="#"><i class="fab fa-instagram"></i></a>
-                                <a  class="p-1" href="#"><i class="fab fa-facebook"></i></a>
-                            </li>';
-    echo                '</ul>';
-    echo            '</div>';
-    // footer second column:
-    echo            '<div class="col col text-center">';
-    echo                    '<ul>';
-    echo                        '<li class="container">';
-    echo                            '<div class="row">';
-    echo                                '<div class="col-12 d-flex align-items-center justify-content-center"><p class="m-1 text-light">دفتر مرکزی</p></div>';
-    echo                            '</div>';
-    echo                        '</li>';
-    echo                        '<li class="container">';
-    echo                            '<div class="row">';
-    echo                                '<div class="col-2  d-flex align-items-center justify-content-start"><i class=" px-1 fas fa-address-card"></i></div>';
-    echo                                '<div class="col-10  d-flex align-items-center justify-content-start"><p class="m-0">آدرس: تهران، بازار بزرگ، عباس آباد، سرای آزادی، نبش دالان دوم، پلاك 320، پيشگامان پودينه</p></div>';
-    echo                            '</div>';
-    echo                        '</li>';
-    echo                        '<li class="container">';
-    echo                            '<div class="row">';
-    echo                                '<div class="col-12 d-flex align-items-center justify-content-center"><p class="m-1 text-light">کارخانه</p></div>';
-    echo                            '</div>';
-    echo                        '</li>';
-    echo                        '<li class="container">';
-    echo                            '<div class="row">';
-    echo                                '<div class="col-2 d-flex align-items-center justify-content-start"><i class=" px-1 fas fa-address-card"></i></div>';
-    echo                                '<div class="col-10 d-flex align-items-center justify-content-start"><p class="m-0">آدرس: تهران، بازار بزرگ، عباس آباد، سرای آزادی، نبش دالان دوم، پلاك 320، پيشگامان پودينه</p></div>';
-    echo                            '</div>';
-    echo                        '</li>';
-    echo                        '<li class="container">';
-    echo                            '<div class="row">';
-    echo                                '<div class="col-2 d-flex align-items-center justify-content-start"><i class=" px-1 fas fa-phone-square"></i></div>';
-    echo                                '<div class="col-10 d-flex align-items-center justify-content-start"><p class="m-0">09121158204 - 55158815 - 33789024</p></div>';
-    echo                            '</div>';
-    echo                        '</li>';
-    echo                    '</ul>';
-    echo            '</div>';
-    // footer third column:
-    echo            '<div class="col">';
-    echo                '<ul>';
-    // echo                    '<li>';
-    // echo                        '<iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d810.286884581503!2d51.420977829182945!3d35.67336899876224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQwJzI0LjEiTiA1McKwMjUnMTcuNSJF!5e0!3m2!1sen!2sus!4v1579936178686!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>';
-    // echo                    '</li>';
-    echo                '</ul>';
-    echo            '</div>';
-    echo        '</section>';
-    echo    '</nav>';
-    echo '</footer>';
+    echo    '
+    <footer class="container-fluid position-relative">
+    <img src="images/Dior_logo.png" alt="لوگوی پیشگامان پودینه">
+    <div id="devider" class="container py-2">
+        <div class="row">
+            <p class="col-12 text-right text-light pb-3 pt-5"><span class="bg-primary p-2"><i class="px-2 fas fa-tags"></i>دسترسی سریع</span><span class=" p-2 mr-sm-2"><i class="px-2 fas fa-map-marker-alt"></i> کارخانه و دفاتر زیر مجموعه</span></p>
+        </div>
+    </div>
+    <section class="container">
+        <div class="row">
+            <div class="col-12 col-sm-4">
+                <p class="text-light text-right font-weight-bold"><span>پیشگامان پودینه:</span></p>
+                <ul>
+                    <li class="text-right py-2"><a class="text-light font-weight-italic" href="#">ارتباط با ما</a></li>
+                    <li class="text-right py-2"><a class="text-light font-weight-italic" href="#">درباره ما</a></li>
+                    <li class="text-right py-2"><a class="text-light font-weight-italic" href="#">مقالات و اخبار</a></li>
+                    <li class="container py-sm-3 py-md-2 pr-0">
+                        <div class="row flex-nowrap text-right py-3 py-sm-0 py-md-0">
+                            <a class=" text-light" href="#"><i class="col-3 fab fa-telegram"></i></a>
+                            <a class=" text-light" href="#"><i class="col-3 fab fa-whatsapp-square"></i></a>
+                            <a class=" text-light" href="#"><i class="col-3 fab fa-instagram"></i></a>
+                            <a class=" text-light" href="#"><i class="col-3 fab fa-facebook"></i></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-12 col-sm-4">
+                <p class="text-light text-right font-weight-bold"><span>خدمات:</span></p>
+                <ul>
+                    <li class="text-right py-2"><a class="text-light " href="#">کاتالوگ محصولات</a></li>
+                    <li class="text-right py-2 "><a class="text-light " href="#">چاپ دیجیتال/سابلیمیشن</a></li>
+                    <li class="text-right py-2"><a class="text-light " href="#">ثبت سفارش</a></li>
+                    <li class="text-right py-2"><a class="text-light " href="#">پیشنهادات ویژه</a></li>
+                </ul>
+            </div>
+            <div class="col-12 col-sm-4 d-flex flex-column justify-content-start">
+                <p class="text-light text-right font-weight-bold"><span>نقشه کارخانه :</span></p>
+                <div class="my-2" id="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d810.2831043967619!2d51.42120381698916!3d35.673741347670784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQwJzI0LjAiTiA1McKwMjUnMTcuNSJF!5e0!3m2!1sen!2s!4v1580028290659!5m2!1sen!2s"  frameborder="0" style="border:0;" allowfullscreen="" width="100%" height="180px"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <p class="text-light text-right font-weight-bold"><span>کارخانه:</span></p>
+                <ul>
+                    <li class="text-right py-2"><p class="text-light text-right"><i class="fas fa-address-card pl-2"></i>آدرس: اردبیل، شهرک صنعتی فجر، ساختمان قائم پلاک <span class="Yekan">50</span></p></li>
+                    <li class="text-right py-2 "><p class="text-light text-right"><i class="fas fa-phone pl-2"></i>تلفن: <span class="Yekan">22785456 </span>- <span class="Yekan">44558821 </span>- <span class="Yekan">06127621031</span></p></li>
+                    <li class="text-right py-2"><p class="text-light text-right"><i class="fas fa-envelope pl-2"></i>ایمیل: factory@diorhome.com</p></li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-6">
+                <p class="text-light text-right font-weight-bold"><span>دفتر مرکزی:</span></p>
+                <ul>
+                    <li class="text-right py-2"><p class="text-light text-right"><i class="fas fa-address-card pl-2"></i>آدرس: تهران بازار بزرگ، بازار عباس آباد، سرای آزادی، دالان دوم پلاک <span class="Yekan">302</span> پلاک <span class="Yekan">50</span></p></li>
+                    <li class="text-right py-2 "><p class="text-light text-right"><i class="fas fa-phone pl-2"></i>تلفن: <span class="Yekan">22785456 </span>- <span class="Yekan"><span class="Yekan">44558821</span></span> - <span class="Yekan"><span class="Yekan"><span class="Yekan"><span class="Yekan">06127621031</span></span></span></span></p></li>
+                    <li class="text-right py-2"><p class="text-light text-right"><i class="fas fa-envelope pl-2"></i>ایمیل: burreau@diorhome.com</p></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</footer>
+
+            ';
 }
 
 ?>

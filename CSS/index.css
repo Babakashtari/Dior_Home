@@ -302,3 +302,6 @@ main > section.cooperation > div > div.container > div.customers > div.customers
         display: none;
     }
 }
+@media screen and (max-width:776px){
+    
+}
