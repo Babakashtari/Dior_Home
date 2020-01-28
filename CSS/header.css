@@ -4,11 +4,11 @@
   box-sizing: border-box;
 }
 @font-face {
-  src: url(fonts/IRANSansWeb_Bold.ttf);
+  src: url(../Fonts/IRANSansWeb_Bold.ttf);
   font-family: "IranSans";
 }
 @font-face {
-  src: url(fonts/yekannumbers-regular.woff);
+  src: url(../Fonts/yekannumbers-regular.woff);
   font-family: "Yekan";
 }
 .Yekan {
@@ -67,10 +67,10 @@ body > div.jumbotron > div > p > span > a > i {
 }
 header > nav > div.logo > img {
   width: auto;
-  height: 200%;
+  height: 100%;
   border-radius: 50%;
   position: absolute;
-  bottom: 8px;
+  bottom: 0;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
