@@ -4,21 +4,12 @@
     box-sizing: border-box;
 }
 @font-face {
-<<<<<<< HEAD
     src: url(../Fonts/IRANSansWeb_Bold.ttf);
     font-family: "IranSans";
 }
 @font-face {
     src: url(../Fonts/yekannumbers-regular.woff);
     font-family: "Yekan";
-=======
-  src: url(../Fonts/IRANSansWeb_Bold.ttf);
-  font-family: "IranSans";
-}
-@font-face {
-  src: url(../Fonts/yekannumbers-regular.woff);
-  font-family: "Yekan";
->>>>>>> c0866009e2213de16b660c1846fc6c28a5cbb03f
 }
 .Yekan {
     font-family: "Yekan";
@@ -49,40 +40,39 @@ body > div.jumbotron {
     /* background-image: linear-gradient(45deg, rgba(0, 255, 0, 0.5), rgba(0, 0, 255, 0.5)); */
 }
 body > div.jumbotron > div > p {
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
+    position: relative;
+    /* bottom: 15px;
+    left: 15px; */
     margin: 0;
     padding: 0.25rem 1rem 0.25rem 1rem;
-    text-align: center;
+    text-align: left;
     font-size: 1.25rem;
     font-style: italic;
-    border-bottom: 3px solid #343a40;
+    /* border-bottom: 3px solid #343a40; */
     -webkit-transition: 0.5s;
     transition: 0.5s;
 }
 body > div.jumbotron > div > p > span > a {
     -webkit-transition: 0.5s;
     transition: 0.5s;
+    margin-bottom: 3px;
 }
-body > div.jumbotron > div > p:hover {
+body > div.jumbotron > div > p > span > a:hover {
     border-bottom: 3px solid blue;
-}
-body > div.jumbotron > div > p:hover > span > a {
     color: blue !important;
     text-decoration: none;
+    margin-bottom: 0;
 }
 body > div.jumbotron > div > p > span > a > i {
     -webkit-transform: rotate(145deg);
     transform: rotate(145deg);
 }
 header > nav > div.logo > img {
-<<<<<<< HEAD
     width: auto;
-    height: 200%;
+    height: 100%;
     border-radius: 50%;
     position: absolute;
-    bottom: 8px;
+    bottom: 0;
     left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
@@ -91,21 +81,6 @@ header > nav > div.logo > img {
     -webkit-transition: 1s;
     transition: 1s;
     z-index: 3;
-=======
-  width: auto;
-  height: 100%;
-  border-radius: 50%;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  box-shadow: 0 1px 8px white;
-  cursor: pointer;
-  -webkit-transition: 1s;
-  transition: 1s;
-  z-index: 3;
->>>>>>> c0866009e2213de16b660c1846fc6c28a5cbb03f
 }
 header > nav > div.logo > img:hover,
 header > nav > div.logo > p:hover + img {

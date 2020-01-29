@@ -7,6 +7,9 @@ function jumbotron_generator(){
                     <p itemprop="name">
                         <span itemprop="telephone"><a class="text-dark" href="tel:09121158204"><span class="Yekan">09121158204</span><i class="fa fa-phone px-1"></i></a></span>
                     </p>
+                    <p itemprop="name">
+                        <span itemprop="telephone"><a class="text-dark" href="tel:09122084055"><span class="Yekan">09122084055</span><i class="fa fa-phone px-1"></i></a></span>
+                    </p>
                 </div>
             </div>
         ';
@@ -34,7 +37,7 @@ function header_generator(){
             <ul class="row">
                 <li class="col"><a id="products_link" class=" text-white pb-2 pt-2" data-toggle="collapse" href="#products">محصولات</a></li>
                 <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">درباره ما</a></li>
-                <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">خانه</a></li>
+                <li class="col"><a class="text-white pb-2 pt-2" href="index.php" target="_self">خانه</a></li>
             </ul>
         </div>
         <!-- logo -->
