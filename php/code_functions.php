@@ -166,15 +166,9 @@ function canvas_generator(){
 }
 
 function customers_logo_generator(){
-<<<<<<< HEAD
     $customers_logo_src = ['images/logos/army_logo.png','images/logos/Kowsarbaft_logo.png', 'images/logos/Institute_of_Childrens_Education.png', 'images/logos/Social_security.jpg', 'images/logos/municipality.jpg', 'images/logos/patan_jame.png', 'images/logos/Seda_logo.jpg', 'images/logos/iran_air.jpg', 'images/logos/ata_airlines.jpg', 'images/logos/erfan_hospital.jpg', "images/logos/erfan_niyayesh_hospital.png", 'images/logos/fire_fighting_logo.jpg', 'images/logos/Ministry_of_Education.png'];
     $customers_logo_alts = ['ارتش جمهوري اسلامي ايران', 'کوثر بافت نوین', 'کانون پرورش فکری کودکان و نوجوانان', 'سازمان تامین اجتماعی', 'شهرداری تهران', 'پاتن جامه', 'صدا و سيماي جمهوري اسلامي ايران', 'هما جمهوري اسلامي ايران', 'شركت هواپيمايي آتا','بيمارستان عرفان', 'بیمارستان عرفان نیایش', 'سازمان آتش نشانی تهران', 'آموزش و پرورش استان تهران'];
     $customers_logo_hrefs = ['https://aja.ir', "https://kowsarbaft.ir", 'https://kanoonnews.ir', 'https://tamin.ir', 'https://tehran.ir', 'http://patanjameh.ir/', 'https://irib.ir', 'http://www.iranair.com/Portal/Home/', 'https://ataair.ir', 'http://erfanhospital.ir/fa/', 'http://erfanhospital.ir/fa/', 'https://fa.wikipedia.org/wiki/%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86_%D8%A2%D8%AA%D8%B4%E2%80%8C%D9%86%D8%B4%D8%A7%D9%86%DB%8C', 'https://medu.ir' ];
-=======
-    $customers_logo_src = ['images/logos/army_logo.png','images/logos/Kowsarbaft_logo.png', 'images/logos/Institute_of_Childrens_Education.png', 'images/logos/Social_security.jpg', 'images/logos/municipality.jpg', 'images/logos/Saipa_logo.png', 'images/logos/Seda_logo.jpg', 'images/logos/iran_air.jpg', 'images/logos/ata_airlines.jpg', 'images/logos/erfan_hospital.jpg', "images/logos/erfan_niyayesh_hospital.png", 'images/logos/fire_fighting_logo.jpg', 'images/logos/Ministry_of_Education.png'];
-    $customers_logo_alts = ['ارتش جمهوري اسلامي ايران', 'کوثر بافت نوین', 'کانون پرورش فکری کودکان و نوجوانان', 'سازمان تامین اجتماعی', 'شهرداری تهران', 'سايپا خودرو', 'صدا و سيماي جمهوري اسلامي ايران', 'هما جمهوري اسلامي ايران', 'شركت هواپيمايي آتا','بيمارستان عرفان', 'بیمارستان عرفان نیایش', 'سازمان آتش نشانی تهران', 'آموزش و پرورش استان تهران'];
-    $customers_logo_hrefs = ['https://aja.ir', "https://kowsarbaft.ir", 'https://kanoonnews.ir', 'https://tamin.ir', 'https://tehran.ir', 'https://saipacorp.com', 'https://irib.ir', 'https://iranair.com', 'https://ataair.ir', 'https://erfanhospital.ir', 'https:///niayeshhospital.ir', 'https://fa.wikipedia.org/wiki/%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86_%D8%A2%D8%AA%D8%B4%E2%80%8C%D9%86%D8%B4%D8%A7%D9%86%DB%8C', 'https://medu.ir' ];
->>>>>>> c0866009e2213de16b660c1846fc6c28a5cbb03f
     
     echo '<div class="customers-container d-flex justify-content-around">';
         for($i = 0 ; $i<count($customers_logo_src) ; $i++){
@@ -186,11 +180,7 @@ function customers_logo_generator(){
 function footer_generator(){
     echo    '
     <footer class="container-fluid position-relative">
-<<<<<<< HEAD
-    <img src="images/Dior_logo.jpg" alt="لوگوی پیشگامان پودینه">
-=======
     <img src="images/Dior_logo.jpg" alt=" لوگوی پیشگامان پودینه آتا">
->>>>>>> c0866009e2213de16b660c1846fc6c28a5cbb03f
     <div id="devider" class="container py-2">
         <div class="row">
             <p class="col-12 text-right text-light pb-3 pt-5"><span class="bg-primary p-2"><i class="px-2 fas fa-tags"></i>دسترسی سریع</span><span class=" p-2 mr-sm-2"><i class="px-2 fas fa-map-marker-alt"></i> کارخانه و دفاتر زیر مجموعه</span></p>
