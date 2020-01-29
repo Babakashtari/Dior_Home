@@ -1,11 +1,11 @@
 <?php
 function jumbotron_generator(){
     echo '  <div class="jumbotron mb-0 mx-sm-0 bg-light text-dark">
-                <h1 class="mx-0 px-0 ">پیشگامان پودینه</h1>
-                <p class="mx-0 px-0 ">به سایت رسمی شرکت پیشگامان پودینه خوش آمدید.</p>
+                <h1 class="mx-0 px-0 ">پیشگامان پودینه آتا</h1>
+                <p class="mx-0 px-0 ">به سایت رسمی شرکت پیشگامان پودینه آتا خوش آمدید.</p>
                 <div itemscope itemtype="https://schema.org/LocalBusiness">
                     <p itemprop="name">
-                        <span itemprop="telephone"><a class="text-dark" href="tel:02155158815"><span class="Yekan">55158815 21</span><i class="fa fa-phone px-1"></i></a></span>
+                        <span itemprop="telephone"><a class="text-dark" href="tel:09121158204"><span class="Yekan">09121158204</span><i class="fa fa-phone px-1"></i></a></span>
                     </p>
                 </div>
             </div>
@@ -166,9 +166,15 @@ function canvas_generator(){
 }
 
 function customers_logo_generator(){
+<<<<<<< HEAD
     $customers_logo_src = ['images/logos/army_logo.png','images/logos/Kowsarbaft_logo.png', 'images/logos/Institute_of_Childrens_Education.png', 'images/logos/Social_security.jpg', 'images/logos/municipality.jpg', 'images/logos/patan_jame.png', 'images/logos/Seda_logo.jpg', 'images/logos/iran_air.jpg', 'images/logos/ata_airlines.jpg', 'images/logos/erfan_hospital.jpg', "images/logos/erfan_niyayesh_hospital.png", 'images/logos/fire_fighting_logo.jpg', 'images/logos/Ministry_of_Education.png'];
     $customers_logo_alts = ['ارتش جمهوري اسلامي ايران', 'کوثر بافت نوین', 'کانون پرورش فکری کودکان و نوجوانان', 'سازمان تامین اجتماعی', 'شهرداری تهران', 'پاتن جامه', 'صدا و سيماي جمهوري اسلامي ايران', 'هما جمهوري اسلامي ايران', 'شركت هواپيمايي آتا','بيمارستان عرفان', 'بیمارستان عرفان نیایش', 'سازمان آتش نشانی تهران', 'آموزش و پرورش استان تهران'];
     $customers_logo_hrefs = ['https://aja.ir', "https://kowsarbaft.ir", 'https://kanoonnews.ir', 'https://tamin.ir', 'https://tehran.ir', 'http://patanjameh.ir/', 'https://irib.ir', 'http://www.iranair.com/Portal/Home/', 'https://ataair.ir', 'http://erfanhospital.ir/fa/', 'http://erfanhospital.ir/fa/', 'https://fa.wikipedia.org/wiki/%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86_%D8%A2%D8%AA%D8%B4%E2%80%8C%D9%86%D8%B4%D8%A7%D9%86%DB%8C', 'https://medu.ir' ];
+=======
+    $customers_logo_src = ['images/logos/army_logo.png','images/logos/Kowsarbaft_logo.png', 'images/logos/Institute_of_Childrens_Education.png', 'images/logos/Social_security.jpg', 'images/logos/municipality.jpg', 'images/logos/Saipa_logo.png', 'images/logos/Seda_logo.jpg', 'images/logos/iran_air.jpg', 'images/logos/ata_airlines.jpg', 'images/logos/erfan_hospital.jpg', "images/logos/erfan_niyayesh_hospital.png", 'images/logos/fire_fighting_logo.jpg', 'images/logos/Ministry_of_Education.png'];
+    $customers_logo_alts = ['ارتش جمهوري اسلامي ايران', 'کوثر بافت نوین', 'کانون پرورش فکری کودکان و نوجوانان', 'سازمان تامین اجتماعی', 'شهرداری تهران', 'سايپا خودرو', 'صدا و سيماي جمهوري اسلامي ايران', 'هما جمهوري اسلامي ايران', 'شركت هواپيمايي آتا','بيمارستان عرفان', 'بیمارستان عرفان نیایش', 'سازمان آتش نشانی تهران', 'آموزش و پرورش استان تهران'];
+    $customers_logo_hrefs = ['https://aja.ir', "https://kowsarbaft.ir", 'https://kanoonnews.ir', 'https://tamin.ir', 'https://tehran.ir', 'https://saipacorp.com', 'https://irib.ir', 'https://iranair.com', 'https://ataair.ir', 'https://erfanhospital.ir', 'https:///niayeshhospital.ir', 'https://fa.wikipedia.org/wiki/%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86_%D8%A2%D8%AA%D8%B4%E2%80%8C%D9%86%D8%B4%D8%A7%D9%86%DB%8C', 'https://medu.ir' ];
+>>>>>>> c0866009e2213de16b660c1846fc6c28a5cbb03f
     
     echo '<div class="customers-container d-flex justify-content-around">';
         for($i = 0 ; $i<count($customers_logo_src) ; $i++){
@@ -180,7 +186,11 @@ function customers_logo_generator(){
 function footer_generator(){
     echo    '
     <footer class="container-fluid position-relative">
+<<<<<<< HEAD
     <img src="images/Dior_logo.jpg" alt="لوگوی پیشگامان پودینه">
+=======
+    <img src="images/Dior_logo.jpg" alt=" لوگوی پیشگامان پودینه آتا">
+>>>>>>> c0866009e2213de16b660c1846fc6c28a5cbb03f
     <div id="devider" class="container py-2">
         <div class="row">
             <p class="col-12 text-right text-light pb-3 pt-5"><span class="bg-primary p-2"><i class="px-2 fas fa-tags"></i>دسترسی سریع</span><span class=" p-2 mr-sm-2"><i class="px-2 fas fa-map-marker-alt"></i> کارخانه و دفاتر زیر مجموعه</span></p>
@@ -226,17 +236,17 @@ function footer_generator(){
             <div class="col-12 col-md-6">
                 <p class="text-light text-right font-weight-bold"><span>کارخانه:</span></p>
                 <ul>
-                    <li class="text-right py-2"><p class="text-light text-right"><i class="fas fa-address-card pl-2"></i>آدرس: اردبیل، شهرک صنعتی فجر، ساختمان قائم پلاک <span class="Yekan">50</span></p></li>
-                    <li class="text-right py-2 "><p class="text-light text-right"><i class="fas fa-phone pl-2"></i>تلفن: <span class="Yekan">22785456 </span>- <span class="Yekan">44558821 </span>- <span class="Yekan">06127621031</span></p></li>
-                    <li class="text-right py-2"><p class="text-light text-right"><i class="fas fa-envelope pl-2"></i>ایمیل: factory@diorhome.com</p></li>
+                    <li class="text-right py-2"><p class="text-light text-right"><i class="fas fa-address-card pl-2"></i>اردبیل، ميدان ايثار، شهرك صنعتي فاز <span class="Yekan">1</span>  خيابان پنج شرقي پيشگامان پودينه آتا</p></li>
+                    <li class="text-right py-2 "><p class="text-light text-right"><i class="fas fa-phone pl-2"></i> <span class="Yekan">55637991 </span>- <span class="Yekan">09122084055 </span></p></li>
+                    <li class="text-right py-2"><p class="text-light text-right"><i class="fas fa-envelope pl-2"></i>factory@diorhome.com</p></li>
                 </ul>
             </div>
             <div class="col-12 col-md-6">
                 <p class="text-light text-right font-weight-bold"><span>دفتر مرکزی:</span></p>
                 <ul>
-                    <li class="text-right py-2"><p class="text-light text-right"><i class="fas fa-address-card pl-2"></i>آدرس: تهران بازار بزرگ، بازار عباس آباد، سرای آزادی، دالان دوم پلاک <span class="Yekan">302</span> پلاک <span class="Yekan">50</span></p></li>
-                    <li class="text-right py-2 "><p class="text-light text-right"><i class="fas fa-phone pl-2"></i>تلفن: <span class="Yekan">22785456 </span>- <span class="Yekan"><span class="Yekan">44558821</span></span> - <span class="Yekan"><span class="Yekan"><span class="Yekan"><span class="Yekan">06127621031</span></span></span></span></p></li>
-                    <li class="text-right py-2"><p class="text-light text-right"><i class="fas fa-envelope pl-2"></i>ایمیل: burreau@diorhome.com</p></li>
+                    <li class="text-right py-2"><p class="text-light text-right"><i class="fas fa-address-card pl-2"></i>تهران، بازار بزرگ، سرای آزادی، طبقه اول پلاک <span class="Yekan">48</span></p></li>
+                    <li class="text-right py-2 "><p class="text-light text-right"><i class="fas fa-phone pl-2"></i> <span class="Yekan">55615148 </span>- <span class="Yekan"><span class="Yekan">55983072</span></span> - <span class="Yekan"><span class="Yekan"><span class="Yekan"><span class="Yekan">09121158204</span></span></span></span></p></li>
+                    <li class="text-right py-2"><p class="text-light text-right"><i class="fas fa-envelope pl-2"></i>burreau@diorhome.com</p></li>
                 </ul>
             </div>
         </div>

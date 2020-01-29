@@ -4,12 +4,21 @@
     box-sizing: border-box;
 }
 @font-face {
+<<<<<<< HEAD
     src: url(../Fonts/IRANSansWeb_Bold.ttf);
     font-family: "IranSans";
 }
 @font-face {
     src: url(../Fonts/yekannumbers-regular.woff);
     font-family: "Yekan";
+=======
+  src: url(../Fonts/IRANSansWeb_Bold.ttf);
+  font-family: "IranSans";
+}
+@font-face {
+  src: url(../Fonts/yekannumbers-regular.woff);
+  font-family: "Yekan";
+>>>>>>> c0866009e2213de16b660c1846fc6c28a5cbb03f
 }
 .Yekan {
     font-family: "Yekan";
@@ -68,6 +77,7 @@ body > div.jumbotron > div > p > span > a > i {
     transform: rotate(145deg);
 }
 header > nav > div.logo > img {
+<<<<<<< HEAD
     width: auto;
     height: 200%;
     border-radius: 50%;
@@ -81,6 +91,21 @@ header > nav > div.logo > img {
     -webkit-transition: 1s;
     transition: 1s;
     z-index: 3;
+=======
+  width: auto;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  box-shadow: 0 1px 8px white;
+  cursor: pointer;
+  -webkit-transition: 1s;
+  transition: 1s;
+  z-index: 3;
+>>>>>>> c0866009e2213de16b660c1846fc6c28a5cbb03f
 }
 header > nav > div.logo > img:hover,
 header > nav > div.logo > p:hover + img {
