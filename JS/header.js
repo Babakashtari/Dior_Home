@@ -132,7 +132,7 @@ const showLogo = () => {
     if (scrolled_amount > jumbotron.offsetHeight / 2) {
         logo.style.height = "105%";
         logo.style.boxShadow = "none";
-        logo.setAttribute("src", "images/Dior_logo_small.png");
+        logo.setAttribute("src", "images/Dior_logo_small.jpg");
         logo_paragraph.style.transform = "translateX(-50%) scale(1)";
     } else {
         if (window.innerWidth < 690 && window.innerWidth >= 462) {
@@ -143,7 +143,7 @@ const showLogo = () => {
             logo.style.height = "200%";
         }
         logo.style.boxShadow = "0 1px 8px white";
-        logo.setAttribute("src", "images/Dior_logo.png");
+        logo.setAttribute("src", "images/Dior_logo.jpg");
         logo_paragraph.style.transform = "translateX(-50%) scale(0)";
     }
 };
