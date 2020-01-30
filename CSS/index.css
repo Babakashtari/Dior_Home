@@ -129,6 +129,7 @@ main > section.cooperation > div.cooperation-talented > div > ul > li {
 main > section.cooperation > div.cooperation-talented > div > ul > li::before {
     counter-increment: expertise;
     content: counter(expertise) " . ";
+    font-family: 'Yekan';
 }
 main > section.cooperation > div > div.container > div.customers {
     height: 150px;
