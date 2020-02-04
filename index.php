@@ -5,6 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="content-security-policy" content="default-src 'none'; 
+        style-src 'self' 'unsafe-inline'; 
+        script-src 'self' 'unsafe-inline';
+        img-src 'self';
+        font-src 'self';
+        frame-src https://www.google.com;
+        "  >
+    <meta name="description"    content="سايت رسمی ‍پیشگامان ‍پودينه آتا" />
+    <meta name="author" content="Babak Ashtari" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="images/fav_icon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/fav_icon/apple-icon-72x72.png">
@@ -31,7 +42,7 @@
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/footer.css">
     <link rel="stylesheet" href="CSS/index.css">
-    <title>Dior Home</title>
+    <title>پيشگامان پودينه - صفحه اصلي</title>
 </head>
 <body>
     <?php head(); ?>

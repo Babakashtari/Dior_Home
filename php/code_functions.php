@@ -52,7 +52,7 @@ function header_generator(){
                         <input class="modal-closable p-1" type="search" name="search" placeholder="جستجو..." />
                 </li>
                 <li class="col"><a href="homepage.php"><i class="fa fa-shopping-cart"></i></a></li>
-                <li class="col"><a href="#"><i class="fa fa-user"></i></a></li>
+                <li class="col"><a href="login.php"><i class="fa fa-user"></i></a></li>
             </ul>
         </div>
 <!-- products collapse bars: -->
