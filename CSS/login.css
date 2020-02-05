@@ -3,6 +3,9 @@
   margin: 0;
   box-sizing: border-box;
 }
-/* main>section{
-
-} */
+main > section {
+  border-radius: 5px;
+}
+main > section > form {
+  direction: rtl;
+}

@@ -57,9 +57,28 @@
     </head>
 <body>
     <?php head(); ?>
-    <main>
-        <section class="container">
-            <!-- bootstrap form -->
+    <main class="p-2">
+        <section class="container border border-light p-2">
+            <!-- signup form -->
+            <form action="#" method="post" class="text-right text-light">
+                <div class="form-group">
+                    <label for="username">نام كاربری:</label>
+                    <input class="form-control" type="text" name="username" id="username" placeholder="مثلا: بابک">
+                </div>
+                <div class="form-group">
+                    <label for="pass">رمز عبور:</label>
+                    <input class="form-control" type="password" id="pass" name='pass'>
+                </div>
+                <div class="form-group">
+                    <label for="email">آدرس ایمیل:</label>
+                    <input class="form-control" type="email" name="email" id="email" placeholder="info@pishgamanpoudineh.ir">
+                </div>
+                <div class="phone-number">
+                    <label for="phone">شماره همراه:</label>
+                    <input type="text" name="phone" id="phone" placeholder="02155158815">
+                </div>
+                <input type="submit" value="ارسال">
+            </form>
         </section>
     </main>
     <?php footer_generator();?>
