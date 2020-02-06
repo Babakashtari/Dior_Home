@@ -58,27 +58,50 @@
 <body>
     <?php head(); ?>
     <main class="p-2">
-        <section class="container border border-light p-2">
-            <!-- signup form -->
-            <form action="#" method="post" class="text-right text-light">
-                <div class="form-group">
-                    <label for="username">نام كاربری:</label>
-                    <input class="form-control" type="text" name="username" id="username" placeholder="مثلا: بابک">
-                </div>
-                <div class="form-group">
-                    <label for="pass">رمز عبور:</label>
-                    <input class="form-control" type="password" id="pass" name='pass'>
-                </div>
-                <div class="form-group">
-                    <label for="email">آدرس ایمیل:</label>
-                    <input class="form-control" type="email" name="email" id="email" placeholder="info@pishgamanpoudineh.ir">
-                </div>
-                <div class="phone-number">
-                    <label for="phone">شماره همراه:</label>
-                    <input type="text" name="phone" id="phone" placeholder="02155158815">
-                </div>
-                <input type="submit" value="ارسال">
-            </form>
+        <section class="container my-4">
+            <div class="row p-2 d-flex justify-content-around">
+                <!-- signup form -->
+                <fieldset class="col col-12 col-sm-5 my-4">
+                    <legend class="text-center text-light">ثبت نام:</legend>
+                    <form action="#" method="post" class="p-1 text-right text-light">
+                        <div class="form-group">
+                            <label for="username">نام كاربری:</label>
+                            <input class="form-control" type="text" name="username" id="username" placeholder="Babak">
+                        </div>
+                        <div class="form-group">
+                            <label for="pass">رمز عبور:</label>
+                            <input class="form-control" type="password" id="pass" name='pass' placeholder="Babak123">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">آدرس ایمیل:</label>
+                            <input class="form-control" type="email" name="email" id="email" placeholder="babak@yahoo.com">
+                        </div>  
+                        <div class="form-group">
+                            <label for="phone">شماره همراه:</label>
+                            <input class="form-control" type="text" name="phone" id="phone" placeholder="02155158815">
+                        </div>
+                        <input class="p-1" type="submit" value="ارسال">
+                    </form>
+                </fieldset>
+                <!-- signin form: -->
+                <fieldset class="col col-12 col-sm-5 my-4">
+                    <legend class="text-center text-light">ورود با حساب کاربری:</legend>
+                    <form action="#" method="post" class="p-1 text-right text-light">
+                        <div class="form-group">
+                            <label for="username">نام كاربری:</label>
+                            <input class="form-control" type="text" name="username" id="username" placeholder="Babak">
+                        <div class="form-group">
+                            <label for="pass">رمز عبور:</label>
+                            <input class="form-control" type="password" id="pass" name='pass' placeholder="Babak123">
+                        </div>
+                        <input class="p-1" type="submit" value="ارسال">
+                    </form>
+                    <div class=" text-right p-2">
+                        <a class="text-light" href="#">رمز عبور خود را فراموش کرده ام</a>
+                    </div>
+                </fieldset>
+            </div>
+
         </section>
     </main>
     <?php footer_generator();?>
