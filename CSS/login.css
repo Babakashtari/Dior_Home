@@ -1,31 +1,108 @@
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
-main > section {
-  border-radius: 5px;
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 255, 0, 0.2)), to(rgba(0, 0, 255, 0.2)));
-  background-image: linear-gradient(to right, rgba(0, 255, 0, 0.2), rgba(0, 0, 255, 0.2));
+::-webkit-input-placeholder {
+    text-overflow: ellipsis;
 }
-main > section > div {
-  border-radius: 5px;
+::-moz-placeholder {
+    text-overflow: ellipsis;
 }
-main > section > div > fieldset {
-  direction: rtl;
-  border-radius: 5px;
-  border: 3px solid white;
+:-ms-input-placeholder {
+    text-overflow: ellipsis;
 }
-main > section > div > fieldset > legend {
-  font-family: "IranSans";
-  text-shadow: 1px 1px 3px black, -1px -1px 3px black;
-  width: 70%;
+::-ms-input-placeholder {
+    text-overflow: ellipsis;
 }
-main > section > div > fieldset > form {
-  direction: rtl;
-  font-family: "IranSans";
-  border-radius: 15px;
+::placeholder {
+    text-overflow: ellipsis;
 }
-main > section > div > fieldset div > a {
-  text-decoration: underline;
+main > section.signing {
+    border-radius: 5px;
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 255, 0, 0.2)), to(rgba(0, 0, 255, 0.2)));
+    background-image: linear-gradient(to right, rgba(0, 255, 0, 0.2), rgba(0, 0, 255, 0.2));
+}
+main > section.signing > div {
+    border-radius: 5px;
+}
+main > section.signing > div > fieldset {
+    direction: rtl;
+    border-radius: 5px;
+    border: 3px solid white;
+}
+main > section.signing > div > fieldset > legend {
+    font-family: "IranSans";
+    text-shadow: 1px 1px 3px black, -1px -1px 3px black;
+    width: 70%;
+}
+main > section.signing > div > fieldset > form {
+    direction: rtl;
+    font-family: "IranSans";
+    border-radius: 15px;
+}
+main > section.signing > div > fieldset > form > div > input:focus {
+    border: auto;
+}
+main > section.signing > div > fieldset > form > div > input + p {
+    color: Red;
+    font-size: 0.75rem;
+}
+main > section.signing > div > fieldset div > a {
+    text-decoration: underline;
+}
+main > section.welcome > div {
+    text-align: justify;
+    direction: rtl;
+    color: yellow;
+}
+main > section.welcome > div > p {
+    line-height: 2rem;
+}
+main > section.welcome > div > p > a {
+    color: yellowgreen;
+    text-decoration: underline;
+}
+main > section.welcome > div > p > a:hover {
+    color: lightblue;
+}
+.displayNone {
+    display: none;
+}
+.passed {
+    border: 3px solid green !important;
+}
+.failed {
+    border: 3px solid red !important;
+}
+@media screen and (max-width: 680px) {
+    main > section.signing > div > fieldset > form {
+        font-size: 0.75rem;
+    }
+    main > section.signing > div > fieldset > form > input[type="submit"] {
+        font-size: 0.75rem;
+    }
+    main > section.signing > div > fieldset > div > a {
+        font-size: 0.75rem;
+    }
+    ::-webkit-input-placeholder {
+        font-size: 0.75rem;
+    }
+    ::-moz-placeholder {
+        font-size: 0.75rem;
+    }
+    :-ms-input-placeholder {
+        font-size: 0.75rem;
+    }
+    ::-ms-input-placeholder {
+        font-size: 0.75rem;
+    }
+    ::placeholder {
+        font-size: 0.75rem;
+    }
+}
+@media screen and (max-width: 570px) {
+    main > section:first-of-type > div > p {
+        font-size: 0.75rem;
+    }
 }
