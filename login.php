@@ -1,12 +1,11 @@
 <?php require "php/code_functions.php" ?>
-
 <!DOCTYPE html lang="fa">
 <html lang="fa">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta http-equiv="content-security-policy" content="default-src 'none'; 
+        <meta http-equiv="content-security-policy" content="default-src 'self'; 
         style-src 'self' 'unsafe-inline'; 
         script-src 'self' 'unsafe-inline';
         img-src 'self';
@@ -57,14 +56,18 @@
     </head>
 <body>
     <?php head(); ?>
-    <main class="">
-        <section class="welcome p-4">
-            <div class="container">
+    <main class="pb-5">
+        <section class="photo-container">
+            <img src="images/login_page_images/signin_main_image2.jpg" alt="ورود به سایت با نام کاربری" >
+            <div><p class="text-center px-3 py-4 m-0">ثبت نام کنید تا از خدمات مجازی سایت پیشگامان پودینه آتا بهره مند شوید.</p></div>
+        </section>
+        <section class="welcome py-4 px-2">
+            <div class="container pt-5">
                 <p class="">ضمن خیر مقدم خدمت کاربران جدید، لطفا ثبت نام کنید تا قابلیت هایی چون <a href="#">ثبت سفارش</a> <a href="#">پیگیری سفارش،</a><a href="#"> ثبت آدرس،</a> و <a href="#">خرید اینترنتی</a> ، برایتان فراهم شود.</p>
-                <p class="">اگر قبلا ثبت نام کرده اید، با نام کاربری و رمز عبورتان وارد سایت شوید تا بتوانید از امکانات تحت وب پیشگامان پودینه آتا استفاده کنید. </p>
+                <p class="">اگر قبلا ثبت نام کرده اید، با نام کاربری و رمز عبورتان وارد سایت شوید تا بتوانید از امکانات تحت وب پیشگامان پودینه آتا بهره مند شوید. </p>
             </div>
         </section>
-        <section class="signing container my-4">
+        <section class="signing container my-5">
             <div class="row p-2 d-flex justify-content-around">
                 <!-- signup form -->
                 <fieldset class="col col-12 col-sm-5 my-4 signup">
@@ -90,7 +93,7 @@
                             <input class="form-control" type="text" name="phone" id="phone" placeholder="02155158815" oninput="validate(/^[0]\d{7,15}$/, this)">
                             <p class='displayNone'>تلفن باید فقط از عدد تشکیل شود. 0 ابتدای آن بیاید و 8 تا 15 رقم داشته باشد.</p>
                         </div>
-                        <input class=" btn btn-success p-1" type="submit" value="ارسال" disabled>
+                        <input class="signup btn btn-success p-1" type="submit" value="ارسال" disabled onclick="signing_validation(event)">
                     </form>
                 </fieldset>
                 <!-- signin form: -->
@@ -107,14 +110,15 @@
                             <input class="form-control" type="password" id="pass" name='pass' placeholder="Babak123" oninput="validate(/^[a-zA-Z1-9]{5,15}$/, this)">
                             <p class='displayNone'>رمز باید حداقل 8 کاراکتر و شامل اعداد و حروف بزرگ یا کوچک باشد.</p>
                         </div>
-                        <input class="btn btn-primary p-1" type="submit" value="ارسال" disabled>
+                        <input class="login btn btn-primary p-1" type="submit" value="ارسال" disabled onclick="signing_validation(event)" >
                     </form>
                     <div class=" text-right p-2">
                         <a class="text-light" href="#">رمز عبور خود را فراموش کرده ام</a>
                     </div>
                 </fieldset>
             </div>
-
+        </section>
+        <section class="validation-result text-center displayNone">
         </section>
     </main>
     <?php footer_generator();?>
