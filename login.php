@@ -119,6 +119,7 @@
             </div>
         </section>
         <section class="validation-result text-center displayNone">
+            <!-- <span>&#935;</span> -->
             <div>
                 <div>                
                     <!-- validation pending spinners -->
