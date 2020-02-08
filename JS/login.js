@@ -9,8 +9,8 @@ const signup_inputs = document.querySelectorAll("main>section.signing>div>fields
 const signin_submit_button = document.querySelector('main>section.signing>div>fieldset.signin>form>input[type="submit"]');
 const signup_submit_button = document.querySelector('main>section.signing>div>fieldset.signup>form>input[type="submit"]');
 const validation_result = document.querySelector("main>section.validation-result");
-const spinners = document.querySelectorAll("main > section.validation-result > div > div.spinner-grow");
 const validation_result_div = document.querySelector("main>section.validation-result>div");
+
 const resizer = () => {
     if (window.innerWidth < 1200) {
         first_section.classList.add("container-fluid");
@@ -81,26 +81,13 @@ const validate = (regex, input) => {
         signup_submit_button.disabled = true;
     }
 };
+const close_spinners = () => {
+    const container_of_spinners = document.querySelector("main > section.validation-result > div > div");
+    setTimeout(() => {
+        container_of_spinners.classList.add("displayNone");
+    }, 1000);
+};
 // ajax call for form validation result:
-const close_validation_result = () => {
-    for (let i = 0; i < spinners.length; i++) {
-        spinners[i].classList.remove("displayNone");
-    }
-    validation_result.classList.add("displayNone");
-};
-window.addEventListener("click", event => {
-    if (event.target !== validation_result_div && !validation_result.classList.contains("displayNone")) {
-        close_validation_result();
-    }
-});
-const open_validation_result = () => {
-    console.log(spinners);
-    for (let i = 0; i < spinners.length; i++) {
-        setTimeout(() => {
-            spinners[i].classList.add("displayNone");
-        }, 1000);
-    }
-};
 const signing_validation = event => {
     event.preventDefault();
 
@@ -119,9 +106,9 @@ const signing_validation = event => {
         AJAX_request.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 // code to be executed... (ex: removing the display:none of the modal validation box)
-                validation_result.innerHTML = this.responseText;
+                validation_result_div.innerHTML += this.responseText;
                 validation_result.classList.remove("displayNone");
-                console.log(spinners);
+                close_spinners();
             }
         };
         AJAX_request.open("POST", "loginResult.php", true);

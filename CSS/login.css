@@ -120,7 +120,7 @@ main > section.validation-result > div {
     border-radius: 5px;
     overflow: hidden;
 }
-main > section.validation-result > div > div.spinner-grow {
+main > section.validation-result > div > div > div.spinner-grow {
     width: 60px;
     height: 60px;
 }

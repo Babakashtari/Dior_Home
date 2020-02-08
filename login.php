@@ -119,6 +119,14 @@
             </div>
         </section>
         <section class="validation-result text-center displayNone">
+            <div>
+                <div>                
+                    <!-- validation pending spinners -->
+                    <div class=" spinner-grow text-muted"></div>
+                    <div class=" spinner-grow text-primary"></div>
+                    <div class=" spinner-grow text-success"></div>
+                </div>
+            </div>
         </section>
     </main>
     <?php footer_generator();?>
