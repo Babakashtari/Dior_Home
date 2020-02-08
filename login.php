@@ -119,15 +119,8 @@
             </div>
         </section>
         <section class="validation-result text-center displayNone">
-            <!-- <span>&#935;</span> -->
-            <div>
-                <div>                
-                    <!-- validation pending spinners -->
-                    <div class=" spinner-grow text-muted"></div>
-                    <div class=" spinner-grow text-primary"></div>
-                    <div class=" spinner-grow text-success"></div>
-                </div>
-            </div>
+        <!-- ajax call loads results in this div: -->
+            <div></div>
         </section>
     </main>
     <?php footer_generator();?>
