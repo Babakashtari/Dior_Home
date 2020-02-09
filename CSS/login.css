@@ -35,7 +35,6 @@ main > section.photo-container > img {
     object-fit: cover;
     -o-object-position: center;
     object-position: center;
-    opacity: 0.5;
 }
 main > section.photo-container > div {
     position: absolute;

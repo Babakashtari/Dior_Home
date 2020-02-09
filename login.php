@@ -75,17 +75,17 @@
                     <form action="#" method="post" class="p-1 text-right text-light">
                         <div class="form-group">
                             <label for="username">نام كاربری:</label>
-                            <input class="form-control" type="text" name="username" id="username" placeholder="Babak" oninput="validate(/^[A-Z][a-z]{4,10}$/,this)">
+                            <input class="form-control" type="text" name="username" id="username" placeholder="Babak" oninput="validate(/^[A-Z][a-z0-9]{4,10}$/,this)">
                             <p class='displayNone'>نام کاربری باید حداقل 5 و حداکثر 10 حرف داشته باشد و با حروف بزرگ آغاز شود.</p>
                         </div>
                         <div class="form-group">
                             <label for="pass">رمز عبور:</label>
-                            <input class="form-control" type="password" id="pass" name='pass' placeholder="Babak123" oninput="validate(/^[a-zA-Z1-9]{5,15}$/, this)">
+                            <input class="form-control" type="password" id="pass" name='pass' placeholder="Babak123" oninput="validate(/^[a-zA-Z0-9]{5,15}$/, this)">
                             <p class='displayNone'> رمز باید حداقل 5 و حداکثر 15 کاراکتر و شامل اعداد و حروف بزرگ یا کوچک باشد.</p>
                         </div>
                         <div class="form-group">
                             <label for="email">آدرس ایمیل:</label>
-                            <input class="form-control" type="email" name="email" id="email" placeholder="babak@yahoo.com" oninput="validate(/^[a-zA-Z1-9_]{3,10}@[a-z]{3,15}[\.][a-z]{2,3}$/, this)">
+                            <input class="form-control" type="email" name="email" id="email" placeholder="babak@yahoo.com" oninput="validate(/^[a-zA-Z0-9_]{3,20}@[a-z]{3,15}[\.][a-z]{2,3}$/, this)">
                             <p class='displayNone'>آدرس ایمیل معتبر نیست.</p>
                         </div>  
                         <div class="form-group">
@@ -102,12 +102,12 @@
                     <form action="#" method="post" class="p-1 text-right text-light">
                         <div class="form-group">
                             <label for="username">نام كاربری:</label>
-                            <input class="form-control" type="text" name="username" id="username" placeholder="Babak" oninput="validate(/^[A-Z][a-z]{4,10}$/, this)">
+                            <input class="form-control" type="text" name="username" id="username" placeholder="Babak" oninput="validate(/^[A-Z][a-z0-9]{4,10}$/, this)">
                             <p class='displayNone'>نام کاربری باید حداقل 5 حرف داشته باشد و با حروف بزرگ آغاز شود.</p>
                         </div>
                         <div class="form-group">
                             <label for="pass">رمز عبور:</label>
-                            <input class="form-control" type="password" id="pass" name='pass' placeholder="Babak123" oninput="validate(/^[a-zA-Z1-9]{5,15}$/, this)">
+                            <input class="form-control" type="password" id="pass" name='pass' placeholder="Babak123" oninput="validate(/^[a-zA-Z0-9]{5,15}$/, this)">
                             <p class='displayNone'>رمز باید حداقل 8 کاراکتر و شامل اعداد و حروف بزرگ یا کوچک باشد.</p>
                         </div>
                         <input class="login btn btn-primary p-1" type="submit" value="ارسال" disabled onclick="signing_validation(event)" >

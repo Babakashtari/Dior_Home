@@ -248,5 +248,4 @@ function footer_generator(){
 
             ';
 }
-
 ?>
