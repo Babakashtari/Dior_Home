@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <div>                
     <!-- validation pending spinners -->
     <div class=" spinner-grow text-muted"></div>
@@ -7,7 +8,6 @@
 
 <?php
 function login_page_validation(){
-
     function test_input($data, $regex) {
         $data = trim($data);
         $data = stripslashes($data);
@@ -48,6 +48,14 @@ function login_page_validation(){
             <p class="signing-message text-success px-4 displayNone">' . $signup_username . ' عزیز، ثبت نام شما با موفقیت انجام شد. برای ادامه از لینک های زیر استفاده کنید.</p>            
                 ';
         }
+        // connecting to the database:
+       $database = mysqli_connect("localhost", "root", "joli1366", "DiorHome");
+       if(!$database){
+           die('connection failed:'.mysqli_connect_error());
+       }else{
+            // check if the username and email already exists:
+                $user_check_query = "SELECT * FROM users WHERE username='$username' OR email='$email'";
+       }
     }    
 }
 login_page_validation();
