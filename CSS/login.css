@@ -1,180 +1,188 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 ::-webkit-input-placeholder {
-    text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }
 ::-moz-placeholder {
-    text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }
 :-ms-input-placeholder {
-    text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }
 ::-ms-input-placeholder {
-    text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }
 ::placeholder {
-    text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }
 main {
-    position: relative;
+  position: relative;
 }
 main > section.photo-container {
-    height: 600px;
-    width: 100%;
-    box-shadow: 1px 1px 3px white, -1px -1px 3px white;
-    background-color: rgba(0, 255, 100, 0.5);
-    position: relative;
+  height: 600px;
+  width: 100%;
+  box-shadow: 1px 1px 3px white, -1px -1px 3px white;
+  background-color: rgba(0, 255, 100, 0.5);
+  position: relative;
 }
 main > section.photo-container > img {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;
-    -o-object-position: center;
-    object-position: center;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
 }
 main > section.photo-container > div {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    -webkit-transform: translate(-50%);
-    transform: translate(-50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 15px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
 }
 main > section.photo-container > div > p {
-    font-size: 1.5rem;
-    line-height: 3rem;
-    color: yellow;
+  font-size: 1.5rem;
+  line-height: 3rem;
+  color: yellow;
 }
 main > section.welcome > div {
-    text-align: justify;
-    direction: rtl;
-    color: yellow;
+  text-align: justify;
+  direction: rtl;
+  color: yellow;
 }
 main > section.welcome > div > p {
-    line-height: 2rem;
+  line-height: 2rem;
 }
 main > section.welcome > div > p > a {
-    color: yellowgreen;
-    text-decoration: underline;
+  color: yellowgreen;
+  text-decoration: underline;
 }
 main > section.welcome > div > p > a:hover {
-    color: lightblue;
+  color: lightblue;
 }
 main > section.signing {
-    border-radius: 5px;
-    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 255, 0, 0.2)), to(rgba(0, 0, 255, 0.2)));
-    background-image: linear-gradient(to right, rgba(0, 255, 0, 0.2), rgba(0, 0, 255, 0.2));
+  border-radius: 5px;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 255, 0, 0.2)), to(rgba(0, 0, 255, 0.2)));
+  background-image: linear-gradient(to right, rgba(0, 255, 0, 0.2), rgba(0, 0, 255, 0.2));
 }
 main > section.signing > div {
-    border-radius: 5px;
+  border-radius: 5px;
 }
 main > section.signing > div > fieldset {
-    direction: rtl;
-    border-radius: 5px;
-    border: 3px solid white;
+  direction: rtl;
+  border-radius: 5px;
+  border: 3px solid white;
 }
 main > section.signing > div > fieldset > legend {
-    font-family: "IranSans";
-    text-shadow: 1px 1px 3px black, -1px -1px 3px black;
-    width: 70%;
+  font-family: "IranSans";
+  text-shadow: 1px 1px 3px black, -1px -1px 3px black;
+  width: 70%;
 }
 main > section.signing > div > fieldset > form {
-    direction: rtl;
-    font-family: "IranSans";
-    border-radius: 15px;
+  direction: rtl;
+  font-family: "IranSans";
+  border-radius: 15px;
 }
 main > section.signing > div > fieldset > form > div > input:focus {
-    border: auto;
+  border: auto;
 }
 main > section.signing > div > fieldset > form > div > input + p {
-    color: Red;
-    font-size: 0.75rem;
+  color: Red;
+  font-size: 0.75rem;
 }
 main > section.signing > div > fieldset div > a {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 main > section.validation-result {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    /* bootstrap has a 1021 z-index for sticky-top headers. so I added this so that the modal stays on top */
-    z-index: 1022;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* bootstrap has a 1021 z-index for sticky-top headers. so I added this so that the modal stays on top */
+  z-index: 1022;
 }
 main > section.validation-result > div {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%);
-    transform: translate(-50%);
-    background-color: white;
-    color: blue;
-    border-radius: 5px;
-    overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+  background-color: white;
+  color: blue;
+  border-radius: 5px;
+  overflow: hidden;
 }
 main > section.validation-result > div > div > div.spinner-grow {
-    width: 60px;
-    height: 60px;
+  width: 60px;
+  height: 60px;
 }
-main > section.validation-result > div > p > span.fa {
-    font-size: 2rem;
-    padding: 0.5rem;
-    border-radius: 50%;
+main > section.validation-result > div > p > span.fa,
+main > section.validation-result > div > p > span.fas {
+  font-size: 2rem;
+  padding: 0.5rem;
+  border-radius: 50%;
 }
 main > section.validation-result > div > p > span.fa-check {
-    border: 3px solid green;
+  border: 3px solid green;
+}
+main > section.validation-result > div > p > a {
+  text-decoration: underline;
+  color: inherit;
+}
+main > section.validation-result > div > p > a:hover {
+  color: blue;
 }
 .displayNone {
-    display: none;
+  display: none;
 }
 .passed {
-    border: 3px solid green !important;
+  border: 3px solid green !important;
 }
 .failed {
-    border: 3px solid red !important;
+  border: 3px solid red !important;
 }
 @media screen and (max-width: 720px) {
-    main > section.photo-container > div > p {
-        font-size: 1rem;
-        line-height: 1.5rem;
-    }
+  main > section.photo-container > div > p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
 @media screen and (max-width: 680px) {
-    main > section.signing > div > fieldset > form {
-        font-size: 0.75rem;
-    }
-    main > section.signing > div > fieldset > form > input[type="submit"] {
-        font-size: 0.75rem;
-    }
-    main > section.signing > div > fieldset > div > a {
-        font-size: 0.75rem;
-    }
-    ::-webkit-input-placeholder {
-        font-size: 0.75rem;
-    }
-    ::-moz-placeholder {
-        font-size: 0.75rem;
-    }
-    :-ms-input-placeholder {
-        font-size: 0.75rem;
-    }
-    ::-ms-input-placeholder {
-        font-size: 0.75rem;
-    }
-    ::placeholder {
-        font-size: 0.75rem;
-    }
+  main > section.signing > div > fieldset > form {
+    font-size: 0.75rem;
+  }
+  main > section.signing > div > fieldset > form > input[type="submit"] {
+    font-size: 0.75rem;
+  }
+  main > section.signing > div > fieldset > div > a {
+    font-size: 0.75rem;
+  }
+  ::-webkit-input-placeholder {
+    font-size: 0.75rem;
+  }
+  ::-moz-placeholder {
+    font-size: 0.75rem;
+  }
+  :-ms-input-placeholder {
+    font-size: 0.75rem;
+  }
+  ::-ms-input-placeholder {
+    font-size: 0.75rem;
+  }
+  ::placeholder {
+    font-size: 0.75rem;
+  }
 }
 @media screen and (max-width: 570px) {
-    main > section.photo-container > div > p,
-    main > section.signing > div > p {
-        font-size: 0.75rem;
-    }
+  main > section.photo-container > div > p,
+  main > section.signing > div > p {
+    font-size: 0.75rem;
+  }
 }

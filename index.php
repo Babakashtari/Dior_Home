@@ -1,4 +1,5 @@
 <?php require "php/code_functions.php" ?>
+<!-- <?php session_start(); ?> -->
 <!DOCTYPE html lang="fa">
 <html lang="en">
 <head>

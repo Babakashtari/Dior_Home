@@ -1,8 +1,12 @@
 <?php
 function jumbotron_generator(){
-    echo '  <div class="jumbotron mb-0 mx-sm-0 bg-light text-dark">
+    echo '      <?php session_start(); ?>
+                <div class="jumbotron mb-0 mx-sm-0 bg-light text-dark">
                 <h1 class="mx-0 px-0 ">پیشگامان پودینه آتا</h1>
-                <p class="mx-0 px-0 ">به سایت رسمی شرکت پیشگامان پودینه آتا خوش آمدید.</p>
+                <p class="mx-0 px-0 ">';
+    user_name_show();
+    echo '
+                به سایت رسمی شرکت پیشگامان پودینه آتا خوش آمدید.</p>
                 <div itemscope itemtype="https://schema.org/LocalBusiness">
                     <p itemprop="name">
                         <span itemprop="telephone"><a class="text-dark" href="tel:09121158204"><span class="Yekan">09121158204</span><i class="fa fa-phone px-1"></i></a></span>
@@ -51,8 +55,16 @@ function header_generator(){
                 <li class="col search">
                         <input class="modal-closable p-1" type="search" name="search" placeholder="جستجو..." />
                 </li>
-                <li class="col"><a href="homepage.php"><i class="fa fa-shopping-cart"></i></a></li>
-                <li class="col"><a href="login.php"><i class="fa fa-user"></i></a></li>
+                <li class="col">
+                    <a href="homepage.php">';
+                    shopping_cart_logged_in_icon_generator();        
+    echo            '</a>
+                </li>
+                <li class="col">
+                    <a href="login.php">';
+                        header_logged_in_icon_generator();
+    echo            '</a>
+                </li>
             </ul>
         </div>
 <!-- products collapse bars: -->
@@ -245,7 +257,28 @@ function footer_generator(){
         </div>
     </section>
 </footer>
-
             ';
+}
+function user_name_show(){
+    if(!empty($_SESSION['user_username'])){
+        echo $_SESSION['user_username'] . " عزیز ";
+    }else{
+        echo 'کاربر گرامی ';
+    }
+}
+function header_logged_in_icon_generator(){
+    if(empty($_SESSION['user_username'])){
+       echo '<i class="fa fa-user text-danger" style="text-shadow:1px 1px 1px white"></i>';
+    }else{
+        echo '<i class="fa fa-user text-success" style="text-shadow:1px 1px 1px white"></i>';
+    }
+}
+function shopping_cart_logged_in_icon_generator(){
+    if(empty($_SESSION['user_username'])){
+        echo '<i class="fa fa-shopping-cart text-danger" style="text-shadow:1px 1px 1px white"></i>';
+     }else{
+        echo '<i class="fa fa-shopping-cart text-success" style="text-shadow:1px 1px 1px white"></i>';
+     }
+ 
 }
 ?>

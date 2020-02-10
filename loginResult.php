@@ -1,5 +1,4 @@
 <?php session_start(); ?>
-
 <div>                
     <!-- validation pending spinners -->
     <div class=" spinner-grow text-muted"></div>
@@ -53,12 +52,16 @@ function login_page_validation(){
                     if (password_verify($login_password, $user_row['pass'])){
                         echo '
                         <p class="text-success pt-4 pb-1 displayNone"><span class=" fa fa-check" aria-hidden="true"></span></p>
-                        <p class="signing-message text-success px-4 displayNone">' . $login_username . ' عزیز خوش آمدید . </p>            
+                        <p class="signing-message text-success px-4 displayNone"> ' . $login_username . ' عزیز خوش آمدید . </p>            
                         ';
-                        // code to be executed when a use logs in
+                        // getting the user info for the SESSION:
+                        $_SESSION['user_username'] = $user_row['username'];
+                        $_SESSION['user_email'] = $user_row['email'];
+                        $_SESSION['user_phone'] = $user_row['phone'];
+                        echo $_SESSION['user_username'];
                     }else{
                         echo '<p class="text-danger pt-4 pb-1 displayNone"><span class=" fas fa-exclamation-circle" aria-hidden="true"></span></p>';
-                        echo 'رمز عبور اشتباه است. اگر رمز عبور خود را فراموش کرده اید از لینک "رمز عبور خود را فراموش کرده ام"، استفاده فرمایید.';
+                        echo '<p class="signing-message text-danger px-4 displayNone">رمز عبور اشتباه است. اگر رمز عبور خود را فراموش کرده اید از لینک:' . '<a href="#">رمز عبور خود را فراموش کرده ام</a>' . ' ، استفاده فرمایید.</p>';
                     }
                 }else{
                     echo '<p class="text-danger pt-4 pb-1 displayNone"><span class=" fas fa-exclamation-circle" aria-hidden="true"></span></p>';
@@ -87,7 +90,7 @@ function login_page_validation(){
                     }
                     // if no user has previously registered with the same input values:
                 }else{
-                    $password = md5($signup_password);
+                    $password = password_hash($signup_password, PASSWORD_BCRYPT);
                     echo '<p class="text-success pt-4 pb-1 displayNone"><span class=" fa fa-check" aria-hidden="true"></span></p>';
                     echo '<p class="signing-message text-success px-4 displayNone">' . $signup_username .  ' عزیز، ثبت نام شما با موفقیت انجام شد. از این پس می توانید با استفاده از منوی ورود، داخل سایت شوید. </p>';
                     $insert_query = "INSERT INTO users (username, pass, email, phone) VALUES ('$signup_username', '$password', '$signup_email', '$signup_phone')";
