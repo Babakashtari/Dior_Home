@@ -76,8 +76,8 @@
                     <form action="#" method="post" class="p-1 text-right text-light">
                         <div class="form-group">
                             <label for="username">نام كاربری:</label>
-                            <input class="form-control" type="text" name="username" id="username" placeholder="Babak" oninput="validate(/^[A-Z][a-z0-9]{4,10}$/,this)">
-                            <p class='displayNone'>نام کاربری باید حداقل 5 و حداکثر 10 حرف داشته باشد و با حروف بزرگ آغاز شود.</p>
+                            <input class="form-control" type="text" name="username" id="username" placeholder="Babak" oninput="validate(/^[A-Z][a-z0-9]{2,}$/,this)">
+                            <p class='displayNone'>نام کاربری باید حداقل 3 حرف داشته باشد و با حروف بزرگ آغاز شود.</p>
                         </div>
                         <div class="form-group">
                             <label for="pass">رمز عبور:</label>
@@ -90,9 +90,9 @@
                             <p class='displayNone'>آدرس ایمیل معتبر نیست.</p>
                         </div>  
                         <div class="form-group">
-                            <label for="phone">شماره تلفن:</label>
-                            <input class="form-control" type="text" name="phone" id="phone" placeholder="02155158815" oninput="validate(/^[0]\d{7,15}$/, this)">
-                            <p class='displayNone'>تلفن باید فقط از عدد تشکیل شود. 0 ابتدای آن بیاید و 8 تا 15 رقم داشته باشد.</p>
+                            <label for="mobile_phone">شماره تلفن:</label>
+                            <input class="form-control" type="text" name="signup_mobile_phone" id="signup_mobile_phone" placeholder="02155158815" oninput="validate(/^09\d{9}$/, this)">
+                            <p class='displayNone'>تلفن باید فقط از عدد تشکیل شود. 09 ابتدای آن بیاید و 11 رقم داشته باشد.</p>
                         </div>
                         <input class="signup btn btn-success p-1" type="submit" value="ارسال" disabled onclick="signing_validation(event)">
                     </form>

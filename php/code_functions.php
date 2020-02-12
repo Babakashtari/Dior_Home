@@ -60,11 +60,9 @@ function header_generator(){
                     shopping_cart_logged_in_icon_generator();        
     echo            '</a>
                 </li>
-                <li class="col">
-                    <a href="login.php">';
+                <li class="col">';
                         header_logged_in_icon_generator();
-    echo            '</a>
-                </li>
+    echo       '</li>
             </ul>
         </div>
 <!-- products collapse bars: -->
@@ -259,6 +257,7 @@ function footer_generator(){
 </footer>
             ';
 }
+// showing username in the jumbotron after signing in:
 function user_name_show(){
     if(!empty($_SESSION['user_username'])){
         echo $_SESSION['user_username'] . " عزیز ";
@@ -266,19 +265,173 @@ function user_name_show(){
         echo 'کاربر گرامی ';
     }
 }
+// showing check on the user icon in the header after user signed in:
 function header_logged_in_icon_generator(){
     if(empty($_SESSION['user_username'])){
-       echo '<i class="fa fa-user text-danger" style="text-shadow:1px 1px 1px white"></i>';
+       echo '<a href="login.php"><i class="fa fa-user" style=""></i></a>';
     }else{
-        echo '<i class="fa fa-user text-success" style="text-shadow:1px 1px 1px white"></i>';
+        echo '<a href="userSignedIn.php"><i class="fa fa-user position-relative" style=""><i class="fa fa-check text-success position-absolute" style="left:50%;transform:translateX(-50%);text-shadow:1px 1px 1px white;"></i></i></a>';
     }
 }
 function shopping_cart_logged_in_icon_generator(){
     if(empty($_SESSION['user_username'])){
-        echo '<i class="fa fa-shopping-cart text-danger" style="text-shadow:1px 1px 1px white"></i>';
+        echo '<i class="fa fa-shopping-cart" style=""></i>';
      }else{
-        echo '<i class="fa fa-shopping-cart text-success" style="text-shadow:1px 1px 1px white"></i>';
+        echo '<i class="fa fa-shopping-cart position-relative" style=""><i class="fa fa-check text-success position-absolute" style="left:50%;transform:translateX(-50%);"></i></i>';
      }
- 
+}
+function user_modification_form_generator(){
+    // database connection:
+    $database_connection = mysqli_connect("localhost", "root", "joli1366", "DiorHome");
+    // database connection check:
+    if(!$database_connection){
+        die('connection failed:'.mysqli_connect_error());
+    }else{
+        $username =  $_SESSION['user_username'];
+        $user_finder_query = "SELECT * FROM users WHERE username = '$username'";
+        $query_check = mysqli_query($database_connection, $user_finder_query);
+        if (mysqli_num_rows($query_check) === 1){
+            $user_row = mysqli_fetch_assoc($query_check);
+
+            $first_name = $user_row['first_name'];
+            $last_name = $user_row['last_name'];
+            $age = $user_row['age'];
+            $gender = $user_row['gender'];
+            $age = $user_row['age'];
+            $email = $user_row['email'];
+            $landline = $user_row['landline'];
+            $mobile_phone = $user_row['mobile_phone'];
+            $website = $user_row['website'];
+
+            echo    '
+            <div class="row d-flex justify-content-around p-4 pb-5">
+            <fieldset class="col-11 col-lg-3">
+                <legend class="text-light text-center">اطلاعات هویتی:</legend>
+                <form action="#" method="post" class="text-light">
+                    <div class="form-group">
+                        <label for="first_name">نام:</label>
+                        <input type="text" class="form-control form-input" id="first_name" name="first_name" placeholder="Babak" oninput="form_validator(/^[A-z][a-z]{2,}$/, this)" value="';
+                        if(!empty($first_name)){echo $first_name;}
+                        echo '">
+                        <p class="displayNone">نام باید با حروف بزنگ آغاز شود و حداقل 3 کاراکتر داشته باشد.</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="last_name">نام خانوادگی:</label>
+                        <input type="text" class="form-control form-input" id="last_name" name="last_name" placeholder="Ashtari" oninput="form_validator(/^[A-z][a-z]{2,}$/, this)" value="';
+                        if(!empty($last_name)){echo $last_name;}
+                        echo '">
+                        <p class="displayNone">نام خانوادگی باید با حروف بزنگ آغاز شود و حداقل 3 کاراکتر داشته باشد.</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">سن:</label>
+                        <input type="number" min="0" max="80" class="form-control form-input" id="age" name="age" placeholder="25" oninput="form_validator(/^(([1][2-9])|([2-7][0-9]))$/, this)" value="';
+                        if(!empty($age)){echo $age;}
+                        echo '">
+                        <p class="displayNone">تنها اعداد بین 12 و 79 قابل قبول هستند.</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">جنسیت:</label>';
+                        if(empty($gender)){
+                            echo    '
+                                <select class="p-1" name="gender" id="gender">
+                                <option value="default">انتخاب کنید</option>
+                                <option value="male">مذکر</option>
+                                <option value="female">مونث</option>
+                                </select>
+                                    ';
+                        }else{
+                            if($gender === "male"){
+                                echo    '
+                                    <select class="p-1" name="gender" id="gender">
+                                        <option value="default">انتخاب کنید</option>
+                                        <option value="male" selected="selected">مذکر</option>
+                                        <option value="female">مونث</option>
+                                    </select>
+                                        ';
+                            }elseif ($gender === "female") {
+                                echo    '
+                                    <select class="p-1" name="gender" id="gender">
+                                        <option value="default">انتخاب کنید</option>
+                                        <option value="male">مذکر</option>
+                                        <option value="female" selected="selected">مونث</option>
+                                    </select>
+                                        ';
+                            }
+                        }
+        echo        '
+                    </div>
+                    <input class="p-2 btn btn-primary" type="submit" name="general_user_info" value="اعمال تغییرات">
+                </form> 
+            </fieldset>
+            <fieldset class="col-11 col-lg-3">
+                <legend class="text-light text-center">اطلاعات تماس:</legend>
+                <form action="#" method="post" class="text-light">
+                    <div class="form-group">
+                        <label for="mobile_phone">شماره تلفن همراه:</label>
+                        <input type="text" class="form-control form-input" id="mobile_phone" name="mobile_phone" placeholder="09127621031" oninput="form_validator(/^09[0-9]{9}$/, this)" value="';
+                        if(!empty($mobile_phone)){echo $mobile_phone;}
+                        echo '">
+                        <p class="displayNone">شماره موبایل صحیح نیست.</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="landline">شماره تلفن ثابت:</label>
+                        <input type="text" class="form-control form-input" id="landline" name="landline" placeholder="02177822661" oninput="form_validator(/^0[0-9]{7,10}$/, this)" value="';
+                        if(!empty($landline)){echo $landline;}
+                        echo '">
+                        <p class="displayNone">شماره تلفن را با پیش شماره شهر وارد کنید.</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">آدرس ایمیل:</label>
+                        <label for="newsletter">(دریافت خبرنامه)</label>
+                        <input type="checkbox" value="1" id="newsletter" name="newsletter">
+                        <input type="email" class="form-control form-input" id="email" name="email" placeholder="ashtaribabak@rocketmail.com" oninput="form_validator(/^[a-z0-9]{3,}@[a-z]{3,}\.[a-z]{0,3}$/,this)" value="';
+                        if(!empty($email)){echo $email;}
+                        echo '">
+                        <p class="displayNone">فرمت ایمیل صحیح نیست.</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="home_address">آدرس پستی:</label>
+                        <input type="text" class="form-control" id="home_address" name="home_address" placeholder="تهران، بازار بزرگ، سرای آزادی، طبقه اول پلاک 48" value="';
+                        if(!empty($website)){echo $website;}
+                        echo '">
+                    </div>
+                    <input class="p-2 btn btn-primary" type="submit" name="general_user_info" value="اعمال تغییرات">
+                </form> 
+            </fieldset>
+            <fieldset class="col-11 col-lg-3">
+                <legend class="text-light text-center">اطلاعات کاربری:</legend>
+                <form action="#" method="post" class="text-light">
+                    <div class="form-group">
+                        <label for="user_name">نام کاربری:</label>
+                        <input type="text" class="form-control form-input" id="user_name" name="user_name" placeholder="Babak" oninput="form_validator(/^[A-Z][a-z0-9]{3,15}$/,this)" value="';
+                        if(!empty($username)){echo $username;}
+                        echo '">
+                        <p class="displayNone">نام کاربری باید با حرف بزرگ آغاز شود و فقط از حروف و اعداد تشکیل شده باشد</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="old_pass">رمز عبور قدیمی:</label>
+                        <input type="password" class="form-control form-input" id="old_pass" name="old_pass" oninput="form_validator(/^[a-zA-Z0-9]{5,15}$/,this)">
+                        <p class="displayNone">رمز باید از اعداد و حروف کوچک و بزرگ تشکیل شده باشد و بین 5 تا 15 کاراکتر باشد.</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="new_pass">رمز عبور جدید:</label>
+                        <input type="password" min="0" max="80" class="form-control form-input" id="new_pass" name="new_pass" oninput="form_validator(/^[a-zA-Z0-9]{5,15}$/,this)">
+                        <p class="displayNone">رمز باید از اعداد و حروف کوچک و بزرگ تشکیل شده باشد و بین 5 تا 15 کاراکتر باشد.</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="website">آدرس وبسایت:</label>
+                        <input type="text" min="0" max="80" class="form-control form-input" id="website" name="website" placeholder="babakashtari.ir" oninput="form_validator(/^(www\.|https?:\/\/)([a-z0-9]{2,}\.){1,3}[a-z]{1,3}$/, this)" value="';
+                        if(!empty($website)){echo $website;}
+                        echo '">
+                        <p class="displayNone">فرمت وبسایت صحیح نیست.</p>
+                    </div>
+                    <input class="p-2 btn btn-primary" type="submit" name="general_user_info" value="اعمال تغییرات">
+                </form> 
+            </fieldset>
+        </div>
+                    ';
+    
+        }
+    }
 }
 ?>

@@ -105,6 +105,9 @@ const close_modal = () => {
         });
     }
 };
+const change_url = () => {
+    location.replace("login.php");
+};
 // ajax call for form validation result:
 const signing_validation = event => {
     event.preventDefault();
@@ -119,7 +122,7 @@ const signing_validation = event => {
         }
     }
     const parameters = [inputs[0].value, inputs[1].value, inputs[2].value, inputs[3].value, inputs[4].value, inputs[5].value];
-    const AjaxLoader = (signup_username, signup_password, signup_email, signup_phone, login_username, login_password) => {
+    const AjaxLoader = (signup_username, signup_password, signup_email, signup_mobile_phone, login_username, login_password) => {
         const AJAX_request = new XMLHttpRequest();
         AJAX_request.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
@@ -128,12 +131,18 @@ const signing_validation = event => {
                 validation_result.classList.remove("displayNone");
                 close_spinners();
                 close_modal();
+                const validation_result_message = document.querySelector("main>section.validation-result>div>p.signing-message");
+                if (validation_result_message.classList.contains("successfully-logged-in")) {
+                    setTimeout(() => {
+                        change_url();
+                    }, 2000);
+                }
             }
         };
         AJAX_request.open("POST", "loginResult.php", true);
         AJAX_request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         // prettier-ignore
-        AJAX_request.send("signup_username=" + signup_username + "&signup_password=" + signup_password + "&signup_email="+ signup_email + "&signup_phone="+ signup_phone + "&login_username="+ login_username + "&login_password="+ login_password);
+        AJAX_request.send("signup_username=" + signup_username + "&signup_password=" + signup_password + "&signup_email="+ signup_email + "&signup_mobile_phone="+ signup_mobile_phone + "&login_username="+ login_username + "&login_password="+ login_password);
     };
     AjaxLoader(...parameters);
 };

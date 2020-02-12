@@ -403,7 +403,8 @@ div.modal_box > div.modal_content > div.products_gallery > div > div.card > div.
     }
     header i.fa-user,
     header i.fa-shopping-cart,
-    header i.fa-search {
+    header i.fa-search,
+    header i.fa-check {
         font-size: 0.75rem;
     }
     header > nav > div > ul > li > input#search {
