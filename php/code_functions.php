@@ -302,21 +302,22 @@ function user_modification_form_generator(){
             $landline = $user_row['landline'];
             $mobile_phone = $user_row['mobile_phone'];
             $website = $user_row['website'];
+            $home_address = $user_row['home_address'];
 
             echo    '
             <div class="row d-flex justify-content-around p-4 pb-5">
             <fieldset class="col-11 col-lg-3">
                 <legend class="text-light text-center">اطلاعات هویتی:</legend>
-                <form action="#" method="post" class="text-light">
+                <form action="#" method="post" class="text-light personal-info">
                     <div class="form-group">
-                        <label for="first_name">نام:</label>
+                        <label class="required" for="first_name">نام:</label>
                         <input type="text" class="form-control form-input" id="first_name" name="first_name" placeholder="Babak" oninput="form_validator(/^[A-z][a-z]{2,}$/, this)" value="';
                         if(!empty($first_name)){echo $first_name;}
                         echo '">
                         <p class="displayNone">نام باید با حروف بزنگ آغاز شود و حداقل 3 کاراکتر داشته باشد.</p>
                     </div>
                     <div class="form-group">
-                        <label for="last_name">نام خانوادگی:</label>
+                        <label class="required" for="last_name">نام خانوادگی:</label>
                         <input type="text" class="form-control form-input" id="last_name" name="last_name" placeholder="Ashtari" oninput="form_validator(/^[A-z][a-z]{2,}$/, this)" value="';
                         if(!empty($last_name)){echo $last_name;}
                         echo '">
@@ -333,16 +334,16 @@ function user_modification_form_generator(){
                         <label for="gender">جنسیت:</label>';
                         if(empty($gender)){
                             echo    '
-                                <select class="p-1" name="gender" id="gender">
-                                <option value="default">انتخاب کنید</option>
-                                <option value="male">مذکر</option>
-                                <option value="female">مونث</option>
+                                <select class="p-1" name="gender" id="gender" onchange="form_validator(/^(male)|(female)$/, this)">
+                                    <option value="">انتخاب کنید</option>
+                                    <option value="male">مذکر</option>
+                                    <option value="female">مونث</option>
                                 </select>
                                     ';
                         }else{
                             if($gender === "male"){
                                 echo    '
-                                    <select class="p-1" name="gender" id="gender">
+                                    <select class="p-1" name="gender" id="gender" onchange="form_validator(/^(male)|(female)$/, this)">
                                         <option value="default">انتخاب کنید</option>
                                         <option value="male" selected="selected">مذکر</option>
                                         <option value="female">مونث</option>
@@ -350,7 +351,7 @@ function user_modification_form_generator(){
                                         ';
                             }elseif ($gender === "female") {
                                 echo    '
-                                    <select class="p-1" name="gender" id="gender">
+                                    <select class="p-1" name="gender" id="gender" onchange="form_validator(/^(male)|(female)$/, this)">
                                         <option value="default">انتخاب کنید</option>
                                         <option value="male">مذکر</option>
                                         <option value="female" selected="selected">مونث</option>
@@ -360,14 +361,14 @@ function user_modification_form_generator(){
                         }
         echo        '
                     </div>
-                    <input class="p-2 btn btn-primary" type="submit" name="general_user_info" value="اعمال تغییرات">
+                    <input class="p-2 btn btn-primary" type="submit" name="personal_info" onclick="user_info_validator(event);" value="اعمال تغییرات">
                 </form> 
             </fieldset>
             <fieldset class="col-11 col-lg-3">
                 <legend class="text-light text-center">اطلاعات تماس:</legend>
-                <form action="#" method="post" class="text-light">
+                <form action="#" method="post" class="text-light contact-info">
                     <div class="form-group">
-                        <label for="mobile_phone">شماره تلفن همراه:</label>
+                        <label class="required" for="mobile_phone">شماره تلفن همراه:</label>
                         <input type="text" class="form-control form-input" id="mobile_phone" name="mobile_phone" placeholder="09127621031" oninput="form_validator(/^09[0-9]{9}$/, this)" value="';
                         if(!empty($mobile_phone)){echo $mobile_phone;}
                         echo '">
@@ -375,13 +376,13 @@ function user_modification_form_generator(){
                     </div>
                     <div class="form-group">
                         <label for="landline">شماره تلفن ثابت:</label>
-                        <input type="text" class="form-control form-input" id="landline" name="landline" placeholder="02177822661" oninput="form_validator(/^0[0-9]{7,10}$/, this)" value="';
+                        <input type="text" class="form-control form-input" id="landline" name="landline" placeholder="02177822661" oninput="form_validator(/^0[0-9]{7,}$/, this)" value="';
                         if(!empty($landline)){echo $landline;}
                         echo '">
                         <p class="displayNone">شماره تلفن را با پیش شماره شهر وارد کنید.</p>
                     </div>
                     <div class="form-group">
-                        <label for="email">آدرس ایمیل:</label>
+                        <label class="required" for="email">آدرس ایمیل:</label>
                         <label for="newsletter">(دریافت خبرنامه)</label>
                         <input type="checkbox" value="1" id="newsletter" name="newsletter">
                         <input type="email" class="form-control form-input" id="email" name="email" placeholder="ashtaribabak@rocketmail.com" oninput="form_validator(/^[a-z0-9]{3,}@[a-z]{3,}\.[a-z]{0,3}$/,this)" value="';
@@ -390,31 +391,31 @@ function user_modification_form_generator(){
                         <p class="displayNone">فرمت ایمیل صحیح نیست.</p>
                     </div>
                     <div class="form-group">
-                        <label for="home_address">آدرس پستی:</label>
+                        <label class="required" for="home_address">آدرس پستی:</label>
                         <input type="text" class="form-control" id="home_address" name="home_address" placeholder="تهران، بازار بزرگ، سرای آزادی، طبقه اول پلاک 48" value="';
-                        if(!empty($website)){echo $website;}
+                        if(!empty($home_address)){echo $home_address;}
                         echo '">
                     </div>
-                    <input class="p-2 btn btn-primary" type="submit" name="general_user_info" value="اعمال تغییرات">
+                    <input class="p-2 btn btn-primary" type="submit" name="contact_info" onclick="user_info_validator(event);" value="اعمال تغییرات">
                 </form> 
             </fieldset>
             <fieldset class="col-11 col-lg-3">
                 <legend class="text-light text-center">اطلاعات کاربری:</legend>
-                <form action="#" method="post" class="text-light">
+                <form action="#" method="post" class="text-light user-info">
                     <div class="form-group">
-                        <label for="user_name">نام کاربری:</label>
+                        <label class="required" for="user_name">نام کاربری:</label>
                         <input type="text" class="form-control form-input" id="user_name" name="user_name" placeholder="Babak" oninput="form_validator(/^[A-Z][a-z0-9]{3,15}$/,this)" value="';
                         if(!empty($username)){echo $username;}
                         echo '">
                         <p class="displayNone">نام کاربری باید با حرف بزرگ آغاز شود و فقط از حروف و اعداد تشکیل شده باشد</p>
                     </div>
                     <div class="form-group">
-                        <label for="old_pass">رمز عبور قدیمی:</label>
+                        <label class="required" for="old_pass">رمز عبور قدیمی:</label>
                         <input type="password" class="form-control form-input" id="old_pass" name="old_pass" oninput="form_validator(/^[a-zA-Z0-9]{5,15}$/,this)">
                         <p class="displayNone">رمز باید از اعداد و حروف کوچک و بزرگ تشکیل شده باشد و بین 5 تا 15 کاراکتر باشد.</p>
                     </div>
                     <div class="form-group">
-                        <label for="new_pass">رمز عبور جدید:</label>
+                        <label class="required" for="new_pass">رمز عبور جدید:</label>
                         <input type="password" min="0" max="80" class="form-control form-input" id="new_pass" name="new_pass" oninput="form_validator(/^[a-zA-Z0-9]{5,15}$/,this)">
                         <p class="displayNone">رمز باید از اعداد و حروف کوچک و بزرگ تشکیل شده باشد و بین 5 تا 15 کاراکتر باشد.</p>
                     </div>
@@ -425,7 +426,7 @@ function user_modification_form_generator(){
                         echo '">
                         <p class="displayNone">فرمت وبسایت صحیح نیست.</p>
                     </div>
-                    <input class="p-2 btn btn-primary" type="submit" name="general_user_info" value="اعمال تغییرات">
+                    <input class="p-2 btn btn-primary" type="submit" name="user_info" onclick="user_info_validator(event);" value="اعمال تغییرات">
                 </form> 
             </fieldset>
         </div>

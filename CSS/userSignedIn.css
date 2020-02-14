@@ -100,12 +100,19 @@ main > section.form-container > div {
 main > section.form-container > div > fieldset {
     border: 1px solid white;
     border-radius: 10px;
+    padding-bottom: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 8rem;
 }
 main > section.form-container > div > fieldset > legend {
     width: 90%;
 }
 main > section.form-container > div > fieldset > form > div.form-group > select#gender {
     width: 100%;
+}
+main > section.form-container > div > fieldset > form > div.form-group > label.required::after {
+    content: " * ";
+    color: red;
 }
 main > section.form-container > div > fieldset > form > div.form-group > input {
     color: black;
@@ -114,6 +121,48 @@ main > section.form-container > div > fieldset > form > div.form-group > input +
     color: Red;
     font-size: 0.75rem;
 }
+main > section.validation-result {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* bootstrap has a 1021 z-index for sticky-top headers. so I added this so that the modal stays on top */
+    z-index: 1022;
+}
+main > section.validation-result > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    transform: translate(-50%);
+    background-color: white;
+    color: blue;
+    border-radius: 5px;
+    overflow: hidden;
+}
+main > section.validation-result > div > div > div.spinner-grow {
+    width: 60px;
+    height: 60px;
+}
+main > section.validation-result > div > p > span.fa,
+main > section.validation-result > div > p > span.fas {
+    font-size: 2rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+main > section.validation-result > div > p > span.fa-check {
+    border: 3px solid green;
+}
+main > section.validation-result > div > p > a {
+    text-decoration: underline;
+    color: inherit;
+}
+main > section.validation-result > div > p > a:hover {
+    color: blue;
+}
+
 .failed {
     border: 3px solid red !important;
 }

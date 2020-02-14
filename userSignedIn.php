@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="content-security-policy" content="default-src 'none'; 
+    <meta http-equiv="content-security-policy" content="default-src 'self'; 
         style-src 'self' 'unsafe-inline'; 
         script-src 'self' 'unsafe-inline';
         img-src 'self';
@@ -68,11 +68,18 @@
                 <li><p>هرگونه تغییر در شماره تماس و یا آدرس پستی خود را در اسرع وقت از طریق فرم اطلاعات تماس با ما در میان بگذارید.</p></li>
                 <li><p>هر چند وقت یکبار رمز عبور خود را از طریق فرم اطلاعات کاربری تغییر دهید. </p></li>
                 <li><p>جهت دریافت خبرنامه آدرس ایمیل خود را تایید فرمایید و به ما اجازه دهید تا برایتان آخرین تخفیف ها و پیشنهادات ویژه را ارسال کنیم. </p></li>
+                <li><p>موارد ستاره دار الزامی هستند.</p></li>
             </ol>
         </section>
         <section class="form-container container-fluid pt-5 ">
+            <!-- form elements are generated here: -->
             <?php user_modification_form_generator(); ?>
         </section>
+        <section class="validation-result text-center displayNone">
+        <!-- validation results are shown in this div: -->
+            <div></div>
+        </section>
+
     </main>
     <?php footer_generator();?>
 
