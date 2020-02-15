@@ -76,8 +76,18 @@ const user_info_validator = event => {
         for (let i = 0; i < contact_info_inputs.length; i++) {
             const name = contact_info_inputs[i].getAttribute("name");
             names.push(name);
-            const parameter = contact_info_inputs[i].value;
-            parameters.push(parameter);
+
+            // getting the checkbox 0 / 1 values:
+            if (i === 2) {
+                if (!contact_info_inputs[2].checked) {
+                    parameters.push("NO");
+                } else {
+                    parameters.push("YES");
+                }
+            } else {
+                const parameter = contact_info_inputs[i].value;
+                parameters.push(parameter);
+            }
         }
     } else if (event.target.getAttribute("name") === "user_info") {
         for (let i = 0; i < user_info_inputs.length; i++) {
@@ -87,8 +97,6 @@ const user_info_validator = event => {
             parameters.push(parameter);
         }
     }
-    // console.log(names);
-    // console.log(parameters);
     const AjaxLoader = (input_names, input_values, submit) => {
         let ajax_string = "";
         for (let i = 0; i < input_names.length; i++) {
@@ -106,9 +114,10 @@ const user_info_validator = event => {
                 close_modal();
             }
         };
-        AJAX_request.open("POST", "php/user_modification.php", true);
+        AJAX_request.open("POST", "php/user_modification_result.php", true);
         AJAX_request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         AJAX_request.send(ajax_string);
+        console.log(ajax_string);
     };
     AjaxLoader(names, parameters, submit_name);
 };

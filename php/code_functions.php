@@ -1,3 +1,4 @@
+
 <?php
 function jumbotron_generator(){
     echo '      <?php session_start(); ?>
@@ -68,7 +69,7 @@ function header_generator(){
 <!-- products collapse bars: -->
         <div class="collapse text-white m-0 row flex-row-reverse" id="products">
             <div class="card col-6 col-sm-3 border border-right-1">
-                <div class="card-header text-dark"><a href="#">کالای خواب</a></div>
+                <div class="card-header text-dark"><a href="sleepingProducts.php">کالای خواب</a></div>
                 <div class="card-body">
                     <ul>
                         <li><a href="#">روبالشی</a></li>
@@ -106,8 +107,13 @@ function header_generator(){
                         <li>
                             <a href="#">طاقه پیچی و ارسال </a>
                         </li>
-                        <li>
-                            <a href="#">پذیرش سفارش</a>
+                        <li>';
+                            if(!empty($_SESSION['user_username'])){
+                                echo '<a href="userUpload.php">ثبت سفارش</a>';
+                            }else{
+                                echo '<a href="login.php">ثبت سفارش</a>';
+                            }
+                        echo '
                         </li>
                     </ul>
                 </div>
@@ -270,7 +276,7 @@ function header_logged_in_icon_generator(){
     if(empty($_SESSION['user_username'])){
        echo '<a href="login.php"><i class="fa fa-user" style=""></i></a>';
     }else{
-        echo '<a href="userSignedIn.php"><i class="fa fa-user position-relative" style=""><i class="fa fa-check text-success position-absolute" style="left:50%;transform:translateX(-50%);text-shadow:1px 1px 1px white;"></i></i></a>';
+        echo '<a href="userModification.php"><i class="fa fa-user position-relative" style=""><i class="fa fa-check text-success position-absolute" style="left:50%;transform:translateX(-50%);text-shadow:1px 1px 1px white;"></i></i></a>';
     }
 }
 function shopping_cart_logged_in_icon_generator(){
@@ -282,7 +288,9 @@ function shopping_cart_logged_in_icon_generator(){
 }
 function user_modification_form_generator(){
     // database connection:
-    $database_connection = mysqli_connect("localhost", "root", "joli1366", "DiorHome");
+    require "database_connection.php";
+
+    // connect_database();
     // database connection check:
     if(!$database_connection){
         die('connection failed:'.mysqli_connect_error());
@@ -383,8 +391,29 @@ function user_modification_form_generator(){
                     </div>
                     <div class="form-group">
                         <label class="required" for="email">آدرس ایمیل:</label>
-                        <label for="newsletter">(دریافت خبرنامه)</label>
-                        <input type="checkbox" value="1" id="newsletter" name="newsletter">
+                        <label for="newsletter">(دریافت خبرنامه)</label>';
+
+                        function newsletter_check(){
+                            // database connection:
+                            require "database_connection.php";
+                            // connect_database();
+                            if(!$database_connection){
+                                die('connection failed:'.mysqli_connect_error());
+                            }else{
+                                $user = $_SESSION['user_username'];
+                                $query = "SELECT * FROM users WHERE username = '$user' ";
+                                $result = mysqli_query($database_connection, $query);
+                                $result_arr = mysqli_fetch_assoc($result);
+                                if($result_arr['newsletter'] === "YES"){
+                                    echo '<input type="checkbox" value="YES" id="newsletter" name="newsletter" checked="true">';
+                                }elseif($result_arr['newsletter'] === "NO"){
+                                    echo '<input type="checkbox" value="YES" id="newsletter" name="newsletter" >';
+                                }
+                            }
+                        }
+                        newsletter_check();
+
+                        echo '
                         <input type="email" class="form-control form-input" id="email" name="email" placeholder="ashtaribabak@rocketmail.com" oninput="form_validator(/^[a-z0-9]{3,}@[a-z]{3,}\.[a-z]{0,3}$/,this)" value="';
                         if(!empty($email)){echo $email;}
                         echo '">

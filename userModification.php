@@ -8,7 +8,7 @@
 <!DOCTYPE html lang="fa">
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="content-security-policy" content="default-src 'self'; 
@@ -88,7 +88,7 @@
     <script src="JS/jquery.min.js"></script>
     <script src="JS/bootstrap.min.js"></script>
     <script src="JS/header.js"></script>
-    <script src="JS/userSignedIn.js"></script>
+    <script src="JS/userModification.js"></script>
     <script src="JS/footer.js"></script>
 </body>
 </html>

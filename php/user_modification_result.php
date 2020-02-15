@@ -35,6 +35,17 @@
         $data = htmlspecialchars($data);
         return $data;
     }
+    function test_newsletter($data){
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        if (preg_match($regex,$data)) {
+            return $data;
+        }else{
+            return $data = "";
+        }
+
+    }
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         // when personal info form is submitted:
         if(!empty($_POST['personal_info'])){
@@ -70,7 +81,7 @@
                 foreach($arr as $key => $value){
                     if(!empty($value)){
                         // database connection:
-                        $database_connection = mysqli_connect("localhost", "root", "joli1366", "DiorHome");
+                        require "database_connection.php";
                         // database connection check:
                         if(!$database_connection){
                             die('connection failed:'.mysqli_connect_error());
@@ -90,11 +101,11 @@
                 if($number_of_updated_fields>0){
                     echo'
                         <p class="text-success pt-4 pb-1 displayNone"><span class=" fa fa-check" aria-hidden="true"></span></p>
-                        <p class="signing-message successfully-logged-in text-success px-4 displayNone"> ' . $number_of_updated_fields . ' فیلد با موفقیت به روز رسانی شد . </p>            
+                        <p class="signing-message successful text-success px-4 displayNone"> ' . $number_of_updated_fields . ' فیلد با موفقیت به روز رسانی شد . </p>            
                         ';
 
                 }else{
-                    echo '<p class="signing-message successfully-logged-in text-primary p-4 m-0 displayNone">تغییری صورت نگرفت.</p>';
+                    echo '<p class="signing-message text-primary p-4 m-0 displayNone">تغییری صورت نگرفت.</p>';
                 }
 
             }
@@ -108,7 +119,7 @@
                 $mobile_phone = test_input($_POST["mobile_phone"], "/^09[0-9]{9}$/");
                 $landline = test_input($_POST["landline"], "/^0[0-9]{7,}$/");
                 $email = test_input($_POST["email"], "/^[a-z0-9]{3,}@[a-z]{3,}\.[a-z]{0,3}$/");
-                $newsletter = test_input($_POST['newsletter'], "/^1$/" );
+                $newsletter = test_input($_POST['newsletter'], "/^yes|no|YES|NO$/" );
                 $home_address = test_home_address($_POST["home_address"]);
                 if(empty($mobile_phone)){
                     echo '<p class="text-danger pt-4 pb-1 displayNone"><span class=" fas fa-exclamation-circle" aria-hidden="true"></span></p>';
@@ -131,7 +142,7 @@
                 foreach($arr as $key => $value){
                     if(!empty($value)){
                         // database connection:
-                        $database_connection = mysqli_connect("localhost", "root", "joli1366", "DiorHome");
+                        require "database_connection.php";                        
                         // database connection check:
                         if(!$database_connection){
                             die('connection failed:'.mysqli_connect_error());
@@ -143,6 +154,7 @@
                             if($user_retrieved[$key] != $value){
                                 $update_query = "UPDATE users SET $key = '$value' WHERE username = '$user' ";
                                 mysqli_query($database_connection, $update_query);
+
                                 $number_of_updated_fields += 1;
                             }
                         } 
@@ -151,11 +163,11 @@
                 if($number_of_updated_fields>0){
                     echo'
                         <p class="text-success pt-4 pb-1 displayNone"><span class=" fa fa-check" aria-hidden="true"></span></p>
-                        <p class="signing-message successfully-logged-in text-success px-4 displayNone"> ' . $number_of_updated_fields . ' فیلد با موفقیت به روز رسانی شد . </p>            
+                        <p class="signing-message successful text-success px-4 displayNone"> ' . $number_of_updated_fields . ' فیلد با موفقیت به روز رسانی شد . </p>            
                         ';
 
                 }else{
-                    echo '<p class="signing-message successfully-logged-in text-primary p-4 m-0 displayNone">تغییری صورت نگرفت.</p>';
+                    echo '<p class="signing-message text-primary p-4 m-0 displayNone">تغییری صورت نگرفت.</p>';
                 }
             }
         }
@@ -193,7 +205,8 @@
                 $number_of_updated_fields = 0;
 
                 // database connection:
-                $database_connection = mysqli_connect("localhost", "root", "joli1366", "DiorHome");
+                require "database_connection.php";
+                
                 if(!$database_connection){
                     die('connection failed:'.mysqli_connect_error());
                 }else{
@@ -208,7 +221,8 @@
                         foreach($arr as $key => $value){
                             if(!empty($value)){
                                 // database connection:
-                                $database_connection = mysqli_connect("localhost", "root", "joli1366", "DiorHome");
+                                require "database_connection.php";
+
                                 // database connection check:
                                 if(!$database_connection){
                                     die('connection failed:'.mysqli_connect_error());
@@ -228,11 +242,11 @@
                         if($number_of_updated_fields>0){
                             echo'
                                 <p class="text-success pt-4 pb-1 displayNone"><span class=" fa fa-check" aria-hidden="true"></span></p>
-                                <p class="signing-message successfully-logged-in text-success px-4 displayNone"> ' . $number_of_updated_fields . ' فیلد با موفقیت به روز رسانی شد . </p>            
+                                <p class="signing-message successful text-success px-4 displayNone"> ' . $number_of_updated_fields . ' فیلد با موفقیت به روز رسانی شد . </p>            
                                 ';
         
                         }else{
-                            echo '<p class="signing-message successfully-logged-in text-primary p-4 m-0 displayNone">تغییری صورت نگرفت.</p>';
+                            echo '<p class="signing-message text-primary p-4 m-0 displayNone">تغییری صورت نگرفت.</p>';
                         }        
                     }
                 }

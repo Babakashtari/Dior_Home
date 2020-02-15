@@ -106,7 +106,7 @@ const close_modal = () => {
     }
 };
 const change_url = () => {
-    location.replace("login.php");
+    location.replace("userModification.php");
 };
 // ajax call for form validation result:
 const signing_validation = event => {
@@ -132,14 +132,14 @@ const signing_validation = event => {
                 close_spinners();
                 close_modal();
                 const validation_result_message = document.querySelector("main>section.validation-result>div>p.signing-message");
-                if (validation_result_message.classList.contains("successfully-logged-in")) {
+                if (validation_result_message.classList.contains("successful")) {
                     setTimeout(() => {
                         change_url();
                     }, 2000);
                 }
             }
         };
-        AJAX_request.open("POST", "loginResult.php", true);
+        AJAX_request.open("POST", "php/loginResult.php", true);
         AJAX_request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         // prettier-ignore
         AJAX_request.send("signup_username=" + signup_username + "&signup_password=" + signup_password + "&signup_email="+ signup_email + "&signup_mobile_phone="+ signup_mobile_phone + "&login_username="+ login_username + "&login_password="+ login_password);

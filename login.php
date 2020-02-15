@@ -3,7 +3,7 @@
 <!DOCTYPE html lang="fa">
 <html lang="fa">
     <head>
-        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta http-equiv="content-security-policy" content="default-src 'self'; 
@@ -90,8 +90,8 @@
                             <p class='displayNone'>آدرس ایمیل معتبر نیست.</p>
                         </div>  
                         <div class="form-group">
-                            <label for="mobile_phone">شماره تلفن:</label>
-                            <input class="form-control" type="text" name="signup_mobile_phone" id="signup_mobile_phone" placeholder="02155158815" oninput="validate(/^09\d{9}$/, this)">
+                            <label for="mobile_phone"> تلفن همراه:</label>
+                            <input class="form-control" type="text" name="signup_mobile_phone" id="signup_mobile_phone" placeholder="09127621031" oninput="validate(/^09\d{9}$/, this)">
                             <p class='displayNone'>تلفن باید فقط از عدد تشکیل شود. 09 ابتدای آن بیاید و 11 رقم داشته باشد.</p>
                         </div>
                         <input class="signup btn btn-success p-1" type="submit" value="ارسال" disabled onclick="signing_validation(event)">

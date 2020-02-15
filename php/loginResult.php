@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+
 <div>                
     <!-- validation pending spinners -->
     <div class=" spinner-grow text-muted"></div>
@@ -37,7 +38,8 @@ function login_page_validation(){
         $signup_mobile_phone = test_input($_POST['signup_mobile_phone'], "/^09\d{9}$/");
     
         // database connection:
-        $database_connection = mysqli_connect("localhost", "root", "joli1366", "DiorHome");
+        require "database_connection.php";
+        // connect_database();
 
         // database connection check:
         if(!$database_connection){
@@ -52,7 +54,7 @@ function login_page_validation(){
                     if (password_verify($login_password, $user_row['pass'])){
                         echo '
                         <p class="text-success pt-4 pb-1 displayNone"><span class=" fa fa-check" aria-hidden="true"></span></p>
-                        <p class="signing-message successfully-logged-in text-success px-4 displayNone"> ' . $login_username . ' عزیز خوش آمدید . </p>            
+                        <p class="signing-message successful text-success px-4 displayNone"> ' . $login_username . ' عزیز خوش آمدید . </p>            
                         ';
                         // getting the user info for the SESSION:
                         $_SESSION['user_username'] = $user_row['username'];
