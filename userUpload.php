@@ -46,10 +46,14 @@
     <title>پیشگامان پودینه - ثبت سفارش</title>
 </head>
 <body>
-<?php head(); ?>
+    <?php head(); ?>
+    <section class="image-section">
+        <div>
+            
+        </div>
+    </section>
 
-
-<?php footer_generator();?>
+    <?php footer_generator();?>
     <?php canvas_generator(); ?>
     <script src="JS/canvas.js"></script>
     <script src="JS/jquery.min.js"></script>
