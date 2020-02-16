@@ -47,11 +47,29 @@
 </head>
 <body>
     <?php head(); ?>
-    <section class="image-section">
-        <div>
-            
-        </div>
-    </section>
+    <main>
+    <!-- photo container section: -->
+        <section class="container-fluid px-0 position-relative photo-container">
+            <img class="border border-dark" src="images/user_upload_images/user_upload.jpg" alt="ثبت سفارش آنلاین تابلوفرش روتختی رو بالشی و...">
+            <h3 class="position-absolute p-1 p-3">سفارش از شما</h3>
+            <h3 class="position-absolute p-1 p-3">تولید با کیفیت و مرغوب از ما</h3>
+        </section>
+        <section class="file-upload">
+            <fieldset>
+            <form method="POST" action="#">
+                <div class="form-group">
+                    <label for="file_name">نام سفارش</label>
+                    <input type="text" class="form-control" id="file_name" placeholder="نام طرح چاپی">
+                </div>
+                <div class="form-group">
+                    <label for="dimensions">ابعاد:</label>
+                    <input type="text" class="form-control" id="dimensions" placeholder="ابعاد طرح چاپی مورد نظر">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                </form>            
+            </fieldset>
+        </section>
+    </main>
 
     <?php footer_generator();?>
     <?php canvas_generator(); ?>
