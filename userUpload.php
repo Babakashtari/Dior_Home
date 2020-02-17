@@ -1,6 +1,6 @@
 <?php require "php/code_functions.php" ?>
-<!-- <?php require "php/uploadResult.php" ?> -->
-<!-- <?php session_start(); ?> -->
+<?php require "php/uploadResult.php" ?>
+<?php session_start(); ?>
 <!DOCTYPE html lang="fa">
 <html lang="fa">
     <head>
@@ -56,42 +56,45 @@
             <h3 class="position-absolute p-1 p-3">تولید با کیفیت و مرغوب از ما</h3>
         </section>
         <section class="result">
-            <div>
+            <div class="p-4">
                 <!-- result of the file submitting will go here -->
-                <!-- <?php require "php/uploadResult.php"; ?> -->
-                <!-- <?php showResult(); ?> -->
+                <?php validator(); ?>
             </div>
         </section>
         <section class="file-upload container">
             <fieldset>
-            <form method="POST" action="php/uploadResult.php">
-            <!-- <?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?> -->
+            <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label class="text-light" for="file_name">نام سفارش:</label>
-                    <input type="text" class="form-control" id="file_name" name="file_name" placeholder="نام طرح چاپی">
+                    <label class="text-light required" for="file_name">نام سفارش:</label>
+                    <input type="text" class="form-control" id="file_name" name="file_name" placeholder="violet" oninput="validate(/^[a-zA-Z0-9]{3,15}$/, this)">
+                    <p class="text-right displayNone">نام سفارش باید یک کلمه ای و بین 3 تا 15 کاراکتر باشد.</p>
                 </div>
                 <div class="form-group">
                     <label class="text-light" for="dimensions">ابعاد:</label>
-                    <input type="text" class="form-control" id="dimensions" name="dimensions" placeholder="ابعاد طرح چاپی مورد نظر">
+                    <input type="text" class="form-control" id="dimensions" name="dimensions" placeholder="40X60" oninput="validate(/^[0-9][X*\/][0-9]$/, this)">
+                    <p class="text-right displayNone">ابعاد عکس خود را با "X"، "/" و یا "*" مشخص کنید.</p>
+
                 </div>
                 <div class="form-group">
-                    <label class="text-light" for="category">گروه مربوطه:</label>
+                    <label class="text-light required" for="category">گروه مربوطه:</label>
                     <select class="form-control" id="category" name="category" onchange="subcategory_generator(this)">
                         <option value="">انتخاب کنید</option>
                         <option value="sleeping_products">کالای خواب</option>
                         <option value="living_room_products">کالای اتاق پذیرایی</option>
                         <option value="carpet_products">فرش</option>
                     </select>
+                    <p class="text-right displayNone">حتما یک مورد را انتخاب نمایید.</p>
                 </div>
                 <div class="form-group sub displayNone">
-                    <label class="text-light" for="subcategory">زیر گروه مربوطه:</label>
-                    <select class="form-control" id="subcategory" name="subcategory">
+                    <label class="text-light required" for="subcategory">زیر گروه مربوطه:</label>
+                    <select class="form-control" id="subcategory" name="subcategory" onchange="validate(/^[0-9][X*\/][0-9]$/, this)">
                         <!-- subcategory option elements are generated here via javascript -->
                     </select>
+                    <p class="text-right displayNone">حتما یک مورد را انتخاب نمایید.</p>
                 </div>
                 <div class="form-group">
-                    <label class="text-light" for="file">فایلتان را از اینجا انتخاب کنید:</label>
-                    <input type="file" class="form-control" id="uploadingfile" name="uploadingfile" enctype="multipart/form-data">
+                    <label class="text-light required" for="file">تصویر الگوی موردنظر:</label>
+                    <input type="file" class="form-control" id="uploadingfile" name="uploadingfile">
                 </div>
                     <input class="btn btn-primary" id="submit" name="submit" type="submit" value="ارسال">
                 </form>            

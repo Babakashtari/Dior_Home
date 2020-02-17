@@ -52,15 +52,16 @@ function login_page_validation(){
                 if (mysqli_num_rows($username_check) === 1){
                     $user_row = mysqli_fetch_assoc($username_check);
                     if (password_verify($login_password, $user_row['pass'])){
-                        echo '
-                        <p class="text-success pt-4 pb-1 displayNone"><span class=" fa fa-check" aria-hidden="true"></span></p>
-                        <p class="signing-message successful text-success px-4 displayNone"> ' . $login_username . ' عزیز خوش آمدید . </p>            
-                        ';
                         // getting the user info for the SESSION:
                         $_SESSION['user_ID'] = $user_row['ID'];
                         $_SESSION['user_username'] = $user_row['username'];
                         $_SESSION['user_email'] = $user_row['email'];
                         $_SESSION['user_mobile_phone'] = $user_row['mobile_phone'];
+                            
+                        echo '
+                        <p class="text-success pt-4 pb-1 displayNone"><span class=" fa fa-check" aria-hidden="true"></span></p>
+                        <p class="signing-message successful text-success px-4 displayNone"> ' . $login_username . ' عزیز خوش آمدید . </p>  
+                        ';
                     }else{
                         echo '<p class="text-danger pt-4 pb-1 displayNone"><span class=" fas fa-exclamation-circle" aria-hidden="true"></span></p>';
                         echo '<p class="signing-message text-danger px-4 displayNone">رمز عبور اشتباه است. اگر رمز عبور خود را فراموش کرده اید از لینک:' . '<a href="#">رمز عبور خود را فراموش کرده ام</a>' . ' ، استفاده فرمایید.</p>';
