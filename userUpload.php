@@ -1,4 +1,5 @@
 <?php require "php/code_functions.php" ?>
+<!-- <?php require "php/uploadResult.php" ?> -->
 <!-- <?php session_start(); ?> -->
 <!DOCTYPE html lang="fa">
 <html lang="fa">
@@ -54,9 +55,17 @@
             <h3 class="position-absolute p-1 p-3">سفارش از شما</h3>
             <h3 class="position-absolute p-1 p-3">تولید با کیفیت و مرغوب از ما</h3>
         </section>
+        <section class="result">
+            <div>
+                <!-- result of the file submitting will go here -->
+                <!-- <?php require "php/uploadResult.php"; ?> -->
+                <!-- <?php showResult(); ?> -->
+            </div>
+        </section>
         <section class="file-upload container">
             <fieldset>
-            <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+            <form method="POST" action="php/uploadResult.php">
+            <!-- <?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?> -->
                 <div class="form-group">
                     <label class="text-light" for="file_name">نام سفارش:</label>
                     <input type="text" class="form-control" id="file_name" name="file_name" placeholder="نام طرح چاپی">
@@ -82,7 +91,7 @@
                 </div>
                 <div class="form-group">
                     <label class="text-light" for="file">فایلتان را از اینجا انتخاب کنید:</label>
-                    <input type="file" class="form-control" id="file" name="file" enctype="multipart/form-data">
+                    <input type="file" class="form-control" id="uploadingfile" name="uploadingfile" enctype="multipart/form-data">
                 </div>
                     <input class="btn btn-primary" id="submit" name="submit" type="submit" value="ارسال">
                 </form>            

@@ -57,6 +57,7 @@ function login_page_validation(){
                         <p class="signing-message successful text-success px-4 displayNone"> ' . $login_username . ' عزیز خوش آمدید . </p>            
                         ';
                         // getting the user info for the SESSION:
+                        $_SESSION['user_ID'] = $user_row['ID'];
                         $_SESSION['user_username'] = $user_row['username'];
                         $_SESSION['user_email'] = $user_row['email'];
                         $_SESSION['user_mobile_phone'] = $user_row['mobile_phone'];
