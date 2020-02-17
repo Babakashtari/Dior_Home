@@ -54,18 +54,37 @@
             <h3 class="position-absolute p-1 p-3">سفارش از شما</h3>
             <h3 class="position-absolute p-1 p-3">تولید با کیفیت و مرغوب از ما</h3>
         </section>
-        <section class="file-upload">
+        <section class="file-upload container">
             <fieldset>
-            <form method="POST" action="#">
+            <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
                 <div class="form-group">
-                    <label for="file_name">نام سفارش</label>
-                    <input type="text" class="form-control" id="file_name" placeholder="نام طرح چاپی">
+                    <label class="text-light" for="file_name">نام سفارش:</label>
+                    <input type="text" class="form-control" id="file_name" name="file_name" placeholder="نام طرح چاپی">
                 </div>
                 <div class="form-group">
-                    <label for="dimensions">ابعاد:</label>
-                    <input type="text" class="form-control" id="dimensions" placeholder="ابعاد طرح چاپی مورد نظر">
+                    <label class="text-light" for="dimensions">ابعاد:</label>
+                    <input type="text" class="form-control" id="dimensions" name="dimensions" placeholder="ابعاد طرح چاپی مورد نظر">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="form-group">
+                    <label class="text-light" for="category">گروه مربوطه:</label>
+                    <select class="form-control" id="category" name="category" onchange="subcategory_generator(this)">
+                        <option value="">انتخاب کنید</option>
+                        <option value="sleeping_products">کالای خواب</option>
+                        <option value="living_room_products">کالای اتاق پذیرایی</option>
+                        <option value="carpet_products">فرش</option>
+                    </select>
+                </div>
+                <div class="form-group sub displayNone">
+                    <label class="text-light" for="subcategory">زیر گروه مربوطه:</label>
+                    <select class="form-control" id="subcategory" name="subcategory">
+                        <!-- subcategory option elements are generated here via javascript -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="text-light" for="file">فایلتان را از اینجا انتخاب کنید:</label>
+                    <input type="file" class="form-control" id="file" name="file" enctype="multipart/form-data">
+                </div>
+                    <input class="btn btn-primary" id="submit" name="submit" type="submit" value="ارسال">
                 </form>            
             </fieldset>
         </section>
