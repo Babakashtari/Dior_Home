@@ -66,14 +66,13 @@
             <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
                 <div class="form-group">
                     <label class="text-light required" for="file_name">نام سفارش:</label>
-                    <input type="text" class="form-control" id="file_name" name="file_name" placeholder="violet" oninput="validate(/^[a-zA-Z0-9]{3,15}$/, this)">
+                    <input type="text" class="form-control" id="file_name" name="file_name" placeholder="violet" oninput="input_validate(/^[a-zA-Z0-9]{3,15}$/, this)">
                     <p class="text-right displayNone">نام سفارش باید یک کلمه ای و بین 3 تا 15 کاراکتر باشد.</p>
                 </div>
                 <div class="form-group">
                     <label class="text-light" for="dimensions">ابعاد:</label>
-                    <input type="text" class="form-control" id="dimensions" name="dimensions" placeholder="40X60" oninput="validate(/^[0-9][X*\/][0-9]$/, this)">
+                    <input type="text" class="form-control" id="dimensions" name="dimensions" placeholder="40X60" oninput="input_validate(/^[0-9][X*\/][0-9]$/, this)">
                     <p class="text-right displayNone">ابعاد عکس خود را با "X"، "/" و یا "*" مشخص کنید.</p>
-
                 </div>
                 <div class="form-group">
                     <label class="text-light required" for="category">گروه مربوطه:</label>
@@ -87,7 +86,7 @@
                 </div>
                 <div class="form-group sub displayNone">
                     <label class="text-light required" for="subcategory">زیر گروه مربوطه:</label>
-                    <select class="form-control" id="subcategory" name="subcategory" onchange="validate(/^[0-9][X*\/][0-9]$/, this)">
+                    <select class="form-control" id="subcategory" name="subcategory" onchange="select_validate(/^(کوسن|روبالشی|روتختی|ملافه|پرده|رومبلی|رومیزی|فرش|روفرشی|تابلوفرش)$/, this)">
                         <!-- subcategory option elements are generated here via javascript -->
                     </select>
                     <p class="text-right displayNone">حتما یک مورد را انتخاب نمایید.</p>

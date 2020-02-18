@@ -17,9 +17,15 @@
             $user_inserted_name = test_input($_POST['file_name'], "/^[a-zA-Z0-9]{3,15}$/");
             $file_dimension = test_input($_POST['dimensions'], "/^[0-9][X*\/][0-9]$/");
             $category = test_input($_POST['category'], '/^(فرش|کالای اتاق پذیرایی|کالای خواب)$/' );
-            $sub_category = test_input($_POST['subcategory'], '/^(روتختی|روبالشی|ملافه|کوسن|پرده|رومبلی|رومیزی|فرش|روفرشی|تابلوفرش)$/');
+            $sub_category = test_input($_POST['subcategory'], '/^(کوسن|روبالشی|روتختی|ملافه|پرده|رومبلی|رومیزی|فرش|روفرشی|تابلوفرش)$/');
             $uploader_ID = $_SESSION['user_ID'];
             $file = $_FILES['uploadingfile'];
+            var_dump($user_inserted_name);
+            var_dump($file_dimension);
+            var_dump($category);
+            var_dump($sub_category);
+            var_dump($uploader_ID);
+            var_dump($file);
 
             $file_name= $file['name'];
             $file_TMP_name= $file['tmp_name'];
