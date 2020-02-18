@@ -51,7 +51,7 @@
     <main>
     <!-- photo container section: -->
         <section class="container-fluid px-0 position-relative photo-container">
-            <img class="border border-dark" src="images/user_upload_images/user_upload.jpg" alt="ثبت سفارش آنلاین تابلوفرش روتختی رو بالشی و...">
+            <img class="border border-dark" src="images/user_upload_images/order_low.jpg" alt="ثبت سفارش آنلاین تابلوفرش روتختی رو بالشی و...">
             <h3 class="position-absolute p-1 p-3">سفارش از شما</h3>
             <h3 class="position-absolute p-1 p-3">تولید با کیفیت و مرغوب از ما</h3>
         </section>
@@ -71,7 +71,7 @@
                 </div>
                 <div class="form-group">
                     <label class="text-light" for="dimensions">ابعاد:</label>
-                    <input type="text" class="form-control" id="dimensions" name="dimensions" placeholder="40X60" oninput="input_validate(/^[0-9][X*\/][0-9]$/, this)">
+                    <input type="text" class="form-control" id="dimensions" name="dimensions" placeholder="40X60" oninput="input_validate(/^[0-9]{1,3}[X*\/][0-9]{1,3}$/, this)">
                     <p class="text-right displayNone">ابعاد عکس خود را با "X"، "/" و یا "*" مشخص کنید.</p>
                 </div>
                 <div class="form-group">
