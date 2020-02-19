@@ -80,7 +80,7 @@
                             $query_result = mysqli_query($database_connection, $search_query);
                             $query_result_array = mysqli_fetch_assoc($query_result);
                             if($query_result_array){
-                                echo '<p class="text-danger pt-4 pb-1"><span class=" fas fa-exclamation-circle" aria-hidden="true"></span></p>';
+                                echo '<p class="text-danger text-center pt-4 pb-1"><span class=" fas fa-exclamation-circle" aria-hidden="true"></span></p>';
                                 echo '<p class="text-center text-danger">فایلی با این نام قبلا در سیستم آپلود شده است.</p>';
                             }else{
                                 // checking if the uploader is admin:
@@ -99,6 +99,7 @@
                                 // inserting data into database using sql:
                                 $insert_query = "INSERT INTO products (product_directory, product_dimensions, product_name, product_category, product_subcategory, uploader_ID, approved) VALUES ('$file_destination', '$file_dimension', '$user_inserted_name', '$category', '$sub_category', '$uploader_ID', '$approved')";
                                 mysqli_query($database_connection, $insert_query);
+                                echo '<p class="text-success text-center"><span class=" fa fa-check border border-success" aria-hidden="true"></span></p>';
                                 echo "<p class='text-success text-center successful'>فایل مورد نظر با موفقیت آ‍پلود شد.</p>";
                             }
                         }

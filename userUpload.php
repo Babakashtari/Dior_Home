@@ -61,8 +61,8 @@
                 <?php validator(); ?>
             </div>
         </section>
-        <section class="file-upload container">
-            <fieldset>
+        <section class="file-upload container p-4 row ml-auto mr-auto">
+            <fieldset class="col-xs-12 col-md-5">
             <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
                 <div class="form-group">
                     <label class="text-light required" for="file_name">نام سفارش:</label>
@@ -98,6 +98,9 @@
                     <input class="btn btn-primary" id="submit" name="submit" type="submit" value="ارسال">
                 </form>            
             </fieldset>
+            <div class="preview col-xs-12 col-md-7">
+                <p class="text-light">پیش نمایش تصویر</p>
+            </div>
         </section>
     </main>
 
