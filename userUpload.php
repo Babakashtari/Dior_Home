@@ -10,7 +10,7 @@
         <meta http-equiv="content-security-policy" content="default-src 'self'; 
         style-src 'self' 'unsafe-inline'; 
         script-src 'self' 'unsafe-inline';
-        img-src 'self';
+        img-src 'self' blob:;
         font-src 'self';
         frame-src https://www.google.com;
         "  >
@@ -61,20 +61,20 @@
                 <?php validator(); ?>
             </div>
         </section>
-        <section class="file-upload container p-4 row ml-auto mr-auto">
-            <fieldset class="col-xs-12 col-md-5">
+        <section class="file-upload container row ml-auto mr-auto">
+            <fieldset class="col-xs-12 col-md-6 p-4">
             <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
-                <div class="form-group">
+                <div class="form-group py-1">
                     <label class="text-light required" for="file_name">نام سفارش:</label>
                     <input type="text" class="form-control" id="file_name" name="file_name" placeholder="violet" oninput="input_validate(/^[a-zA-Z0-9]{3,15}$/, this)">
                     <p class="text-right displayNone">نام سفارش باید یک کلمه ای و بین 3 تا 15 کاراکتر باشد.</p>
                 </div>
-                <div class="form-group">
+                <div class="form-group py-1">
                     <label class="text-light" for="dimensions">ابعاد:</label>
                     <input type="text" class="form-control" id="dimensions" name="dimensions" placeholder="40X60" oninput="input_validate(/^[0-9]{1,3}[X*\/][0-9]{1,3}$/, this)">
                     <p class="text-right displayNone">ابعاد عکس خود را با "X"، "/" و یا "*" مشخص کنید.</p>
                 </div>
-                <div class="form-group">
+                <div class="form-group py-1">
                     <label class="text-light required" for="category">گروه مربوطه:</label>
                     <select class="form-control" id="category" name="category" onchange="subcategory_generator(this)">
                         <option value="">انتخاب کنید</option>
@@ -91,15 +91,18 @@
                     </select>
                     <p class="text-right displayNone">حتما یک مورد را انتخاب نمایید.</p>
                 </div>
-                <div class="form-group">
+                <div class="form-group py-1">
                     <label class="text-light required" for="file">تصویر الگوی موردنظر:</label>
-                    <input type="file" class="form-control" id="uploadingfile" name="uploadingfile">
+                    <input type="file" class="form-control" id="uploadingfile" name="uploadingfile" onchange="preview(event)">
                 </div>
                     <input class="btn btn-primary" id="submit" name="submit" type="submit" value="ارسال">
                 </form>            
             </fieldset>
-            <div class="preview col-xs-12 col-md-7">
-                <p class="text-light">پیش نمایش تصویر</p>
+            <div class="preview-container pl-0 pr-0 pr-md-4 col-xs-12 col-md-6 pt-4 pt-md-0">
+                <div class="preview ">
+                    <p class="text-light text-center">پیش نمایش تصویر</p>
+                    <img >
+                </div>
             </div>
         </section>
     </main>
