@@ -92,6 +92,11 @@
                     <p class="text-right displayNone">حتما یک مورد را انتخاب نمایید.</p>
                 </div>
                 <div class="form-group py-1">
+                    <label class="text-light" for="description">توضیحات:</label>
+                    <textarea id="description" name="description" class="form-control" placeholder="توضیحات مربوط به سفارش" oninput="textarea_validation(/[a-zA-Z0-9ا-يئءیکآ]{1,}/, this)"></textarea>
+                    <p class="text-right displayNone">تعداد نفرات، جنس پارچه و...</p>
+                </div>
+                <div class="form-group py-1">
                     <label class="text-light required" for="file">تصویر الگوی موردنظر:</label>
                     <input type="file" class="form-control" id="uploadingfile" name="uploadingfile" onchange="preview(event)">
                 </div>
