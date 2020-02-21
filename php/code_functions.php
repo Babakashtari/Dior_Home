@@ -69,34 +69,34 @@ function header_generator(){
 <!-- products collapse bars: -->
         <div class="collapse text-white m-0 row flex-row-reverse" id="products">
             <div class="card col-6 col-sm-3 border border-right-1">
-                <div class="card-header text-dark"><a href="sleepingProducts.php">کالای خواب</a></div>
+                <div class="card-header text-dark"><a href="products.php">کالای خواب</a></div>
                 <div class="card-body">
                     <ul>
-                        <li><a href="#">روبالشی</a></li>
-                        <li><a href="#">روتختی</a></li>
-                        <li><a href="#">ملافه</a></li>
-                        <li><a href="#">کوسن</a></li>
+                        <li><a href="products.php">روبالشی</a></li>
+                        <li><a href="products.php">روتختی</a></li>
+                        <li><a href="products.php">ملافه</a></li>
+                        <li><a href="products.php">کوسن</a></li>
                     </ul>
                 </div>
             </div>
             <div class="card col-6 col-sm-3 border border-right-1">
-                <div class="card-header text-dark"><a href="#">اتاق نشیمن</a></div>
+                <div class="card-header text-dark"><a href="products.php">اتاق نشیمن</a></div>
                 <div class="card-body">
                     <ul>
-                        <li><a href="#">پرده</a></li>
-                        <li><a href="#">رومبلی</a></li>
-                        <li><a href="#">کوسن</a></li>
-                        <li><a href="#">رومیزی</a></li> 
+                        <li><a href="products.php">پرده</a></li>
+                        <li><a href="products.php">رومبلی</a></li>
+                        <li><a href="products.php">کوسن</a></li>
+                        <li><a href="products.php">رومیزی</a></li> 
                     </ul>
                 </div>
             </div>
             <div class="card col-6 col-sm-3 border border-right-1">
-                <div class="card-header text-dark"><a href="#">فرش</a></div>
+                <div class="card-header text-dark"><a href="products.php">فرش</a></div>
                 <div class="card-body">
                     <ul>
-                        <li><a href="#">فرش</a></li>
-                        <li><a href="#">تابلوفرش</a></li>
-                        <li><a href="#">روفرشی</a></li>
+                        <li><a href="products.php">فرش</a></li>
+                        <li><a href="products.php">تابلوفرش</a></li>
+                        <li><a href="products.php">روفرشی</a></li>
                     </ul>
                 </div>
             </div>
@@ -107,13 +107,8 @@ function header_generator(){
                         <li>
                             <a href="#">طاقه پیچی و ارسال </a>
                         </li>
-                        <li>';
-                            if(!empty($_SESSION['user_username'])){
-                                echo '<a href="userUpload.php">ثبت سفارش</a>';
-                            }else{
-                                echo '<a href="login.php">ثبت سفارش</a>';
-                            }
-                        echo '
+                        <li>
+                            <a href="userUpload.php">ثبت سفارش</a>
                         </li>
                     </ul>
                 </div>
@@ -228,7 +223,7 @@ function footer_generator(){
                 <ul>
                     <li class="text-right py-2"><a class="text-light " href="#">کاتالوگ محصولات</a></li>
                     <li class="text-right py-2 "><a class="text-light " href="#">چاپ دیجیتال/سابلیمیشن</a></li>
-                    <li class="text-right py-2"><a class="text-light " href="#">ثبت سفارش</a></li>
+                    <li class="text-right py-2"><a class="text-light " href="userUpload.php">ثبت سفارش</a></li>
                     <li class="text-right py-2"><a class="text-light " href="#">پیشنهادات ویژه</a></li>
                 </ul>
             </div>

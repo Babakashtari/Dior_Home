@@ -1,6 +1,9 @@
 <?php require "php/code_functions.php" ?>
 <?php require "php/uploadResult.php" ?>
-<?php session_start(); ?>
+<?php require "php/expiration.php" ?>
+<?php session_start();
+    expiration_check();
+?>
 <!DOCTYPE html lang="fa">
 <html lang="fa">
     <head>
@@ -67,12 +70,12 @@
                 <div class="form-group py-1">
                     <label class="text-light required" for="file_name">نام سفارش:</label>
                     <input type="text" class="form-control" id="file_name" name="file_name" placeholder="violet" oninput="input_validate(/^[a-zA-Z0-9]{3,15}$/, this)">
-                    <p class="text-right displayNone">نام سفارش باید یک کلمه ای و بین 3 تا 15 کاراکتر باشد.</p>
+                    <p class="text-right displayNone p-0 m-0">نام سفارش باید یک کلمه ای و بین 3 تا 15 کاراکتر باشد.</p>
                 </div>
                 <div class="form-group py-1">
                     <label class="text-light" for="dimensions">ابعاد:</label>
                     <input type="text" class="form-control" id="dimensions" name="dimensions" placeholder="40X60" oninput="input_validate(/^[0-9]{1,3}[X*\/][0-9]{1,3}$/, this)">
-                    <p class="text-right displayNone">ابعاد عکس خود را با "X"، "/" و یا "*" مشخص کنید.</p>
+                    <p class="text-right displayNone p-0 m-0">ابعاد عکس خود را با "X"، "/" و یا "*" مشخص کنید.</p>
                 </div>
                 <div class="form-group py-1">
                     <label class="text-light required" for="category">گروه مربوطه:</label>
@@ -82,19 +85,19 @@
                         <option value="living_room_products">کالای اتاق پذیرایی</option>
                         <option value="carpet_products">فرش</option>
                     </select>
-                    <p class="text-right displayNone">حتما یک مورد را انتخاب نمایید.</p>
+                    <p class="text-right displayNone p-0 m-0">حتما یک مورد را انتخاب نمایید.</p>
                 </div>
                 <div class="form-group sub displayNone">
                     <label class="text-light required" for="subcategory">زیر گروه مربوطه:</label>
                     <select class="form-control" id="subcategory" name="subcategory" onchange="select_validate(/^(کوسن|روبالشی|روتختی|ملافه|پرده|رومبلی|رومیزی|فرش|روفرشی|تابلوفرش)$/, this)">
                         <!-- subcategory option elements are generated here via javascript -->
                     </select>
-                    <p class="text-right displayNone">حتما یک مورد را انتخاب نمایید.</p>
+                    <p class="text-right displayNone p-0 m-0">حتما یک مورد را انتخاب نمایید.</p>
                 </div>
                 <div class="form-group py-1">
                     <label class="text-light" for="description">توضیحات:</label>
                     <textarea id="description" name="description" class="form-control" placeholder="توضیحات مربوط به سفارش" oninput="textarea_validation(/[a-zA-Z0-9ا-يئءیکآ]{1,}/, this)"></textarea>
-                    <p class="text-right displayNone">تعداد نفرات، جنس پارچه و...</p>
+                    <p class="text-right displayNone p-0 m-0">تعداد نفرات، جنس پارچه و...</p>
                 </div>
                 <div class="form-group py-1">
                     <label class="text-light required" for="file">تصویر الگوی موردنظر:</label>
@@ -104,7 +107,7 @@
                 </form>            
             </fieldset>
             <div class="preview-container pl-0 pr-0 pr-md-4 col-xs-12 col-md-6 pt-4 pt-md-0">
-                <div class="preview ">
+                <div class="preview">
                     <p class="text-light text-center">پیش نمایش تصویر</p>
                     <img >
                 </div>

@@ -1,14 +1,12 @@
 <?php session_start(); ?>
-
 <div>                
     <!-- validation pending spinners -->
     <div class=" spinner-grow text-muted"></div>
     <div class=" spinner-grow text-primary"></div>
     <div class=" spinner-grow text-success"></div>
 </div>
-
 <?php
-function login_page_validation(){
+function login_page_validation(){        
     function test_input($data, $regex) {
         $data = trim($data);
         $data = stripslashes($data);
@@ -36,11 +34,9 @@ function login_page_validation(){
         $signup_password = test_input($_POST["signup_password"], "/^[a-zA-Z0-9]{5,15}$/");
         $signup_email = email_test_input($_POST["signup_email"]);
         $signup_mobile_phone = test_input($_POST['signup_mobile_phone'], "/^09\d{9}$/");
-    
         // database connection:
         require "database_connection.php";
         // connect_database();
-
         // database connection check:
         if(!$database_connection){
            die('connection failed:'.mysqli_connect_error());
@@ -57,7 +53,10 @@ function login_page_validation(){
                         $_SESSION['user_username'] = $user_row['username'];
                         $_SESSION['user_email'] = $user_row['email'];
                         $_SESSION['user_mobile_phone'] = $user_row['mobile_phone'];
-                            
+                        $_SESSION['login_start_time'] = time();
+                        // expiration time is set to 30 minutes: 30 *60
+                        $_SESSION['login_expiration_time'] = $_SESSION['login_start_time'] + (30*60);
+
                         echo '
                         <p class="text-success pt-4 pb-1 displayNone"><span class=" fa fa-check" aria-hidden="true"></span></p>
                         <p class="signing-message successful text-success px-4 displayNone"> ' . $login_username . ' عزیز خوش آمدید . </p>  
@@ -69,7 +68,6 @@ function login_page_validation(){
                 }else{
                     echo '<p class="text-danger pt-4 pb-1 displayNone"><span class=" fas fa-exclamation-circle" aria-hidden="true"></span></p>';
                     echo '<p class="signing-message text-danger px-4 displayNone">کاربری با این مشخصات یافت نشد. اگر قبلا ثبت نام نکرده اید لطفا از منوی ثبت نام استفاده فرمایید.</p>';
-
                 }
             }
             // an attempt to signup:
@@ -81,7 +79,6 @@ function login_page_validation(){
                 // if a user with similar inputs exists:
                 if($user){
                     echo '<p class="text-danger pt-4 pb-1 displayNone"><span class=" fas fa-exclamation-circle" aria-hidden="true"></span></p>';
-
                     if($user['username'] === $signup_username){
                         echo '<p class="signing-message text-danger px-4 displayNone">کاربری قبلا با نام کاربری ' . $signup_username. ' ثبت نام کرده است.</p>';
                     }

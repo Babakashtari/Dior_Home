@@ -1,5 +1,10 @@
 <?php require "php/code_functions.php" ?>
-<!-- <?php session_start(); ?> -->
+<?php 
+    session_start();
+    if(isset( $_SESSION['user_username']) && isset($_SESSION['location'])){
+        header("location:". $_SESSION['location']);
+    }
+?>
 <!DOCTYPE html lang="fa">
 <html lang="fa">
     <head>

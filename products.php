@@ -1,5 +1,6 @@
 <?php require "php/code_functions.php" ?>
-<!-- <?php session_start(); ?> -->
+<?php require 'php/productsResults.php' ?>
+<?php session_start(); ?>
 <!DOCTYPE html lang="fa">
 <html lang="fa">
     <head>
@@ -13,7 +14,7 @@
         font-src 'self';
         frame-src https://www.google.com;
         "  >
-        <meta name="description"    content="کاتالوگ چاپ دیجیتالی و ساللیمیشن پیشگامان پودینه آتا روی انواع کالای خواب، کاتالوگ طرح سابلیمیشن و چاپ دیجیتال در ابعاد متفاوت " />
+        <meta name="description"    content="کاتالوگ محصولات دیجیتالی و ساللیمیشن پیشگامان پودینه آتا، کاتالوگ محصولات به دو صورت دیجیتالی و سابلیمیشن در ابعاد متفاوت عرضه می شود" />
         <meta name="author" content="Babak Ashtari" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
@@ -34,19 +35,58 @@
         <meta name="msapplication-TileImage" content="images/fav_icon/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
     <!-- font awesome -->
-    <link rel="stylesheet" href="CSS/all.min.css">
+        <link rel="stylesheet" href="CSS/all.min.css">
         <link rel="stylesheet" href="CSS/bootstrap.min.css.map">
         <link rel="stylesheet" href="CSS/bootstrap.min.css"/>
         <link rel="stylesheet" href="CSS/Normalizer.css">
         <link rel="stylesheet" href="Css/fonts.css">
         <link rel="stylesheet" href="CSS/header.css">
         <link rel="stylesheet" href="CSS/footer.css">
-        <link rel="stylesheet" href="CSS/sleepingProducts.css">
+        <link rel="stylesheet" href="CSS/products.css">
 
-    <title>پیشگامان پودینه - کالای خواب</title>
+    <title>پیشگامان پودینه آتا - کاتالوگ محصولات</title>
 </head>
 <body>
 <?php head(); ?>
+    <main class="container-fluid">
+        <section class="filter">
+            <div class="container p-2">
+            <fieldset class=" p-4 border border-primary">
+                <legend class="text-right text-light">جستجو بر اساس:</legend>
+            <form class=" row form-inline" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                <div class="form-group py-1 col-3 ">
+                    <input type="text" class="form-control col-md-3" id="file_name" name="file_name" placeholder="نام محصول: violet">
+                </div>
+                <div class="form-group py-1 col-3 ">
+                    <input type="text" class="form-control col-md-3" id="dimensions" name="dimensions" placeholder="ابعاد محصول: 40X60">
+                </div>
+                <div class="form-group py-1 col-3 ">
+                    <select class="form-control" id="category" name="category" onchange="subcategory_generator(this)">
+                        <option value="">دسته بندی محصولات</option>
+                        <option value="sleeping_products">کالای خواب</option>
+                        <option value="living_room_products">کالای اتاق پذیرایی</option>
+                        <option value="carpet_products">فرش</option>
+                    </select>
+                </div>
+                <div class="form-group sub displayNone  col-md-3 py-1">
+                    <select class="form-control" id="subcategory" name="subcategory" >
+                        <!-- subcategory option elements are generated here via javascript -->
+                    </select>
+                </div>
+                <div class="form-group py-1 col-12 ">
+                    <textarea id="description" name="description" class="form-control" placeholder="توضیحات" ></textarea>
+                </div>
+                <div class="form-group col-12 py-1">
+                    <input class="btn btn-primary col-12" id="submit" name="submit" type="submit" value="جستجو کن">
+                </div>
+                </form>            
+            </fieldset>
+            </div>
+        </section>
+        <section class="row py-5">
+            <?php card_generators(); ?>
+        </section>
+    </main>
 
 
 <?php footer_generator();?>
@@ -56,6 +96,6 @@
     <script src="JS/bootstrap.min.js"></script>
     <script src="JS/header.js"></script>
     <script src="JS/footer.js"></script>
-    <script src="JS/sleepingProducts.js"></script>
+    <script src="JS/products.js"></script>
 </body>
 </html>

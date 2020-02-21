@@ -1,9 +1,9 @@
 <?php require "php/code_functions.php" ?>
+<?php require "php/expiration.php" ?>
+
 <?php 
     session_start(); 
-    if(empty($_SESSION['user_username'])){
-        header('location:login.php');
-    }
+    expiration_check();
 ?>
 <!DOCTYPE html lang="fa">
 <html lang="en">
