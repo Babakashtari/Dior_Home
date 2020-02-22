@@ -69,12 +69,12 @@
             <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
                 <div class="form-group py-1">
                     <label class="text-light required" for="file_name">نام سفارش:</label>
-                    <input type="text" class="form-control" id="file_name" name="file_name" placeholder="violet" oninput="input_validate(/^[a-zA-Z0-9]{3,15}$/, this)">
+                    <input type="text" class="form-control" id="file_name" name="file_name" placeholder="violet" oninput="input_validate(/^[a-zA-Z\d\s]{3,15}$/, this)">
                     <p class="text-right displayNone p-0 m-0">نام سفارش باید یک کلمه ای و بین 3 تا 15 کاراکتر باشد.</p>
                 </div>
                 <div class="form-group py-1">
                     <label class="text-light" for="dimensions">ابعاد:</label>
-                    <input type="text" class="form-control" id="dimensions" name="dimensions" placeholder="40X60" oninput="input_validate(/^[0-9]{1,3}[X*\/][0-9]{1,3}$/, this)">
+                    <input type="text" class="form-control" id="dimensions" name="dimensions" placeholder="40X60" oninput="input_validate(/^\d{1,3}[Xx*\/]\d{1,3}$/, this)">
                     <p class="text-right displayNone p-0 m-0">ابعاد عکس خود را با "X"، "/" و یا "*" مشخص کنید.</p>
                 </div>
                 <div class="form-group py-1">

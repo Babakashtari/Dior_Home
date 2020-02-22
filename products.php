@@ -53,7 +53,7 @@
             <div class="container p-2">
             <fieldset class=" p-4 border border-primary">
                 <legend class="text-center text-light">جستجو بر اساس:</legend>
-            <form class=" row form-inline" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+            <form class=" row form-inline" method="GET" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                 <div class="form-group py-1">
                     <input type="text" class="form-control border border-primary" id="file_name" name="file_name" placeholder="نام محصول: violet">
                 </div>
@@ -61,16 +61,15 @@
                     <input type="text" class="form-control border border-primary" id="dimensions" name="dimensions" placeholder="ابعاد محصول: 40X60">
                 </div>
                 <div class="form-group py-1">
-                    <select class="form-control border border-primary" id="category" name="category" value="<?php category_generator(); ?>" onchange="subcategory_generator(this)">
+                    <select class="form-control border border-primary" id="category" name="category" onchange="subcategory_generator(this)">
                         <option value="">دسته بندی محصولات</option>
-                        <option value="sleeping_products">کالای خواب</option>
-                        <option value="living_room_products">کالای اتاق پذیرایی</option>
-                        <option value="carpet_products">فرش</option>
+                        <?php category_option_generator(); ?>
                     </select>
                 </div>
                 <div class="form-group sub displayNone py-1">
-                    <select class="form-control border border-primary" id="subcategory" name="subcategory" value = "<?php sub_category_generator(); ?>" >
+                    <select class="form-control border border-primary" id="subcategory" name="subcategory" >
                         <!-- subcategory option elements are generated here via javascript -->
+                        <?php subcategory_option_generator(); ?>
                     </select>
                 </div>
                 <div class="form-group py-1 col-12 ">
