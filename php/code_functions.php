@@ -69,34 +69,34 @@ function header_generator(){
 <!-- products collapse bars: -->
         <div class="collapse text-white m-0 row flex-row-reverse" id="products">
             <div class="card col-6 col-sm-3 border border-right-1">
-                <div class="card-header text-dark"><a href="products.php">کالای خواب</a></div>
+                <div class="card-header text-dark"><a href="products.php?category=sleeping_products">کالای خواب</a></div>
                 <div class="card-body">
                     <ul>
-                        <li><a href="products.php">روبالشی</a></li>
-                        <li><a href="products.php">روتختی</a></li>
-                        <li><a href="products.php">ملافه</a></li>
-                        <li><a href="products.php">کوسن</a></li>
+                        <li><a href="products.php?subcategory=روبالشی">روبالشی</a></li>
+                        <li><a href="products.php?subcategory=روتختی">روتختی</a></li>
+                        <li><a href="products.php?subcategory=ملافه">ملافه</a></li>
+                        <li><a href="products.php?subcategory=کوسن">کوسن</a></li>
                     </ul>
                 </div>
             </div>
             <div class="card col-6 col-sm-3 border border-right-1">
-                <div class="card-header text-dark"><a href="products.php">اتاق نشیمن</a></div>
+                <div class="card-header text-dark"><a href="products.php?category=living_rooms_products">اتاق نشیمن</a></div>
                 <div class="card-body">
                     <ul>
-                        <li><a href="products.php">پرده</a></li>
-                        <li><a href="products.php">رومبلی</a></li>
-                        <li><a href="products.php">کوسن</a></li>
-                        <li><a href="products.php">رومیزی</a></li> 
+                        <li><a href="products.php?subcategory=‍پرده">پرده</a></li>
+                        <li><a href="products.php?subcategory=رومبلی">رومبلی</a></li>
+                        <li><a href="products.php?subcategory=کوسن">کوسن</a></li>
+                        <li><a href="products.php?subcategory=رومیزی">رومیزی</a></li> 
                     </ul>
                 </div>
             </div>
             <div class="card col-6 col-sm-3 border border-right-1">
-                <div class="card-header text-dark"><a href="products.php">فرش</a></div>
+                <div class="card-header text-dark"><a href="products.php?category=carpet_produdcts">فرش</a></div>
                 <div class="card-body">
                     <ul>
-                        <li><a href="products.php">فرش</a></li>
-                        <li><a href="products.php">تابلوفرش</a></li>
-                        <li><a href="products.php">روفرشی</a></li>
+                        <li><a href="products.php?subcategory=فرش">فرش</a></li>
+                        <li><a href="products.php?subcategory=تابلوفرش">تابلوفرش</a></li>
+                        <li><a href="products.php?subcategory=روفرشي">روفرشی</a></li>
                     </ul>
                 </div>
             </div>

@@ -1,4 +1,20 @@
 <?php 
+    function category_value_generator(){
+        if(isset($_GET['category'])){
+            $category = $_GET['category'];
+        }else{
+            $category = "";
+        }
+        echo $category;
+    }
+    function sub_category_generator(){
+        if(isset($_GET['subcategory'])){
+            $subcategory = $_GET['subcategory'];
+        }else{
+            $subcategory = "";
+        }
+        echo $subcategory;
+    }
     function card_generators(){
         $number_of_results_per_page = 12;
         $products_name = [];
@@ -13,12 +29,16 @@
         $card_text = ["چاپ طرح روبالشی، روتختی و کوسن", "چاپ انواع طرح و الگوی روتختی", "چاپ انواع طرح و الگوی روبالشی", "چاپ انواع الگو و طرح روی پارچه مبل", "طراحی و چاپ انواع عکس، الگو و لوگو برای رومبلی", "چاپ انواع طرح و الگو روی کوسن", "طراحی و چاپ انواع عکس و الگوی رومیزی", "چاپ الگو و طرح ملحفه پرده ای", "چاپ الگو، طرح و عکس روی فرش، روفرشی و تابلوفرش", "چاپ انواع طرح و عکس برای روفرشی", "چاپ دیجیتالی عکس و الگو جهت تابلوفرش", "پذیرش هرگونه طرح و الگوی جدید جهت چاپ"];
     
         for($i = 0 ; $i < $number_of_results_per_page ; $i++){
-            echo '<div class="col-xs-12 col-sm-6 col-md-3 p-3">';
-            echo    '<div class="card border border-primary">';
+            echo '<div class="col-xs-12 col-md-6 col-lg-4 p-3">';
+            echo    '<div class="card border border-bottom-primary">';
             echo        '<img class="card-img-top" src="' . $card_images[$i]. '" alt="'. $card_header[$i] . '">';
             echo        '<div class="card-body text-center ">';
-            echo            '<h6 class="card-title ">' . $card_header[$i] . '</h6>';
-            echo            '<p class="card-text">' . $card_text[$i] . '<p class="card-text"></p>';
+            echo            '<h6 class="card-title ">نام محصول: ' . $card_header[$i] . '</h6>';
+            echo            '<p class="card-text text-right">ابعاد:</p>';
+            echo            '<p class="card-text text-right">دسته بندی:</p>';
+            echo            '<p class="card-text text-right">زیرمجموعه:</p>';
+            echo            '<p class="card-text text-right">توضیحات:</p>';
+            echo            '<p class="card-text text-right">' . $card_text[$i] . '</p>';
             echo            '<a href="#" class="btn btn-primary">' . 'افزودن به سبد خرید' . '</a>';
             echo        '</div>';
             echo    '</div>';    

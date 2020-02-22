@@ -52,32 +52,32 @@
         <section class="filter">
             <div class="container p-2">
             <fieldset class=" p-4 border border-primary">
-                <legend class="text-right text-light">جستجو بر اساس:</legend>
+                <legend class="text-center text-light">جستجو بر اساس:</legend>
             <form class=" row form-inline" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                <div class="form-group py-1 col-3 ">
-                    <input type="text" class="form-control col-md-3" id="file_name" name="file_name" placeholder="نام محصول: violet">
+                <div class="form-group py-1">
+                    <input type="text" class="form-control border border-primary" id="file_name" name="file_name" placeholder="نام محصول: violet">
                 </div>
-                <div class="form-group py-1 col-3 ">
-                    <input type="text" class="form-control col-md-3" id="dimensions" name="dimensions" placeholder="ابعاد محصول: 40X60">
+                <div class="form-group py-1">
+                    <input type="text" class="form-control border border-primary" id="dimensions" name="dimensions" placeholder="ابعاد محصول: 40X60">
                 </div>
-                <div class="form-group py-1 col-3 ">
-                    <select class="form-control" id="category" name="category" onchange="subcategory_generator(this)">
+                <div class="form-group py-1">
+                    <select class="form-control border border-primary" id="category" name="category" value="<?php category_generator(); ?>" onchange="subcategory_generator(this)">
                         <option value="">دسته بندی محصولات</option>
                         <option value="sleeping_products">کالای خواب</option>
                         <option value="living_room_products">کالای اتاق پذیرایی</option>
                         <option value="carpet_products">فرش</option>
                     </select>
                 </div>
-                <div class="form-group sub displayNone  col-md-3 py-1">
-                    <select class="form-control" id="subcategory" name="subcategory" >
+                <div class="form-group sub displayNone py-1">
+                    <select class="form-control border border-primary" id="subcategory" name="subcategory" value = "<?php sub_category_generator(); ?>" >
                         <!-- subcategory option elements are generated here via javascript -->
                     </select>
                 </div>
                 <div class="form-group py-1 col-12 ">
-                    <textarea id="description" name="description" class="form-control" placeholder="توضیحات" ></textarea>
+                    <textarea id="description" name="description" class="form-control border border-primary" placeholder="توضیحات" ></textarea>
                 </div>
                 <div class="form-group col-12 py-1">
-                    <input class="btn btn-primary col-12" id="submit" name="submit" type="submit" value="جستجو کن">
+                    <input class="btn btn-primary col-12 border border-primary" id="submit" name="submit" type="submit" value="جستجو کن">
                 </div>
                 </form>            
             </fieldset>
