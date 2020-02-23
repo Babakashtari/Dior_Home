@@ -69,34 +69,34 @@ function header_generator(){
 <!-- products collapse bars: -->
         <div class="collapse text-white m-0 row flex-row-reverse" id="products">
             <div class="card col-6 col-sm-3 border border-right-1">
-                <div class="card-header text-dark"><a href="products.php?category=sleeping_products">کالای خواب</a></div>
+                <div class="card-header text-dark"><a href="products.php?product_category=sleeping_products">کالای خواب</a></div>
                 <div class="card-body">
                     <ul>
-                        <li><a href="products.php?category=sleeping_products&subcategory=روبالشی">روبالشی</a></li>
-                        <li><a href="products.php?category=sleeping_products&subcategory=روتختی">روتختی</a></li>
-                        <li><a href="products.php?category=sleeping_products&subcategory=ملافه">ملافه</a></li>
-                        <li><a href="products.php?category=sleeping_products&subcategory=کوسن">کوسن</a></li>
+                        <li><a href="products.php?product_category=sleeping_products&product_subcategory=روبالشی">روبالشی</a></li>
+                        <li><a href="products.php?product_category=sleeping_products&product_subcategory=روتختی">روتختی</a></li>
+                        <li><a href="products.php?product_category=sleeping_products&product_subcategory=ملافه">ملافه</a></li>
+                        <li><a href="products.php?product_category=sleeping_products&product_subcategory=کوسن">کوسن</a></li>
                     </ul>
                 </div>
             </div>
             <div class="card col-6 col-sm-3 border border-right-1">
-                <div class="card-header text-dark"><a href="products.php?category=living_room_products">اتاق نشیمن</a></div>
+                <div class="card-header text-dark"><a href="products.php?product_category=living_room_products">اتاق نشیمن</a></div>
                 <div class="card-body">
                     <ul>
-                        <li><a href="products.php?category=living_room_products&subcategory=‍پرده">پرده</a></li>
-                        <li><a href="products.php?category=living_room_products&subcategory=رومبلی">رومبلی</a></li>
-                        <li><a href="products.php?category=living_room_products&subcategory=کوسن">کوسن</a></li>
-                        <li><a href="products.php?category=living_room_products&subcategory=رومیزی">رومیزی</a></li> 
+                        <li><a href="products.php?product_category=living_room_products&product_subcategory=‍پرده">پرده</a></li>
+                        <li><a href="products.php?product_category=living_room_products&product_subcategory=رومبلی">رومبلی</a></li>
+                        <li><a href="products.php?product_category=living_room_products&product_subcategory=کوسن">کوسن</a></li>
+                        <li><a href="products.php?product_category=living_room_products&product_subcategory=رومیزی">رومیزی</a></li> 
                     </ul>
                 </div>
             </div>
             <div class="card col-6 col-sm-3 border border-right-1">
-                <div class="card-header text-dark"><a href="products.php?category=carpet_products">فرش</a></div>
+                <div class="card-header text-dark"><a href="products.php?product_category=carpet_products">فرش</a></div>
                 <div class="card-body">
                     <ul>
-                        <li><a href="products.php?category=carpet_products&subcategory=فرش">فرش</a></li>
-                        <li><a href="products.php?category=carpet_products&subcategory=تابلوفرش">تابلوفرش</a></li>
-                        <li><a href="products.php?category=carpet_products&subcategory=روفرشی">روفرشی</a></li>
+                        <li><a href="products.php?product_category=carpet_products&product_subcategory=فرش">فرش</a></li>
+                        <li><a href="products.php?product_category=carpet_products&product_subcategory=تابلوفرش">تابلوفرش</a></li>
+                        <li><a href="products.php?product_category=carpet_products&product_subcategory=روفرشی">روفرشی</a></li>
                     </ul>
                 </div>
             </div>

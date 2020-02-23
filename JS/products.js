@@ -1,6 +1,6 @@
-const category_selector = document.querySelector('main>section>div>fieldset>form>div.form-group>select[name="category"]');
+const category_selector = document.querySelector('main>section>div>fieldset>form>div.form-group>select[name="product_category"]');
 const subcategory_container = document.querySelector("main>section>div>fieldset>form>div.form-group.sub");
-const subcategory_selector = document.querySelector('main>section>div>fieldset>form>div.form-group>select[name="subcategory"]');
+const subcategory_selector = document.querySelector('main>section>div>fieldset>form>div.form-group>select[name="product_subcategory"]');
 const inputs = document.querySelectorAll("main>section>div>fieldset>form>div.form-group");
 
 const input_aligner = () => {
@@ -22,9 +22,9 @@ input_aligner();
 const subcategory_generator = main_category => {
     const categories = ["sleeping_products", "living_room_products", "carpet_products"];
     const values = [
-        ["روبالشی", "روتختی", "ملافه", "کوسن"],
-        ["پرده", "رومبلی", "کوسن", "رومیزی"],
-        ["فرش", "روفرشی", "تابلوفرش"]
+        ["انتخاب کنید", "روبالشی", "روتختی", "ملافه", "کوسن"],
+        ["انتخاب کنید", "پرده", "رومبلی", "کوسن", "رومیزی"],
+        ["انتخاب کنید", "فرش", "روفرشی", "تابلوفرش"]
     ];
     const selected_category = main_category.value;
     if (selected_category) {
@@ -33,6 +33,10 @@ const subcategory_generator = main_category => {
     } else {
         subcategory_container.classList.add("displayNone");
         input_aligner();
+        const options = subcategory_selector.querySelectorAll("option");
+        for (let i = 0; i < options.length; i++) {
+            subcategory_selector.remove(options[i]);
+        }
     }
     for (let i = 0; i < values.length; i++) {
         if (selected_category === categories[i]) {
@@ -40,7 +44,11 @@ const subcategory_generator = main_category => {
                 const option = document.createElement("option");
                 const textNode = document.createTextNode(item);
                 option.appendChild(textNode);
-                option.setAttribute("value", item);
+                if (item === "انتخاب کنید") {
+                    option.setAttribute("value", "");
+                } else {
+                    option.setAttribute("value", item);
+                }
                 option.classList.add(categories[i]);
                 subcategory_selector.appendChild(option);
             });

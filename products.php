@@ -55,25 +55,25 @@
                 <legend class="text-center text-light">جستجو بر اساس:</legend>
             <form class=" row form-inline" method="GET" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                 <div class="form-group py-1">
-                    <input type="text" class="form-control border border-primary" id="file_name" name="file_name" placeholder="نام محصول: violet">
+                    <input type="text" class="form-control border border-primary" id="product_name" name="product_name" placeholder="نام محصول: violet">
                 </div>
                 <div class="form-group py-1">
-                    <input type="text" class="form-control border border-primary" id="dimensions" name="dimensions" placeholder="ابعاد محصول: 40X60">
+                    <input type="text" class="form-control border border-primary" id="product_dimensions" name="product_dimensions" placeholder="ابعاد محصول: 40X60">
                 </div>
                 <div class="form-group py-1">
-                    <select class="form-control border border-primary" id="category" name="category" onchange="subcategory_generator(this)">
+                    <select class="form-control border border-primary" id="product_category" name="product_category" onchange="subcategory_generator(this)">
                         <option value="">دسته بندی محصولات</option>
                         <?php category_option_generator(); ?>
                     </select>
                 </div>
                 <div class="form-group sub displayNone py-1">
-                    <select class="form-control border border-primary" id="subcategory" name="subcategory" >
+                    <select class="form-control border border-primary" id="product_subcategory" name="product_subcategory" >
                         <!-- subcategory option elements are generated here via javascript -->
                         <?php subcategory_option_generator(); ?>
                     </select>
                 </div>
                 <div class="form-group py-1 col-12 ">
-                    <textarea id="description" name="description" class="form-control border border-primary" placeholder="توضیحات" ></textarea>
+                    <textarea id="product_description" name="product_description" class="form-control border border-primary" placeholder="توضیحات" ></textarea>
                 </div>
                 <div class="form-group col-12 py-1">
                     <input class="btn btn-primary col-12 border border-primary" id="submit" name="submit" type="submit" value="جستجو کن">
@@ -82,8 +82,13 @@
             </fieldset>
             </div>
         </section>
-        <section class="row py-5">
+        <section class="row justify-content-center py-5">
             <?php card_generators(); ?>
+        </section>
+        <section class="products-pagination">
+            <div>
+                <?php pagination(); ?>
+            </div>
         </section>
     </main>
 
