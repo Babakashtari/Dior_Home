@@ -22,10 +22,8 @@
         }        
     }
         
-    $approved = "YES";
-
     $inputs_arr = [];
-
+    array_push($inputs_arr, "approved='YES'");
     if(!empty($_GET['product_name'])){
         $product_name = test_input($_GET['product_name'], "/^[a-zA-Z\d\s]{3,15}$/");
         if(!empty($product_name)){
@@ -56,10 +54,6 @@
             array_push($inputs_arr, "product_description='$product_description'");
         }
     }
-
-    if(count($inputs_arr) == 0){
-        $query = " SELECT * FROM products ";
-    }else{
         $query = " SELECT * FROM products WHERE ";
         for($l=0;$l<count($inputs_arr); $l++){
             if($l == 0){
@@ -68,7 +62,6 @@
                 $query .= " AND" . " ". $inputs_arr[$l];
             }
         }
-    }
     // getting the total number of pages:
     require "database_connection.php";
     if(!$database_connection){
@@ -210,7 +203,6 @@ function subcategory_option_generator(){
     if(!empty($_GET['product_subcategory']) ){
         $subcategories = ['روبالشی', 'روتختی', 'ملافه', 'کوسن', 'پرده', 'رومبلی', 'رومیزی', 'فرش', 'روفرشی', 'تابلوفرش'];
         if(in_array($_GET['product_subcategory'], $subcategories)){
-            // echo '<option value="">انتخاب کنید</option>';
             echo '<option value="' . $_GET['product_subcategory']. '"' . ' selected="selected">' . $_GET['product_subcategory'] . '</option>';
         }
     }
@@ -234,11 +226,23 @@ function card_generators(){
                 echo    '<div class="card border border-primary">';
                 echo        '<img class="card-img-top" src="' . $row['product_directory']. '" alt="'. $row['product_description'] . '">';
                 echo        '<div class="card-body text-center ">';
-                echo            '<h6 class="card-title ">نام محصول: ' . $row['product_name'] . '</h6>';
-                echo            '<p class="card-text text-right">ابعاد:'. $row['product_dimensions'] .'</p>';
-                echo            '<p class="card-text text-right">دسته بندی:'. $row['product_category'] .'</p>';
-                echo            '<p class="card-text text-right">زیرمجموعه:'. $row['product_subcategory'] .'</p>';
-                echo            '<p class="card-text text-right">توضیحات: '. $row['product_description'] .'</p>';
+                echo            '<h6 class="card-title ">نام محصول:<span class="text-success"> ' . $row['product_name'] . '</span></h6>';
+                echo            '<p class="card-text text-right">ابعاد:<span class="text-success"> ';
+                if(!empty($row['product_dimensions'] )){
+                  echo  $row['product_dimensions']; 
+                }else{
+                    echo 'همه ابعاد';
+                }
+                echo            '</span></p>';
+                echo            '<p class="card-text text-right">دسته بندی:<span class="text-success"> '. $row['product_category'] .'</span></p>';
+                echo            '<p class="card-text text-right">زیرمجموعه:<span class="text-success"> '. $row['product_subcategory'] .'</span></p>';
+                echo            '<p class="card-text text-right">توضیحات:<span class="text-success"> ';
+                if(!empty($row['product_description'])){
+                    echo    $row['product_description']; 
+                }else{
+                    echo 'ندارد';
+                }
+                echo            '</span></p>';
                 echo            '<a href="#" class="btn btn-primary">' . 'افزودن به سبد خرید' . '</a>';
                 echo        '</div>';
                 echo    '</div>';    

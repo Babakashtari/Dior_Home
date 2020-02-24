@@ -7,8 +7,13 @@ function jumbotron_generator(){
                 <p class="mx-0 px-0 ">';
     user_name_show();
     echo '
-                به سایت رسمی شرکت پیشگامان پودینه آتا خوش آمدید.</p>
-                <div itemscope itemtype="https://schema.org/LocalBusiness">
+                به سایت رسمی شرکت پیشگامان پودینه آتا خوش آمدید.</p>';
+    if(!empty($_SESSION['user_username'])){
+        echo '<p class="mx-0 px-0"><a class="text-danger" href="php/expiration.php?logout=logout">از اينجا خارج شويد!</a></p>';
+    }else{
+        echo '<p class="mx-0 px-0"><a class="text-primary" href="php/expiration.php?logout=logout">از اينجا وارد شويد!</a></p>';
+    }
+    echo            '<div itemscope itemtype="https://schema.org/LocalBusiness">
                     <p itemprop="name">
                         <span itemprop="telephone"><a class="text-dark" href="tel:09121158204"><span class="Yekan">09121158204</span><i class="fa fa-phone px-1"></i></a></span>
                     </p>

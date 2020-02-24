@@ -4,6 +4,10 @@
     if(isset( $_SESSION['user_username']) && isset($_SESSION['location'])){
         header("location:". $_SESSION['location']);
     }
+    if(isset($_GET['logout']) && $_GET['logout'] == "logout"){
+        require "php/expiration.php";
+        end_session();
+    }
 ?>
 <!DOCTYPE html lang="fa">
 <html lang="fa">

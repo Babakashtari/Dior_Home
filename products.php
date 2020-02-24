@@ -92,7 +92,6 @@
         </section>
     </main>
 
-
 <?php footer_generator();?>
     <?php canvas_generator(); ?>
     <script src="JS/canvas.js"></script>
