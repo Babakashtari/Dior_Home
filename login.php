@@ -8,8 +8,7 @@
     }
     // when user logs in in the same login.php page:
     if(!empty($_SESSION['user_username']) && empty($_SESSION['location'])){
-        echo "user_username is not set";
-        // header("location:login.php");
+        header("location:userModification.php");
     }
 ?>
 <!DOCTYPE html lang="fa">

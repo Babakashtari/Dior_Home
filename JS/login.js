@@ -141,7 +141,7 @@ const signing_validation = event => {
                 if (validation_result_message.classList.contains("successful")) {
                     setTimeout(() => {
                         change_url();
-                    }, 2000);
+                    }, 1000);
                 }
             }
         };
