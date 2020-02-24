@@ -1,12 +1,15 @@
 <?php require "php/code_functions.php" ?>
 <?php 
     session_start();
-    if(isset( $_SESSION['user_username']) && isset($_SESSION['location'])){
+
+    // when user is headed towards login.php page via another page which requires logging in:
+    if(!empty($_SESSION['user_username']) && !empty($_SESSION['location'])){
         header("location:". $_SESSION['location']);
     }
-    if(isset($_GET['logout']) && $_GET['logout'] == "logout"){
-        require "php/expiration.php";
-        end_session();
+    // when user logs in in the same login.php page:
+    if(!empty($_SESSION['user_username']) && empty($_SESSION['location'])){
+        echo "user_username is not set";
+        // header("location:login.php");
     }
 ?>
 <!DOCTYPE html lang="fa">

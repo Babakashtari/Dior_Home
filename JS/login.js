@@ -105,6 +105,12 @@ const close_modal = () => {
         });
     }
 };
+// self invoking function for page reload for making logout text turn into green in the jumbotron:
+// (() => {
+//     setTimeout(() => {
+//         location.replace("login.php");
+//     }, 1000);
+// })();
 const change_url = () => {
     location.replace("login.php");
 };

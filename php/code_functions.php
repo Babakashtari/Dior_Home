@@ -9,9 +9,9 @@ function jumbotron_generator(){
     echo '
                 به سایت رسمی شرکت پیشگامان پودینه آتا خوش آمدید.</p>';
     if(!empty($_SESSION['user_username'])){
-        echo '<p class="mx-0 px-0"><a class="text-danger" href="php/expiration.php?logout=logout">از اينجا خارج شويد!</a></p>';
+        echo '<p class="mx-0 px-0"><a class="text-danger" href="php/session_destroyer.php">از اينجا خارج شويد!</a></p>';
     }else{
-        echo '<p class="mx-0 px-0"><a class="text-primary" href="php/expiration.php?logout=logout">از اينجا وارد شويد!</a></p>';
+        echo '<p class="mx-0 px-0"><a class="text-primary" href="login.php">از اينجا وارد شويد!</a></p>';
     }
     echo            '<div itemscope itemtype="https://schema.org/LocalBusiness">
                     <p itemprop="name">
