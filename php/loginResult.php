@@ -73,6 +73,7 @@ function login_page_validation(){
             // an attempt to signup:
             elseif(!empty($signup_username) && !empty($signup_password) && !empty($signup_email) && !empty($signup_mobile_phone)){
                 // check if the username and email already exists:
+                    echo 'if conditional entered';
                 $user_check_query = "SELECT * FROM users WHERE username='$signup_username' OR email='$signup_email' OR mobile_phone='$signup_mobile_phone' LIMIT 1";
                 $result = mysqli_query($database_connection, $user_check_query);
                 $user = mysqli_fetch_assoc($result);

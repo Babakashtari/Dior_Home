@@ -234,7 +234,15 @@ function card_generators(){
                     echo 'همه ابعاد';
                 }
                 echo            '</span></p>';
-                echo            '<p class="card-text text-right">دسته بندی:<span class="text-success"> '. $row['product_category'] .'</span></p>';
+                echo            '<p class="card-text text-right">دسته بندی:<span class="text-success"> ';
+                if($row['product_category'] == "sleeping_products"){
+                    echo "کالای خواب";
+                } elseif($row['product_category'] == "living_room_products"){
+                    echo "کالای اتاق پذیرایی";
+                }elseif($row['product_category'] == "carpet_products"){
+                    echo "فرش";
+                }
+                echo '</span></p>';
                 echo            '<p class="card-text text-right">زیرمجموعه:<span class="text-success"> '. $row['product_subcategory'] .'</span></p>';
                 echo            '<p class="card-text text-right">توضیحات:<span class="text-success"> ';
                 if(!empty($row['product_description'])){
