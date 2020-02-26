@@ -88,7 +88,7 @@
                         <div class="form-group">
                             <label for="username">نام كاربری:</label>
                             <input class="form-control" type="text" name="username" id="username" placeholder="Babak" oninput="validate(/^[A-Z][a-z0-9]{2,}$/,this)">
-                            <p class='displayNone'>نام کاربری باید حداقل 3 حرف داشته باشد و با حروف بزرگ آغاز شود.</p>
+                            <p class='displayNone'>نام کاربری باید به حروف لاتین باشد، حداقل 3 حرف داشته باشد و با حروف بزرگ آغاز شود.</p>
                         </div>
                         <div class="form-group">
                             <label for="pass">رمز عبور:</label>
@@ -114,8 +114,8 @@
                     <form action="#" method="post" class="p-1 text-right text-light">
                         <div class="form-group">
                             <label for="username">نام كاربری:</label>
-                            <input class="form-control" type="text" name="username" id="username" placeholder="Babak" oninput="validate(/^[A-Z][a-z0-9]{4,10}$/, this)">
-                            <p class='displayNone'>نام کاربری باید حداقل 5 حرف داشته باشد و با حروف بزرگ آغاز شود.</p>
+                            <input class="form-control" type="text" name="username" id="username" placeholder="Babak" oninput="validate(/^[A-Z][a-z0-9]{2,10}$/, this)">
+                            <p class='displayNone'>نام کاربری باید به حروف لاتین باشد، حداقل 3 حرف داشته باشد و با حروف بزرگ آغاز شود.</p>
                         </div>
                         <div class="form-group">
                             <label for="pass">رمز عبور:</label>

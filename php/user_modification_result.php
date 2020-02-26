@@ -54,8 +54,8 @@
                 echo '<p class="text-danger pt-4 pb-1 displayNone"><span class=" fas fa-exclamation-circle" aria-hidden="true"></span></p>';
                 echo '<p class="signing-message text-danger px-4 displayNone">فیلد های "نام" و "نام خانوادگی" نباید خالی بمانند.</p>';
             }else{
-                $first_name = test_input($_POST["first_name"], "/^[A-z][a-z]{2,}$/");
-                $last_name = test_input($_POST["last_name"], "/^[A-z][a-z]{2,}$/");
+                $first_name = test_input($_POST["first_name"], "/^[A-Z][a-z]{2,}$/");
+                $last_name = test_input($_POST["last_name"], "/^[A-Z][a-z]{2,}$/");
                 $age = test_input($_POST["age"], "/^(([1][2-9])|([2-7][0-9]))$/");
                 $gender = test_input($_POST["gender"], "/^(male)|(female)$/");
 

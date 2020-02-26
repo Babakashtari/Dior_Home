@@ -319,14 +319,14 @@ function user_modification_form_generator(){
                 <form action="#" method="post" class="text-light personal-info">
                     <div class="form-group">
                         <label class="required" for="first_name">نام:</label>
-                        <input type="text" class="form-control form-input" id="first_name" name="first_name" placeholder="Babak" oninput="form_validator(/^[A-z][a-z]{2,}$/, this)" value="';
+                        <input type="text" class="form-control form-input" id="first_name" name="first_name" placeholder="Babak" oninput="form_validator(/^[A-Z][a-z]{2,}$/, this)" value="';
                         if(!empty($first_name)){echo $first_name;}
                         echo '">
-                        <p class="displayNone">نام باید با حروف بزنگ آغاز شود و حداقل 3 کاراکتر داشته باشد.</p>
+                        <p class="displayNone">نام باید به لاتين باشد با حرف بزنگ آغاز شود و حداقل 3 کاراکتر داشته باشد.</p>
                     </div>
                     <div class="form-group">
                         <label class="required" for="last_name">نام خانوادگی:</label>
-                        <input type="text" class="form-control form-input" id="last_name" name="last_name" placeholder="Ashtari" oninput="form_validator(/^[A-z][a-z]{2,}$/, this)" value="';
+                        <input type="text" class="form-control form-input" id="last_name" name="last_name" placeholder="Ashtari" oninput="form_validator(/^[A-Z][a-z]{2,}$/, this)" value="';
                         if(!empty($last_name)){echo $last_name;}
                         echo '">
                         <p class="displayNone">نام خانوادگی باید با حروف بزنگ آغاز شود و حداقل 3 کاراکتر داشته باشد.</p>
@@ -336,7 +336,7 @@ function user_modification_form_generator(){
                         <input type="number" min="0" max="80" class="form-control form-input" id="age" name="age" placeholder="25" oninput="form_validator(/^(([1][2-9])|([2-7][0-9]))$/, this)" value="';
                         if(!empty($age)){echo $age;}
                         echo '">
-                        <p class="displayNone">تنها اعداد بین 12 و 79 قابل قبول هستند.</p>
+                        <p class="displayNone">تنها اعداد بین 12 و 80 قابل قبول هستند.</p>
                     </div>
                     <div class="form-group">
                         <label for="gender">جنسیت:</label>';
@@ -436,7 +436,7 @@ function user_modification_form_generator(){
                         <input type="text" class="form-control form-input" id="user_name" name="user_name" placeholder="Babak" oninput="form_validator(/^[A-Z][a-z0-9]{3,15}$/,this)" value="';
                         if(!empty($username)){echo $username;}
                         echo '">
-                        <p class="displayNone">نام کاربری باید با حرف بزرگ آغاز شود و فقط از حروف و اعداد تشکیل شده باشد</p>
+                        <p class="displayNone">نام کاربری باید لاتین باشد، با حرف بزرگ آغاز شود و فقط از حروف و اعداد تشکیل شده باشد</p>
                     </div>
                     <div class="form-group">
                         <label class="required" for="old_pass">رمز عبور قدیمی:</label>

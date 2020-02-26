@@ -227,6 +227,7 @@ function card_generators(){
                 echo        '<img class="card-img-top" src="' . $row['product_directory']. '" alt="'. $row['product_description'] . '">';
                 echo        '<div class="card-body text-center ">';
                 echo            '<h6 class="card-title ">نام محصول:<span class="text-success"> ' . $row['product_name'] . '</span></h6>';
+                // echo            '<table>';
                 echo            '<p class="card-text text-right">ابعاد:<span class="text-success"> ';
                 if(!empty($row['product_dimensions'] )){
                   echo  $row['product_dimensions']; 
@@ -252,6 +253,7 @@ function card_generators(){
                 }
                 echo            '</span></p>';
                 echo            '<a href="#" class="btn btn-primary">' . 'افزودن به سبد خرید' . '</a>';
+                // echo            '</table>'
                 echo        '</div>';
                 echo    '</div>';    
                 echo '</div>';
