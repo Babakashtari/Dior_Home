@@ -82,7 +82,7 @@
             </fieldset>
             </div>
         </section>
-        <section class="row justify-content-center py-5">
+        <section class=" row justify-content-center py-5">
             <?php card_generators(); ?>
         </section>
         <section class="products-pagination">
