@@ -54,7 +54,7 @@ main > section > div > div.card > div.card-body > table {
 }
 main > section > div > div.card > div.card-body > table p {
     margin-bottom: 0;
-    text-align: justify;
+    /* text-align: justify; */
 }
 main > section > div > div.card > div.card-body > table tr > td:first-of-type {
     width: 35%;
