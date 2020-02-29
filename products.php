@@ -76,13 +76,43 @@
                     <textarea id="product_description" name="product_description" class="form-control border border-primary" placeholder="توضیحات" ></textarea>
                 </div>
                 <div class="form-group col-12 py-1">
-                    <input class="btn btn-primary col-12 border border-primary" id="submit" name="submit" type="submit" value="جستجو کن">
+                    <input class="btn btn-primary text-light col-12 border border-primary" id="submit" name="submit" type="submit" value="جستجو کن">
                 </div>
                 </form>            
             </fieldset>
             </div>
         </section>
         <section class=" row justify-content-center py-5">
+            <div class="container-fluid row badge-container mx-3 pb-2">
+                <h4 class="col-12 text-light text-center access-header py-4">کاتالوگ محصولات - دسترسی سریع</h4>
+                <div class="col-12  col-md-6 col-lg-4 p-2 ">
+                    <div class="row p-2">
+                        <p class="text-light category text-center col-sm-12 col-md-11 py-2">  کالای خواب: </p>
+                        <a href="products.php?product_category=sleeping_products&product_subcategory=روتختی" type="button" class="btn btn-primary   col-sm-2"><span class="badge badge-light Yekan">444</span><br> روتختی </a>
+                        <a href="products.php?product_category=sleeping_products&product_subcategory=روبالشی" type="button" class="btn btn-primary   col-sm-2"><span class="badge badge-light Yekan">444</span><br> روبالشی </a>
+                        <a href="products.php?product_category=sleeping_products&product_subcategory=کوسن" type="button" class="btn btn-primary   col-sm-2"><span class="badge badge-light Yekan">444</span><br> کوسن </a>
+                        <a href="products.php?product_category=sleeping_products&product_subcategory=ملافه" type="button" class="btn btn-primary   col-sm-2"><span class="badge badge-light Yekan">4</span><br> ملافه </a>
+                    </div>
+                </div>
+                <div class="col-12  col-md-6 col-lg-4 p-2 ">
+                    <div class="row p-2">
+                        <p class="text-light category text-center col-sm-12 col-md-11 py-2">  کالای اتاق پذیرایی:</p>
+                        <a href="products.php?product_category=living_room_products&product_subcategory=رومیزی" type="button" class="btn btn-primary  col-sm-2"><span class="badge badge-light Yekan">4</span><br> رومیزی </a>
+                        <a href="products.php?product_category=living_room_products&product_subcategory=پرده" type="button" class="btn btn-primary  col-sm-2"><span class="badge badge-light Yekan">444</span><br> پرده </a>
+                        <a href="products.php?product_category=living_room_products&product_subcategory=کوسن" type="button" class="btn btn-primary  col-sm-2"><span class="badge badge-light Yekan">4</span><br> کوسن </a>
+                        <a href="products.php?product_category=living_room_products&product_subcategory=رومبلی" type="button" class="btn btn-primary  col-sm-2"><span class="badge badge-light Yekan">4</span><br> رومبلی </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 p-2 ">
+                    <div class="row p-2">
+                        <p class="text-light category text-center col-sm-12 col-md-11 py-2">  کالای فرش:</p>
+                        <a href="products.php?product_category=carpet_products&product_subcategory=فرش" type="button" class="btn btn-primary col-sm-2 col-lg-3"><span class="badge badge-light Yekan">444</span><br> فرش </a>
+                        <a href="products.php?product_category=carpet_products&product_subcategory=روفرشی" type="button" class="btn btn-primary col-sm-2 col-lg-3"><span class="badge badge-light Yekan">4</span><br> روفرشی </a>
+                        <a href="products.php?product_category=carpet_products&product_subcategory=تابلوفرش" type="button" class="btn btn-primary col-sm-2 col-lg-3"><span class="badge badge-light Yekan">4</span><br> تابلوفرش </a>
+                    </div>
+                </div>
+            </div>
+
             <?php card_generators(); ?>
         </section>
         <section class="products-pagination">

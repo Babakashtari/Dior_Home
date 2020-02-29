@@ -10,6 +10,24 @@ main > section > div > div.card > img {
     -o-object-position: center;
     object-position: center;
 }
+main > section > div.badge-container {
+    border-radius: 15px;
+    border: 1px solid #007bff;
+    direction: rtl;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+main > section > div.badge-container > h4 {
+    direction: rtl;
+    color: yellow;
+}
+main > section > div.badge-container > div > div {
+    justify-content: space-around;
+}
+main > section > div.badge-container > div > div > p.category {
+    border-bottom: 1px solid #007bff;
+    /* width: 95%; */
+}
 main > section.filter {
     direction: rtl;
 }
@@ -54,7 +72,6 @@ main > section > div > div.card > div.card-body > table {
 }
 main > section > div > div.card > div.card-body > table p {
     margin-bottom: 0;
-    /* text-align: justify; */
 }
 main > section > div > div.card > div.card-body > table tr > td:first-of-type {
     width: 35%;
@@ -71,6 +88,15 @@ main > section.products-pagination {
 }
 .displayNone {
     display: none !important;
+}
+@media screen and (max-width: 1313px) {
+    main > section > div.badge-container > div > div,
+    main > section > div.badge-container > div > div > a {
+        font-size: 0.75rem;
+    }
+    main > section > div.badge-container > h4 {
+        font-size: 1rem;
+    }
 }
 @media screen and (max-width: 992px) {
     legend {
@@ -111,13 +137,33 @@ main > section.products-pagination {
         text-overflow: ellipsis;
     }
 }
+@media screen and (max-width: 767px) {
+    main > section > div.badge-container > div > div {
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+    }
+}
 @media screen and (max-width: 700px) {
     main > section > div.product-results > div.card > div.card-body table {
         height: 10rem;
     }
 }
-/* @media screen and (max-width: 655px) {
-    main > section > div.product-results > div.card {
-        width: 10%;
+@media screen and (max-width: 576px) {
+    main > section > div.badge-container > div > div > a {
+        display: inline-block;
+        width: 70px;
     }
-} */
+}
+@media screen and (max-width: 485px) {
+    main > section > div.badge-container > div > div > a {
+        display: inline-block;
+        width: 70px;
+    }
+}
+@media screen and (max-width: 347px) {
+    main > section > div.badge-container > div > div > a {
+        display: inline-block;
+        width: 45%;
+        margin-top: 0.5rem;
+    }
+}
