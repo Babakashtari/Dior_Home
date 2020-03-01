@@ -1,5 +1,6 @@
 <?php require "php/code_functions.php" ?>
 <?php require 'php/productsResults.php' ?>
+<?php require 'php/explorer_warning.php' ?>
 <?php session_start(); ?>
 <!DOCTYPE html lang="fa">
 <html lang="fa">
@@ -42,6 +43,7 @@
         <link rel="stylesheet" href="Css/fonts.css">
         <link rel="stylesheet" href="CSS/header.css">
         <link rel="stylesheet" href="CSS/footer.css">
+        <link rel="stylesheet" href="CSS/explorer_warning.css">
         <link rel="stylesheet" href="CSS/products.css">
 
     <title>پیشگامان پودینه آتا - کاتالوگ محصولات</title>
@@ -90,6 +92,7 @@
                 <?php pagination(); ?>
             </div>
         </section>
+        <?php show_warning(); ?>
     </main>
 
 <?php footer_generator();?>
@@ -99,6 +102,7 @@
     <script src="JS/bootstrap.min.js"></script>
     <script src="JS/header.js"></script>
     <script src="JS/footer.js"></script>
+    <script src="JS/explorer_warning.js"></script>
     <script src="JS/products.js"></script>
 </body>
 </html>
