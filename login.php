@@ -1,4 +1,5 @@
 <?php require "php/code_functions.php" ?>
+<?php require 'php/explorer_warning.php' ?>
 <?php 
     session_start();
 
@@ -63,6 +64,7 @@
         <link rel="stylesheet" href="Css/fonts.css">
         <link rel="stylesheet" href="CSS/header.css">
         <link rel="stylesheet" href="CSS/footer.css">
+        <link rel="stylesheet" href="CSS/explorer_warning.css">
         <link rel="stylesheet" href="CSS/login.css">
         <title>پيشگامان پودينه - ورود</title>
     </head>
@@ -134,6 +136,7 @@
         <!-- ajax call loads results in this div: -->
             <div></div>
         </section>
+        <?php show_warning(); ?>
     </main>
     <?php footer_generator();?>
     <?php canvas_generator(); ?>
@@ -141,6 +144,7 @@
     <script src="JS/jquery.min.js"></script>
     <script src="JS/bootstrap.min.js"></script>
     <script src="JS/header.js"></script>
+    <script src="JS/explorer_warning.js"></script>
     <script src="JS/login.js"></script>
     <script src="JS/footer.js"></script>
 </body>

@@ -111,6 +111,9 @@ header {
     -webkit-transition: 1s;
     transition: 1s;
 }
+main {
+    background-color: black;
+}
 main,
 footer {
     -webkit-transition: 1s;

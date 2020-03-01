@@ -69,7 +69,6 @@ footer div#map {
     }
 }
 @media screen and (max-width: 769px) {
-    /* footer > section > div.row > p, */
     footer > section:nth-of-type(1) > div.row > div > p,
     footer > section:nth-of-type(1) > div.row > div > ul > li > a,
     footer > section:nth-of-type(1) > div.row > div > ul > li > div > a > i,
@@ -82,9 +81,6 @@ footer div#map {
     }
 }
 @media screen and (max-width: 357px) {
-    /* footer > section:nth-of-type(1) > div.row > div > p, */
-    /* footer > section:nth-of-type(1) > div.row > div > ul > li > a, */
-    /* footer > section:nth-of-type(1) > div.row > div > ul > li > div > a > i, */
     footer > div#devider > div.row > p {
         font-size: 0.6rem;
     }

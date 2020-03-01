@@ -1,6 +1,7 @@
 <?php require "php/code_functions.php" ?>
 <?php require "php/uploadResult.php" ?>
 <?php require "php/expiration.php" ?>
+<?php require 'php/explorer_warning.php' ?>
 <?php session_start();
     expiration_check();
 ?>
@@ -45,6 +46,7 @@
         <link rel="stylesheet" href="Css/fonts.css">
         <link rel="stylesheet" href="CSS/header.css">
         <link rel="stylesheet" href="CSS/footer.css">
+        <link rel="stylesheet" href="CSS/explorer_warning.css">
         <link rel="stylesheet" href="CSS/userUpload.css">
 
     <title>پیشگامان پودینه - ثبت سفارش</title>
@@ -113,6 +115,7 @@
                 </div>
             </div>
         </section>
+        <?php show_warning(); ?>
     </main>
 
     <?php footer_generator();?>
@@ -122,6 +125,7 @@
     <script src="JS/bootstrap.min.js"></script>
     <script src="JS/header.js"></script>
     <script src="JS/footer.js"></script>
+    <script src="JS/explorer_warning.js"></script>
     <script src="JS/userUpload.js"></script>
 </body>
 </html>

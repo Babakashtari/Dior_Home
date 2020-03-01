@@ -1,4 +1,6 @@
 <?php require "php/code_functions.php" ?>
+<?php require 'php/explorer_warning.php' ?>
+
 <!-- <?php session_start(); ?> -->
 <!DOCTYPE html lang="fa">
 <html lang="en">
@@ -42,6 +44,7 @@
     <link rel="stylesheet" href="Css/fonts.css">
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="CSS/explorer_warning.css">
     <link rel="stylesheet" href="CSS/index.css">
     <title>پيشگامان پودينه - صفحه اصلي</title>
 </head>
@@ -107,6 +110,7 @@
                 </div>
             </div>
         </section>
+        <?php show_warning(); ?>
     </main>
     <?php footer_generator();?>
     <?php canvas_generator(); ?>
@@ -116,5 +120,7 @@
     <script src="JS/header.js"></script>
     <script src="JS/index.js"></script>
     <script src="JS/footer.js"></script>
+    <script src="JS/explorer_warning.js"></script>
+
 </body>
 </html>

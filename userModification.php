@@ -1,6 +1,6 @@
 <?php require "php/code_functions.php" ?>
 <?php require "php/expiration.php" ?>
-
+<?php require 'php/explorer_warning.php' ?>
 <?php 
     session_start(); 
     expiration_check();
@@ -47,6 +47,7 @@
     <link rel="stylesheet" href="Css/fonts.css">
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="CSS/explorer_warning.css">
     <link rel="stylesheet" href="CSS/userSignedIn.css">
     <title>پيشگامان پودينه - تکمیل اطلاعات کاربری</title>
 </head>
@@ -79,7 +80,7 @@
         <!-- validation results are shown in this div: -->
             <div></div>
         </section>
-
+        <?php show_warning(); ?>
     </main>
     <?php footer_generator();?>
 
@@ -89,6 +90,7 @@
     <script src="JS/bootstrap.min.js"></script>
     <script src="JS/header.js"></script>
     <script src="JS/userModification.js"></script>
+    <script src="JS/explorer_warning.js"></script>
     <script src="JS/footer.js"></script>
 </body>
 </html>

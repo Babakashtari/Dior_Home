@@ -242,52 +242,87 @@ function card_generators(){
     if(!$database_connection){
         die('connection failed:'.mysqli_connect_error());
     }else{
-        // code for the badges:
-        $bedsheet_query = "SELECT COUNT(*) AS bedsheet FROM products WHERE product_category = 'sleeping_products' AND product_subcategory = 'روتختی' ";
+
+        // --- queries for the badges ---
+
+        $bedsheet_query = "SELECT * FROM products WHERE product_category = 'sleeping_products' AND product_subcategory = 'روتختی' AND approved = 'YES' ";
         $bedsheet_query_result = mysqli_query($database_connection, $bedsheet_query);
-        $bedsheet_query_result_array = mysqli_fetch_assoc($bedsheet_query_result);
-            echo '<p class="text-light">' . $bedsheet_query_result_array['bedsheet'] . '</p>';
-        $pillow_query = "SELECT COUNT(*) AS pillow FROM products WHERE product_category = 'sleeping_products' AND product_subcategory = 'روبالشی' ";
+        $bedsheet_number = mysqli_num_rows($bedsheet_query_result);
+
+        $pillow_query = "SELECT * FROM products WHERE product_category = 'sleeping_products' AND product_subcategory = 'روبالشی' AND approved = 'YES' ";
         $pillow_query_result = mysqli_query($database_connection, $pillow_query);
-        $pillow_query_result_array = mysqli_fetch_assoc($pillow_query_result);
-            echo '<p class="text-light">' . $pillow_query_result_array['pillow'] . '</p>';
-        $bedroom_cushion_query = "SELECT COUNT(*) AS bedroom_cushion FROM products WHERE product_category = 'sleeping_products' AND product_subcategory = 'کوسن' ";
+        $pillow_number = mysqli_num_rows($pillow_query_result);
+
+        $bedroom_cushion_query = "SELECT * FROM products WHERE product_category = 'sleeping_products' AND product_subcategory = 'کوسن' AND approved = 'YES' ";
         $bedroom_cushion_query_result = mysqli_query($database_connection, $bedroom_cushion_query);
-        $bedroom_cushion_query_result_array = mysqli_fetch_assoc($bedroom_cushion_query_result);
-            echo '<p class="text-light">' . $bedroom_cushion_query_result_array['bedroom_cushion'] . '</p>';
-        $bedcover_query = "SELECT COUNT(*) AS bedcover FROM products WHERE product_category = 'sleeping_products' AND product_subcategory = 'ملافه' ";
+        $bedroom_cushion_number = mysqli_num_rows($bedroom_cushion_query_result);
+
+        $bedcover_query = "SELECT * FROM products WHERE product_category = 'sleeping_products' AND product_subcategory = 'ملافه' AND approved = 'YES' ";
         $bedcover_query_result = mysqli_query($database_connection, $bedcover_query);
-        $bedcover_query_result_array = mysqli_fetch_assoc($bedcover_query_result);
-            echo '<p class="text-light">' . $bedcover_query_result_array['bedcover'] . '</p>';
-        $table_cloth_query = "SELECT COUNT(*) AS tablecloth FROM products WHERE product_category = 'living_room_products' AND product_subcategory = 'رومیزی' ";
+        $bedcover_number = mysqli_num_rows($bedcover_query_result);
+
+        $table_cloth_query = "SELECT * FROM products WHERE product_category = 'living_room_products' AND product_subcategory = 'رومیزی' AND approved = 'YES' ";
         $table_cloth_query_result = mysqli_query($database_connection, $table_cloth_query);
-        $table_cloth_query_result_array = mysqli_fetch_assoc($table_cloth_query_result);
-            echo '<p class="text-light">' . $table_cloth_query_result_array['tablecloth'] . '</p>';
-        $curtain_query = "SELECT COUNT(*) AS curtain FROM products WHERE product_category = 'living_room_products' AND product_subcategory = 'پرده' ";
+        $table_cloth_number = mysqli_num_rows($table_cloth_query_result);
+
+        $curtain_query = "SELECT * FROM products WHERE product_category = 'living_room_products' AND product_subcategory = 'پرده' AND approved = 'YES' ";
         $curtain_query_result = mysqli_query($database_connection, $curtain_query);
-        $curtain_query_result_array = mysqli_fetch_assoc($curtain_query_result);
-            echo '<p class="text-light">' . $curtain_query_result_array['curtain'] . '</p>';
-        $livingroom_cushion_query = "SELECT COUNT(*) AS cushion FROM products WHERE product_category = 'living_room_products' AND product_subcategory = 'کوسن' ";
+        $curtain_number = mysqli_num_rows($curtain_query_result);
+
+        $livingroom_cushion_query = "SELECT * FROM products WHERE product_category = 'living_room_products' AND product_subcategory = 'کوسن' AND approved = 'YES' ";
         $livingroom_cushion_query_result = mysqli_query($database_connection, $livingroom_cushion_query);
-        $livingroom_cushion_query_result_array = mysqli_fetch_assoc($livingroom_cushion_query_result);
-            echo '<p class="text-light">' . $livingroom_cushion_query_result_array['cushion'] . '</p>';
-        $sofacover_query = "SELECT COUNT(*) AS sofacover FROM products WHERE product_category = 'living_room_products' AND product_subcategory = 'رومبلی' ";
+        $livingroom_cushion_number = mysqli_num_rows($livingroom_cushion_query_result);
+
+        $sofacover_query = "SELECT * FROM products WHERE product_category = 'living_room_products' AND product_subcategory = 'رومبلی' AND approved = 'YES' ";
         $sofacover_query_result = mysqli_query($database_connection, $sofacover_query);
-        $sofacover_query_result_array = mysqli_fetch_assoc($sofacover_query_result);
-            echo '<p class="text-light">' . $sofacover_query_result_array['sofacover'] . '</p>';
-        $carpet_query = "SELECT COUNT(*) AS carpet FROM products WHERE product_category = 'carpet_products' AND product_subcategory = 'فرش' ";
+        $sofacover_number = mysqli_num_rows($sofacover_query_result);
+
+        $carpet_query = "SELECT * FROM products WHERE product_category = 'carpet_products' AND product_subcategory = 'فرش' AND approved = 'YES' ";
         $carpet_query_result = mysqli_query($database_connection, $carpet_query);
-        $carpet_query_result_array = mysqli_fetch_assoc($carpet_query_result);
-            echo '<p class="text-light">' . $carpet_query_result_array['carpet'] . '</p>';
-        $carpet_cover_query = "SELECT COUNT(*) AS carpet_cover FROM products WHERE product_category = 'carpet_products' AND product_subcategory = 'روفرشی' ";
+        $carpet_carpet_number = mysqli_num_rows($carpet_query_result);
+
+        $carpet_cover_query = "SELECT * FROM products WHERE product_category = 'carpet_products' AND product_subcategory = 'روفرشی' AND approved = 'YES' ";
         $carpet_cover_query_result = mysqli_query($database_connection, $carpet_cover_query);
-        $carpet_cover_query_result_array = mysqli_fetch_assoc($carpet_cover_query_result);
-            echo '<p class="text-light">' . $carpet_cover_query_result_array['carpet_cover'] . '</p>';
-        $carpetboard_query = "SELECT COUNT(*) AS carpetboard FROM products WHERE product_category = 'carpet_products' AND product_subcategory = 'تابلوفرش' ";
+        $carpet_cover_number = mysqli_num_rows($carpet_cover_query_result);
+
+        $carpetboard_query = "SELECT * FROM products WHERE product_category = 'carpet_products' AND product_subcategory = 'تابلوفرش' AND approved = 'YES' ";
         $carpetboard_query_result = mysqli_query($database_connection, $carpetboard_query);
-        $carpetboard_query_result_array = mysqli_fetch_assoc($carpetboard_query_result);
-            echo '<p class="text-light">' . $carpetboard_query_result_array['carpetboard'] . '</p>';
+        $carpetboard_number = mysqli_num_rows($carpetboard_query_result);
     
+        // --- html for the badges ---
+
+echo    '
+        <div class="container-fluid row badge-container mx-3 pb-2">
+            <h4 class="col-12 text-light text-center access-header py-4">کاتالوگ محصولات - دسترسی سریع</h4>
+            <div class="col-12  col-md-6 col-lg-4 p-2 ">
+                <div class="row p-2">
+                    <p class="text-light category text-center col-sm-12 col-md-11 py-2">  کالای خواب: </p>
+                    <a href="products.php?product_category=sleeping_products&product_subcategory=روتختی" type="button" class="btn btn-primary   col-sm-2"><span class="badge badge-light Yekan">' . $bedsheet_number . '</span><br> روتختی </a>
+                    <a href="products.php?product_category=sleeping_products&product_subcategory=روبالشی" type="button" class="btn btn-primary   col-sm-2"><span class="badge badge-light Yekan">'. $pillow_number .'</span><br> روبالشی </a>
+                    <a href="products.php?product_category=sleeping_products&product_subcategory=کوسن" type="button" class="btn btn-primary   col-sm-2"><span class="badge badge-light Yekan">' . $bedroom_cushion_number . '</span><br> کوسن </a>
+                    <a href="products.php?product_category=sleeping_products&product_subcategory=ملافه" type="button" class="btn btn-primary   col-sm-2"><span class="badge badge-light Yekan">' . $bedcover_number . '</span><br> ملافه </a>
+                </div>
+            </div>
+            <div class="col-12  col-md-6 col-lg-4 p-2 ">
+                <div class="row p-2">
+                    <p class="text-light category text-center col-sm-12 col-md-11 py-2">  کالای اتاق پذیرایی:</p>
+                    <a href="products.php?product_category=living_room_products&product_subcategory=رومیزی" type="button" class="btn btn-primary  col-sm-2"><span class="badge badge-light Yekan">' . $table_cloth_number . '</span><br> رومیزی </a>
+                    <a href="products.php?product_category=living_room_products&product_subcategory=پرده" type="button" class="btn btn-primary  col-sm-2"><span class="badge badge-light Yekan">' . $curtain_number . '</span><br> پرده </a>
+                    <a href="products.php?product_category=living_room_products&product_subcategory=کوسن" type="button" class="btn btn-primary  col-sm-2"><span class="badge badge-light Yekan">' . $livingroom_cushion_number . ' </span><br> کوسن </a>
+                    <a href="products.php?product_category=living_room_products&product_subcategory=رومبلی" type="button" class="btn btn-primary  col-sm-2"><span class="badge badge-light Yekan">' . $sofacover_number . '</span><br> رومبلی </a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 p-2 ">
+                <div class="row p-2">
+                    <p class="text-light category text-center col-sm-12 col-md-11 py-2">  کالای فرش:</p>
+                    <a href="products.php?product_category=carpet_products&product_subcategory=فرش" type="button" class="btn btn-primary col-sm-2 col-lg-3"><span class="badge badge-light Yekan">' . $carpet_carpet_number . '</span><br> فرش </a>
+                    <a href="products.php?product_category=carpet_products&product_subcategory=روفرشی" type="button" class="btn btn-primary col-sm-2 col-lg-3"><span class="badge badge-light Yekan">' . $carpet_cover_number . '</span><br> روفرشی </a>
+                    <a href="products.php?product_category=carpet_products&product_subcategory=تابلوفرش" type="button" class="btn btn-primary col-sm-2 col-lg-3"><span class="badge badge-light Yekan">' . $carpetboard_number . '</span><br> تابلوفرش </a>
+                </div>
+            </div>
+        </div>
+        ';
+
 
 
         $query_result = mysqli_query($database_connection, $query);
