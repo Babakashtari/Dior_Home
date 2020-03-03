@@ -114,13 +114,13 @@
     </main>
     <?php footer_generator();?>
     <?php canvas_generator(); ?>
+    <script src="JS/explorer_warning.js"></script>
     <script src="JS/canvas.js"></script>
     <script src="JS/jquery.min.js"></script>
     <script src="JS/bootstrap.min.js"></script>
     <script src="JS/header.js"></script>
     <script src="JS/index.js"></script>
     <script src="JS/footer.js"></script>
-    <script src="JS/explorer_warning.js"></script>
 
 </body>
 </html>

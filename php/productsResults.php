@@ -290,8 +290,16 @@ function card_generators(){
         $carpetboard_number = mysqli_num_rows($carpetboard_query_result);
     
         // --- html for the badges ---
-        $product_category = $_GET['product_category'];
-        $product_subcategory = $_GET['product_subcategory'];
+        if(!empty($_GET['product_category'])){
+            $product_category = $_GET['product_category'];
+        }else{
+            $product_category = null;
+        }
+        if(!empty($_GET['product_subcategory'])){
+            $product_subcategory = $_GET['product_subcategory'];
+        }else{
+            $product_subcategory = null;
+        }
 
         echo    '
         <div class="container-fluid row badge-container mx-3 pb-2">

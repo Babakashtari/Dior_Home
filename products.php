@@ -46,9 +46,6 @@
         <link rel="stylesheet" href="CSS/explorer_warning.css">
         <link rel="stylesheet" href="CSS/products.css">
         
-        <!-- [if IE] -->
-    <link href="CSS/ie_products.css" rel="stylesheet" type="text/css">
-    <!-- [endif] -->
     <title>پیشگامان پودینه آتا - کاتالوگ محصولات</title>
 </head>
 <body>

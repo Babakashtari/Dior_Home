@@ -127,6 +127,7 @@ function header_generator(){
 function hamburger_menu_generator(){
     echo '  <section class="hamburger-close">
                 <ul class="hamburger_opened_menu hamburger-close bg-dark d-flex flex-column">
+                <li class="hamburger-close d-flex justify-content-end p-2 align-items-center"><a class="hamburger-close text-white py-1" href="index.php" target="_self">خانه</a></li>
                     <li class="hamburger-close d-flex justify-content-end p-2 align-items-center"><a class="hamburger-close text-white py-1" href="products.php?product_category=sleeping_products" target="_self">کالای خواب</a></li>
                     <li class="hamburger-close d-flex justify-content-end p-2 align-items-center"><a class="hamburger-close text-white py-1" href="products.php?product_category=living_room_products" target="_self">اتاق ‍پذیرایی</a></li>
                     <li class="hamburger-close d-flex justify-content-end p-2 align-items-center"><a class="hamburger-close text-white py-1" href="products.php?product_category=carpet_products" target="_self">فرش</a></li>
@@ -140,7 +141,8 @@ function Search_card_generator(){
     $card_images = ["images/search_images/sleeping_products3.jpg", "images/search_images/bedsheet.jpg", "images/search_images/pillow2.jpg", "images/search_images/home_furniture.jpg", "images/search_images/sofa_cover.jpg", "images/search_images/cushion4.jpg", "images/search_images/table_cloth.jpeg", "images/search_images/curtain.jpg", "images/search_images/carpet_printing.jpg", "images/search_images/carpet_cover.jpg", "images/search_images/carpet_board.jpg", "images/search_images/order.jpg"];
     $card_header = ["انواع کالای خواب", "روتختی", "روبالشی", "پارچه مبلی", "رومبلی", "کوسن", "رومیزی", "پرده" , "چاپ انواع فرش", "روفرشی", "تابلو فرش", "سفارشی"];
     $card_text = ["چاپ طرح روبالشی، روتختی و کوسن", "چاپ انواع طرح و الگوی روتختی", "چاپ انواع طرح و الگوی روبالشی", "چاپ انواع الگو و طرح روی پارچه مبل", "طراحی و چاپ انواع عکس، الگو و لوگو برای رومبلی", "چاپ انواع طرح و الگو روی کوسن", "طراحی و چاپ انواع عکس و الگوی رومیزی", "چاپ الگو و طرح ملحفه پرده ای", "چاپ الگو، طرح و عکس روی فرش، روفرشی و تابلوفرش", "چاپ انواع طرح و عکس برای روفرشی", "چاپ دیجیتالی عکس و الگو جهت تابلوفرش", "پذیرش هرگونه طرح و الگوی جدید جهت چاپ"];
-    $card_links = ['products.php?product_category=sleeping_products', 'products.php?product_category=sleeping_products&product_subcategory=روتختی', 'products.php?product_category=sleeping_products&product_subcategory=روبالشی', 'products.php?product_category=living_room_products&product_subcategory=رومبلی', 'products.php?product_category=living_room_products&product_subcategory=رومبلی', 'products.php?product_category=living_room_products&product_subcategory=کوسن', 'products.php?product_category=living_room_products&product_subcategory=رومیزی', 'products.php?product_category=living_room_products&product_subcategory=‍پرده', 'products.php?product_category=carpet_products', 'products.php?product_category=carpet_products&product_subcategory=روفرشی', 'products.php?product_category=carpet_products&product_subcategory=تابلوفرش'];
+    $card_links = ['products.php?product_category=sleeping_products', 'products.php?product_category=sleeping_products&product_subcategory=روتختی', 'products.php?product_category=sleeping_products&product_subcategory=روبالشی', 'products.php?product_category=living_room_products&product_subcategory=رومبلی', 'products.php?product_category=living_room_products&product_subcategory=رومبلی', 'products.php?product_category=living_room_products&product_subcategory=کوسن', 'products.php?product_category=living_room_products&product_subcategory=رومیزی', 'products.php?product_category=living_room_products&product_subcategory=‍پرده', 'products.php?product_category=carpet_products', 'products.php?product_category=carpet_products&product_subcategory=روفرشی', 'products.php?product_category=carpet_products&product_subcategory=تابلوفرش', "userUpload.php"];
+    
     for($i=0; $i<count($card_images); $i++){
         echo '<div class="modal-closable">';
         echo    '<div class="modal-closable card border border-primary">';
@@ -185,7 +187,7 @@ function canvas_generator(){
 }
 
 function customers_logo_generator(){
-    $customers_logo_src = ['images/logos/army_logo.png','images/logos/Kowsarbaft_logo.png', 'images/logos/Institute_of_Childrens_Education.png', 'images/logos/Social_security.jpg', 'images/logos/municipality.jpg', 'images/logos/patan_jame.png', 'images/logos/Seda_logo.jpg', 'images/logos/iran_air.jpg', 'images/logos/ata_airlines.jpg', 'images/logos/erfan_hospital.jpg', "images/logos/erfan_niyayesh_hospital.png", 'images/logos/fire_fighting_logo.jpg', 'images/logos/Ministry_of_Education.png'];
+    $customers_logo_src = ['images/logos/army_logo.jpg','images/logos/Kowsarbaft_logo.png', 'images/logos/Institute_of_Childrens_Education.png', 'images/logos/Social_security.jpg', 'images/logos/municipality.jpg', 'images/logos/patan_jame.png', 'images/logos/Seda_logo.jpg', 'images/logos/iran_air.jpg', 'images/logos/ata_airlines.jpg', 'images/logos/erfan_hospital.jpg', "images/logos/erfan_niyayesh_hospital.png", 'images/logos/fire_fighting_logo.jpg', 'images/logos/Ministry_of_Education.png'];
     $customers_logo_alts = ['ارتش جمهوري اسلامي ايران', 'کوثر بافت نوین', 'کانون پرورش فکری کودکان و نوجوانان', 'سازمان تامین اجتماعی', 'شهرداری تهران', 'پاتن جامه', 'صدا و سيماي جمهوري اسلامي ايران', 'هما جمهوري اسلامي ايران', 'شركت هواپيمايي آتا','بيمارستان عرفان', 'بیمارستان عرفان نیایش', 'سازمان آتش نشانی تهران', 'آموزش و پرورش استان تهران'];
     $customers_logo_hrefs = ['https://aja.ir', "https://kowsarbaft.ir", 'https://kanoonnews.ir', 'https://tamin.ir', 'https://tehran.ir', 'http://patanjameh.ir/', 'https://irib.ir', 'http://www.iranair.com/Portal/Home/', 'https://ataair.ir', 'http://erfanhospital.ir/fa/', 'http://erfanhospital.ir/fa/', 'https://fa.wikipedia.org/wiki/%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86_%D8%A2%D8%AA%D8%B4%E2%80%8C%D9%86%D8%B4%D8%A7%D9%86%DB%8C', 'https://medu.ir' ];
     
@@ -245,7 +247,7 @@ function footer_generator(){
             <div class="col-12 col-md-6">
                 <p class="text-light text-right font-weight-bold"><span>کارخانه:</span></p>
                 <ul>
-                    <li class="text-right py-2"><p class="text-light text-right"><i class="fas fa-address-card pl-2"></i>اردبیل، ميدان ايثار، شهرك صنعتي فاز <span class="Yekan">1</span>  خيابان پنج شرقي پيشگامان پودينه آتا</p></li>
+                    <li class="text-right py-2"><p class="text-light text-right"><i class="fas fa-address-card pl-2"></i>اردبیل، ميدان ايثار، شهرك صنعتی فاز <span class="Yekan">1</span>  خيابان پنج شرقی پيشگامان پودينه آتا</p></li>
                     <li class="text-right py-2 "><p class="text-light text-right"><i class="fas fa-phone pl-2"></i> <span class="Yekan">55637991 </span>- <span class="Yekan">09122084055 </span></p></li>
                     <li class="text-right py-2"><p class="text-light text-right"><i class="fas fa-envelope pl-2"></i>factory@diorhome.com</p></li>
                 </ul>
