@@ -14,7 +14,7 @@ for (var b = 0; b < browser_array.length; b++) {
         if (site_header.classList.contains("sticky-top")) {
             setInterval(function() {
                 site_header.classList.remove("sticky-top");
-                site_header.style.zIndex = -1;
+                site_header.style.zIndex = 0;
                 footer_img.style.zIndex = 0;
             }, 1);
         }

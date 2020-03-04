@@ -77,7 +77,7 @@
         </section>
         <section class="welcome py-4 px-2">
             <div class="container pt-5">
-                <p class="">ضمن خیر مقدم خدمت کاربران جدید، لطفا ثبت نام کنید تا قابلیت هایی چون <a href="#">ثبت سفارش</a> <a href="#">پیگیری سفارش،</a><a href="#"> ثبت آدرس،</a> و <a href="#">خرید اینترنتی</a> ، برایتان فراهم شود.</p>
+                <p class="">ضمن خیر مقدم خدمت کاربران جدید، لطفا ثبت نام کنید تا قابلیت هایی چون <a href="userUpload.php">ثبت سفارش</a> <a href="#">پیگیری سفارش،</a><a href="#"> ثبت آدرس،</a> و <a href="#">خرید اینترنتی</a> ، برایتان فراهم شود.</p>
                 <p class="">اگر قبلا ثبت نام کرده اید، با نام کاربری و رمز عبورتان وارد سایت شوید تا بتوانید از امکانات تحت وب پیشگامان پودینه آتا بهره مند شوید. </p>
             </div>
         </section>
@@ -127,7 +127,7 @@
                         <input class="login btn btn-primary p-1" type="submit" value="ارسال" disabled onclick="signing_validation(event)" >
                     </form>
                     <div class=" text-right p-2">
-                        <a class="text-light" href="#">رمز عبور خود را فراموش کرده ام</a>
+                        <a class="text-light" href="forgot.php">رمز عبور خود را فراموش کرده ام</a>
                     </div>
                 </fieldset>
             </div>
