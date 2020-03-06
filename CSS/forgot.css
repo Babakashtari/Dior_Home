@@ -2,6 +2,15 @@
     padding: 0;
     margin: 0;
 }
+@font-face {
+    src: url(../Fonts/IRANSansWeb_Bold.ttf);
+    font-family: "IranSans";
+}
+@font-face {
+    src: url(../Fonts/yekannumbers-regular.woff);
+    font-family: "Yekan";
+}
+
 body {
     background-color: black;
 }
@@ -34,6 +43,11 @@ body > section.background-image > fieldset > legend {
     color: yellow;
     background-color: transparent;
     text-align: center;
+}
+body > section.background-image > fieldset > form > p.text-success > span.fa-check {
+    border: 3px solid green;
+    padding: 0.5rem;
+    border-radius: 50%;
 }
 body > section.background-image > fieldset > form > div.form-group > label {
     width: 100%;
