@@ -1,6 +1,7 @@
 <?php 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
 
 if(isset($_POST['submit'])){
     if(empty($_POST['email_address'])){
@@ -57,17 +58,23 @@ if(isset($_POST['submit'])){
                     require 'PHPMailer/src/PHPMailer.php';
                     require 'PHPMailer/src/SMTP.php';
 
-                    $mail_config = new PHPMailer();
-                    $mail_config->isSMTP();
-                    $mail_config->Host= gethostname();
-                    $mail_config->SMTPAuth = true;
-                    $mail_config->Username = 'info@diorhome.ir';
-                    $mail_config->Password = 'joli1366';
-                    $mail_config->addAddress('ashtaribabak@rocketmail.com');
-                    $mail_config->Subject = 'بازیابی گذرواژه';
-                    $mail_config->Body = 'this is the body';
-                    $mail_config->send();
-                        echo    '<p style="direction:rtl;text-align:right" class="text-center text-success pb-2">لطفا ایمیل خود را چک کنید.</p>';    
+                    $mail_config = new PHPMailer(true);
+                    try{
+                        $mail_config->isSMTP();
+                        $mail_config->Host = "mail.diorhome.ir";
+                        $mail_config->SMTPAuth = true;
+                        $mail_config->Username = 'info@diorhome.ir';
+                        $mail_config->Password = 'joli1366';
+                        $mail_config->addAddress($email);
+                        $mail_config->Subject = 'بازیابی گذرواژه';
+                        $mail_config->Body = 'this is the body';
+                        $mail_config->setFrom('info@diorhome.ir', ' پشتیبانی شرکت پیشگامان پودینه آتا');
+                        $mail_config->isHTML(true);
+                        $mail_config->send();
+                            echo    '<p style="direction:rtl;text-align:right" class="text-center text-success pb-2">لطفا ایمیل خود را چک کنید.</p>';        
+                    }catch (Exception $e) {
+                        echo "Message could not be sent. Mailer Error: {$mail_config->ErrorInfo}";
+                    }
 
                     // $selected_result = mysqli_fetch_assoc($select_query_result);
                     // $username = $selected_result['username'];
