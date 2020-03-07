@@ -63,10 +63,9 @@
                     <input class="btn btn-primary form-control" type="submit" name="submit" id="submit" value="بازیابی گذرواژه">
                 </div>
                 <div class="form-group">
-                        <a href="login.php">ورود/ثبت نام</a>
+                    <a href="login.php">ورود/ثبت نام</a>
                 </div>
-        </form>
-
+            </form>
         </fieldset>
     </section>
     <script src="JS/explorer_warning.js"></script>
