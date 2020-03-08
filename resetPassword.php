@@ -1,5 +1,6 @@
 <?php require "php/code_functions.php" ?>
 <?php require 'php/explorer_warning.php' ?>
+<?php require "php/resetPasswordUpdate.php" ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +15,7 @@
         font-src 'self';
         frame-src https://www.google.com;
         "  >
-    <meta name="description"    content="  - بازیابی گذرواژه سايت رسمی ‍پیشگامان ‍پودينه آتا" />
+    <meta name="description"    content="  - تغییر گذرواژه سايت رسمی ‍پیشگامان ‍پودينه آتا" />
     <meta name="author" content="Babak Ashtari" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -41,31 +42,18 @@
     <link rel="stylesheet" href="CSS/bootstrap.min.css"/>
     <link rel="stylesheet" href="CSS/Normalizer.css">
     <link rel="stylesheet" href="Css/fonts.css">
-    <!-- <link rel="stylesheet" href="CSS/header.css"> -->
-    <!-- <link rel="stylesheet" href="CSS/footer.css"> -->
     <link rel="stylesheet" href="CSS/explorer_warning.css">
-    <link rel="stylesheet" href="CSS/forgot.css">
-    <title>پیشگامان پودینه - بازیابی گذرواژه</title>
+    <link rel="stylesheet" href="CSS/resetPassword.css">
+    <title>پیشگامان پودینه - تغییر گذرواژه</title>
 </head>
 <body>
     <section class="background-image d-flex justify-content-center align-items-center">
-        <!-- <img src="#" alt="the iamge of a blue sky with the sun shining behind the clouds"> -->
         <fieldset>
             <img src="images/Dior_logo_small.jpg" alt="لوگوی پیشگامان پودینه آتا">
-            <h3>بازیابی گذر واژه</h3>
+            <h3>تغییر رمز عبور:</h3>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
-                <?php require "php/forgot_password.php" ?>
-                <div class="form-group">
-                    <label for="email_address">آدرس ایمیل خود را وارد کنید:</label>
-                    <input type="email" class="form-control" id="email_address" name="email_address" placeholder="name@example.com" oninput="validate(/^[a-zA-Z0-9_]{3,20}@[a-z]{3,15}[\.][a-z]{2,3}$/, this)">
-                    <p class="displayNone">فرمت آدرس ایمیل درست وارد نشده است.</p>
-                </div>
-                <div class="form-group">
-                    <input class="btn btn-primary form-control" type="submit" name="submit" id="submit" value="بازیابی گذرواژه">
-                </div>
-                <div class="form-group">
-                    <a href="login.php">ورود/ثبت نام</a>
-                </div>
+                <?php retrieve_data_from_the_mailed_link(); ?>
+                <?php  if(!empty($_POST['first_password']) && !empty($_POST['second_password'])) password_reset(); ?>
             </form>
         </fieldset>
     </section>
@@ -73,6 +61,6 @@
     <script src="JS/explorer_warning.js"></script>
     <script src="JS/jquery.min.js"></script>
     <script src="JS/bootstrap.min.js"></script>
-    <script src="JS/forgot.js"></script>
+    <script src="JS/resetPassword.js"></script>
 </body>
 </html>

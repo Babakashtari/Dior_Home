@@ -1,4 +1,4 @@
-const warning = document.querySelector("main>section.warning");
+const warning = document.querySelector("section.warning");
 const site_header = document.querySelector("header");
 const footer_img = document.querySelector("footer>img");
 // browser check:

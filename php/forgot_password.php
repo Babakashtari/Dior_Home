@@ -55,7 +55,7 @@ if(isset($_POST['submit'])){
                                         
                     $selected_result = mysqli_fetch_assoc($select_query_result);
                     $username = $selected_result['username'];
-                    $reset_password_link = "forgot.php?email=$email&token=$token";
+                    $reset_password_link = "https://diorhome.ir/resetPassword.php?email=$email&token=$token";
                     $to = $email;
                     $subject = "بازیابی رمز عبور";
                     $message_title = "<p style='direction:rtl;text-align:right'>" . $username . " عزیز</p>";

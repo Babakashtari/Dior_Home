@@ -1,6 +1,6 @@
 "use strict";
 
-var warning = document.querySelector("main>section.warning");
+var warning = document.querySelector("section.warning");
 var site_header = document.querySelector("header");
 var footer_img = document.querySelector("footer>img"); // browser check:
 

@@ -1,4 +1,5 @@
-const error = document.querySelector("body > section.background-image > fieldset > form > div.form-group > p");
+const inputs = document.querySelectorAll("body>section.background-image>fieldset>form>div.form-group>input");
+const errors = document.querySelectorAll("body > section.background-image > fieldset > form > div.form-group > p");
 const section = document.querySelector("body > section.background-image");
 
 const validate = (regex, input) => {
@@ -8,16 +9,28 @@ const validate = (regex, input) => {
         // when the inserted input value is valid:
         if (regex.test(value)) {
             input.style.border = "3px solid green";
-            error.classList.add("displayNone");
+            for (let i = 0; i < inputs.length; i++) {
+                if (inputs[i] === input) {
+                    errors[i].classList.add("displayNone");
+                }
+            }
             // when the inserted input value is not valid:
         } else {
             input.style.border = "3px solid red";
-            error.classList.remove("displayNone");
+            for (let i = 0; i < inputs.length; i++) {
+                if (inputs[i] === input) {
+                    errors[i].classList.remove("displayNone");
+                }
+            }
         }
         // if the input value is empty:
     } else {
         input.style.border = "3px solid transparent";
-        error.classList.add("displayNone");
+        for (let i = 0; i < inputs.length; i++) {
+            if (inputs[i] === input) {
+                errors[i].classList.add("displayNone");
+            }
+        }
     }
 };
 
