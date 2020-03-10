@@ -172,14 +172,28 @@ main > section.validation-result > div > p > a:hover {
 .displayNone {
     display: none;
 }
-@media screen and (max-width: 871px) {
+@media screen and (max-width: 1000px) {
+    main > section.image-container {
+        height: 450px !important;
+    }
     main > section.image-container > div > p {
         font-size: 1.5rem;
     }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 750px) {
+    main > section.image-container {
+        height: 350px !important;
+    }
+    main > section.image-container > div.center {
+        top: 45%;
+    }
     main > section.image-container > div > p {
         font-size: 1rem;
+    }
+}
+@media screen and (max-width: 521px) {
+    main > section.image-container > div > p {
+        font-size: 0.75rem;
     }
 }
 @media screen and (max-width: 460px) {

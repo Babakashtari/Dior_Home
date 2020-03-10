@@ -55,7 +55,7 @@
     <?php head(); ?>
     <main>
         <section class="image-container container-fluid p-0">
-            <img src="images/search_images/order.jpg" alt="ثبت اطلاعات تکمیلی کاربران پیشگامان پودینه آتا">
+            <img src="images/user_info_update/supplementary_info.jpg" alt="ثبت اطلاعات تکمیلی کاربران پیشگامان پودینه آتا">
             <div class="top">
                 <p class="py-4 px-3 text-center">تکمیل اطلاعات کاربران</p>
             </div>
