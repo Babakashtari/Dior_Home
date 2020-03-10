@@ -56,6 +56,12 @@
                 <?php  if(!empty($_POST['first_password']) && !empty($_POST['second_password'])) password_reset(); ?>
             </form>
         </fieldset>
+        <div class="links d-flex">
+            <a href="index.php">خانه</a>
+            <a href="">درباره ما</a>
+            <a href="">اخبار</a>
+            <a href="products.php">محصولات</a>
+        </div>
     </section>
     <?php show_warning(); ?>
     <script src="JS/explorer_warning.js"></script>
