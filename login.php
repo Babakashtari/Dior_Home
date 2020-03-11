@@ -71,7 +71,7 @@
 <body>
     <?php head(); ?>
     <main class="pb-5">
-        <section class="photo-container">
+        <section class="photo-container d-flex align-items-center justify-content-center">
             <img src="images/login_page_images/signin_main_image2.jpg" alt="ورود به سایت با نام کاربری" >
             <div><p class="text-center px-3 py-4 m-0">ثبت نام کنید تا از خدمات مجازی سایت پیشگامان پودینه آتا بهره مند شوید.</p></div>
         </section>

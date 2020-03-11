@@ -54,13 +54,13 @@
 <body>
     <?php head(); ?>
     <main>
-        <section class="image-container container-fluid p-0">
+        <section class="image-container container-fluid p-0 d-flex align-items-center justify-content-center">
             <img src="images/user_info_update/supplementary_info.jpg" alt="ثبت اطلاعات تکمیلی کاربران پیشگامان پودینه آتا">
             <div class="top">
                 <p class="py-4 px-3 text-center">تکمیل اطلاعات کاربران</p>
             </div>
             <div class="center">
-                <p class="py-4 px-3 text-center">اطلاعات دقیق تر، خدمات با کیفیت تر</p>
+                <p class="py-4 px-3 text-center">اطلاعات دقیق تر، خدمات بهتر</p>
             </div>
         </section>
         <section class="text container text-justify p-5 mt-4">
