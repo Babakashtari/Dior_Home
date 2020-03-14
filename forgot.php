@@ -1,8 +1,9 @@
 <?php require "php/code_functions.php" ?>
 <?php require 'php/explorer_warning.php' ?>
+<?php require 'php/copy_right.php' ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,26 +42,25 @@
     <link rel="stylesheet" href="CSS/bootstrap.min.css"/>
     <link rel="stylesheet" href="CSS/Normalizer.css">
     <link rel="stylesheet" href="Css/fonts.css">
-    <!-- <link rel="stylesheet" href="CSS/header.css"> -->
-    <!-- <link rel="stylesheet" href="CSS/footer.css"> -->
     <link rel="stylesheet" href="CSS/explorer_warning.css">
+    <link rel="stylesheet" href="CSS/copy_right.css">
     <link rel="stylesheet" href="CSS/forgot.css">
     <title>پیشگامان پودینه - بازیابی گذرواژه</title>
 </head>
 <body>
-    <section class="background-image d-flex justify-content-center align-items-center">
-        <!-- <img src="#" alt="the iamge of a blue sky with the sun shining behind the clouds"> -->
+    <section class="form-section d-flex justify-content-center py-1 pt-sm-3">
+
         <fieldset>
             <img src="images/Dior_logo_small.jpg" alt="لوگوی پیشگامان پودینه آتا">
             <h3>بازیابی گذر واژه</h3>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                 <?php require "php/forgot_password.php" ?>
-                <div class="form-group">
+                <div class="form-group ">
                     <label for="email_address">آدرس ایمیل خود را وارد کنید:</label>
                     <input type="email" class="form-control" id="email_address" name="email_address" placeholder="name@example.com" oninput="validate(/^[a-zA-Z0-9_]{3,20}@[a-z]{3,15}[\.][a-z]{2,3}$/, this)">
                     <p class="displayNone">فرمت آدرس ایمیل درست وارد نشده است.</p>
                 </div>
-                <div class="form-group">
+                <div class="form-group ">
                     <input class="btn btn-primary form-control" type="submit" name="submit" id="submit" value="بازیابی گذرواژه">
                 </div>
                 <div class="form-group">
@@ -69,6 +69,8 @@
             </form>
         </fieldset>
     </section>
+    <?php copy_right(); ?>
+
     <?php show_warning(); ?>
     <script src="JS/explorer_warning.js"></script>
     <script src="JS/jquery.min.js"></script>

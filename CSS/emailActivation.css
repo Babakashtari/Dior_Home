@@ -13,7 +13,6 @@
 
 body {
     background-color: black;
-    overflow: hidden;
 }
 body > section.background-image {
     height: 100vh;
@@ -27,13 +26,13 @@ body > section.background-image {
 body > section.background-image > fieldset {
     font-family: "IranSans";
     width: 30%;
-    /* background-color: rgba(0, 0, 0, 0.3); */
-    /* border: 2px solid white; */
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 2px solid white;
     color: white;
     direction: rtl;
     border-radius: 5px;
     text-align: center;
-    /* box-shadow: 3px 3px 30px black; */
+    box-shadow: 3px 3px 30px black;
     padding: 2rem 1rem;
 }
 body > section.background-image > fieldset > img {
@@ -43,12 +42,15 @@ body > section.background-image > fieldset > img {
     box-shadow: 1px 1px 10px black, -1px -1px 10px black;
 }
 body > section.background-image > fieldset > h3 {
+    /* width: 80%; */
     color: white;
     text-align: center;
     padding: 1rem;
+    /* text-shadow: 1px 1px 5px black, -1px -1px 5px black; */
 }
 body > section.background-image > fieldset > form > p.text-success > span.fa-check {
     border: 3px solid green;
+    /* text-shadow: 1px 1px 5px black, -1px -1px 5px black; */
     padding: 0.5rem;
     border-radius: 50%;
 }
@@ -65,6 +67,7 @@ body > section.background-image > fieldset > form > div.form-group > a {
     width: 100%;
     text-align: right;
     color: white;
+    /* text-shadow: 1px 1px 3px black, -1px -1px 3px black; */
 }
 body > section.background-image > fieldset > form > div.form-group > input::-webkit-input-placeholder {
     text-align: right;

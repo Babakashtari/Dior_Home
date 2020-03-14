@@ -5,8 +5,8 @@ use PHPMailer\PHPMailer\SMTP;
 
 if(isset($_POST['submit'])){
     if(empty($_POST['email_address'])){
-        echo '<p class="text-danger text-center"><span class=" fas fa-exclamation-circle" aria-hidden="true"></span></p>';
-        echo '<p class="text-center text-danger pb-2">ایمیلی جهت بازیابی گذرواژه وارد نشده است.</p>';
+        echo '<p class="text-center"><span class=" fas fa-exclamation-circle" aria-hidden="true"></span></p>';
+        echo '<p class="text-center pb-2">ایمیلی جهت بازیابی گذرواژه وارد نشده است.</p>';
     }else{
         function email_test_input($email){
             $email = trim($email);
@@ -31,8 +31,8 @@ if(isset($_POST['submit'])){
         $email = email_test_input($_POST['email_address']);
         $email = test_input($_POST['email_address'], '/^[a-zA-Z0-9_]{3,20}@[a-z]{3,15}[\.][a-z]{2,3}$/');
         if(empty($email)){
-            echo '<p class="text-danger text-center"><span class=" fas fa-exclamation-circle" aria-hidden="true"></span></p>';
-            echo '<p class="text-center text-danger pb-2">آدرس ایمیل به درستی وارد نشده است.</p>';
+            echo '<p class="text-center"><span class=" fas fa-exclamation-circle" aria-hidden="true"></span></p>';
+            echo '<p class="text-center pb-2">آدرس ایمیل به درستی وارد نشده است.</p>';
         }else{
             require "database_connection.php";
             if(!$database_connection){
@@ -87,13 +87,13 @@ if(isset($_POST['submit'])){
                             echo    '<p class="text-success text-center pt-4 pb-1"><span class=" fa fa-check" aria-hidden="true"></span></p>';
                             echo    '<p style="direction:rtl;text-align:right" class="text-center text-success pb-2">لطفا ایمیل خود را چک کنید.</p>';        
                     }catch (Exception $e) {
-                        echo '<p class="text-danger text-center"><span class=" fas fa-exclamation-circle" aria-hidden="true"></span></p>';
-                        echo '<p class="text-center text-danger pb-2">مشکلی پیش آمد و ایمیل ارسال نشد.</p>';    
+                        echo '<p class="text-center"><span class=" fas fa-exclamation-circle" aria-hidden="true"></span></p>';
+                        echo '<p class="text-center pb-2">مشکلی پیش آمد و ایمیل ارسال نشد.</p>';    
                         echo "Message could not be sent. Mailer Error: {$mail_config->ErrorInfo}";
                     }
                 }else{
-                    echo '<p class="text-danger text-center"><span class=" fas fa-exclamation-circle" aria-hidden="true"></span></p>';
-                    echo '<p class="text-center text-danger pb-2">ایمیلی که وارد کردید در سامانه یافت نشد.</p>';
+                    echo '<p class="text-center"><span class=" fas fa-exclamation-circle" aria-hidden="true"></span></p>';
+                    echo '<p class="text-center pb-2">ایمیلی که وارد کردید در سامانه یافت نشد.</p>';
                 }
             }
         }

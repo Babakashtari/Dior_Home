@@ -87,7 +87,6 @@ function login_page_validation(){
             // an attempt to signup:
             elseif(!empty($signup_username) && !empty($signup_password) && !empty($signup_email) && !empty($signup_mobile_phone)){
                 // check if the username and email already exists:
-                    echo 'if conditional entered';
                 $user_check_query = "SELECT * FROM users WHERE username='$signup_username' OR email='$signup_email' OR mobile_phone='$signup_mobile_phone' LIMIT 1";
                 $result = mysqli_query($database_connection, $user_check_query);
                 $user = mysqli_fetch_assoc($result);
@@ -107,14 +106,14 @@ function login_page_validation(){
                 }else{
                     $password = password_hash($signup_password, PASSWORD_BCRYPT);
                     echo '<p class="text-success pt-4 pb-1 displayNone"><span class=" fa fa-check" aria-hidden="true"></span></p>';
-                    echo '<p class="signing-message text-success px-4 displayNone">' . $signup_username .  ' عزیز، ثبت نام شما با موفقیت انجام شد. از این پس می توانید با استفاده از منوی ورود، داخل سایت شوید. </p>';
+                    echo '<p class="signing-message text-success px-4 displayNone">' . $signup_username .  '  عزیز ایمیلی برایتان ارسال شد. لطفا ایمیل خود را چک کنید و بر روی لینک مورد نظر کلیک فرمایید تا حساب کاربریتان فعال شود. </p>';
                     $insert_query = "INSERT INTO users (username, pass, email, mobile_phone) VALUES ('$signup_username', '$password', '$signup_email', '$signup_mobile_phone')";
                     mysqli_query($database_connection, $insert_query);
 
                     // sending a reporting email:
-                    require 'PHPMailer/src/Exception.php';
-                    require 'PHPMailer/src/PHPMailer.php';
-                    require 'PHPMailer/src/SMTP.php';
+                    require '../PHPMailer/src/Exception.php';
+                    require '../PHPMailer/src/PHPMailer.php';
+                    require '../PHPMailer/src/SMTP.php';
                     $to = $signup_email;
                     $subject = " ثبت کاربری در پیشگامان پودینه آتا";
                     $heading = "<p style='direction:rtl;text-align:right'>" . $signup_username . " عزیز </p>";
@@ -123,7 +122,7 @@ function login_page_validation(){
                     $password_text = "<p style='direction:rtl;text-align:right'>رمز عبور: $signup_password </p>";
                     $body2 = "<p style='direction:rtl;text-align:right'>در صورتی که اقدام به ثبت نام توسط شما صورت نگرفته است لازم نیست اقدام خاصی بکنید در غیر این صورت، لطفا از طریق لینک  زیر ثبت نام خود را تکمیل نمایید:</p>";
                     $activation_page_link = "<p><a href ='https://diorhome.ir/emailActivation.php?email=" .$signup_email . "'>https://diorhome.ir/emailActivation.php?email=" .$signup_email . "</a></p>";
-                    $body3 = "<p>لازم به ذکر است خدماتی همچون خرید اینترنتی، ثبت سفارش و پیگیری آن تنها از طریق داشتن کاربری امکان پذیر است</p>";
+                    $body3 = "<p style='direction:rtl;text-align:right'>لازم به ذکر است خدماتی همچون خرید اینترنتی، ثبت سفارش و پیگیری آن تنها از طریق داشتن کاربری در سایت امکان پذیر است</p>";
                     $footer1 = "<p style='direction:rtl;text-align:left'>با تشکر</p>";
                     $footer2 = "<p style='direction:rtl;text-align:left'>گروه پشتیبانی پیشگامان پودينه آتا</p>";
                     $message = $heading . $body1 . $username_text . $password_text . $body2 . $activation_page_link . $body3 . $footer1 . $footer2;

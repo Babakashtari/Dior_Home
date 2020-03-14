@@ -1,9 +1,10 @@
 <?php require "php/code_functions.php" ?>
 <?php require 'php/explorer_warning.php' ?>
 <?php require "php/resetPasswordUpdate.php" ?>
+<?php require "php/copy_right.php" ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,15 +40,16 @@
     <!-- font awesome -->
     <link rel="stylesheet" href="CSS/all.min.css">
     <link rel="stylesheet" href="CSS/bootstrap.min.css.map">
-    <link rel="stylesheet" href="CSS/bootstrap.min.css"/>
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/Normalizer.css">
     <link rel="stylesheet" href="Css/fonts.css">
     <link rel="stylesheet" href="CSS/explorer_warning.css">
+    <link rel="stylesheet" href="CSS/copy_right.css">
     <link rel="stylesheet" href="CSS/resetPassword.css">
     <title>پیشگامان پودینه - تغییر گذرواژه</title>
 </head>
 <body>
-    <section class="background-image d-flex justify-content-center align-items-center">
+    <section class="background-image d-flex justify-content-center align-items-center flex-wrap container-fluid">
         <fieldset>
             <img src="images/Dior_logo_small.jpg" alt="لوگوی پیشگامان پودینه آتا">
             <h3>تغییر رمز عبور:</h3>
@@ -56,13 +58,9 @@
                 <?php  if(!empty($_POST['first_password']) && !empty($_POST['second_password'])) password_reset(); ?>
             </form>
         </fieldset>
-        <div class="links d-flex">
-            <a href="index.php">خانه</a>
-            <a href="">درباره ما</a>
-            <a href="">اخبار</a>
-            <a href="products.php">محصولات</a>
-        </div>
+        <?php copy_right(); ?>
     </section>
+
     <?php show_warning(); ?>
     <script src="JS/explorer_warning.js"></script>
     <script src="JS/jquery.min.js"></script>
