@@ -1,0 +1,32 @@
+* {
+  padding: 0;
+  margin: 0;
+  direction: rtl;
+}
+.iranSans {
+  font-family: "iranSans";
+}
+main > section {
+  padding: 2rem;
+  box-shadow: 1px 1px 8px black;
+}
+main > section + section {
+  margin-top: 3rem;
+}
+main > section > h3 {
+  text-align: center;
+}
+main > section > div > h5 {
+  text-align: center;
+}
+main > section > div {
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px black;
+}
+main > section > div + div {
+  margin-top: 3rem;
+}
+main > section > div > table p {
+  margin: 0;
+  text-align: right;
+}
