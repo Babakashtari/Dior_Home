@@ -75,6 +75,7 @@
     <script src="JS/explorer_warning.js"></script>
     <script src="JS/jquery.min.js"></script>
     <script src="JS/bootstrap.min.js"></script>
+    <script src="JS/copy_right.js"></script>
     <script src="JS/forgot.js"></script>
 </body>
 </html>
