@@ -44,28 +44,28 @@ session_start();
                                 }else{
                                     echo '<p class="text-danger text-center"><span class=" fas fa-exclamation-circle" aria-hidden="true"></span></p>';
                                     echo '<p class="text-center text-danger pb-2">لینک مورد نظر منقضی شده است.</p>';    
-                                    exit();
+                                    // exit();
                                 }
                             }else{
                                 echo '<p class="text-danger text-center"><span class=" fas fa-exclamation-circle" aria-hidden="true"></span></p>';
                                 echo '<p class="text-center text-danger pb-2">اطلاعات با یکدیگر تطابق ندارند.</p>';   
-                                exit();     
+                                // exit();     
                             }
                         }else{
                             echo '<p class="text-danger text-center"><span class=" fas fa-exclamation-circle" aria-hidden="true"></span></p>';
                             echo '<p class="text-center text-danger pb-2">این لینک قبلا استفاده شده است.</p>';       
-                            exit(); 
+                            // exit(); 
                         }
                     }else{
                         echo '<p class="text-danger text-center"><span class=" fas fa-exclamation-circle" aria-hidden="true"></span></p>';
                         echo '<p class="text-center text-danger pb-2">ایمیل وارد شده هنوز فعالسازی نشده است.</p>';    
-                        exit();
+                        // exit();
                     }
     
                 }else{
                     echo '<p class="text-danger text-center"><span class=" fas fa-exclamation-circle" aria-hidden="true"></span></p>';
                     echo '<p class="text-center text-danger pb-2">ایمیلی با اطلاعات فوق یافت نشد.</p>';   
-                    exit();     
+                    // exit();     
                 }
             }
         }
@@ -129,7 +129,7 @@ function password_reset(){
         }else{
             echo '<p class="text-danger text-center"><span class=" fas fa-exclamation-circle" aria-hidden="true"></span></p>';
             echo '<p class="text-center text-danger pb-2">رمز عبور جدید و تکرار آن باهمدیگر مطابقت ندارند.</p>';    
-            exit();
+            // exit();
         }
 }
 ?>

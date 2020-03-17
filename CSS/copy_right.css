@@ -8,12 +8,12 @@ body > div.links {
     left: 0;
     right: 0;
 }
-body > section.background-image > div.links > div.footer {
+body > div.links > div.footer {
     font-family: "IranSans";
     direction: rtl;
 }
-/* @media screen and (min-height: 486px) and (orientation: portrait) {
-    body > div.links > div.footer > p {
-        margin-bottom: 0.75rem !important;
+@media screen and (min-height: 486px) and (orientation: portrait) {
+    body > div.links > div.link-container {
+        padding-bottom: 1.5rem !important;
     }
-} */
+}

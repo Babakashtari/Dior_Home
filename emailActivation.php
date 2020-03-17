@@ -1,6 +1,6 @@
 <?php require "php/code_functions.php" ?>
 <?php require 'php/explorer_warning.php' ?>
-<?php require "php/resetPasswordUpdate.php" ?>
+<?php require 'php/copy_right.php' ?>
 
 <!DOCTYPE html>
 <html lang="fa">
@@ -43,25 +43,20 @@
     <link rel="stylesheet" href="CSS/Normalizer.css">
     <link rel="stylesheet" href="Css/fonts.css">
     <link rel="stylesheet" href="CSS/explorer_warning.css">
+    <link rel="stylesheet" href="CSS/copy_right.css">
     <link rel="stylesheet" href="CSS/emailActivation.css">
-    <title>پیشگامان پودینه - تایید کاربری</title>
+    <title>پیشگامان پودینه - تایید ایمیل</title>
 </head>
 <body>
-    <section class="background-image d-flex justify-content-center align-items-center">
-        <div>
+    <section class="result-section d-flex justify-content-center py-1 pt-sm-3">
+        <div class="result">
             <img src="images/Dior_logo_small.jpg" alt="لوگوی پیشگامان پودینه آتا">
-            <h3>تغییر رمز عبور:</h3>
-            <div class="d-flex alig-items-center justify-content-center">
-                <?php retrieve_data_from_the_mailed_link(); ?>
-            </div>
-        </div>
-        <div class="links d-flex">
-            <a href="index.php">خانه</a>
-            <a href="#">درباره ما</a>
-            <a href="#">اخبار</a>
-            <a href="products.php">محصولات</a>
+            <h3>تایید ایمیل</h3>
+            <?php require "php/emailActivationResult.php" ?>
         </div>
     </section>
+    <?php copy_right(); ?>
+
     <?php show_warning(); ?>
     <script src="JS/explorer_warning.js"></script>
     <script src="JS/jquery.min.js"></script>

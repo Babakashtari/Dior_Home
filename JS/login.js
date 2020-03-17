@@ -105,12 +105,7 @@ const close_modal = () => {
         });
     }
 };
-// self invoking function for page reload for making logout text turn into green in the jumbotron:
-// (() => {
-//     setTimeout(() => {
-//         location.replace("login.php");
-//     }, 1000);
-// })();
+
 const change_url = () => {
     location.replace("login.php");
 };
@@ -127,28 +122,40 @@ const signing_validation = event => {
             inputs[i].value = null;
         }
     }
-    const parameters = [inputs[0].value, inputs[1].value, inputs[2].value, inputs[3].value, inputs[4].value, inputs[5].value];
-    const AjaxLoader = (signup_username, signup_password, signup_email, signup_mobile_phone, login_username, login_password) => {
-        const AJAX_request = new XMLHttpRequest();
-        AJAX_request.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                // code to be executed when ajax receives an anwser...
-                validation_result_div.innerHTML = this.responseText;
-                validation_result.classList.remove("displayNone");
-                close_spinners();
-                close_modal();
-                const validation_result_message = document.querySelector("main>section.validation-result>div>p.signing-message");
-                if (validation_result_message.classList.contains("successful")) {
-                    setTimeout(() => {
-                        change_url();
-                    }, 1000);
-                }
+    const signup_username = inputs[0].value;
+    const signup_password = inputs[1].value;
+    const signup_email = inputs[2].value;
+    const signup_mobile_phone = inputs[3].value;
+    const login_username = inputs[4].value;
+    const login_password = inputs[5].value;
+
+    // const parameters = [inputs[0].value, inputs[1].value, inputs[2].value, inputs[3].value, inputs[4].value, inputs[5].value];
+    // const AjaxLoader = (signup_username, signup_password, signup_email, signup_mobile_phone, login_username, login_password) => {
+
+    const AJAX_request = new XMLHttpRequest();
+    AJAX_request.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            // code to be executed when ajax receives an anwser...
+            validation_result_div.innerHTML = this.responseText;
+            validation_result.classList.remove("displayNone");
+            close_spinners();
+            close_modal();
+            const validation_result_message = document.querySelector("main>section.validation-result>div>p.signing-message");
+            if (validation_result_message.classList.contains("successful")) {
+                setTimeout(() => {
+                    change_url();
+                }, 1000);
             }
-        };
-        AJAX_request.open("POST", "php/loginResult.php", true);
-        AJAX_request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        // prettier-ignore
-        AJAX_request.send("signup_username=" + signup_username + "&signup_password=" + signup_password + "&signup_email="+ signup_email + "&signup_mobile_phone="+ signup_mobile_phone + "&login_username="+ login_username + "&login_password="+ login_password);
+        }
     };
-    AjaxLoader(...parameters);
+    if (event.target.classList.contains("login")) {
+        AJAX_request.open("POST", "php/loginResult.php", true);
+    } else if (event.target.classList.contains("signup")) {
+        AJAX_request.open("POST", "php/signup_result.php", true);
+    }
+    AJAX_request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // prettier-ignore
+    AJAX_request.send("signup_username=" + signup_username + "&signup_password=" + signup_password + "&signup_email="+ signup_email + "&signup_mobile_phone="+ signup_mobile_phone + "&login_username="+ login_username + "&login_password="+ login_password);
 };
+// AjaxLoader(...parameters);
+// };

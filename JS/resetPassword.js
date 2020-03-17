@@ -33,14 +33,3 @@ const validate = (regex, input) => {
         }
     }
 };
-
-const change_image = () => {
-    if (window.innerWidth < 986) {
-        section.style.backgroundImage = "url(images/login_page_images/forgot/trees.jpg)";
-    } else {
-        section.style.backgroundImage = "url(images/login_page_images/forgot/forest1.jpg)";
-    }
-};
-
-window.addEventListener("load", change_image);
-window.addEventListener("resize", change_image);

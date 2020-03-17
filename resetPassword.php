@@ -49,17 +49,17 @@
     <title>پیشگامان پودینه - تغییر گذرواژه</title>
 </head>
 <body>
-    <section class="background-image d-flex justify-content-center align-items-center flex-wrap container-fluid">
+    <section class="form-section justify-content-center py-1 pt-sm-3 d-flex">
         <fieldset>
             <img src="images/Dior_logo_small.jpg" alt="لوگوی پیشگامان پودینه آتا">
             <h3>تغییر رمز عبور:</h3>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                 <?php retrieve_data_from_the_mailed_link(); ?>
-                <?php  if(!empty($_POST['first_password']) && !empty($_POST['second_password'])) password_reset(); ?>
+                <?php  if(!empty($_POST['first_password']) && !empty($_POST['second_password'])){password_reset();} ?>
             </form>
         </fieldset>
-        <?php copy_right(); ?>
     </section>
+    <?php copy_right(); ?>
 
     <?php show_warning(); ?>
     <script src="JS/explorer_warning.js"></script>

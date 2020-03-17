@@ -31,8 +31,6 @@ body > section.form-section > fieldset {
     border-radius: 5px;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.5);
-    /* border: 3px solid black; */
-    /* box-shadow: 3px 3px 30px black; */
     padding: 2rem 1rem;
 }
 body > section.form-section > fieldset > img {
@@ -42,10 +40,8 @@ body > section.form-section > fieldset > img {
     box-shadow: 1px 1px 10px black, -1px -1px 10px black;
 }
 body > section.form-section > fieldset > h3 {
-    /* width: 80%; */
     color: white;
     text-shadow: 1px 1px 1px black;
-
     text-align: center;
     padding: 1rem;
 }
