@@ -1,0 +1,114 @@
+* {
+    padding: 0;
+    margin: 0;
+    direction: rtl;
+}
+.displayNone {
+    display: none;
+}
+.iranSans {
+    font-family: "iranSans";
+}
+::-webkit-input-placeholder {
+    font-family: "iranSans";
+}
+::-moz-placeholder {
+    font-family: "iranSans";
+}
+:-ms-input-placeholder {
+    font-family: "iranSans";
+}
+::-ms-input-placeholder {
+    font-family: "iranSans";
+}
+::placeholder,
+label {
+    font-family: "iranSans";
+}
+main > section {
+    padding: 2rem;
+    box-shadow: 1px 1px 8px black;
+}
+main > section + section {
+    margin-top: 3rem;
+}
+main > section > h3 {
+    text-align: center;
+}
+main > section > div > h5 {
+    text-align: center;
+}
+main > section > div {
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px black;
+}
+main > section > div + div {
+    margin-top: 3rem;
+}
+main > section > div > table p {
+    margin: 0;
+    text-align: right;
+}
+main > section.users-info > div.search-criteria {
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px black;
+}
+main > section.users-info > div.search_criteria > div > span > input[type="checkbox"] {
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+main > section.users-info > form {
+    border-radius: 5px;
+}
+main > section.products-info > form > button[type="submit"] {
+    width: 100%;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+main > section.users-info > form > div.checkbox {
+    text-align: right;
+}
+main > section.users-info > form > div.checkbox > label > input[type="checkbox"] {
+    margin-left: 0.25rem;
+}
+main > section.users-info > form > button[type="submit"] {
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 100%;
+}
+main > section.products-info > div.search_criteria {
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px black;
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+}
+main > section.products-info > div.search_criteria > div > span > input[type="checkbox"] {
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+@media screen and (max-width: 657px) {
+    main > section.products-info > div.search_criteria > div {
+        font-size: 0.75rem;
+    }
+    main > section.products-info > div.search_criteria > h5 {
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width: 583px) {
+    main > section.users-info > div > table {
+        font-size: 0.75rem;
+    }
+    main > section.users-info > div > h5 {
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width: 310px) {
+    main > section.users-info > form,
+    main > section.users-info > div.search_criteria > div {
+        font-size: 0.75rem;
+    }
+    main > section.users-info > div.search_criteria > h5 {
+        font-size: 1rem;
+    }
+}
