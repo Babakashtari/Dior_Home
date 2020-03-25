@@ -1,5 +1,5 @@
-<?php require "../php/expiration.php" ?>
-<?php require '../php/explorer_warning.php' ?>
+<?php require "../httpdocs/php/expiration.php" ?>
+<?php require '../httpdocs/php/explorer_warning.php' ?>
 <?php require "php/admin_expiration.php" ?>
 <?php 
     session_start();
@@ -23,28 +23,27 @@
     <meta name="author" content="Babak Ashtari" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="images/fav_icon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/fav_icon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="images/fav_icon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/fav_icon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="images/fav_icon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="images/fav_icon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="images/fav_icon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/fav_icon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="images/fav_icon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/fav_icon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="images/fav_icon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/fav_icon/favicon-16x16.png">
-    <link rel="manifest" href="images/fav_icon/manifest.json">
+    <link rel="apple-touch-icon" sizes="60x60" href="../httpdocs/images/fav_icon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../httpdocs/images/fav_icon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../httpdocs/images/fav_icon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../httpdocs/images/fav_icon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../httpdocs/images/fav_icon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../httpdocs/images/fav_icon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../httpdocs/images/fav_icon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../httpdocs/images/fav_icon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../httpdocs/images/fav_icon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../httpdocs/images/fav_icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../httpdocs/images/fav_icon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../httpdocs/images/fav_icon/favicon-16x16.png">
+    <link rel="manifest" href="../httpdocs/images/fav_icon/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="images/fav_icon/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="../httpdocs/images/fav_icon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="../CSS/all.min.css">
-    <link rel="stylesheet" href="../CSS/bootstrap.min.css.map">
-    <link rel="stylesheet" href="../CSS/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../CSS/Normalizer.css">
-    <link rel="stylesheet" href="../CSS/fonts.css">
+    <link rel="stylesheet" href="../httpdocs/CSS/all.min.css">
+    <link rel="stylesheet" href="../httpdocs/CSS/bootstrap.min.css.map">
+    <link rel="stylesheet" href="../httpdocs/CSS/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../httpdocs/CSS/Normalizer.css">
+    <link rel="stylesheet" href="../httpdocs/CSS/fonts.css">
     <link rel="stylesheet" href="CSS/signed_in_admin.css">
 
     <title>Admin Panel</title>
@@ -92,175 +91,66 @@
                     <span class="iranSans users-checkboxes"><input type="checkbox" name="users-checkboxes" id="">کاربر ادمین</s>
                 </div>
             </div>
-            <form class="row my-2 p-2 text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+            <form class="row my-2 p-2 text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                 <div class="form-group col-12 displayNone">
-                    <input type="text" class="form-control" name="first_name" id="first_name" placeholder="نام">
-                </div>
-                <div class="form-group col-12 displayNone">
-                    <input type="text" class="form-control" name="last_name" id="last_name" placeholder="نام خانوادگی">
-                </div>
-                <div class="form-group col-12 displayNone">
-                    <input type="number" class="form-control" name="age" id="age" placeholder="سن">
-                </div>
-                <div class="form-group col-12 displayNone">
-                    <input type="text" class="form-control" name="gender" id="gender" placeholder="جنسیت">
-                </div>
-                <div class="form-group col-12 displayNone">
-                    <input type="text" class="form-control" name="username" id="username" placeholder="نام کاربری">
-                </div>
-                <div class="form-group col-12 displayNone">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="ایمیل">
-                </div>
-                <div class="form-group col-12 displayNone">
-                    <input type="text" class="form-control" name="home_address" id="home_address" placeholder="آدرس منزل">
-                </div>
-                <div class="form-group col-12 displayNone">
-                    <input type="text" class="form-control" name="landline" id="landline" placeholder="تلفن ثابت">
-                </div>
-                <div class="form-group col-12 displayNone">
-                    <input type="text" class="form-control" name="mobile_phone" id="mobile_phone" placeholder="موبایل">
-                </div>
-                <div class="checkbox col-4 displayNone">
-                    <label for="verified"><input type="checkbox" id="verified" name="verified"> کاربر تایید شده</label>
-                </div>
-                <div class="checkbox col-4 displayNone">
-                    <label for="newsletter"><input type="checkbox" id="newsletter" name="newsletter"> خبرنامه</label>
-                </div>
-                <div class="checkbox col-4 displayNone">
-                    <label for="administrator"><input type="checkbox" id="administrator" name="administrator">ادمین</label>
-                </div>
-                <button type="submit" class="btn btn-primary displayNone">جستجو</button>
-            </form> 
-            <div class="general-info p-3">
-                <h5 class="iranSans">اطلاعات عمومی:</h5>
-                <table class="table table-dark">
-                    <thead>
-                        <th>
-                            <p class="iranSans pb-0">ردیف</p>
-                        </th>
-                        <th>
-                            <p class="iranSans pb-0">نام</p>
-                        </th>
-                        <th>
-                            <p class="iranSans pb-0">نام خانوادگی</p>
-                        </th>
-                        <th>
-                            <p class="iranSans pb-0">نام کاربری</p>
-                        </th>
-                        <th>
-                            <p class="iranSans pb-0">رمز عبور</p>
-                        </th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <p class="iranSans"></p>
-                            </td>
-                            <td>
-                                <p class="iranSans"></p>
-                            </td>
-                            <td>
-                                <p class="iranSans"></p>
-                            </td>
-                            <td>
-                                <p class="iranSans"></p>
-                            </td>
-                            <td>
-                                <p class="iranSans"></p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="contact-info p-3">
-                <h5 class="iranSans">اطلاعات تماس:</h5>
-                <table class="table table-dark">
-                    <thead>
-                        <th>
-                            <p class="iranSans pb-0">ردیف</p>
-                        </th>
-                        <th>
-                            <p class="iranSans pb-0">آدرس ایمیل</p>
-                        </th>
-                        <th>
-                            <p class="iranSans pb-0">تلفن ثابت</p>
-                        </th>
-                        <th>
-                            <p class="iranSans pb-0">موبایل</p>
-                        </th>
-                        <th>
-                            <p class="iranSans pb-0">آدرس پستی</p>
-                        </th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <p class="iranSans"></p>
-                            </td>
-                            <td>
-                                <p class="iranSans"></p>
-                            </td>
-                            <td>
-                                <p class="iranSans"></p>
-                            </td>
-                            <td>
-                                <p class="iranSans"></p>
-                            </td>
-                            <td>
-                                <p class="iranSans"></p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="miscellaneous p-3">
-                <h5 class="iranSans">اطلاعات تکمیلی:</h5>
-                <table class="table table-dark">
-                    <thead>
-                        <th>
-                            <p class="iranSans pb-0">ردیف</p>
-                        </th>
+                    <input type="text" class="form-control" name="first_name" id="first_name" placeholder="نام" oninput="validate(/^[A-Z][a-z]{2,}$/, this)">
+                    <p class="displayNone text-danger iranSans">نام باید به لاتين باشد با حرف بزنگ آغاز شود و حداقل 3 کاراکتر داشته باشد.</p>
 
-                        <th>
-                            <p class="iranSans pb-0">سن</p>
-                        </th>
-                        <th>
-                            <p class="iranSans pb-0">جنسیت</p>
-                        </th>
-                        <th>
-                            <p class="iranSans pb-0">وضعیت تایید</p>
-                        </th>
-                        <th>
-                            <p class="iranSans pb-0">خبرنامه</p>
-                        </th>
-                        <th>
-                            <p class="iranSans pb-0">آدرس وبسایت</p>
-                        </th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <p class="iranSans"></p>
-                            </td>
-                            <td>
-                                <p class="iranSans"></p>
-                            </td>
-                            <td>
-                                <p class="iranSans"></p>
-                            </td>
-                            <td>
-                                <p class="iranSans"></p>
-                            </td>
-                            <td>
-                                <p class="iranSans"></p>
-                            </td>
-                            <td>
-                                <p class="iranSans"></p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                </div>
+                <div class="form-group col-12 displayNone">
+                    <input type="text" class="form-control" name="last_name" id="last_name" placeholder="نام خانوادگی" oninput="validate(/^[A-Z][a-z]{2,}$/, this)">
+                    <p class="displayNone text-danger iranSans">نام خانوادگی باید با حروف بزنگ آغاز شود و حداقل 3 کاراکتر داشته باشد.</p>
+
+                </div>
+                <div class="form-group col-12 displayNone">
+                    <input type="number" class="form-control" name="age" id="age" placeholder="سن" oninput="validate(/^(([1][2-9])|([2-7][0-9]))$/, this)">
+                    <p class="displayNone text-danger iranSans">تنها اعداد بین 12 و 80 قابل قبول هستند.</p>
+
+                </div>
+                <div class="form-group col-12 displayNone">
+                    <select class="p-1 col-12 iranSans" name="gender" id="gender" onchange="validate(/^(male)|(female)$/, this)">
+                        <option value="">جنسیت</option>
+                        <option value="male">مذکر</option>
+                        <option value="female">مونث</option>
+                    </select>
+                </div>
+                <div class="form-group col-12 displayNone">
+                    <input type="text" class="form-control" name="username" id="username" placeholder="نام کاربری" oninput="validate(/^[A-Z][a-z0-9]{2,}$/, this)">
+                    <p class='displayNone text-danger iranSans'>نام کاربری باید به حروف لاتین باشد، حداقل 3 حرف داشته باشد و با حروف بزرگ آغاز شود.</p>
+                </div>
+                <div class="form-group col-12 displayNone">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="ایمیل" oninput="validate(/^[a-zA-Z0-9_]{3,20}@[a-z]{3,15}[\.][a-z]{2,3}$/, this)">
+                    <p class='displayNone text-danger iranSans'>آدرس ایمیل معتبر نیست.</p>
+                </div>
+                <div class="form-group col-12 displayNone">
+                    <input type="text" class="form-control" name="home_address" id="home_address" placeholder="آدرس منزل" oninput="validate(/.*/, this)">
+                    <p class="displayNone text-danger iranSans"></p>
+                </div>
+                <div class="form-group col-12 displayNone">
+                    <input type="text" class="form-control" name="landline" id="landline" placeholder="تلفن ثابت" oninput="validate(/^0[0-9]{7,}$/, this)">
+                    <p class="displayNone text-danger iranSans">شماره تلفن را با پیش شماره شهر وارد کنید.</p>
+                </div>
+                <div class="form-group col-12 displayNone">
+                    <input type="text" class="form-control" name="mobile_phone" id="mobile_phone" placeholder="موبایل" oninput="validate(/^09\d{9}$/, this)">
+                    <p class='displayNone text-danger iranSans'>تلفن باید فقط از عدد تشکیل شود. 09 ابتدای آن بیاید و 11 رقم داشته باشد.</p>
+                </div>
+                <div class="checkbox col-4 displayNone">
+                    <label for="verified"><input type="checkbox" id="verified" name="verified" value="YES"> کاربر تایید شده</label>
+                </div>
+                <div class="checkbox col-4 displayNone">
+                    <label for="newsletter"><input type="checkbox" id="newsletter" name="newsletter" value="YES"> خبرنامه</label>
+                </div>
+                <div class="checkbox col-4 displayNone">
+                    <label for="administrator"><input type="checkbox" id="administrator" name="administrator" value="YES">ادمین</label>
+                </div>
+                <input type="submit" class="iranSans btn btn-primary displayNone" name="user_search" value="جستجو"></input>
+            </form> 
+            <?php require 'php/user_search_analysis.php' ?>
+
+            <div class="product-pagination">
+<!-- pagination goes here -->
             </div>
+
         </section>
         <section class="products-info">
         <h3 class="iranSans">جستجوی محصولات</h3>
@@ -286,7 +176,7 @@
                 </div>
 
             </div>
-            <form class="row my-2 p-2 text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+            <form class="row my-2 p-2 text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                 <div class="form-group col-12 displayNone">
                     <input type="text" class="form-control" id="product_name" name="product_name" placeholder="نام محصول">
                 </div>
@@ -305,7 +195,7 @@
                 <div class="form-group col-12 displayNone">
                     <input type="text" class="form-control" id="uploader_ID" name="uploader_ID" placeholder="نام شخص ارسال کننده">
                 </div>
-                <button type="submit" class="btn btn-primary displayNone">جستجو</button>
+                <input type="submit" class="iranSans btn btn-primary displayNone" value="جستجو"></input>
             </form> 
         </section>
     </main>

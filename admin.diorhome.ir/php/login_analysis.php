@@ -22,7 +22,7 @@ if(isset($_POST['submit'])){
             echo '<p class="iranSans signing-message text-center text-danger px-4 ">رمز عبور درست وارد نشده است</p>';
         }
         if(!empty($username) && !empty($password)){
-            require "../php/database_connection.php";
+            require "../httpdocs/php/database_connection.php";
             if(!$database_connection){
                 die('connection failed:'.mysqli_connect_error());
             }else{  

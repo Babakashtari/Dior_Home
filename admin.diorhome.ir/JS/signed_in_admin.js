@@ -5,14 +5,16 @@ const users_top_div_first_9_checkboxes = document.querySelectorAll(
 const users_search_form_first_9_divs = document.querySelectorAll("main>section.users-info>form>div.form-group");
 const bottom_3_top_div_boxes = document.querySelectorAll('main>section.users-info>div.search_criteria>div>span>input[name="users-checkboxes"]');
 const bottom_3_form_checkboxes = document.querySelectorAll('main>section.users-info>form>div.checkbox>label>input[type="checkbox"]');
-const users_search_submit_button = document.querySelector('main>section.users-info>form>button[type="submit"]');
-const products_search_submit_button = document.querySelector('main>section.products-info>form>button[type="submit"]');
+const users_search_submit_button = document.querySelector('main>section.users-info>form>input[type="submit"]');
+const products_search_submit_button = document.querySelector('main>section.products-info>form>input[type="submit"]');
 const users_search_form_container = document.querySelector("main>section.users-info>form");
 const products_search_form_container = document.querySelector("main>section.products-info>form");
 const products_search_top_div_boxes = document.querySelectorAll('main>section.products-info>div.search_criteria>div>span>input[type="checkbox"]');
 const products_search_form_divs = document.querySelectorAll("main>section.products-info>form>div.form-group");
+const users_error_messages = document.querySelectorAll("main>section.users-info>form>div.form-group>p");
+const users_inputs = document.querySelectorAll("main>section.users-info>form>div.form-group>input");
 
-// console.log(products_search_form_container);
+console.log(users_inputs);
 // تیک زدن سه چک باکس ادمین، خبرنامه و تایید ایمیل در فیلد های فرم جستجوی کاربر:
 const checker = event => {
     for (let i = 0; i < bottom_3_top_div_boxes.length; i++) {
@@ -116,3 +118,26 @@ const function_loader2 = event => {
 for (let s = 0; s < products_search_top_div_boxes.length; s++) {
     products_search_top_div_boxes[s].addEventListener("change", function_loader2);
 }
+
+const validate = (regex, input) => {
+    for (let i = 0; i < users_error_messages.length; i++) {
+        if (input === users_inputs[i]) {
+            if (input.value === "") {
+                input.classList.remove("passed");
+                input.classList.remove("failed");
+                users_error_messages[i].classList.add("displayNone");
+            } else {
+                const validation_result = regex.test(input.value);
+                if (validation_result) {
+                    input.classList.add("passed");
+                    input.classList.remove("failed");
+                    users_error_messages[i].classList.add("displayNone");
+                } else {
+                    input.classList.add("failed");
+                    input.classList.remove("passed");
+                    users_error_messages[i].classList.remove("displayNone");
+                }
+            }
+        }
+    }
+};

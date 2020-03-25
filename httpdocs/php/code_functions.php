@@ -62,7 +62,7 @@ function header_generator(){
                         <input class="modal-closable p-1" type="search" name="search" placeholder="جستجو..." />
                 </li>
                 <li class="col">
-                    <a href="homepage.php">';
+                    <a href="shopping_cart.php">';
                     shopping_cart_logged_in_icon_generator();        
     echo            '</a>
                 </li>
@@ -291,9 +291,6 @@ function shopping_cart_logged_in_icon_generator(){
 function user_modification_form_generator(){
     // database connection:
     require "database_connection.php";
-
-    // connect_database();
-    // database connection check:
     if(!$database_connection){
         die('connection failed:'.mysqli_connect_error());
     }else{

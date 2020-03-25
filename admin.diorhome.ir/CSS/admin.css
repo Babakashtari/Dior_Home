@@ -3,6 +3,10 @@
     margin: 0;
     direction: rtl;
 }
+@font-face {
+    src: url(../../httpdocs/Fonts/IRANSansWeb_Bold.ttf);
+    font-family: "IranSans";
+}
 .iranSans {
     font-family: "iranSans";
 }
@@ -14,21 +18,6 @@
 }
 .passed {
     border-color: green !important;
-}
-::-webkit-input-placeholder {
-    font-family: "iranSans";
-}
-::-moz-placeholder {
-    font-family: "iranSans";
-}
-:-ms-input-placeholder {
-    font-family: "iranSans";
-}
-::-ms-input-placeholder {
-    font-family: "iranSans";
-}
-::placeholder {
-    font-family: "iranSans";
 }
 main {
     width: 100%;
