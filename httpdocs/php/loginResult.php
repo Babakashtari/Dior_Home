@@ -31,10 +31,6 @@ session_start();
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $login_username = test_input($_POST["login_username"], "/^[A-Z][a-z0-9]{2,}$/");
         $login_password = test_input($_POST["login_password"], "/^[a-zA-Z0-9]{5,15}$/");
-        // $signup_username = test_input($_POST["signup_username"], "/^[A-Z][a-z0-9]{4,10}$/");
-        // $signup_password = test_input($_POST["signup_password"], "/^[a-zA-Z0-9]{5,15}$/");
-        // $signup_email = email_test_input($_POST["signup_email"]);
-        // $signup_mobile_phone = test_input($_POST['signup_mobile_phone'], "/^09\d{9}$/");
         
         // database connection:
         require "database_connection.php";
