@@ -46,19 +46,24 @@ session_start();
                     $user_row = mysqli_fetch_assoc($username_check);
                     if (password_verify($login_password, $user_row['pass'])){
                         if($user_row['verified'] == 'YES'){
-                        // getting the user info for the SESSION:
-                            $_SESSION['user_ID'] = $user_row['ID'];
-                            $_SESSION['user_username'] = $user_row['username'];
-                            $_SESSION['user_email'] = $user_row['email'];
-                            $_SESSION['user_mobile_phone'] = $user_row['mobile_phone'];
-                            $_SESSION['login_start_time'] = time();
-                            // expiration time is set to 30 minutes: 30 *60
-                            $_SESSION['login_expiration_time'] = $_SESSION['login_start_time'] + (30*60);
-    
-                            echo '
-                            <p class="text-success pt-4 pb-1 displayNone"><span class=" fa fa-check" aria-hidden="true"></span></p>
-                            <p class="signing-message successful text-success px-4 displayNone"> ' . $login_username . ' عزیز خوش آمدید . </p>  
-                            ';    
+                            if($user_row['disabled'] == 'YES'){
+                                echo '<p class="text-danger pt-4 pb-1 displayNone"><span class=" fas fa-exclamation-circle" aria-hidden="true"></span></p>';
+                                echo '<p class="signing-message text-danger px-4 displayNone">کاربری شما غیر فعال شده است. در صورتی که این امر اشتباهی صورت گرفته است، لطفا با گروه پشتیبانی تماس بگیرید.</p>';    
+                            }else{
+                            // getting the user info for the SESSION:
+                                $_SESSION['user_ID'] = $user_row['ID'];
+                                $_SESSION['user_username'] = $user_row['username'];
+                                $_SESSION['user_email'] = $user_row['email'];
+                                $_SESSION['user_mobile_phone'] = $user_row['mobile_phone'];
+                                $_SESSION['login_start_time'] = time();
+                                // expiration time is set to 30 minutes: 30 *60
+                                $_SESSION['login_expiration_time'] = $_SESSION['login_start_time'] + (30*60);
+        
+                                echo '
+                                <p class="text-success pt-4 pb-1 displayNone"><span class=" fa fa-check" aria-hidden="true"></span></p>
+                                <p class="signing-message successful text-success px-4 displayNone"> ' . $login_username . ' عزیز خوش آمدید . </p>  
+                                ';        
+                            }
                         }else{
                             echo '<p class="text-danger pt-4 pb-1 displayNone"><span class=" fas fa-exclamation-circle" aria-hidden="true"></span></p>';
                             echo '<p class="signing-message text-danger px-4 displayNone">شما کاربریتان را هنوز تایید نکرده اید. لطفا ایمیلتان را چک کنید</p>';
