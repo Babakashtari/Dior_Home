@@ -1,9 +1,5 @@
 const users_top_div_checkboxes = document.querySelectorAll('main>section.users-info>div.search_criteria>div>span>input[type="checkbox"]');
-const users_top_div_first_9_checkboxes = document.querySelectorAll(
-    "main>section.users-info>div.search_criteria>div>span:not(.users-checkboxes)>input[type='checkbox']"
-);
-const users_search_form_first_9_divs = document.querySelectorAll("main>section.users-info>form>div.form-group");
-const bottom_3_top_div_boxes = document.querySelectorAll('main>section.users-info>div.search_criteria>div>span>input[name="users-checkboxes"]');
+const users_search_form_divs = document.querySelectorAll("main>section.users-info>form>div.form-group");
 const bottom_3_form_checkboxes = document.querySelectorAll('main>section.users-info>form>div.checkbox>label>input[type="checkbox"]');
 const users_search_submit_button = document.querySelector('main>section.users-info>form>input[type="submit"]');
 const products_search_submit_button = document.querySelector('main>section.products-info>form>input[type="submit"]');
@@ -13,49 +9,38 @@ const products_search_top_div_boxes = document.querySelectorAll('main>section.pr
 const products_search_form_divs = document.querySelectorAll("main>section.products-info>form>div.form-group");
 const users_error_messages = document.querySelectorAll("main>section.users-info>form>div.form-group>p");
 const users_inputs = document.querySelectorAll("main>section.users-info>form>div.form-group>input");
+const users_search_result_div = document.querySelector("main>section.users-info>div.result");
 
-console.log(users_inputs);
-// تیک زدن سه چک باکس ادمین، خبرنامه و تایید ایمیل در فیلد های فرم جستجوی کاربر:
-const checker = event => {
-    for (let i = 0; i < bottom_3_top_div_boxes.length; i++) {
-        if (event.target === bottom_3_top_div_boxes[i]) {
-            if (event.target.checked) {
-                bottom_3_form_checkboxes[i].checked = true;
-            } else {
-                if (bottom_3_top_div_boxes[i].checked) {
-                    bottom_3_form_checkboxes[i].checked = true;
-                } else {
-                    bottom_3_form_checkboxes[i].checked = false;
-                }
-            }
-        }
+// ریفرش کردن صفحه برای اینکه متغیر های سیشن کار کنند:
+window.onload = function() {
+    if (!window.location.hash) {
+        window.location = window.location + "#loaded";
+        window.location.reload();
     }
 };
-
-// برداشتن تیک چک باکس ها وقتی صفحه لود می شود:
-for (let i = 0; i < bottom_3_top_div_boxes.length; i++) {
-    bottom_3_top_div_boxes[i].addEventListener("change", checker);
-}
-const remove_ticks = array => {
-    for (let i = 0; i < array.length; i++) {
-        array[i].checked = false;
-    }
-};
-document.addEventListener("load", remove_ticks(users_top_div_first_9_checkboxes));
-document.addEventListener("load", remove_ticks(products_search_top_div_boxes));
-
 // ظاهر شدن فیلد سرچ مربوطه در فرم بعد از تیک زدن چک باکس مربوطه در قسمت جستجوی کاربر:
 const user_search_input_appear = event => {
-    for (let i = 0; i < users_top_div_first_9_checkboxes.length; i++) {
-        if (event.target === users_top_div_first_9_checkboxes[i]) {
+    for (let i = 0; i < users_top_div_checkboxes.length; i++) {
+        if (event.target === users_top_div_checkboxes[i]) {
             if (event.target.checked) {
-                users_search_form_first_9_divs[i].classList.remove("displayNone");
+                users_search_form_divs[i].classList.remove("displayNone");
             } else {
-                users_search_form_first_9_divs[i].classList.add("displayNone");
+                users_search_form_divs[i].classList.add("displayNone");
             }
         }
     }
 };
+const user_search_input_appear2 = () => {
+    for (let i = 0; i < users_top_div_checkboxes.length; i++) {
+        if (users_top_div_checkboxes[i].checked) {
+            users_search_form_divs[i].classList.remove("displayNone");
+        } else {
+            users_search_form_divs[i].classList.add("displayNone");
+        }
+    }
+};
+
+user_search_input_appear2();
 // ظاهر شدن دکمه جستجو بعد از فعال شدن حداقل یک فیلد توسط کاربر ادمین:
 const users_form_submit_button_appear = () => {
     let message = "";
@@ -72,13 +57,14 @@ const users_form_submit_button_appear = () => {
         users_search_form_container.style.boxShadow = "none";
     }
 };
+users_form_submit_button_appear();
 
 const function_loader = event => {
     user_search_input_appear(event);
     users_form_submit_button_appear();
 };
-for (let s = 0; s < users_top_div_first_9_checkboxes.length; s++) {
-    users_top_div_first_9_checkboxes[s].addEventListener("change", function_loader);
+for (let s = 0; s < users_top_div_checkboxes.length; s++) {
+    users_top_div_checkboxes[s].addEventListener("change", function_loader);
 }
 
 // ظاهر شدن فیلد سرچ مربوطه در فرم بعد از تیک زدن چک باکس مربوطه در قسمت جستجوی محصول:

@@ -61,22 +61,22 @@
                 <p class="p-2 px-md-4 pb-4 mx-2 mx-md-4 mb-4 "> اتاق خواب و نشيمن خود را آنگونه كه می پسنديد طراحی كنيد و به ما بدهيد تا برايتان توليد كنيم. پيشگامان پودينه آتا از سال <span class="Yekan">1380</span> و با بيش از <span class="Yekan">18</span> سال تجربه، طرح و الگوی شما را به صورت سفارشی دریافت و برایتان به صورت چاپ دیجیتالی روی پارچه تولید می کند.</p>
                 <table class="container px-1">
                     <tr class="row">
-                        <td class="col-6 py-2 px-2 px-md-4"><a href="#"><img class="border border-primary" src="images/index_images/carpet_board1.jpg" alt="روتختی نمونه کار پیشگامان پودینه"></a></td>
-                        <td class="col-3 py-2 px-2 px-md-4"><a href="#"><img class="border border-primary" src="images/index_images/curtain2.jpg" alt="پرده نمونه چاپی پیشگامان پودینه"></a></td>
-                        <td class="col-3 py-2 px-2 px-md-4"><a href="#"><img class="border border-primary" src="images/index_images/sleeping_products.jpg" alt="كالاي خواب شامل كوسن، روتختي و روملافه اي"></a></td>
+                        <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=carpet_products&product_subcategory=تابلوفرش"><img class="border border-primary" src="images/index_images/carpet_board1.jpg" alt="روتختی نمونه کار پیشگامان پودینه"></a></td>
+                        <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=living_room_products&product_subcategory=پرده"><img class="border border-primary" src="images/index_images/curtain2.jpg" alt="پرده نمونه چاپی پیشگامان پودینه"></a></td>
+                        <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=sleeping_products"><img class="border border-primary" src="images/index_images/sleeping_products.jpg" alt="كالاي خواب شامل كوسن، روتختي و روملافه اي"></a></td>
                     </tr>
                     <tr class="row label">
-                        <td class="col-6 py-2 px-2 px-md-4"><a href="#">تابلوفرش</a></td>
-                        <td class="col-3 py-2 px-2 px-md-4"><a href="#">پرده ای</a></td>
-                        <td class="col-3 py-2 px-2 px-md-4"><a href="#">كالای خواب</a></td>
+                        <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=carpet_products&product_subcategory=تابلوفرش">تابلوفرش</a></td>
+                        <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=living_room_products&product_subcategory=پرده">پرده </a></td>
+                        <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=sleeping_products">كالای خواب</a></td>
                     </tr>
                     <tr class="row">
-                        <td class="col-6 py-2 px-2 px-md-4"><a href="#"><img class="border border-primary" src="images/index_images/carpet3.jpg" alt="روفرشی تولید پیشگامان پودینه"></a></td>
-                        <td class="col-6 py-2 px-2 px-md-4"><a href="#"><img class="border border-primary" src="images/index_images/sofa_cover.jpg" alt="رومبلی تولید پیشگامان پودینه"></a></td>
+                        <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=carpet_products&product_subcategory=روفرشی"><img class="border border-primary" src="images/index_images/carpet3.jpg" alt="روفرشی تولید پیشگامان پودینه"></a></td>
+                        <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=living_room_products&product_subcategory=رومبلی"><img class="border border-primary" src="images/index_images/sofa_cover.jpg" alt="رومبلی تولید پیشگامان پودینه"></a></td>
                     </tr>
                     <tr class='row label'>
-                        <td class="col-6 py-2 px-2 px-md-4"><a href="#">روفرشی</a></td>
-                        <td class="col-6 py-2 px-2 px-md-4"><a href="#">رومبلی</a></td>
+                        <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=carpet_products&product_subcategory=روفرشی">روفرشی</a></td>
+                        <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=living_room_products&product_subcategory=رومبلی">رومبلی</a></td>
                     </tr>
                 </table>
         </section>

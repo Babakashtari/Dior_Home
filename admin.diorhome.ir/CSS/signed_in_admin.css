@@ -4,9 +4,10 @@
     direction: rtl;
 }
 @font-face {
-    src: url(../../httpdocs/Fonts/IRANSansWeb_Bold.ttf);
+    src: url(../Fonts/IRANSansWeb_Bold.ttf);
     font-family: "IranSans";
 }
+
 .displayNone {
     display: none;
 }
@@ -23,18 +24,40 @@
 ::-webkit-input-placeholder {
     font-family: "iranSans";
 }
+
 ::-moz-placeholder {
     font-family: "iranSans";
 }
+
 :-ms-input-placeholder {
     font-family: "iranSans";
 }
+
 ::-ms-input-placeholder {
     font-family: "iranSans";
 }
+
 ::placeholder,
 label {
     font-family: "iranSans";
+}
+::-webkit-input-placeholder {
+    color: gray !important;
+}
+::-moz-placeholder {
+    color: gray !important;
+}
+:-ms-input-placeholder {
+    color: gray !important;
+}
+::-ms-input-placeholder {
+    color: gray !important;
+}
+::placeholder {
+    color: gray !important;
+}
+input {
+    color: black !important;
 }
 main > section {
     padding: 2rem;
@@ -46,36 +69,12 @@ main > section + section {
 main > section > h3 {
     text-align: center;
 }
-main > section > div > h5 {
-    text-align: center;
-}
 main > section > div {
     border-radius: 5px;
     box-shadow: 1px 1px 5px black;
 }
 main > section > div + div {
     margin-top: 3rem;
-}
-main > section > div > table > tbody > tr > td.header {
-    width: 3rem;
-    height: 10rem;
-    border-left: 1px solid rgba(255, 255, 255, 0.2);
-}
-main > section > div > table > tbody > tr > td.header > p {
-    -webkit-writing-mode: vertical-rl;
-    -ms-writing-mode: tb-rl;
-    writing-mode: vertical-rl;
-    -webkit-text-orientation: mixed;
-    text-orientation: mixed;
-    width: 100%;
-    height: 100%;
-    margin-top: 5rem;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
-main > section > div > table p {
-    margin: 0;
-    text-align: right;
 }
 main > section.users-info > div.search-criteria {
     border-radius: 5px;
@@ -87,6 +86,9 @@ main > section.users-info > div.search_criteria > div > span > input[type="check
 }
 main > section.users-info > form {
     border-radius: 5px;
+}
+main > section.users-info > form > div.form-group > select {
+    color: gray;
 }
 main > section.users-info > form > div.form-group > p {
     text-align: right;
@@ -102,6 +104,25 @@ main > section.users-info > form > input[type="submit"] {
     margin-right: 15px;
     width: 100%;
 }
+main > section.users-info > div.result {
+    background: lightblue;
+}
+main > section.users-info > div.result > div {
+    box-shadow: 0 1px 3px black;
+}
+main > section.users-info > div.result > div > div > p {
+    direction: rtl;
+}
+main > section.users-info > div.result > div > div > p > span {
+    font-size: 0.75rem;
+    color: rgba(0, 0, 0, 0.7);
+}
+main > section.users-info > div.result > form > div > button {
+    text-align: center;
+    background-color: transparent;
+    border-radius: 5px;
+}
+
 main > section.products-info > form > input[type="submit"] {
     width: 100%;
     margin-left: 15px;
@@ -118,7 +139,12 @@ main > section.products-info > div.search_criteria > div > span > input[type="ch
     margin-left: 0.5rem;
     cursor: pointer;
 }
-@media screen and (max-width: 657px) {
+@media screen and (max-width: 840px) {
+    main > section.users-info > div.result > form > div > button {
+        font-size: 0.8rem;
+    }
+}
+@media screen and (max-width: 810px) {
     main > section.products-info > div.search_criteria > div {
         font-size: 0.75rem;
     }
@@ -126,12 +152,13 @@ main > section.products-info > div.search_criteria > div > span > input[type="ch
         font-size: 1rem;
     }
 }
-@media screen and (max-width: 583px) {
-    main > section.users-info > div > table {
+@media screen and (max-width: 576px) {
+    main > section.users-info > div.result > div > div > p > a > i {
         font-size: 0.75rem;
     }
-    main > section.users-info > div > h5 {
-        font-size: 1rem;
+
+    main > section.users-info > div.result > div > div p {
+        font-size: 0.75rem;
     }
 }
 @media screen and (max-width: 310px) {

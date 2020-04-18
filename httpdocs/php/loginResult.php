@@ -67,7 +67,6 @@ session_start();
                         }else{
                             echo '<p class="text-danger pt-4 pb-1 displayNone"><span class=" fas fa-exclamation-circle" aria-hidden="true"></span></p>';
                             echo '<p class="signing-message text-danger px-4 displayNone">شما کاربریتان را هنوز تایید نکرده اید. لطفا ایمیلتان را چک کنید</p>';
-
                         }
                     }else{
                         echo '<p class="text-danger pt-4 pb-1 displayNone"><span class=" fas fa-exclamation-circle" aria-hidden="true"></span></p>';

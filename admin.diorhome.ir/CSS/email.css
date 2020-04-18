@@ -1,0 +1,74 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    src: url(../Fonts/IRANSansWeb_Bold.ttf);
+    font-family: "IranSans";
+}
+.iranSans {
+    font-family: "iranSans";
+}
+.displayNone {
+    display: none;
+}
+.passed {
+    border-bottom: 3px solid green !important;
+}
+.failed {
+    border-bottom: 3px solid red !important;
+}
+main > section > div > img {
+    border-radius: 50%;
+    width: 15%;
+    height: auto;
+}
+main > section > form {
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5), -1px -1px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+}
+main > section > form > div {
+    direction: rtl;
+}
+main > section > form > div.form-group > label {
+    text-align: right;
+    line-height: 2.5;
+}
+main > section > form > div.form-group > input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    box-shadow: none !important;
+    color: black;
+    text-align: left;
+}
+main > section > form > div.form-group > textarea {
+    border: none;
+    box-shadow: none !important;
+    direction: rtl;
+    text-align: right;
+    color: black;
+}
+main > section > form > div.form-group > input:focus {
+    box-shadow: none;
+}
+@media screen and (max-width: 678px) {
+    ::-webkit-input-placeholder {
+        font-size: 0.75rem;
+    }
+    ::-moz-placeholder {
+        font-size: 0.75rem;
+    }
+    :-ms-input-placeholder {
+        font-size: 0.75rem;
+    }
+    ::-ms-input-placeholder {
+        font-size: 0.75rem;
+    }
+    main > section > form,
+    ::placeholder,
+    main > section > form > button[type="submit"] {
+        font-size: 0.75rem;
+    }
+}

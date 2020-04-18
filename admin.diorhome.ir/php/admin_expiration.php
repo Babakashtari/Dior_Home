@@ -2,7 +2,7 @@
 
 function kill_session(){
     session_destroy();
-    header('location:admin.php');
+    header('location:index.php');
 }
     function expiration_test(){
         if(!empty($_SESSION['username'])){
