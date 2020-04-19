@@ -62,11 +62,11 @@
                     <?php require "php/login_analysis.php" ?>
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control iranSans" name="username" id="username" placeholder="نام کاربری" oninput="validate(/^[A-Z][a-z0-9]{2,}$/,this)">
+                  <input type="text" class="form-control iranSans" name="username" id="username" placeholder="نام کاربری" value="<?php if(isset($_POST['username'])){echo htmlentities($_POST['username']);} ?>" oninput="validate(/^[A-Z][a-z0-9]{2,}$/,this)">
                   <p class='iranSans pt-1 displayNone'>نام کاربری باید به حروف لاتین باشد، حداقل 3 حرف داشته باشد و با حروف بزرگ آغاز شود.</p>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control iranSans" name="password" id="password" placeholder="رمز عبور" oninput="validate(/^[a-zA-Z0-9]{5,15}$/, this)">
+                    <input type="password" class="form-control iranSans" name="password" id="password" placeholder="رمز عبور" value="<?php if(isset($_POST['password'])){echo htmlentities($_POST['password']);} ?>" oninput="validate(/^[a-zA-Z0-9]{5,15}$/, this)">
                     <p class='iranSans pt-1 displayNone'> رمز باید حداقل 5 و حداکثر 15 کاراکتر و شامل اعداد و حروف بزرگ یا کوچک باشد.</p>
                 </div>
                 <input name="submit" class="iranSans btn btn-primary col-12" type="submit" value="ورود" disabled>
