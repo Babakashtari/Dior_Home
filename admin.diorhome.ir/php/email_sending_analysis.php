@@ -22,7 +22,6 @@ use PHPMailer\PHPMailer\SMTP;
     // وقتی ادمین بر روی ارسال گروهی ایمیل یا خبرنامه به مخاطبین انتخاب شده کلیک کند:
     function create_fields(){
         if(isset($_POST['newsletter_to_all']) || isset($_POST['email_to_all'])){
-            // print_r($_POST);
             if(isset($_POST['newsletter_to_all'])){
                 $subject = "diorhome.ir - خبرنامه";
             }
@@ -124,8 +123,9 @@ function mailing_report(){
             $mail_config->isSMTP();
             $mail_config->Host = "mail.diorhome.ir";
             $mail_config->SMTPAuth = true;
-            $mail_config->Username = 'support@diorhome.ir';
-            $mail_config->Password = 'joli1366';
+            // فرستنده اصلی که ایمیل از پنل آن ارسال می شود
+            $mail_config->Username = 'noreply@diorhome.ir';
+            $mail_config->Password = '09353899182joli1366';
             $mail_config->addAddress($to);
             // اضافه کردن میل های سی سی:
             if(isset($array_of_cc_mails) && !empty($array_of_cc_mails)){
@@ -135,7 +135,8 @@ function mailing_report(){
             }    
             $mail_config->Subject = $subject;
             $mail_config->Body = $message;
-            $mail_config->setFrom('support@diorhome.ir', ' گروه پشتیبانی پیشگامان پودینه آتا');
+            // فرستنده که در ایمیل نمایش داده می شود.
+            $mail_config->setFrom('noreply@diorhome.ir', ' گروه صنعتی پشتیبانی پیشگامان پودینه آتا');
             $mail_config->isHTML(true);
             $mail_config->send();
             echo '<p class="text-success text-center"><span class=" fa fa-check" aria-hidden="true"></span></p>';
@@ -145,6 +146,7 @@ function mailing_report(){
             echo '<p class="text-danger text-center"><span class=" fas fa-exclamation-circle" aria-hidden="true"></span></p>';
             echo '<p class="text-center text-danger pb-2">مشکلی پیش آمد و ایمیل ارسال نشد.</p>';    
             echo "Message could not be sent. Mailer Error: {$mail_config->ErrorInfo}";
+            print_r($e);
         }  
     }
 }

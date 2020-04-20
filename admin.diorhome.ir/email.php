@@ -59,7 +59,7 @@
             </div>
             <form class=" p-4" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" id="message">
                 <div class="sending_result">
-                    <?php mailing_report(); print_r($_SESSION); ?>
+                    <?php mailing_report(); ?>
                 </div>
                 <div class="form-group row">
                     <label for="sender" class="iranSans col-3 col-md-2 text-primary m-0">از:</label>
