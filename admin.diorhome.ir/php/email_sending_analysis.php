@@ -27,7 +27,7 @@ use PHPMailer\PHPMailer\SMTP;
             }
             $number_of_recipients = $_POST['number_of_recipients'];
             echo  "<label for='recipients0' class='iranSans col-3 col-md-2 text-primary m-0'>به:</label>";
-            echo "<input type='email' class='form-control iranSans col-9 col-md-10 ' name='recipients0' id='recipients0' placeholder='ashtaribabak@rocketmail.com' value='"; if(isset($_POST["emails0"])){echo $_POST["emails0"];}else{echo $_SESSION['to'];}  echo "' oninput='validate(/^[a-zA-Z0-9_]{3,20}@[a-z]{3,15}[\.][a-z]{2,3}$/, this)'>";
+            echo "<input type='email' class='form-control iranSans col-9 col-md-10 ' name='recipients0' id='recipients0' placeholder='ashtaribabak@rocketmail.com' value='"; if(isset($_POST["recipients0"])){echo htmlentities($_POST["recipients0"]);}else{echo $_POST['emails0'];}  echo "' oninput='validate(/^[a-zA-Z0-9_]{3,20}@[a-z]{3,15}[\.][a-z]{2,3}$/, this)'>";
             $emails_string = "";
             if($number_of_recipients>1){
                 for($index = 1 ; $index<$number_of_recipients; $index++){
@@ -38,7 +38,7 @@ use PHPMailer\PHPMailer\SMTP;
                     }
                 }
                 echo  "<label for='cc_recipients' class='iranSans col-3 col-md-2 text-primary m-0'>CC:</label>";
-                echo "<input type='text' class='form-control iranSans col-9 col-md-10 ' name='cc_recipients' id='cc_recipients' value='$emails_string' >";
+                echo "<input type='text' class='form-control iranSans col-9 col-md-10 ' name='cc_recipients' id='cc_recipients' value='"; if(isset($_POST['cc_recipients'])){echo htmlentities($_POST['cc_recipients']);}else{echo $emails_string;} echo "' >";
             }
             // اگر کاربر ادمین بر روی ایمیل یک مخاطب کلیک کند:
         }else{
@@ -46,7 +46,7 @@ use PHPMailer\PHPMailer\SMTP;
                 $recipient = email_test_input($_GET['recipient']);
             }
             echo '<label for="recipient" class="iranSans col-3 col-md-2 text-primary m-0">به:</label>';
-            echo "<input type='email' class='form-control iranSans col-9 col-md-10 ' name='recipient' id='recipient' placeholder='ashtaribabak@rocketmail.com' oninput='validate(/^[a-zA-Z0-9_]{3,20}@[a-z]{3,15}[\.][a-z]{2,3}$/, this)' value='"; if(isset($recipient) && !empty($recipient)){echo $recipient;} echo "'>";
+            echo "<input type='email' class='form-control iranSans col-9 col-md-10 ' name='recipient' id='recipient' placeholder='ashtaribabak@rocketmail.com' oninput='validate(/^[a-zA-Z0-9_]{3,20}@[a-z]{3,15}[\.][a-z]{2,3}$/, this)' value='"; if(isset($_POST['recipient'])){echo htmlentities($_POST['recipient']);}elseif(isset($recipient) && !empty($recipient)){echo $recipient;} echo "'>";
         }
     }
     // وقتی کاربر ادمین دکمه ارسال ایمیل را کلیک کند:
@@ -123,7 +123,10 @@ function mailing_report(){
             $mail_config->isSMTP();
             $mail_config->Host = "mail.diorhome.ir";
             $mail_config->SMTPAuth = true;
+<<<<<<< HEAD
             // فرستنده اصلی که ایمیل از پنل آن ارسال می شود
+=======
+>>>>>>> ca4a9cb7a420fa35265d7314bd7295f4c297f3f2
             $mail_config->Username = 'noreply@diorhome.ir';
             $mail_config->Password = '09353899182joli1366';
             $mail_config->addAddress($to);
@@ -135,8 +138,12 @@ function mailing_report(){
             }    
             $mail_config->Subject = $subject;
             $mail_config->Body = $message;
+<<<<<<< HEAD
             // فرستنده که در ایمیل نمایش داده می شود.
             $mail_config->setFrom('noreply@diorhome.ir', ' گروه صنعتی پشتیبانی پیشگامان پودینه آتا');
+=======
+            $mail_config->setFrom('noreply@diorhome.ir', ' گروه پشتیبانی پیشگامان پودینه آتا');
+>>>>>>> ca4a9cb7a420fa35265d7314bd7295f4c297f3f2
             $mail_config->isHTML(true);
             $mail_config->send();
             echo '<p class="text-success text-center"><span class=" fa fa-check" aria-hidden="true"></span></p>';

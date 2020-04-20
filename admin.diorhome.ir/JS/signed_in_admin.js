@@ -11,13 +11,6 @@ const users_error_messages = document.querySelectorAll("main>section.users-info>
 const users_inputs = document.querySelectorAll("main>section.users-info>form>div.form-group>input");
 const users_search_result_div = document.querySelector("main>section.users-info>div.result");
 
-// ریفرش کردن صفحه برای اینکه متغیر های سیشن کار کنند:
-window.onload = function() {
-    if (!window.location.hash) {
-        window.location = window.location + "#loaded";
-        window.location.reload();
-    }
-};
 // ظاهر شدن فیلد سرچ مربوطه در فرم بعد از تیک زدن چک باکس مربوطه در قسمت جستجوی کاربر:
 const user_search_input_appear = event => {
     for (let i = 0; i < users_top_div_checkboxes.length; i++) {

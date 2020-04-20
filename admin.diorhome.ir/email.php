@@ -63,7 +63,7 @@
                 </div>
                 <div class="form-group row">
                     <label for="sender" class="iranSans col-3 col-md-2 text-primary m-0">از:</label>
-                    <input type="email" class="form-control iranSans col-9 col-md-10 " name="sender" id="sender" placeholder="support@diorhome.ir" value="support@diorhome.ir" oninput="validate(/^[a-zA-Z0-9_]{3,20}@[a-z]{3,15}[\.][a-z]{2,3}$/, this)">
+                    <input type="email" class="form-control iranSans col-9 col-md-10 " name="sender" id="sender" placeholder="noreply@diorhome.ir" value="noreply@diorhome.ir" oninput="validate(/^[a-zA-Z0-9_]{3,20}@[a-z]{3,15}[\.][a-z]{2,3}$/, this)">
                     <p class='iranSans text-danger pt-1 displayNone col-12'>ایمیل وارد شده صحیح نمی باشد.</p>
                 </div>
                 <div class="form-group row">
@@ -73,19 +73,20 @@
                     <p class='iranSans text-danger pt-1 displayNone col-12'>ایمیل وارد شده صحیح نمی باشد.</p>
                 </div>
                 <div class="form-group row">
-                    <label for="recipients" class="iranSans col-3 col-md-2 text-primary m-0">موضوع:</label>
-                    <input type="text" class="form-control iranSans col-9 col-md-10 " name="topic" id="topic" value="<?php if(isset($subject)){echo $subject;} ?>">
+                    <label for="topic" class="iranSans col-3 col-md-2 text-primary m-0">موضوع:</label>
+                    <input type="text" class="form-control iranSans col-9 col-md-10 " name="topic" id="topic" value="<?php if(isset($_POST['topic'])){echo $_POST['topic'];}elseif(isset($subject)){echo $subject;} ?>">
                     <p class='iranSans text-danger pt-1 displayNone col-12'>ایمیل وارد شده صحیح نمی باشد.</p>
                 </div>
                 <div class="form-group row">
                     <p class="iranSans px-2" style='direction:rtl;text-align:right'> کاربر گرامی، </p>
-                    <textarea class="form-control iranSans col-12 " id="message_body" name="message_body" form="message" rows="5" ></textarea>
+                    <textarea class="form-control iranSans col-12 " id="message_body" name="message_body" form="message" rows="5" ><?php if(isset($_POST['message_body'])){echo $_POST['message_body'];} ?></textarea>
                     <p class="iranSans text-left px-2 col-12" style='direction:rtl;text-align:left'>گروه پشتیبانی پیشگامان پودينه آتا</p>
                     <p class="iranSans text-left px-2 col-12" style='direction:rtl;text-align:left'>تلفن: 02155615148  - 02155983072 </p>
                     <p class="iranSans text-left px-2 col-12" style='direction:rtl;text-align:left'>تهران: بازار بزرگ، سرای آزادی، طبقه اول پلاک 48</p>
                     <p class="iranSans text-left px-2 col-12" style='direction:rtl;text-align:left'>اردبیل: ميدان ايثار، شهرك صنعتی فاز 1 خيابان پنج شرقی پيشگامان پودينه آتا</p>
                 </div>
                 <button type="submit" name="send_mail" id="send_mail" class="iranSans btn btn-primary col-4 col-md-2" ><i class="fas fa-paper-plane p-1"></i>ارسال</button>
+                <p class="iranSans text-center col-12"><a href="signed_in_admin.php">بازگشت به صفحه اصلی پنل ادمین</a></p>
             </form>
         </section>
         <?php show_warning(); ?>
