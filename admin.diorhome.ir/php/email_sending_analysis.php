@@ -22,13 +22,12 @@ use PHPMailer\PHPMailer\SMTP;
     // وقتی ادمین بر روی ارسال گروهی ایمیل یا خبرنامه به مخاطبین انتخاب شده کلیک کند:
     function create_fields(){
         if(isset($_POST['newsletter_to_all']) || isset($_POST['email_to_all'])){
-            // print_r($_POST);
             if(isset($_POST['newsletter_to_all'])){
                 $subject = "diorhome.ir - خبرنامه";
             }
             $number_of_recipients = $_POST['number_of_recipients'];
             echo  "<label for='recipients0' class='iranSans col-3 col-md-2 text-primary m-0'>به:</label>";
-            echo "<input type='email' class='form-control iranSans col-9 col-md-10 ' name='recipients0' id='recipients0' placeholder='ashtaribabak@rocketmail.com' value='"; if(isset($_POST["emails0"])){echo $_POST["emails0"];}else{echo $_SESSION['to'];}  echo "' oninput='validate(/^[a-zA-Z0-9_]{3,20}@[a-z]{3,15}[\.][a-z]{2,3}$/, this)'>";
+            echo "<input type='email' class='form-control iranSans col-9 col-md-10 ' name='recipients0' id='recipients0' placeholder='ashtaribabak@rocketmail.com' value='"; if(isset($_POST["recipients0"])){echo htmlentities($_POST["recipients0"]);}else{echo $_POST['emails0'];}  echo "' oninput='validate(/^[a-zA-Z0-9_]{3,20}@[a-z]{3,15}[\.][a-z]{2,3}$/, this)'>";
             $emails_string = "";
             if($number_of_recipients>1){
                 for($index = 1 ; $index<$number_of_recipients; $index++){
@@ -39,7 +38,7 @@ use PHPMailer\PHPMailer\SMTP;
                     }
                 }
                 echo  "<label for='cc_recipients' class='iranSans col-3 col-md-2 text-primary m-0'>CC:</label>";
-                echo "<input type='text' class='form-control iranSans col-9 col-md-10 ' name='cc_recipients' id='cc_recipients' value='$emails_string' >";
+                echo "<input type='text' class='form-control iranSans col-9 col-md-10 ' name='cc_recipients' id='cc_recipients' value='"; if(isset($_POST['cc_recipients'])){echo htmlentities($_POST['cc_recipients']);}else{echo $emails_string;} echo "' >";
             }
             // اگر کاربر ادمین بر روی ایمیل یک مخاطب کلیک کند:
         }else{
@@ -47,7 +46,7 @@ use PHPMailer\PHPMailer\SMTP;
                 $recipient = email_test_input($_GET['recipient']);
             }
             echo '<label for="recipient" class="iranSans col-3 col-md-2 text-primary m-0">به:</label>';
-            echo "<input type='email' class='form-control iranSans col-9 col-md-10 ' name='recipient' id='recipient' placeholder='ashtaribabak@rocketmail.com' oninput='validate(/^[a-zA-Z0-9_]{3,20}@[a-z]{3,15}[\.][a-z]{2,3}$/, this)' value='"; if(isset($recipient) && !empty($recipient)){echo $recipient;} echo "'>";
+            echo "<input type='email' class='form-control iranSans col-9 col-md-10 ' name='recipient' id='recipient' placeholder='ashtaribabak@rocketmail.com' oninput='validate(/^[a-zA-Z0-9_]{3,20}@[a-z]{3,15}[\.][a-z]{2,3}$/, this)' value='"; if(isset($_POST['recipient'])){echo htmlentities($_POST['recipient']);}elseif(isset($recipient) && !empty($recipient)){echo $recipient;} echo "'>";
         }
     }
     // وقتی کاربر ادمین دکمه ارسال ایمیل را کلیک کند:
@@ -124,8 +123,8 @@ function mailing_report(){
             $mail_config->isSMTP();
             $mail_config->Host = "mail.diorhome.ir";
             $mail_config->SMTPAuth = true;
-            $mail_config->Username = 'support@diorhome.ir';
-            $mail_config->Password = 'joli1366';
+            $mail_config->Username = 'noreply@diorhome.ir';
+            $mail_config->Password = '09353899182joli1366';
             $mail_config->addAddress($to);
             // اضافه کردن میل های سی سی:
             if(isset($array_of_cc_mails) && !empty($array_of_cc_mails)){
@@ -135,7 +134,7 @@ function mailing_report(){
             }    
             $mail_config->Subject = $subject;
             $mail_config->Body = $message;
-            $mail_config->setFrom('support@diorhome.ir', ' گروه پشتیبانی پیشگامان پودینه آتا');
+            $mail_config->setFrom('noreply@diorhome.ir', ' گروه پشتیبانی پیشگامان پودینه آتا');
             $mail_config->isHTML(true);
             $mail_config->send();
             echo '<p class="text-success text-center"><span class=" fa fa-check" aria-hidden="true"></span></p>';
