@@ -443,8 +443,10 @@ function search_result(){
                         }else{
                             $home_address = $row['home_address'];
                         }
-                        $password = 'needs work';
                         $verified = $row['verified'];
+                        if($verified == 'NO'){
+                            $activation_code = $row['sign_up_token'];
+                        }
                         $newsletter = $row['newsletter'];
 
                         echo    
@@ -483,9 +485,13 @@ function search_result(){
                             <div class='p-1 col-sm-5  col-md-3'>
                                 <p class='text-left iranSans'>age: <span>$age</span></p>
                             </div>
-                            <div class='p-1 offset-sm-2 col-sm-5 offset-md-0 col-md-3'>
-                                <p class='text-left iranSans'>verified: <span>$verified</span></p>
-                            </div>
+                            <div class='p-1 offset-sm-2 col-sm-5 offset-md-0 col-md-3'>";
+                                if($verified == 'YES'){
+                                    echo "<p class='text-left iranSans'>verified:<span>$verified</span></p>";
+                                }else{
+                                    echo "<p class='text-left iranSans'>verified:<a href='email.php?recipient=$email&activation_code=$activation_code&username=$username'><span>$verified</span></a></p>";
+                                }
+                            echo "</div>
                             <div class='p-1 col-sm-5 offset-md-2 col-md-10'>
                                 <p class='text-left iranSans'>website: <span>$website</span></p>
                             </div>

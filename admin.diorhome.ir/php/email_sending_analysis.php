@@ -107,15 +107,31 @@ function mailing_report(){
             $message_body = purify($_POST['message_body']);
             $_SESSION['message_body'] = $message_body;
         }
+        if(isset($_POST['activation_link'])){
+            $activation_link = purify($_POST['activation_link']);
+            $activation_link_final = "<p class='text-right p-0 m-0 col-12'><a href='$activation_link'>$activation_link</a></p>";
+        }else{
+            $activation_link_final = "";
+        }
+        if(isset($_POST['activation_username'])){
+            $activation_username = purify($_POST['activation_username']);
+            $header = $activation_username;
+        }else{
+            $header =           "<p style='direction:rtl;text-align:right;'>کاربر گرامی، </p>";
+        }
         $message_image =    '<div style="text-align:center;"><img src="https://diorhome.ir/images/Dior_logo.jpg" style="border-radius:50%;width:80px;height:auto;margin-left:auto;" /></div>';
-        $header =           "<p style='direction:rtl;text-align:right;'> کاربر گرامی، </p>";
-        $main_message =     '<p style="direction:rtl;text-align:right">' . $message_body . '</p>';
+        if(isset($_POST['activation_username']) && isset($_POST['activation_link'])){
+            $main_message = "<p class='text-right' >ضمن خیر مقدم جهت ثبت نام در سایت پیشگامان پودینه، از اینک زیر می توانید برای فعالسازی حساب کاربری خود استفاده فرمایید:</p>";
+        }else{
+            $main_message =     '<p style="direction:rtl;text-align:right">' . $message_body . '</p>';
+            echo 'something failed';
+        }
         $footer1 =          "<p style='direction:rtl;text-align:left;'>گروه پشتیبانی پیشگامان پودينه آتا</p>";
         $footer2 =          "<p style='direction:rtl;text-align:left;'>تهران: بازار بزرگ، سرای آزادی، طبقه اول پلاک 48</p>";
         $footer3 =          "<p style='direction:rtl;text-align:left;'>اردبیل: ميدان ايثار، شهرك صنعتی فاز 1 خيابان پنج شرقی پيشگامان پودينه آتا</p>";
         $footer4 =          "<p style='direction:rtl;text-align:left;'>تلفن: 02155615148 - 02155983072  </p>";
 
-        $message = $message_image . $header . $main_message . $footer1 . $footer2 . $footer3 . $footer4;
+        $message = $message_image . $header . $main_message . $activation_link_final . $footer1 . $footer2 . $footer3 . $footer4;
 
         $mail_config = new PHPMailer(true);
         try{
@@ -123,10 +139,7 @@ function mailing_report(){
             $mail_config->isSMTP();
             $mail_config->Host = "mail.diorhome.ir";
             $mail_config->SMTPAuth = true;
-<<<<<<< HEAD
             // فرستنده اصلی که ایمیل از پنل آن ارسال می شود
-=======
->>>>>>> ca4a9cb7a420fa35265d7314bd7295f4c297f3f2
             $mail_config->Username = 'noreply@diorhome.ir';
             $mail_config->Password = '09353899182joli1366';
             $mail_config->addAddress($to);
@@ -138,12 +151,8 @@ function mailing_report(){
             }    
             $mail_config->Subject = $subject;
             $mail_config->Body = $message;
-<<<<<<< HEAD
             // فرستنده که در ایمیل نمایش داده می شود.
             $mail_config->setFrom('noreply@diorhome.ir', ' گروه صنعتی پشتیبانی پیشگامان پودینه آتا');
-=======
-            $mail_config->setFrom('noreply@diorhome.ir', ' گروه پشتیبانی پیشگامان پودینه آتا');
->>>>>>> ca4a9cb7a420fa35265d7314bd7295f4c297f3f2
             $mail_config->isHTML(true);
             $mail_config->send();
             echo '<p class="text-success text-center"><span class=" fa fa-check" aria-hidden="true"></span></p>';
