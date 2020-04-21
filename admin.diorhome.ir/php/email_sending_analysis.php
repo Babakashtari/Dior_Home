@@ -109,22 +109,21 @@ function mailing_report(){
         }
         if(isset($_POST['activation_link'])){
             $activation_link = purify($_POST['activation_link']);
-            $activation_link_final = "<p class='text-right p-0 m-0 col-12'><a href='$activation_link'>$activation_link</a></p>";
+            $activation_link_final = "<p style='text-align:left;direction:ltr;'><a href='$activation_link'>$activation_link</a></p>";
         }else{
             $activation_link_final = "";
         }
         if(isset($_POST['activation_username'])){
             $activation_username = purify($_POST['activation_username']);
-            $header = $activation_username;
+            $header = '<p style="text-align:right;direction:rtl">' . $activation_username . '</p>';
         }else{
-            $header =           "<p style='direction:rtl;text-align:right;'>کاربر گرامی، </p>";
+            $header =  "<p style='direction:rtl;text-align:right;'>کاربر گرامی، </p>";
         }
         $message_image =    '<div style="text-align:center;"><img src="https://diorhome.ir/images/Dior_logo.jpg" style="border-radius:50%;width:80px;height:auto;margin-left:auto;" /></div>';
         if(isset($_POST['activation_username']) && isset($_POST['activation_link'])){
-            $main_message = "<p class='text-right' >ضمن خیر مقدم جهت ثبت نام در سایت پیشگامان پودینه، از اینک زیر می توانید برای فعالسازی حساب کاربری خود استفاده فرمایید:</p>";
+            $main_message = "<p style='text-align:right;direction:rtl' >ضمن خیر مقدم جهت ثبت نام در سایت پیشگامان پودینه، از اینک زیر می توانید برای فعالسازی حساب کاربری خود استفاده فرمایید:</p>";
         }else{
-            $main_message =     '<p style="direction:rtl;text-align:right">' . $message_body . '</p>';
-            echo 'something failed';
+            $main_message = '<p style="direction:rtl;text-align:right">' . $message_body . '</p>';
         }
         $footer1 =          "<p style='direction:rtl;text-align:left;'>گروه پشتیبانی پیشگامان پودينه آتا</p>";
         $footer2 =          "<p style='direction:rtl;text-align:left;'>تهران: بازار بزرگ، سرای آزادی، طبقه اول پلاک 48</p>";

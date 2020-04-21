@@ -74,16 +74,20 @@
                 </div>
                 <div class="form-group row">
                     <label for="topic" class="iranSans col-3 col-md-2 text-primary m-0">موضوع:</label>
-                    <input type="text" class="form-control iranSans col-9 col-md-10 " name="topic" id="topic" value="
-                        <?php 
+                    <input type="text" class="form-control iranSans col-9 col-md-10 " name="topic" id="topic" value="<?php 
+                            // اگر کد فعالسازی می خواهیم بفرستیم
                             if(isset($_GET['activation_code'])){
                                 echo 'ثبت کاربری در پیشگامان پودینه آتا';
+                            // اگر یک بار ایمیل ارسال شده باشد و بخواهیم موضوع در فیلد مربوطه باقی بماند:
                             }elseif(isset($_POST['topic'])){
                                 echo $_POST['topic'];
-                            }elseif(isset($subject)){
-                                echo $subject;
-                            } 
-                        ?>">
+                            // وقتی موضوع خبرنامه باشد چون موضوع در خبرنامه تعیین شده است: 
+                            }if(isset($_POST['newsletter_to_all'])){
+                                echo "diorhome.ir - خبرنامه";
+                            // وقتی اصلا موضوعی انتخاب نشده باشد:
+                            }else{
+                                echo '';
+                            }?>">
                     <p class='iranSans text-danger pt-1 displayNone col-12'>ایمیل وارد شده صحیح نمی باشد.</p>
                 </div>
                 <div class="form-group row">
@@ -96,13 +100,11 @@
                             }
                         ?>
                     </p>
-                    <textarea class="form-control iranSans col-12 " id="message_body" name="message_body" form="message" rows="<?php if(isset($_GET['activation_code'])){echo 1;}else{echo 5;} ?>" >
-                        <?php 
+                    <textarea class="form-control iranSans col-12 " id="message_body" name="message_body" form="message" rows="<?php if(isset($_GET['activation_code'])){echo 1;}else{echo 5;} ?>" ><?php 
                             if(isset($_POST['message_body'])){
                                 echo $_POST['message_body'];
                             } 
-                        ?>
-                    </textarea>
+                        ?></textarea>
                     <?php
                         if(isset($_GET['activation_code']) && isset($_GET['username']) && !empty($_GET['username'])){
                             echo "<p class='iranSans text-right p-0 m-0 col-12'>ضمن خیر مقدم بابت ثبت نام در سایت  پیشگامان پودینه آتا، لینک فعال سازی ایمیل شما عبارت است از:</p>";

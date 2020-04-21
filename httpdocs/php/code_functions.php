@@ -229,7 +229,7 @@ function footer_generator(){
                 <p class="text-light text-right font-weight-bold"><span>خدمات:</span></p>
                 <ul>
                     <li class="text-right py-2"><a class="text-light " href="products.php">کاتالوگ محصولات</a></li>
-                    <li class="text-right py-2 "><a class="text-light " href="#">چاپ دیجیتال/سابلیمیشن</a></li>
+                    <li class="text-right py-2 "><a class="text-light " href="sublimation.php">چاپ دیجیتال/سابلیمیشن</a></li>
                     <li class="text-right py-2"><a class="text-light " href="userUpload.php">ثبت سفارش</a></li>
                     <li class="text-right py-2"><a class="text-light " href="#">پیشنهادات ویژه</a></li>
                 </ul>

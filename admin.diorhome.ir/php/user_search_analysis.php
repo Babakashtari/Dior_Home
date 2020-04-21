@@ -487,9 +487,9 @@ function search_result(){
                             </div>
                             <div class='p-1 offset-sm-2 col-sm-5 offset-md-0 col-md-3'>";
                                 if($verified == 'YES'){
-                                    echo "<p class='text-left iranSans'>verified:<span>$verified</span></p>";
+                                    echo "<p class='text-left iranSans'>verified:<span> $verified</span></p>";
                                 }else{
-                                    echo "<p class='text-left iranSans'>verified:<a href='email.php?recipient=$email&activation_code=$activation_code&username=$username'><span>$verified</span></a></p>";
+                                    echo "<p class='text-left iranSans'>verified:<a href='email.php?recipient=$email&activation_code=$activation_code&username=$username'><span> $verified</span></a></p>";
                                 }
                             echo "</div>
                             <div class='p-1 col-sm-5 offset-md-2 col-md-10'>
