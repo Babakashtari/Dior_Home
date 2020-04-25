@@ -10,10 +10,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="content-security-policy" content="default-src 'none'; 
         style-src 'self' 'unsafe-inline';
-        script-src 'self' 'unsafe-inline';
+        script-src 'self' 'unsafe-inline' www.aparat.com;
         img-src 'self';
         font-src 'self';
-        frame-src https://www.google.com;
+        frame-src https://www.google.com www.aparat.com;
         "  >
     <meta name="description"    content="سايت رسمی ‍پیشگامان ‍پودينه آتا" />
     <meta name="author" content="Babak Ashtari" />
@@ -60,13 +60,8 @@
                 <ul>
                     <li class="p-2 text-right iranSans">
                         <h4>سابلیمیشن به چه معناست؟</h4>
-<<<<<<< HEAD
                         <img class="right" src="images/sublimation/google_on_glass.png" alt="google atlanta glass">
                         <p class="text-right">سابلیمیشن از واژه لاتین <span>sublimation</span> مشتق شده که در لغت به معنی تبدیل مستقیم مواد از حالت جامد به گاز است. سابلیمیشن در اصطلاح به چاپ حرارتی در اشکال گوناگون و بر روی مواد مختلف دلالت دارد به گونه ای که طرح  بر روی کاغذ مخصوص سابلیمیشن پرینت گرفته شده و بر اثر حرارت بالا، بر روی جسم مورد نظر جوهر می ریزد و چاپ انجام می شود. در این روش برای چاپ باید ابتدا طرح خود را روی کاغذ مخصوص سابلیمیشن به صورت وارونه چاپ کنیم و سپس آن را برای چاپ سابلیمیشن روی سطح مورد نظر قرار دهیم. چاپ سابلیمیشن یکی از انواع چاپ های یک رو محسوب می شود. از بهترین نمونه های چاپ سابلیمیشن می توان به چاپ روی کاسه، بشقاب، لیوان، سرامیک، شيشه و انواع پ‍ارچه اشاره کرد. امروزه به دلیل تنوع کاربردهای سابليميشن، این نوع چاپ به یکی از بهترين راه های تبليغات محصولات گوناگون تبدیل شده است. کادر تخصصی پیشگامان پودینه آتا مفتخر است که چاپ سابلیمیشن بر روی انواع پارچه را در تمامی ابعاد، طبق سفارش مشتریان گرامی انجام و با توجه به تیراژ کار حداکثر تا 2 هفته پس از پذیرش سفارش، تحویل می دهد.</p>
-=======
-                        <img class="right" src="images/sublimation/google-atlanta-glass.jpg" alt="google atlanta glass">
-                        <p class="">سابلیمیشن از واژه لاتین <span>sublimation</span> مشتق شده که در لغت به معنی تبدیل مستقیم مواد از حالت جامد به گاز است. سابلیمیشن در اصطلاح به چاپ حرارتی در اشکال گوناگون و بر روی مواد مختلف دلالت دارد به گونه ای که طرح  بر روی کاغذ مخصوص سابلیمیشن پرینت گرفته شده و بر اثر حرارت بالا، بر روی جسم مورد نظر جوهر می ریزد و چاپ انجام می شود. در این روش برای چاپ باید ابتدا طرح خود را روی کاغذ مخصوص سابلیمیشن به صورت وارونه چاپ کنیم و سپس آن را برای چاپ سابلیمیشن روی سطح مورد نظر قرار دهیم. چاپ سابلیمیشن یکی از انواع چاپ های یک رو محسوب می شود. از بهترین نمونه های چاپ سابلیمیشن می توان به چاپ روی کاسه، بشقاب، لیوان، سرامیک، شيشه و انواع پ‍ارچه اشاره کرد. امروزه به دلیل تنوع کاربردهای سابليميشن، این نوع چاپ به یکی از بهترين راه های تبليغات محصولات گوناگون تبدیل شده است. کادر تخصصی پیشگامان پودینه آتا مفتخر است که چاپ سابلیمیشن بر روی انواع پارچه را در تمامی ابعاد، طبق سفارش مشتریان گرامی انجام و با توجه به تیراژ کار حداکثر تا 2 هفته پس از پذیرش سفارش، تحویل می دهد.</p>
->>>>>>> cb58779046de64db1c8380ec2246da3b48f19948
                     </li>
                     <li class="p-2 text-right iranSans">
                         <h4>ملزومات چاپ سابلیمیشن:</h4>
@@ -86,6 +81,35 @@
                     </li>
                 </ul>
             </article>
+        </section>
+        <section class="videos row col-12 m-0 mt-2">
+            <h4 class="col-12 text-center py-4">ویدئو های مربوط به چاپ سابلیمیشن:</h4>
+            <div class="video-wrapper col-10 mx-auto  row py-4">
+                <div class="col-sm-12 col-md-6 col-xl-4">
+                    <p class="col-12 text-center text-light"> انواع چاپ سابلیمیشن:</p>
+                    <div id="99810068535"><script type="text/JavaScript" src="https://www.aparat.com/embed/iSnFx?data[rnddiv]=99810068535&data[responsive]=yes"></script></div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-xl-4">
+                    <p class="col-12 text-center text-light"> سابلیمیشن صنعتی در چین:</p>
+                    <div id="57444752393"><script type="text/JavaScript" src="https://www.aparat.com/embed/q6cn4?data[rnddiv]=57444752393&data[responsive]=yes"></script></div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-xl-4">
+                    <p class="col-12 text-center text-light">دستگاه سابلیمیشن صنعتی:</p>
+                    <div id="62039058268"><script type="text/JavaScript" src="https://www.aparat.com/embed/HyFCj?data[rnddiv]=62039058268&data[responsive]=yes"></script></div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-xl-4">
+                    <p class="col-12 text-center text-light pt-2 ">سابلیمیشن روی پارچه تیره:</p>
+                    <div id="82757372484"><script type="text/JavaScript" src="https://www.aparat.com/embed/N7jEt?data[rnddiv]=82757372484&data[responsive]=yes"></script></div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-xl-4">
+                    <p class="col-12 text-center text-light pt-2 ">سرعت در چاپ سابلیمیشن:</p>
+                    <div id="40890002010"><script type="text/JavaScript" src="https://www.aparat.com/embed/pHXvD?data[rnddiv]=40890002010&data[responsive]=yes"></script></div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-xl-4">
+                    <p class="col-12 text-center text-light pt-2 ">سابلیمیشن خانگی در بریتانیا:</p>
+                    <div id="17875047868"><script type="text/JavaScript" src="https://www.aparat.com/embed/io2ZF?data[rnddiv]=17875047868&data[responsive]=yes"></script></div>
+                </div>
+            </div>
         </section>
     <?php show_warning(); ?>
     </main>
