@@ -46,7 +46,7 @@ function header_generator(){
             </ul>
             <ul class="row">
                 <li class="col"><a id="products_link" class=" text-white pb-2 pt-2" data-toggle="collapse" href="#products">محصولات</a></li>
-                <li class="col"><a class="text-white pb-2 pt-2" href="#" target="_self">درباره ما</a></li>
+                <li class="col"><a class="text-white pb-2 pt-2" href="aboutUs.php" target="_self">درباره ما</a></li>
                 <li class="col"><a class="text-white pb-2 pt-2" href="index.php" target="_self">خانه</a></li>
             </ul>
         </div>
@@ -213,7 +213,7 @@ function footer_generator(){
                 <p class="text-light text-right font-weight-bold"><span>پیشگامان پودینه:</span></p>
                 <ul>
                     <li class="text-right py-2"><a class="text-light font-weight-italic" href="#">ارتباط با ما</a></li>
-                    <li class="text-right py-2"><a class="text-light font-weight-italic" href="#">درباره ما</a></li>
+                    <li class="text-right py-2"><a class="text-light font-weight-italic" href="aboutUs.php">درباره ما</a></li>
                     <li class="text-right py-2"><a class="text-light font-weight-italic" href="#">مقالات و اخبار</a></li>
                     <li class="container py-sm-3 py-md-2 pr-0">
                         <div class="row flex-nowrap text-right py-3 py-sm-0 py-md-0">

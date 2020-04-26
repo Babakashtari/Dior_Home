@@ -57,10 +57,10 @@
                 <legend class="text-center text-light">جستجو بر اساس:</legend>
             <form class=" row form-inline" method="GET" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                 <div class="form-group py-1">
-                    <input type="text" class="form-control border border-primary" id="product_name" name="product_name" placeholder="نام محصول: violet">
+                    <input type="text" class="form-control border border-primary" id="product_name" name="product_name" placeholder="نام محصول: violet" value="<?php if(isset($_GET['product_name'])){echo $_GET['product_name'];} ?>">
                 </div>
                 <div class="form-group py-1">
-                    <input type="text" class="form-control border border-primary" id="product_dimensions" name="product_dimensions" placeholder="ابعاد محصول: 40X60">
+                    <input type="text" class="form-control border border-primary" id="product_dimensions" name="product_dimensions" placeholder="ابعاد محصول: 40X60" value="<?php if(isset($_GET['product_dimensions'])){echo $_GET['product_dimensions'];} ?>">
                 </div>
                 <div class="form-group py-1">
                     <select class="form-control border border-primary" id="product_category" name="product_category" onchange="subcategory_generator(this)">
@@ -75,7 +75,7 @@
                     </select>
                 </div>
                 <div class="form-group py-1 col-12 ">
-                    <textarea id="product_description" name="product_description" class="form-control border border-primary" placeholder="توضیحات" ></textarea>
+                    <textarea id="product_description" name="product_description" class="form-control border border-primary" placeholder="توضیحات" ><?php if(isset($_GET['product_description'])){echo $_GET['product_description'];} ?></textarea>
                 </div>
                 <div class="form-group col-12 py-1">
                     <input class="btn btn-primary text-light col-12 border border-primary" id="submit" name="submit" type="submit" value="جستجو کن">
