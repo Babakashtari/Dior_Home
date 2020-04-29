@@ -1,3 +1,23 @@
+p {
+  direction: rtl;
+}
 main > section > div {
   border-radius: 10px;
+}
+main > section.image-container {
+  position: relative;
+}
+main > section.image-container > div::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 255, 0.4)), to(rgba(0, 255, 0, 0.4)));
+  background-image: linear-gradient(rgba(0, 0, 255, 0.4), rgba(0, 255, 0, 0.4));
+}
+main > section.image-container > div > img {
+  width: 100%;
+  height: auto;
 }
