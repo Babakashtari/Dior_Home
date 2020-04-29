@@ -22,7 +22,7 @@ main > section.description > article > ul > li > h4 {
     clear: both;
 }
 main > section.description > article > ul > li > h4::before {
-    content: "\f00c";
+    content: "\f058";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     padding: 1rem;
