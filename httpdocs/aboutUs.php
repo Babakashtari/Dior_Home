@@ -108,6 +108,31 @@
                 </ul>                
             </div>
         </section>
+        <section class="container mb-2 py-4 creativity">
+                <h3 class="p-2 p-md-4 mx-2 mx-md-4 ">دسترسی سریع:</h3>
+                <p>محصولات ما در سه دسته عمده تقسيم بندي مي شوند كه عبارتند از فرش،‌ كالاي خواب و كالاي اتاق پذيرايي. در حال حاضر كالاي فرش تنها شامل دو دسته محصولات تابلو فرش و روفرشی مي شود كه به زودي با كثيري از محصولات و طرح هاي زيبا و متنوع در اين حوزه در خدمت مشتريان عزيزمان خواهيم بود. از جمله محصولات كالاي خواب شركت نيز مي توان به ملافه، رو تختي،‌ رو بالشي و كوسن اشاره كرد كه غني ترين و متنوع ترين محصولات مارا تشكيل مي دهند. شركت بالغ بر 300 طرح و الگوي كالاي خواب دارد.  همچنين اخيرا با افتخار دسته جديدي خود را گسترش داده و اخيرا اقدام به چاپ و تكميل محصولاتي تحت عنوان كالاي اتاق پذيرايي كرده كه در حال حاضر تنها شامل رومبلي و روميزي مي شود.</p>
+                <table class="container px-1">
+                    <tr class="row">
+                        <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=carpet_products&product_subcategory=تابلوفرش"><img class="border border-primary" src="images/index_images/carpet_board1.jpg" alt="روتختی نمونه کار پیشگامان پودینه"></a></td>
+                        <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=living_room_products&product_subcategory=پرده"><img class="border border-primary" src="images/index_images/curtain2.jpg" alt="پرده نمونه چاپی پیشگامان پودینه"></a></td>
+                        <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=sleeping_products"><img class="border border-primary" src="images/index_images/sleeping_products.jpg" alt="كالاي خواب شامل كوسن، روتختي و روملافه اي"></a></td>
+                    </tr>
+                    <tr class="row label">
+                        <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=carpet_products&product_subcategory=تابلوفرش">تابلوفرش</a></td>
+                        <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=living_room_products&product_subcategory=پرده">پرده </a></td>
+                        <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=sleeping_products">كالای خواب</a></td>
+                    </tr>
+                    <tr class="row">
+                        <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=carpet_products&product_subcategory=روفرشی"><img class="border border-primary" src="images/index_images/carpet3.jpg" alt="روفرشی تولید پیشگامان پودینه"></a></td>
+                        <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=living_room_products&product_subcategory=رومبلی"><img class="border border-primary" src="images/index_images/sofa_cover.jpg" alt="رومبلی تولید پیشگامان پودینه"></a></td>
+                    </tr>
+                    <tr class='row label'>
+                        <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=carpet_products&product_subcategory=روفرشی">روفرشی</a></td>
+                        <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=living_room_products&product_subcategory=رومبلی">رومبلی</a></td>
+                    </tr>
+                </table>
+        </section>
+
         <section class="m-5">
             <div class="video-container text-center">
                 <h4 class=" p-1 text-light">نمونه چاپ دیجیتالی تابلو فرش:</h4>
