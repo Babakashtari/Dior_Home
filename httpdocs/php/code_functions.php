@@ -132,7 +132,7 @@ function hamburger_menu_generator(){
                     <li class="hamburger-close d-flex justify-content-end p-2 align-items-center"><a class="hamburger-close text-white py-1" href="products.php?product_category=living_room_products" target="_self">اتاق ‍پذیرایی</a></li>
                     <li class="hamburger-close d-flex justify-content-end p-2 align-items-center"><a class="hamburger-close text-white py-1" href="products.php?product_category=carpet_products" target="_self">فرش</a></li>
                     <li class="hamburger-close d-flex justify-content-end p-2 align-items-center"><a class="hamburger-close text-white py-1" href="#" target="_self">خدمات طاقه پیچی</a></li>
-                    <li class="hamburger-close d-flex justify-content-end p-2 align-items-center"><a class="hamburger-close text-white py-1" href="userUpload.php" target="_self">پذیرش سفارش</a></li>
+                    <li class="hamburger-close d-flex justify-content-end p-2 align-items-center"><a class="hamburger-close text-white py-1" href="userUpload.php" target="_self">ثبت سفارش</a></li>
                 </ul>
             </section>
          ';

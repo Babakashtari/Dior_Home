@@ -25,9 +25,9 @@
     $inputs_arr = [];
     array_push($inputs_arr, "approved='YES'");
     if(!empty($_GET['product_name'])){
-        $product_name = test_input($_GET['product_name'], "/^[a-zA-Z\d\s]{3,15}$/");
+        $product_name = test_input($_GET['product_name'], "/^[a-zA-Z\d\s]{1,15}$/");
         if(!empty($product_name)){
-            array_push($inputs_arr, "product_name='$product_name'");
+            array_push($inputs_arr, "product_name like '%$product_name%'");
         }
     }
     if(!empty($_GET['product_dimensions'])){
@@ -82,6 +82,7 @@
     }
 
     function pagination(){
+        $product_name = $GLOBALS['product_name'];
         $page_number = $GLOBALS['page_number'];
         $total_number_of_rows = $GLOBALS['total_number_of_rows'];
         $total_number_of_pages = $GLOBALS['total_number_of_pages'];
@@ -90,7 +91,11 @@
         $href='';
 
         foreach ($inputs_arr as $key => $value) {
-            $href .= '&' . $value;
+            if($value == "product_name like '%$product_name%'"){
+                $href .= '&' . "product_name=$product_name";
+            }else{
+                $href .= '&' . $value;
+            }
         }
         $href = str_replace("'", "", $href);
 

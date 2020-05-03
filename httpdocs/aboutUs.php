@@ -134,30 +134,30 @@
         </section>
 
         <section class="videos row col-12 m-0 mt-2">
-            <h4 class="col-12 text-center py-4">ویدئو های چاپ صنعتی:</h4>
+            <h4 class="col-12 text-center py-4"><i class="fas fa-video px-2"></i>ویدئو های مرتبط با چاپ صنعتی:</h4>
             <div class="video-wrapper col-10 mx-auto  row py-4">
                 <div class="col-sm-12 col-md-6 col-xl-4">
-                    <p class="col-12 text-center text-light">چاپ تابلو فرش:</p>
-                    <div id="49272618412"><script type="text/JavaScript" src="https://www.aparat.com/embed/1VNz5?data[rnddiv]=49272618412&data[responsive]=yes"></script></div>                
+                    <p class="col-12 text-center text-light">آموزش چاپ تابلو فرش:</p>
+                    <div id="80689281912"><script type="text/JavaScript" src="https://www.aparat.com/embed/K4eNJ?data[rnddiv]=80689281912&data[responsive]=yes"></script></div>
                 </div>
                 <div class="col-sm-12 col-md-6 col-xl-4">
-                    <p class="col-12 text-center text-light"> چاپ کاغذ سابلیمیشن:</p>
+                    <p class="col-12 text-center text-light">دستگاه چاپ کاغذ سابلیمیشن:</p>
                     <div id="10972438765"><script type="text/JavaScript" src="https://www.aparat.com/embed/sJuqU?data[rnddiv]=10972438765&data[responsive]=yes"></script></div>
                 </div>
                 <div class="col-sm-12 col-md-6 col-xl-4">
-                    <p class="col-12 text-center text-light">چاپ روی تیشرت:</p>
+                    <p class="col-12 text-center text-light">آموزش چاپ روی تیشرت:</p>
                     <div id="24835862596"><script type="text/JavaScript" src="https://www.aparat.com/embed/VA5sE?data[rnddiv]=24835862596&data[responsive]=yes"></script></div>
                 </div>
                 <div class="col-sm-12 col-md-6 col-xl-4">
-                    <p class="col-12 text-center text-light pt-2 ">چاپ روفرشی:</p>
-                    <div id="10082083935"><script type="text/JavaScript" src="https://www.aparat.com/embed/75anE?data[rnddiv]=10082083935&data[responsive]=yes"></script></div>
+                    <p class="col-12 text-center text-light pt-2 ">چاپ کلاریس روی فرش:</p>
+                    <div id="16637075276"><script type="text/JavaScript" src="https://www.aparat.com/embed/9UhYm?data[rnddiv]=16637075276&data[responsive]=yes"></script></div>
                 </div>
                 <div class="col-sm-12 col-md-6 col-xl-4">
-                    <p class="col-12 text-center text-light pt-2 ">چاپ رومبلی:</p>
+                    <p class="col-12 text-center text-light pt-2 ">دستگاه چاپ رومبلی:</p>
                     <div id="26010119264"><script type="text/JavaScript" src="https://www.aparat.com/embed/tyQxZ?data[rnddiv]=26010119264&data[responsive]=yes"></script></div>
                 </div>
                 <div class="col-sm-12 col-md-6 col-xl-4">
-                    <p class="col-12 text-center text-light pt-2 ">چاپ روی کوسن:</p>
+                    <p class="col-12 text-center text-light pt-2 ">آموزش چاپ روی کوسن:</p>
                     <div id="83019590106"><script type="text/JavaScript" src="https://www.aparat.com/embed/SwI4z?data[rnddiv]=83019590106&data[responsive]=yes"></script></div>
                 </div>
             </div>
