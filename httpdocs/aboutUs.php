@@ -10,10 +10,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="content-security-policy" content="default-src 'none'; 
         style-src 'self' 'unsafe-inline'; 
-        script-src 'self' 'unsafe-inline';
+        script-src 'self' 'unsafe-inline' https://www.aparat.com;
         img-src 'self';
         font-src 'self';
-        frame-src https://www.google.com;
+        frame-src https://www.google.com https://www.aparat.com;
         "  >
     <meta name="description"    content="سايت رسمی ‍پیشگامان ‍پودينه آتا - درباره ما" />
     <meta name="author" content="Babak Ashtari" />
@@ -101,7 +101,7 @@
                                 <p class="text-justify">یک نسخه از طرح چاپی پس از انجام به صورت شابلون سابلیمیشن در اختیار سفارش دهنده قرار می گیرد. این شابلون برای چاپ مجدد قابل استفاده است.</p>
                             </li>
                             <li>
-                                <p class="text-justify">‍پیشگامان پودينه آتا قادر است غریب به اتفاق محصولات چاپ خانگی را اعم از  روتختی، ملافه، كوسن، روبالشی، فرش، روفرشی، ‌تابلوفرش، رومبلی، رومیزی و غيره تا عرض ۳ متر روی بافت پارچه و یا فرش چاپ کند.</p>
+                                <p class="text-justify">پیشگامان پودينه آتا قادر است غریب به اتفاق محصولات چاپ خانگی را اعم از  روتختی، ملافه، كوسن، روبالشی، فرش، روفرشی، ‌تابلوفرش، رومبلی، رومیزی و غيره تا عرض ۳ متر روی بافت پارچه و یا فرش چاپ کند.</p>
                             </li>
                         </ul>
                     </li>
@@ -109,13 +109,13 @@
             </div>
         </section>
         <section class="container mb-2 py-4 creativity">
-                <h3 class="p-2 p-md-4 mx-2 mx-md-4 ">دسترسی سریع:</h3>
-                <p class="p-5">محصولات ما در سه دسته عمده تقسيم بندي مي شوند كه عبارتند از كالاي فرش،‌ كالاي خواب و كالاي اتاق پذيرايي. در حال حاضر كالاي فرش تنها شامل دو دسته محصولات تابلو فرش و روفرشی مي شود كه به زودي با كثيري از محصولات و طرح هاي زيبا و متنوع در اين حوزه در اختيار مشتريان عزيز قرار خواهد گرفت. از جمله محصولات كالاي خواب شركت نيز مي توان به ملافه، رو تختي،‌ رو بالشي و كوسن اشاره كرد كه غني ترين و متنوع ترين محصولات مارا تشكيل مي دهد. پيشگامان پودنه آتا همچنين اخيرا دسته جديدي از محصولات را به خط توليد خود اضافه كرده است كه تحت عنوان كالاي اتاق پذيرايي شناخته مي شوند. در حال حاضر تنها كالاهاي اتاق پذيرايي ما شامل رومبلي و روميزي مي شود ولي به زودي اين خط توليد نيز مانند بقيه محصولات، توسعه خواهد يافت.</p>
-                <table class="container px-1">
+                <h3 class="p-2 p-md-2 mx-2 mx-md-4"><i class="px-2 fas fa-tags"></i>دسته بندی محصولات:</h3>
+                <p class="py-3 px-5">محصولات ما در سه دسته عمده تقسيم بندي مي شوند كه عبارتند از كالاي فرش،‌ كالاي خواب و كالاي اتاق پذيرايي. در حال حاضر كالاي فرش تنها شامل دو دسته محصولات تابلو فرش و روفرشی مي شود كه به زودي با كثيري از محصولات و طرح هاي زيبا و متنوع در اين حوزه در اختيار مشتريان عزيز قرار خواهد گرفت. از جمله محصولات كالاي خواب شركت نيز مي توان به ملافه، رو تختي،‌ رو بالشي و كوسن اشاره كرد كه غني ترين و متنوع ترين محصولات مارا تشكيل مي دهد. پيشگامان پودنه آتا همچنين اخيرا دسته جديدي از محصولات را به خط توليد خود اضافه كرده است كه تحت عنوان كالاي اتاق پذيرايي شناخته مي شوند. در حال حاضر تنها كالاهاي اتاق پذيرايي ما شامل رومبلي و روميزی مي شود ولي به زودی اين خط توليد نيز مانند بقيه محصولات، توسعه خواهد يافت.</p>
+                <table class="container px-1 ">
                     <tr class="row">
                         <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=carpet_products&product_subcategory=تابلوفرش"><img class="border border-primary" src="images/index_images/carpet_board1.jpg" alt="روتختی نمونه کار پیشگامان پودینه"></a></td>
                         <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=living_room_products&product_subcategory=پرده"><img class="border border-primary" src="images/index_images/curtain2.jpg" alt="پرده نمونه چاپی پیشگامان پودینه"></a></td>
-                        <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=sleeping_products"><img class="border border-primary" src="images/index_images/sleeping_products.jpg" alt="كالاي خواب شامل كوسن، روتختي و روملافه اي"></a></td>
+                        <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=sleeping_products"><img class="border border-primary" src="images/index_images/sleeping_products.jpg" alt="كالای خواب شامل كوسن، روتختی و روملافه ای"></a></td>
                     </tr>
                     <tr class="row label">
                         <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=carpet_products&product_subcategory=تابلوفرش">تابلوفرش</a></td>
@@ -133,13 +133,32 @@
                 </table>
         </section>
 
-        <section class="m-5">
-            <div class="video-container text-center">
-                <h4 class=" p-1 text-light">نمونه چاپ دیجیتالی تابلو فرش:</h4>
-                <div>
-                    <video class="border border-primary p-2 mb-5" width="320" height="240" poster="images/carpet_board.jpg" controls>
-                        <source src="images/aboutUs/carpet_board.mp4" type="video/mp4">
-                    </video>
+        <section class="videos row col-12 m-0 mt-2">
+            <h4 class="col-12 text-center py-4">ویدئو های چاپ صنعتی:</h4>
+            <div class="video-wrapper col-10 mx-auto  row py-4">
+                <div class="col-sm-12 col-md-6 col-xl-4">
+                    <p class="col-12 text-center text-light">چاپ تابلو فرش:</p>
+                    <div id="49272618412"><script type="text/JavaScript" src="https://www.aparat.com/embed/1VNz5?data[rnddiv]=49272618412&data[responsive]=yes"></script></div>                
+                </div>
+                <div class="col-sm-12 col-md-6 col-xl-4">
+                    <p class="col-12 text-center text-light"> چاپ کاغذ سابلیمیشن:</p>
+                    <div id="10972438765"><script type="text/JavaScript" src="https://www.aparat.com/embed/sJuqU?data[rnddiv]=10972438765&data[responsive]=yes"></script></div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-xl-4">
+                    <p class="col-12 text-center text-light">چاپ روی تیشرت:</p>
+                    <div id="24835862596"><script type="text/JavaScript" src="https://www.aparat.com/embed/VA5sE?data[rnddiv]=24835862596&data[responsive]=yes"></script></div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-xl-4">
+                    <p class="col-12 text-center text-light pt-2 ">چاپ روفرشی:</p>
+                    <div id="10082083935"><script type="text/JavaScript" src="https://www.aparat.com/embed/75anE?data[rnddiv]=10082083935&data[responsive]=yes"></script></div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-xl-4">
+                    <p class="col-12 text-center text-light pt-2 ">چاپ رومبلی:</p>
+                    <div id="26010119264"><script type="text/JavaScript" src="https://www.aparat.com/embed/tyQxZ?data[rnddiv]=26010119264&data[responsive]=yes"></script></div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-xl-4">
+                    <p class="col-12 text-center text-light pt-2 ">چاپ روی کوسن:</p>
+                    <div id="83019590106"><script type="text/JavaScript" src="https://www.aparat.com/embed/SwI4z?data[rnddiv]=83019590106&data[responsive]=yes"></script></div>
                 </div>
             </div>
         </section>

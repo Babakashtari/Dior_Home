@@ -82,6 +82,18 @@ main > section.description > div > ul > li > ul > li > p::before {
   font-weight: 900;
   padding: 1rem;
 }
+main > section.videos {
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 255, 255, 0.1)), to(rgba(255, 0, 255, 0.1)));
+  background-image: linear-gradient(to right, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
+}
+main > section.videos > div.video-wrapper {
+  margin-bottom: 7rem;
+}
+main > section.videos > h4,
+main > section.videos > p {
+  color: yellow;
+}
+/* .......... */
 main > section > div.video-container > div > video {
   border-radius: 15px;
 }
