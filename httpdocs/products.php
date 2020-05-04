@@ -43,6 +43,7 @@
         <link rel="stylesheet" href="Css/fonts.css">
         <link rel="stylesheet" href="CSS/header.css">
         <link rel="stylesheet" href="CSS/footer.css">
+        <link rel="stylesheet" href="CSS/contact_us_modal.css">
         <link rel="stylesheet" href="CSS/explorer_warning.css">
         <link rel="stylesheet" href="CSS/products.css">
         
@@ -93,10 +94,9 @@
             </div>
         </section>
         <?php show_warning(); ?>
-        <?php contact_us_modal(); ?>
     </main>
-
-<?php footer_generator();?>
+    <?php contact_us_modal(); ?>
+    <?php footer_generator();?>
     <?php canvas_generator(); ?>
     <script src="JS/canvas.js"></script>
     <script src="JS/jquery.min.js"></script>

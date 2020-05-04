@@ -81,11 +81,10 @@
         <!-- validation results are shown in this div: -->
             <div></div>
         </section>
-        <?php contact_us_modal(); ?>
         <?php show_warning(); ?>
     </main>
+    <?php contact_us_modal(); ?>
     <?php footer_generator();?>
-
     <?php canvas_generator(); ?>
     <script src="JS/canvas.js"></script>
     <script src="JS/jquery.min.js"></script>

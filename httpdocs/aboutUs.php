@@ -163,10 +163,10 @@
                 </div>
             </div>
         </section>
-        <?php contact_us_modal(); ?>
         <?php show_warning(); ?>
     </main>
-    <?php footer_generator();?>
+    <?php contact_us_modal(); ?>
+    <?php footer_generator(); ?>
     <?php canvas_generator(); ?>
     <script src="JS/explorer_warning.js"></script>
     <script src="JS/canvas.js"></script>
