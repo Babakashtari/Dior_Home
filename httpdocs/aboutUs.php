@@ -44,6 +44,7 @@
     <link rel="stylesheet" href="Css/fonts.css">
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="CSS/contact_us_modal.css">
     <link rel="stylesheet" href="CSS/explorer_warning.css">
     <link rel="stylesheet" href="CSS/aboutUs.css">
     <title>پيشگامان پودينه - درباره ما</title>
@@ -162,6 +163,7 @@
                 </div>
             </div>
         </section>
+        <?php contact_us_modal(); ?>
         <?php show_warning(); ?>
     </main>
     <?php footer_generator();?>

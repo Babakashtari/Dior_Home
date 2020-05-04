@@ -93,6 +93,7 @@
             </div>
         </section>
         <?php show_warning(); ?>
+        <?php contact_us_modal(); ?>
     </main>
 
 <?php footer_generator();?>

@@ -48,6 +48,7 @@
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/footer.css">
     <link rel="stylesheet" href="CSS/explorer_warning.css">
+    <link rel="stylesheet" href="CSS/contact_us_modal.css">
     <link rel="stylesheet" href="CSS/userSignedIn.css">
     <title>پيشگامان پودينه - تکمیل اطلاعات کاربری</title>
 </head>
@@ -80,6 +81,7 @@
         <!-- validation results are shown in this div: -->
             <div></div>
         </section>
+        <?php contact_us_modal(); ?>
         <?php show_warning(); ?>
     </main>
     <?php footer_generator();?>

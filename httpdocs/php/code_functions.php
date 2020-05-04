@@ -212,7 +212,7 @@ function footer_generator(){
             <div class="col-12 col-sm-4">
                 <p class="text-light text-right font-weight-bold"><span>پیشگامان پودینه:</span></p>
                 <ul>
-                    <li class="text-right py-2"><a class="text-light font-weight-italic" href="#">ارتباط با ما</a></li>
+                    <li class="text-right py-2"><button class="text-light font-weight-italic" data-toggle="modal" data-target="#contact_us_modal">ارتباط با ما</button></li>
                     <li class="text-right py-2"><a class="text-light font-weight-italic" href="aboutUs.php">درباره ما</a></li>
                     <li class="text-right py-2"><a class="text-light font-weight-italic" href="#">مقالات و اخبار</a></li>
                     <li class="container py-sm-3 py-md-2 pr-0">
@@ -461,5 +461,59 @@ function user_modification_form_generator(){
                     ';    
         }
     }
+}
+
+function contact_us_modal(){
+    echo    '
+    <!-- Modal -->
+<div class="modal fade" id="contact_us_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header row m-0">
+            <div class="col-12">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="text-center col-12">
+                <img src="images/Dior_logo.jpg">
+            </div>
+            <h5 class="modal-title text-dark col-12 text-center pt-1" id="exampleModalLabel">پیشگامان پودینه آتا:</h5>
+        </div>
+        <div class="modal-body">
+            <p><i class="fas fa-address-card pl-2 "></i> دفتر مرکزی: تهران، بازار بزرگ، سرای آزادی، طبقه اول پلاک 48</p>
+            <p><i class="fas fa-address-card pl-2 "></i> کارخانه: اردبیل، ميدان ايثار، شهرك صنعتی فاز 1 خيابان پنج شرقی پيشگامان پودينه آتا</p>
+        </div>
+        <div class="modal-footer">
+            <p class="col-12 row p-0"> 
+                <span class="label col-12">
+                    <i class="fas fa-phone pl-2"></i>دفتر مرکزی:
+                </span>
+                <span class="col-4" itemdrop="telephone">
+                    <a class="Yekan " href="tel:55615148 ">55615148</a>
+                </span>
+                <span class="col-4" itemdrop="telephone">
+                    <a class="Yekan " href="tel:55983072">55983072</a>
+                </span>
+                <span class="col-4" itemdrop="telephone">
+                    <a class="Yekan " href="tel:09121158204">09121158204</a>
+                </span>
+            </p>
+            <p class="col-12 row p-0">
+                <span class="label col-12">
+                    <i class="fas fa-phone pl-2"></i>کارخانه:
+                </span>
+                <span class="col-4" itemdrop="telephone">
+                    <a class="Yekan" href="tel:55637991">55637991</a>
+                </span>
+                <span class="col-4" itemdrop="telephone">
+                    <a class="Yekan" href="tel:09122084055">09122084055</a>
+                </span>
+            </p>
+        </div>
+    </div>
+  </div>
+</div>
+            ';
 }
 ?>
