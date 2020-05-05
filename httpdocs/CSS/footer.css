@@ -1,114 +1,114 @@
 footer {
-    background-color: darkslategrey;
-    border-radius: 5px;
-    direction: rtl;
-    width: auto !important;
+  background-color: darkslategrey;
+  border-radius: 5px;
+  direction: rtl;
+  width: auto !important;
 }
 
-footer>div#devider>div>p {
-    border-bottom: 3px solid white;
-    overflow: hidden;
-    line-height: 0;
+footer > div#devider > div > p {
+  border-bottom: 3px solid white;
+  overflow: hidden;
+  line-height: 0;
 }
 
-footer>div#devider>div>p>span {
-    border-radius: 15px 15px 0 0;
-    border: 3px solid white;
-    cursor: pointer;
+footer > div#devider > div > p > span {
+  border-radius: 15px 15px 0 0;
+  border: 3px solid white;
+  cursor: pointer;
 }
 
-footer>img {
-    position: absolute;
-    z-index: 1;
-    top: 1%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    border-radius: 50%;
-    width: 10%;
-    height: auto;
-    background-color: black;
-    box-shadow: 0 1px 8px white;
+footer > img {
+  position: absolute;
+  z-index: 1;
+  top: 1%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 50%;
+  width: 10%;
+  height: auto;
+  background-color: black;
+  box-shadow: 0 1px 8px white;
 }
 
-footer>section {
-    padding-bottom: 2rem;
+footer > section {
+  padding-bottom: 2rem;
 }
 
-footer>section>div>div>ul>li>button {
-    background-color: transparent;
-    border: none;
-    font-family: 'iranSans';
+footer > section > div > div > ul > li > button {
+  background-color: transparent;
+  border: none;
+  font-family: "iranSans";
 }
 
-footer>section:nth-of-type(1)>div>div>p>span,
-footer>section:nth-of-type(2)>div>div>p>span {
-    border-bottom: 3px solid yellowgreen;
-    padding-left: 3rem;
+footer > section:nth-of-type(1) > div > div > p > span,
+footer > section:nth-of-type(2) > div > div > p > span {
+  border-bottom: 3px solid yellowgreen;
+  padding-left: 3rem;
 }
 
-footer>section:nth-of-type(1)>div>div>ul,
-footer>section:nth-of-type(2)>div>div>ul {
-    list-style-type: none;
+footer > section:nth-of-type(1) > div > div > ul,
+footer > section:nth-of-type(2) > div > div > ul {
+  list-style-type: none;
 }
 
-footer>section:nth-of-type(1)>div>div>ul>li,
-footer>section:nth-of-type(2)>div>div>ul>li {
-    border-bottom: 3px solid gray;
+footer > section:nth-of-type(1) > div > div > ul > li,
+footer > section:nth-of-type(2) > div > div > ul > li {
+  border-bottom: 3px solid gray;
 }
 
-footer>section:nth-of-type(1)>div>div>ul>li>div>a>i {
-    font-size: 1.5rem;
+footer > section:nth-of-type(1) > div > div > ul > li > div > a > i {
+  font-size: 1.5rem;
 }
 
 footer div#map {
-    width: 100%;
-    border-radius: 5px;
-    box-shadow: 1px 1px 3px black, -1px -1px 3px black;
-    overflow: hidden;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px black, -1px -1px 3px black;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 1200px) {
-    footer>section:nth-of-type(2)>div>div>ul>li>p {
-        font-size: 0.75rem;
-        line-height: 2rem;
-    }
+  footer > section:nth-of-type(2) > div > div > ul > li > p {
+    font-size: 0.75rem;
+    line-height: 2rem;
+  }
 }
 
 @media screen and (max-width: 895px) and (min-width: 768px) {
-    footer>section:nth-of-type(2)>div>div>ul>li>p {
-        font-size: 0.6rem;
-        margin: 0;
-    }
+  footer > section:nth-of-type(2) > div > div > ul > li > p {
+    font-size: 0.6rem;
+    margin: 0;
+  }
 
-    footer>section:nth-of-type(2)>div>div>p {
-        font-size: 0.75rem;
-        margin: 0;
-    }
+  footer > section:nth-of-type(2) > div > div > p {
+    font-size: 0.75rem;
+    margin: 0;
+  }
 }
 
 @media screen and (max-width: 769px) {
+  footer > section:nth-of-type(1) > div.row > div > p,
+  footer > section:nth-of-type(1) > div.row > div > ul > li > a,
+  footer > section > div > div > ul > li > button,
+  footer > section:nth-of-type(1) > div.row > div > ul > li > div > a > i,
+  footer > div#devider > div.row > p {
+    font-size: 0.75rem;
+  }
 
-    footer>section:nth-of-type(1)>div.row>div>p,
-    footer>section:nth-of-type(1)>div.row>div>ul>li>a,
-    footer>section:nth-of-type(1)>div.row>div>ul>li>div>a>i,
-    footer>div#devider>div.row>p {
-        font-size: 0.75rem;
-    }
-
-    footer>section:nth-of-type(2)>div>div>ul>li>a,
-    footer>section:nth-of-type(2)>div>div>ul>li>a>i {
-        font-size: 1rem;
-    }
+  footer > section:nth-of-type(2) > div > div > ul > li > a,
+  footer > section:nth-of-type(2) > div > div > ul > li > a > i {
+    font-size: 1rem;
+  }
 }
 
 @media screen and (max-width: 357px) {
-    footer>div#devider>div.row>p {
-        font-size: 0.6rem;
-    }
+  footer > div#devider > div.row > p {
+    font-size: 0.6rem;
+  }
 }
 
 @media screen and (max-width: 308px) {
-    footer>div#devider>div.row>p>span>i {
-        display: none;
-    }
+  footer > div#devider > div.row > p > span > i {
+    display: none;
+  }
 }

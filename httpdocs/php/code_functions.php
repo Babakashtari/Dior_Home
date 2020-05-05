@@ -217,9 +217,9 @@ function footer_generator(){
                     <li class="text-right py-2"><a class="text-light font-weight-italic" href="#">مقالات و اخبار</a></li>
                     <li class="container py-sm-3 py-md-2 pr-0">
                         <div class="row flex-nowrap text-right py-3 py-sm-0 py-md-0">
-                            <a class=" text-light" href="#"><i class="col-3 fab fa-telegram"></i></a>
-                            <a class=" text-light" href="#"><i class="col-3 fab fa-whatsapp-square"></i></a>
-                            <a class=" text-light" href="#"><i class="col-3 fab fa-instagram"></i></a>
+                            <a class=" text-light" href="https://t.me/pishgaman_poudineh_ata"><i class="col-3 fab fa-telegram"></i></a>
+                            <a class=" text-light" href="https://wa.me/989122084055"><i class="col-3 fab fa-whatsapp-square"></i></a>
+                            <a class=" text-light" href="https://instagram.com/pishgaman_poudineh"><i class="col-3 fab fa-instagram"></i></a>
                             <a class=" text-light" href="#"><i class="col-3 fab fa-facebook"></i></a>
                         </div>
                     </li>
