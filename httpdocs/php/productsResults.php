@@ -82,7 +82,11 @@
     }
 
     function pagination(){
-        $product_name = $GLOBALS['product_name'];
+        if(isset($GLOBALS['product_name'])){
+            $product_name = $GLOBALS['product_name'];
+        }else{
+            $product_name = null;
+        }
         $page_number = $GLOBALS['page_number'];
         $total_number_of_rows = $GLOBALS['total_number_of_rows'];
         $total_number_of_pages = $GLOBALS['total_number_of_pages'];
@@ -90,7 +94,7 @@
         $inputs_arr = $GLOBALS['inputs_arr'];
         $href='';
 
-        foreach ($inputs_arr as $key => $value) {
+        foreach ($inputs_arr as $key => $value){
             if($value == "product_name like '%$product_name%'"){
                 $href .= '&' . "product_name=$product_name";
             }else{
@@ -311,35 +315,29 @@ function card_generators(){
             <h4 class="col-12 text-light text-center access-header py-4">کاتالوگ محصولات - دسترسی سریع</h4>
             <div class="col-12  col-md-6 col-lg-4 p-2 ">
                 <div class="row p-2">
-                    <p class="text-light category text-center col-sm-12 col-md-11 py-2">  کالای خواب: </p>
+                    <p class="text-light category text-center col-sm-12 col-md-11 py-2">کالای خواب:</p>
                     <a href="products.php?product_category=sleeping_products&product_subcategory=روتختی" type="button" class="btn';
                     if($product_category == "sleeping_products" && $product_subcategory == "روتختی"){
                         echo ' btn-success ';
                     }else{
                         echo ' btn-primary ';
                     } 
-                    echo '   col-sm-2"><span class="badge badge-light Yekan">' . $bedsheet_number . '</span><br> روتختی </a>
+                    echo '   col-sm-2 col-lg-3"><span class="badge badge-light Yekan">' . $bedsheet_number . '</span><br>روتختی</a>
                     <a href="products.php?product_category=sleeping_products&product_subcategory=روبالشی" type="button" class="btn';
                     if($product_category == "sleeping_products" && $product_subcategory == "روبالشی"){
                         echo ' btn-success ';
                     }else{
                         echo ' btn-primary ';
                     }
-                    echo '   col-sm-2"><span class="badge badge-light Yekan">'. $pillow_number .'</span><br> روبالشی </a>
-                    <a href="products.php?product_category=sleeping_products&product_subcategory=کوسن" type="button" class="btn';
-                    if($product_category == "sleeping_products" && $product_subcategory == "کوسن"){
-                        echo " btn-success ";
-                    }else{
-                        echo " btn-primary";
-                    }
-                    echo '   col-sm-2"><span class="badge badge-light Yekan">' . $bedroom_cushion_number . '</span><br> کوسن </a>
+                    echo '   col-sm-2 col-lg-3"><span class="badge badge-light Yekan">'. $pillow_number .'</span><br>روبالشی</a>
+
                     <a href="products.php?product_category=sleeping_products&product_subcategory=ملافه" type="button" class="btn';
                     if($product_category == "sleeping_products" && $product_subcategory == "ملافه" ){
                         echo " btn-success ";
                     }else{
                         echo " btn-primary ";
                     }
-                    echo '   col-sm-2"><span class="badge badge-light Yekan">' . $bedcover_number . '</span><br> ملافه </a>
+                    echo '   col-sm-2 col-lg-3"><span class="badge badge-light Yekan">' . $bedcover_number . '</span><br> ملافه </a>
                 </div>
             </div>
             <div class="col-12  col-md-6 col-lg-4 p-2 ">

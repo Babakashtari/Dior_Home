@@ -71,7 +71,7 @@
                 </div>
                 <div class="form-group sub displayNone py-1">
                     <select class="form-control border border-primary" id="product_subcategory" name="product_subcategory" >
-                        <!-- subcategory option elements are generated here via javascript -->
+                        <!-- subcategory option elements are generated here -->
                         <?php subcategory_option_generator(); ?>
                     </select>
                 </div>

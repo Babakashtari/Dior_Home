@@ -80,7 +80,6 @@ function header_generator(){
                         <li><a href="products.php?product_category=sleeping_products&product_subcategory=روبالشی">روبالشی</a></li>
                         <li><a href="products.php?product_category=sleeping_products&product_subcategory=روتختی">روتختی</a></li>
                         <li><a href="products.php?product_category=sleeping_products&product_subcategory=ملافه">ملافه</a></li>
-                        <li><a href="products.php?product_category=sleeping_products&product_subcategory=کوسن">کوسن</a></li>
                     </ul>
                 </div>
             </div>
@@ -88,7 +87,7 @@ function header_generator(){
                 <div class="card-header text-dark"><a href="products.php?product_category=living_room_products">اتاق نشیمن</a></div>
                 <div class="card-body">
                     <ul>
-                        <li><a href="products.php?product_category=living_room_products&product_subcategory=‍پرده">پرده</a></li>
+                        <li><a href="products.php?product_category=living_room_products&product_subcategory=پرده">پرده</a></li>
                         <li><a href="products.php?product_category=living_room_products&product_subcategory=رومبلی">رومبلی</a></li>
                         <li><a href="products.php?product_category=living_room_products&product_subcategory=کوسن">کوسن</a></li>
                         <li><a href="products.php?product_category=living_room_products&product_subcategory=رومیزی">رومیزی</a></li> 
