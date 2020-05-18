@@ -52,10 +52,62 @@
 <body>
     <?php head(); ?>
     <main>
-        <section class="container-fluid px-0 position-relative main_image">
-            <img class="border border-dark" src="images/index_images/frontpage.jpg" alt="پرده، کوسن و رومبلی اتاق نشیمن">
-            <h3 class="position-absolute p-1 p-sm-3">خلاقیت از شما</h3>
-            <h3 class="position-absolute p-1 p-sm-3">تولید با کیفیت و مرغوب از ما</h3>
+        <section class="container-fluid px-0 m-0 position-relative main_image">
+          <!-- carousel -->
+          <div id="carouselId" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselId" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselId" data-slide-to="1"></li>
+              <li data-target="#carouselId" data-slide-to="2"></li>
+              <li data-target="#carouselId" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              <div class="carousel-item active">
+                <img class="" src="images/index_images/frontpage.jpg" alt="لباس دخترانه">
+                <div class="carousel-caption">
+                  <h3 class="p-4" id="first"> تولید و پخش انواع پوشاک دخترانه</h3>
+                  <h5 class="col-8 col-sm-12 py-2">روپوش، سارافون، شال و روسری دخترانه در طرح ها و رنگ های متنوع</h5>
+                  <!-- لطفا این لینکها را به سایت هایی وصل کنید که در مورد این نوع نقاشی توضیح می دهند. برای سئو خوب است -->
+                  <a class="text-light px-5 py-2" href="#">بیشتر بخوانید</a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="img/index/photoslider/" alt="لباس زنانه">
+                <div class="carousel-caption">
+                  <h3 class="p-4" id="second">انواع پوشاک زنانه و مجلسی</h3>
+                  <h5 class="col-8 col-sm-12 py-2">انواع روپوش زنانه شیک مناسب برای محافل و مجالس رسمی و غیر رسمی</h5>
+                  <!-- لطفا این لینکها را به سایت هایی وصل کنید که در مورد این نوع نقاشی توضیح می دهند. برای سئو خوب است -->
+                  <a class="text-light px-5 py-2" href="#">بیشتر بخوانید</a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="img/index/photoslider/photo_slider7.jpg" alt="یونیفرم و لباس اداری">
+                <div class="carousel-caption">
+                  <h3 class="p-4" id="third">انواع یونیفرم و لباس اداری</h3>
+                  <h5 class="col-8 col-sm-12 py-2">تولید انواع لباس کار و یونیفرم اداری مناسب سازمان ها و مراکز دولتی و غیر دولتی</h5>
+                  <!-- لطفا این لینکها را به سایت هایی وصل کنید که در مورد این نوع نقاشی توضیح می دهند. برای سئو خوب است -->
+                  <a class="text-light px-5 py-2" href="#">بیشتر بخوانید</a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="img/index/photoslider/photo_slider4.jpg" alt="چادر و لباس اسلامی">
+                <div class="carousel-caption">
+                  <h3 class="p-4" id="third">انواع چادر و البسه اسلامی</h3>
+                  <h5 class="col-8 col-sm-12 py-2">تولید انواع چادر عربی و ایرانی، شيک و مناسب برای تمامی سنین</h5>
+                  <!-- لطفا این لینکها را به سایت هایی وصل کنید که در مورد این نوع نقاشی توضیح می دهند. برای سئو خوب است -->
+                  <a class="text-light px-5 py-2" href="#">بیشتر بخوانید</a>
+                </div>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
         </section>
         <section class="container my-4 py-4 creativity">
                 <h3 class="p-2 p-md-4 mx-2 mx-md-4 ">ایده از شما، کار از ما</h3>
@@ -63,7 +115,7 @@
                 <table class="container px-1">
                     <tr class="row">
                         <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=carpet_products&product_subcategory=تابلوفرش"><img class="border border-primary" src="images/index_images/carpet_board1.jpg" alt="روتختی نمونه کار پیشگامان پودینه"></a></td>
-                        <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=living_room_products&product_subcategory=پرده"><img class="border border-primary" src="images/index_images/curtain2.jpg" alt="پرده نمونه چاپی پیشگامان پودینه"></a></td>
+                        <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=living_room_products&product_subcategory=پرده"><img class="border border-primary" src="images/index_images/curtain.png" alt="پرده نمونه چاپی پیشگامان پودینه"></a></td>
                         <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=sleeping_products"><img class="border border-primary" src="images/index_images/sleeping_products.jpg" alt="كالاي خواب شامل كوسن، روتختي و روملافه اي"></a></td>
                     </tr>
                     <tr class="row label">
