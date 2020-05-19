@@ -63,39 +63,39 @@
             </ol>
             <div class="carousel-inner" role="listbox">
               <div class="carousel-item active">
-                <img class="rotate-img" src="images/index_images/frontpage.jpg" alt="اتاق نشیمن و بنجره بارانی">
+                <img class="rotate-img" src="images/index_images/photoslider/table_cloth.jpg" alt="رومیزی">
                 <div class="carousel-caption">
                   <h3 class="p-4" id="first"> کالای اتاق پذیرایی</h3>
-                  <h5 class="col-8 col-sm-12 py-2">چاپ دیجتالی انواع رومیزی، رو مبلی و كوسن</h5>
+                  <h5 class="col-8 col-sm-12 py-2">چاپ دیجتالی انواع رومیزی، رو مبلی، كوسن و ...</h5>
                   <!-- لطفا این لینکها را به سایت هایی وصل کنید که در مورد این نوع نقاشی توضیح می دهند. برای سئو خوب است -->
                   <a class="text-light px-5 py-2" href="#">بیشتر بخوانید</a>
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="img/index/photoslider/photo_slider5.jpg" alt="كالای خواب">
+                <img src="images/index_images/photoslider/bed2.jpg" alt="كالای خواب" width="100%" height="100%">
                 <div class="carousel-caption">
                   <h3 class="p-4" id="second">کالای خواب</h3>
                   <h5 class="col-8 col-sm-12 py-2">چاپ سابلیمیشن روی انواع روتختی، ملافه، رو بالشی و كوسن</h5>
                   <!-- لطفا این لینکها را به سایت هایی وصل کنید که در مورد این نوع نقاشی توضیح می دهند. برای سئو خوب است -->
-                  <a class="text-light px-5 py-2" href="#">بیشتر بخوانید</a>
+                  <a class="text-light px-5 py-2" href="#">بیشتر ببینید</a>
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="img/index/photoslider/photo_slider7.jpg" alt="کالای فرش">
+                <img src="images/index_images/photoslider/sea_carpet_board.jpg" alt="کالای فرش">
                 <div class="carousel-caption">
-                  <h3 class="p-4" id="third">فرش </h3>
-                  <h5 class="col-8 col-sm-12 py-2">تولید و چاپ انواع فرش، روفرشی و تابلوفرش</h5>
+                  <h3 class="p-4" id="third">روفرشی و تابلو فرش</h3>
+                  <h5 class="col-8 col-sm-12 py-2"> چاپ دیجیتالی انواع فرش، روفرشی و تابلوفرش</h5>
                   <!-- لطفا این لینکها را به سایت هایی وصل کنید که در مورد این نوع نقاشی توضیح می دهند. برای سئو خوب است -->
-                  <a class="text-light px-5 py-2" href="#">بیشتر بخوانید</a>
+                  <a class="text-light px-5 py-2" href="#">بیشتر ببینید</a>
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="img/index/photoslider/photo_slider4.jpg" alt="چادر و لباس اسلامی">
+                <img src="images/index_images/photoslider/cushion3.jpg" alt="کوسن و رو بالشی">
                 <div class="carousel-caption">
-                  <h3 class="p-4" id="third">انواع چادر و البسه اسلامی</h3>
-                  <h5 class="col-8 col-sm-12 py-2">تولید انواع چادر عربی و ایرانی، شيک و مناسب برای تمامی سنین</h5>
+                  <h3 class="p-4" id="third">کوسن و روبالشی</h3>
+                  <h5 class="col-8 col-sm-12 py-2">چاپ دیجیتالی طرح ها و الگوهای واقعی و کارتونی روی روبالشی و انواع کوسن</h5>
                   <!-- لطفا این لینکها را به سایت هایی وصل کنید که در مورد این نوع نقاشی توضیح می دهند. برای سئو خوب است -->
-                  <a class="text-light px-5 py-2" href="#">بیشتر بخوانید</a>
+                  <a class="text-light px-5 py-2" href="#">بیشتر ببینید</a>
                 </div>
               </div>
             </div>
