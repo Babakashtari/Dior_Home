@@ -63,28 +63,28 @@
             </ol>
             <div class="carousel-inner" role="listbox">
               <div class="carousel-item active">
-                <img class="" src="images/index_images/frontpage.jpg" alt="لباس دخترانه">
+                <img class="rotate-img" src="images/index_images/frontpage.jpg" alt="اتاق نشیمن و بنجره بارانی">
                 <div class="carousel-caption">
-                  <h3 class="p-4" id="first"> تولید و پخش انواع پوشاک دخترانه</h3>
-                  <h5 class="col-8 col-sm-12 py-2">روپوش، سارافون، شال و روسری دخترانه در طرح ها و رنگ های متنوع</h5>
+                  <h3 class="p-4" id="first"> کالای اتاق پذیرایی</h3>
+                  <h5 class="col-8 col-sm-12 py-2">چاپ دیجتالی انواع رومیزی، رو مبلی و كوسن</h5>
                   <!-- لطفا این لینکها را به سایت هایی وصل کنید که در مورد این نوع نقاشی توضیح می دهند. برای سئو خوب است -->
                   <a class="text-light px-5 py-2" href="#">بیشتر بخوانید</a>
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="img/index/photoslider/" alt="لباس زنانه">
+                <img src="img/index/photoslider/photo_slider5.jpg" alt="كالای خواب">
                 <div class="carousel-caption">
-                  <h3 class="p-4" id="second">انواع پوشاک زنانه و مجلسی</h3>
-                  <h5 class="col-8 col-sm-12 py-2">انواع روپوش زنانه شیک مناسب برای محافل و مجالس رسمی و غیر رسمی</h5>
+                  <h3 class="p-4" id="second">کالای خواب</h3>
+                  <h5 class="col-8 col-sm-12 py-2">چاپ سابلیمیشن روی انواع روتختی، ملافه، رو بالشی و كوسن</h5>
                   <!-- لطفا این لینکها را به سایت هایی وصل کنید که در مورد این نوع نقاشی توضیح می دهند. برای سئو خوب است -->
                   <a class="text-light px-5 py-2" href="#">بیشتر بخوانید</a>
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="img/index/photoslider/photo_slider7.jpg" alt="یونیفرم و لباس اداری">
+                <img src="img/index/photoslider/photo_slider7.jpg" alt="کالای فرش">
                 <div class="carousel-caption">
-                  <h3 class="p-4" id="third">انواع یونیفرم و لباس اداری</h3>
-                  <h5 class="col-8 col-sm-12 py-2">تولید انواع لباس کار و یونیفرم اداری مناسب سازمان ها و مراکز دولتی و غیر دولتی</h5>
+                  <h3 class="p-4" id="third">فرش </h3>
+                  <h5 class="col-8 col-sm-12 py-2">تولید و چاپ انواع فرش، روفرشی و تابلوفرش</h5>
                   <!-- لطفا این لینکها را به سایت هایی وصل کنید که در مورد این نوع نقاشی توضیح می دهند. برای سئو خوب است -->
                   <a class="text-light px-5 py-2" href="#">بیشتر بخوانید</a>
                 </div>
