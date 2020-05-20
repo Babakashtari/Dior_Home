@@ -429,6 +429,11 @@ div#carouselId {
   border-radius: 50%;
   color: white !important;
   padding: 2rem !important;
+  font-size: 2.5rem;
+}
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  text-shadow: 3px 3px 3px black;
 }
 
 .carousel-caption {
@@ -441,8 +446,9 @@ div#carouselId {
 .carousel-caption > h3 {
   direction: rtl;
   position: absolute;
-  top: 30%;
-  right: 15%;
+  top: 15%;
+  right: 50%;
+  transform: translateX(50%);
   font-size: 1.5rem;
   color: yellow;
   border-radius: 5px;
@@ -474,24 +480,24 @@ h3#third {
 @-webkit-keyframes drag_from_left {
   from {
     opacity: 0;
-    right: 100%;
+    right: 0;
   }
 
   to {
     opacity: 1;
-    right: 15%;
+    right: 50%;
   }
 }
 
 @keyframes drag_from_left {
   from {
     opacity: 0;
-    right: 100%;
+    right: 0;
   }
 
   to {
     opacity: 1;
-    right: 15%;
+    right: 50%;
   }
 }
 
@@ -526,34 +532,34 @@ h3#third {
 @-webkit-keyframes drag_from_right {
   from {
     opacity: 0;
-    right: -100%;
+    right: 100%;
   }
 
   to {
     opacity: 1;
-    right: 15%;
+    right: 50%;
   }
 }
 
 @keyframes drag_from_right {
   from {
     opacity: 0;
-    right: -100%;
+    right: 100%;
   }
 
   to {
     opacity: 1;
-    right: 15%;
+    right: 50%;
   }
 }
 
 .carousel-caption > h5 {
   direction: rtl;
   position: absolute;
-  top: 50%;
-  right: 15%;
+  top: 45%;
+  right: 0;
   color: white;
-  text-align: right;
+  text-align: center;
   font-size: 1.5rem;
   text-shadow: 1px 1px 3px black, -1px -1px 3px black;
   opacity: 0;
@@ -577,7 +583,7 @@ h3#third {
 
   to {
     opacity: 1;
-    right: 15%;
+    right: 0;
   }
 }
 
@@ -589,7 +595,7 @@ h3#third {
 
   to {
     opacity: 1;
-    right: 15%;
+    right: 0;
   }
 }
 
@@ -598,7 +604,8 @@ h3#third {
   direction: rtl;
   position: absolute;
   top: 70%;
-  right: 15%;
+  right: 50%;
+  transform: translateX(50%);
   opacity: 0;
   background-color: gray;
   -webkit-animation-name: link_appear_with_delay;
@@ -616,24 +623,24 @@ h3#third {
 @-webkit-keyframes link_appear_with_delay {
   from {
     opacity: 0;
-    right: 30%;
+    right: 90%;
   }
 
   to {
     opacity: 1;
-    right: 15%;
+    right: 50%;
   }
 }
 
 @keyframes link_appear_with_delay {
   from {
     opacity: 0;
-    right: 30%;
+    right: 90%;
   }
 
   to {
     opacity: 1;
-    right: 15%;
+    right: 50%;
   }
 }
 
