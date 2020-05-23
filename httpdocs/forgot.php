@@ -15,7 +15,7 @@
         font-src 'self';
         frame-src https://www.google.com;
         "  >
-    <meta name="description"    content="  - بازیابی گذرواژه سايت رسمی ‍پیشگامان ‍پودينه آتا" />
+    <meta name="description"    content="  - بازیابی گذرواژه از طریق این صفحه جهت کاربران پیشگامان پودينه آتا جهت چاپ ديجيتال يا سابليميشن" />
     <meta name="author" content="Babak Ashtari" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 

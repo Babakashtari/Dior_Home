@@ -15,7 +15,7 @@
         font-src 'self';
         frame-src https://www.google.com;
         "  >
-    <meta name="description"    content="تایید ایمیل - سايت رسمی ‍پیشگامان ‍پودينه آتا" />
+    <meta name="description"    content="فعالسازی ایمیل، وبسايت رسمی پيشگامان پودينه آتا" />
     <meta name="author" content="Babak Ashtari" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 

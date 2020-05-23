@@ -15,7 +15,7 @@
         font-src 'self';
         frame-src https://www.google.com https://www.aparat.com;
         "  >
-    <meta name="description"    content="سايت رسمی پیشگامان پودينه آتا - درباره ما" />
+    <meta name="description"    content="پيشگامان پودينه آتا، مركز چاپ " />
     <meta name="author" content="Babak Ashtari" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -47,7 +47,7 @@
     <link rel="stylesheet" href="CSS/contact_us_modal.css">
     <link rel="stylesheet" href="CSS/explorer_warning.css">
     <link rel="stylesheet" href="CSS/aboutUs.css">
-    <title>پيشگامان پودينه - درباره ما</title>
+    <title>پيشگامان پودينه آتا - درباره ما</title>
 </head>
 <body>
     <?php head(); ?>

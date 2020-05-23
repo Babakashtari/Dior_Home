@@ -62,12 +62,12 @@ function header_generator(){
                         <input class="modal-closable p-1" type="search" name="search" placeholder="جستجو..." />
                 </li>
                 <li class="col">
-                    <a href="shopping_cart.php">';
+                    <a href="shoppingcart.php">';
                     shopping_cart_logged_in_icon_generator();        
     echo            '</a>
                 </li>
                 <li class="col">';
-                        header_logged_in_icon_generator();
+                    header_logged_in_icon_generator();
     echo       '</li>
             </ul>
         </div>
@@ -475,7 +475,7 @@ function contact_us_modal(){
                 </button>
             </div>
             <div class="text-center col-12">
-                <img src="images/Dior_logo.jpg">
+                <img src="images/Dior_logo.jpg" alt="آرم سایت رسمی پيشگامان پودينه آتا">
             </div>
             <h5 class="modal-title text-dark col-12 text-center pt-1" id="exampleModalLabel">پیشگامان پودینه آتا:</h5>
         </div>

@@ -15,7 +15,7 @@
         font-src 'self';
         frame-src https://www.google.com;
         "  >
-    <meta name="description"    content="سايت رسمی ‍پیشگامان ‍پودينه آتا" />
+    <meta name="description" content="پيشگامان پودينه آتا، پيشرو در خدمات چاپ و پرينت ديجيتال يا سابليميشن روی انواع پارچه." />
     <meta name="author" content="Babak Ashtari" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
