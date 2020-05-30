@@ -21,11 +21,11 @@
     <meta http-equiv="content-security-policy" content="default-src 'none'; 
         style-src 'self' 'unsafe-inline'; 
         script-src 'self' 'unsafe-inline';
-        img-src 'self';
+        img-src 'self' 'http://www.w3.org';
         font-src 'self';
         frame-src https://www.google.com;
         "  >
-    <meta name="description"    content="سايت رسمی ‍پیشگامان ‍پودينه آتا" />
+    <meta name="description" content="پيشگامان پودينه آتا، پيشرو در خدمات چاپ ديجيتال يا همان چاپ سابليميشن روی انواع پارچه." />
     <meta name="author" content="Babak Ashtari" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -75,37 +75,37 @@
               <div class="carousel-item active">
                 <img class="rotate-img" src="images/index_images/photoslider/table_cloth.jpg" alt="رومیزی">
                 <div class="carousel-caption">
-                  <h3 class="p-4" id="first"> کالای اتاق پذیرایی</h3>
-                  <h5 class="col-8 col-sm-12 py-2">چاپ دیجتالی انواع رومیزی، رو مبلی، كوسن و ...</h5>
+                  <h3 class="p-3 p-md-4" id="first"> کالای اتاق پذیرایی</h3>
+                  <h5 class="col-8 col-sm-10 py-2">چاپ دیجتالی انواع رومیزی، رو مبلی، كوسن و ...</h5>
                   <!-- لطفا این لینکها را به سایت هایی وصل کنید که در مورد این نوع نقاشی توضیح می دهند. برای سئو خوب است -->
-                  <a class="text-light px-5 py-2" href="#">بیشتر بخوانید</a>
+                  <a class="text-light px-3 px-md-5 py-2" href="#">بیشتر ببینید</a>
                 </div>
               </div>
               <div class="carousel-item">
                 <img src="images/index_images/photoslider/bed2.jpg" alt="كالای خواب" width="100%" height="100%">
                 <div class="carousel-caption">
-                  <h3 class="p-4" id="second">کالای خواب</h3>
-                  <h5 class="col-8 col-sm-12 py-2">چاپ سابلیمیشن روی انواع روتختی، ملافه، رو بالشی و كوسن</h5>
+                  <h3 class="p-3 p-md-4" id="second">کالای خواب</h3>
+                  <h5 class="col-8 col-sm-10 py-2">چاپ سابلیمیشن روی انواع روتختی، ملافه، رو بالشی و كوسن</h5>
                   <!-- لطفا این لینکها را به سایت هایی وصل کنید که در مورد این نوع نقاشی توضیح می دهند. برای سئو خوب است -->
-                  <a class="text-light px-5 py-2" href="#">بیشتر ببینید</a>
+                  <a class="text-light px-3 px-md-5 py-2" href="#">بیشتر ببینید</a>
                 </div>
               </div>
               <div class="carousel-item">
                 <img src="images/index_images/photoslider/sea_carpet_board.jpg" alt="کالای فرش">
                 <div class="carousel-caption">
-                  <h3 class="p-4" id="third">روفرشی و تابلو فرش</h3>
-                  <h5 class="col-8 col-sm-12 py-2"> چاپ دیجیتالی انواع فرش، روفرشی و تابلوفرش</h5>
+                  <h3 class="p-3 p-md-4" id="third">روفرشی و تابلو فرش</h3>
+                  <h5 class="col-8 col-sm-10 py-2"> چاپ دیجیتالی انواع فرش، روفرشی و تابلوفرش</h5>
                   <!-- لطفا این لینکها را به سایت هایی وصل کنید که در مورد این نوع نقاشی توضیح می دهند. برای سئو خوب است -->
-                  <a class="text-light px-5 py-2" href="#">بیشتر ببینید</a>
+                  <a class="text-light px-3 px-md-5 py-2" href="#">بیشتر ببینید</a>
                 </div>
               </div>
               <div class="carousel-item">
                 <img src="images/index_images/photoslider/cushion3.jpg" alt="کوسن و رو بالشی">
                 <div class="carousel-caption">
-                  <h3 class="p-4" id="third">کوسن و روبالشی</h3>
-                  <h5 class="col-8 col-sm-12 py-2">چاپ دیجیتالی طرح ها و الگوهای واقعی و کارتونی روی روبالشی و انواع کوسن</h5>
+                  <h3 class="p-3 p-md-4" id="third">کوسن و روبالشی</h3>
+                  <h5 class="col-8 col-sm-10 py-2">چاپ دیجیتالی طرح ها و الگوهای واقعی و کارتونی روی روبالشی و انواع کوسن</h5>
                   <!-- لطفا این لینکها را به سایت هایی وصل کنید که در مورد این نوع نقاشی توضیح می دهند. برای سئو خوب است -->
-                  <a class="text-light px-5 py-2" href="#">بیشتر ببینید</a>
+                  <a class="text-light px-3 px-md-5 py-2" href="#">بیشتر ببینید</a>
                 </div>
               </div>
             </div>
@@ -118,28 +118,9 @@
           </div>
         </section>
         <section class="container my-4 py-4 creativity">
-                <h3 class="p-2 p-md-4 mx-2 mx-md-4 ">ایده از شما، کار از ما</h3>
-                <p class="p-2 px-md-4 pb-4 mx-2 mx-md-4 mb-4 "> اتاق خواب و نشيمن خود را آنگونه كه می پسنديد طراحی كنيد و به ما بدهيد تا برايتان توليد كنيم. پيشگامان پودينه آتا از سال <span class="Yekan">1380</span> و با بيش از <span class="Yekan">18</span> سال تجربه، طرح و الگوی شما را به صورت سفارشی دریافت و برایتان به صورت چاپ دیجیتالی روی پارچه تولید می کند.</p>
-                <table class="container px-1">
-                    <tr class="row">
-                        <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=carpet_products&product_subcategory=تابلوفرش"><img class="border border-primary" src="images/index_images/carpet_board1.jpg" alt="روتختی نمونه کار پیشگامان پودینه"></a></td>
-                        <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=living_room_products&product_subcategory=پرده"><img class="border border-primary" src="images/index_images/curtain.png" alt="پرده نمونه چاپی پیشگامان پودینه"></a></td>
-                        <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=sleeping_products"><img class="border border-primary" src="images/index_images/sleeping_products.jpg" alt="كالاي خواب شامل كوسن، روتختي و روملافه اي"></a></td>
-                    </tr>
-                    <tr class="row label">
-                        <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=carpet_products&product_subcategory=تابلوفرش">تابلوفرش</a></td>
-                        <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=living_room_products&product_subcategory=پرده">پرده </a></td>
-                        <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=sleeping_products">كالای خواب</a></td>
-                    </tr>
-                    <tr class="row">
-                        <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=carpet_products&product_subcategory=روفرشی"><img class="border border-primary" src="images/index_images/carpet3.jpg" alt="روفرشی تولید پیشگامان پودینه"></a></td>
-                        <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=living_room_products&product_subcategory=رومبلی"><img class="border border-primary" src="images/index_images/sofa_cover.jpg" alt="رومبلی تولید پیشگامان پودینه"></a></td>
-                    </tr>
-                    <tr class='row label'>
-                        <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=carpet_products&product_subcategory=روفرشی">روفرشی</a></td>
-                        <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=living_room_products&product_subcategory=رومبلی">رومبلی</a></td>
-                    </tr>
-                </table>
+          <h3 class="p-2 p-md-4 mx-2 mx-md-4 ">ایده از شما، کار از ما</h3>
+          <p class="p-2 px-md-4 pb-4 mx-2 mx-md-4 mb-4 "> اتاق خواب و نشيمن خود را آنگونه كه می پسنديد طراحی كنيد و به ما بدهيد تا برايتان توليد كنيم. پيشگامان پودينه آتا از سال <span class="Yekan">1380</span> و با بيش از <span class="Yekan">18</span> سال تجربه، طرح و الگوی شما را به صورت سفارشی دریافت و برایتان به صورت چاپ دیجیتالی روی پارچه تولید می کند.</p>
+          <?php five_photos_section(); ?>
         </section>
         <section class="cooperation">
             <div>

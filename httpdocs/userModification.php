@@ -21,14 +21,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="content-security-policy" content="default-src 'self'; 
+    <meta http-equiv="content-security-policy" content="
+        default-src 'self'; 
         style-src 'self' 'unsafe-inline'; 
         script-src 'self' 'unsafe-inline';
         img-src 'self';
         font-src 'self';
         frame-src https://www.google.com;
         "  >
-    <meta name="description"    content="صفحه ثبت و نگهداری اطلاعات مشتریان شرکت پیشگامان پودینه آتا" />
+    <meta name="description"    content="تکمیل اطلاعات کاربری مشتریان شرکت نساجی پیشگامان پودینه آتا مرکز چاپ سابليميشن و چاپ ديجيتالی روی پارچه " />
     <meta name="author" content="Babak Ashtari" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -60,7 +61,7 @@
     <link rel="stylesheet" href="CSS/explorer_warning.css">
     <link rel="stylesheet" href="CSS/contact_us_modal.css">
     <link rel="stylesheet" href="CSS/userSignedIn.css">
-    <title>پيشگامان پودينه - تکمیل اطلاعات کاربری</title>
+    <title>پيشگامان پودينه آتا - تکمیل اطلاعات کاربری</title>
 </head>
 <body>
     <?php head(); ?>

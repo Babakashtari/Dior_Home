@@ -21,11 +21,11 @@
     <meta http-equiv="content-security-policy" content="default-src 'none'; 
         style-src 'self' 'unsafe-inline'; 
         script-src 'self' 'unsafe-inline' https://www.aparat.com;
-        img-src 'self';
+        img-src 'self' 'http:www.w3.org';
         font-src 'self';
         frame-src https://www.google.com https://www.aparat.com;
         "  >
-    <meta name="description"    content="سايت رسمی پیشگامان پودينه آتا - درباره ما" />
+    <meta name="description"    content="پيشگامان پودينه آتا، مركز چاپ " />
     <meta name="author" content="Babak Ashtari" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -57,7 +57,7 @@
     <link rel="stylesheet" href="CSS/contact_us_modal.css">
     <link rel="stylesheet" href="CSS/explorer_warning.css">
     <link rel="stylesheet" href="CSS/aboutUs.css">
-    <title>پيشگامان پودينه - درباره ما</title>
+    <title>پيشگامان پودينه آتا - درباره ما</title>
 </head>
 <body>
     <?php head(); ?>
@@ -120,28 +120,9 @@
             </div>
         </section>
         <section class="container mb-2 py-4 creativity">
-                <h3 class="p-2 p-md-2 mx-2 mx-md-4"><i class="px-2 fas fa-tags"></i>دسته بندی محصولات:</h3>
-                <p class="py-3 px-5">محصولات ما در سه دسته عمده تقسيم بندي مي شوند كه عبارتند از كالاي فرش،‌ كالاي خواب و كالاي اتاق پذيرايي. در حال حاضر كالاي فرش تنها شامل دو دسته محصولات تابلو فرش و روفرشی مي شود كه به زودي با كثيري از محصولات و طرح هاي زيبا و متنوع در اين حوزه در اختيار مشتريان عزيز قرار خواهد گرفت. از جمله محصولات كالاي خواب شركت نيز مي توان به ملافه، رو تختي،‌ رو بالشي و كوسن اشاره كرد كه غني ترين و متنوع ترين محصولات مارا تشكيل مي دهد. پيشگامان پودنه آتا همچنين اخيرا دسته جديدي از محصولات را به خط توليد خود اضافه كرده است كه تحت عنوان كالاي اتاق پذيرايي شناخته مي شوند. در حال حاضر تنها كالاهاي اتاق پذيرايي ما شامل رومبلي و روميزی مي شود ولي به زودی اين خط توليد نيز مانند بقيه محصولات، توسعه خواهد يافت.</p>
-                <table class="container px-1 ">
-                    <tr class="row">
-                        <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=carpet_products&product_subcategory=تابلوفرش"><img class="border border-primary" src="images/index_images/carpet_board1.jpg" alt="روتختی نمونه کار پیشگامان پودینه"></a></td>
-                        <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=living_room_products&product_subcategory=پرده"><img class="border border-primary" src="images/index_images/curtain2.jpg" alt="پرده نمونه چاپی پیشگامان پودینه"></a></td>
-                        <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=sleeping_products"><img class="border border-primary" src="images/index_images/sleeping_products.jpg" alt="كالای خواب شامل كوسن، روتختی و روملافه ای"></a></td>
-                    </tr>
-                    <tr class="row label">
-                        <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=carpet_products&product_subcategory=تابلوفرش">تابلوفرش</a></td>
-                        <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=living_room_products&product_subcategory=پرده">پرده </a></td>
-                        <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=sleeping_products">كالای خواب</a></td>
-                    </tr>
-                    <tr class="row">
-                        <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=carpet_products&product_subcategory=روفرشی"><img class="border border-primary" src="images/index_images/carpet3.jpg" alt="روفرشی تولید پیشگامان پودینه"></a></td>
-                        <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=living_room_products&product_subcategory=رومبلی"><img class="border border-primary" src="images/index_images/sofa_cover.jpg" alt="رومبلی تولید پیشگامان پودینه"></a></td>
-                    </tr>
-                    <tr class='row label'>
-                        <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=carpet_products&product_subcategory=روفرشی">روفرشی</a></td>
-                        <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=living_room_products&product_subcategory=رومبلی">رومبلی</a></td>
-                    </tr>
-                </table>
+            <h3 class="p-2 p-md-2 mx-2 mx-md-4"><i class="px-2 fas fa-tags"></i>دسته بندی محصولات:</h3>
+            <p class="py-3 px-5">محصولات ما در سه دسته عمده تقسيم بندي مي شوند كه عبارتند از كالاي فرش،‌ كالاي خواب و كالاي اتاق پذيرايي. در حال حاضر كالاي فرش تنها شامل دو دسته محصولات تابلو فرش و روفرشی مي شود كه به زودي با كثيري از محصولات و طرح هاي زيبا و متنوع در اين حوزه در اختيار مشتريان عزيز قرار خواهد گرفت. از جمله محصولات كالاي خواب شركت نيز مي توان به ملافه، رو تختي،‌ رو بالشي و كوسن اشاره كرد كه غني ترين و متنوع ترين محصولات مارا تشكيل مي دهد. پيشگامان پودنه آتا همچنين اخيرا دسته جديدي از محصولات را به خط توليد خود اضافه كرده است كه تحت عنوان كالاي اتاق پذيرايي شناخته مي شوند. در حال حاضر تنها كالاهاي اتاق پذيرايي ما شامل رومبلي و روميزی مي شود ولي به زودی اين خط توليد نيز مانند بقيه محصولات، توسعه خواهد يافت.</p>
+            <?php five_photos_section(); ?>
         </section>
 
         <section class="videos row col-12 m-0 mt-2">

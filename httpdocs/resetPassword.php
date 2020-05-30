@@ -16,7 +16,7 @@
         font-src 'self';
         frame-src https://www.google.com;
         "  >
-    <meta name="description"    content="  - تغییر گذرواژه سايت رسمی ‍پیشگامان ‍پودينه آتا" />
+    <meta name="description"    content="پنل تغییر گذرواژه کاربری وبسايت رسمی صنايع نساجي پیشگامان پودينه آتا - درگاه خدمات مجازی شرکت از جمله خبرنامه" />
     <meta name="author" content="Babak Ashtari" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 

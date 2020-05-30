@@ -62,12 +62,12 @@ function header_generator(){
                         <input class="modal-closable p-1" type="search" name="search" placeholder="جستجو..." />
                 </li>
                 <li class="col">
-                    <a href="shopping_cart.php">';
+                    <a href="shoppingcart.php">';
                     shopping_cart_logged_in_icon_generator();        
     echo            '</a>
                 </li>
                 <li class="col">';
-                        header_logged_in_icon_generator();
+                    header_logged_in_icon_generator();
     echo       '</li>
             </ul>
         </div>
@@ -475,7 +475,7 @@ function contact_us_modal(){
                 </button>
             </div>
             <div class="text-center col-12">
-                <img src="images/Dior_logo.jpg">
+                <img src="images/Dior_logo.jpg" alt="آرم سایت رسمی پيشگامان پودينه آتا">
             </div>
             <h5 class="modal-title text-dark col-12 text-center pt-1" id="exampleModalLabel">پیشگامان پودینه آتا:</h5>
         </div>
@@ -515,4 +515,27 @@ function contact_us_modal(){
 </div>
             ';
 }
+function five_photos_section(){ ?>
+    <table class="container px-1">
+        <tr class="row">
+            <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=carpet_products&product_subcategory=تابلوفرش"><img class="border border-primary" src="images/index_images/carpet_board1.jpg" alt="روتختی نمونه کار پیشگامان پودینه"></a></td>
+            <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=living_room_products&product_subcategory=پرده"><img class="border border-primary" src="images/index_images/curtain.png" alt="پرده نمونه چاپی پیشگامان پودینه"></a></td>
+            <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=sleeping_products"><img class="border border-primary" src="images/index_images/sleeping_products.jpg" alt="كالاي خواب شامل كوسن، روتختي و روملافه اي"></a></td>
+        </tr>
+        <tr class="row label">
+            <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=carpet_products&product_subcategory=تابلوفرش">تابلوفرش</a></td>
+            <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=living_room_products&product_subcategory=پرده">پرده </a></td>
+            <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=sleeping_products">كالای خواب</a></td>
+        </tr>
+        <tr class="row">
+            <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=carpet_products&product_subcategory=روفرشی"><img class="border border-primary" src="images/index_images/carpet3.jpg" alt="روفرشی تولید پیشگامان پودینه"></a></td>
+            <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=living_room_products&product_subcategory=رومبلی"><img class="border border-primary" src="images/index_images/sofa_cover.jpg" alt="رومبلی تولید پیشگامان پودینه"></a></td>
+        </tr>
+        <tr class='row label'>
+            <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=carpet_products&product_subcategory=روفرشی">روفرشی</a></td>
+            <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=living_room_products&product_subcategory=رومبلی">رومبلی</a></td>
+        </tr>
+    </table>
+<?php }
+
 ?>
