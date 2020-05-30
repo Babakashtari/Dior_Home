@@ -11,11 +11,11 @@
     <meta http-equiv="content-security-policy" content="default-src 'none'; 
         style-src 'self' 'unsafe-inline'; 
         script-src 'self' 'unsafe-inline';
-        img-src 'self';
+        img-src 'self' 'http://www.w3.org';
         font-src 'self';
         frame-src https://www.google.com;
         "  >
-    <meta name="description" content="پيشگامان پودينه آتا، پيشرو در خدمات چاپ و پرينت ديجيتال يا سابليميشن روی انواع پارچه." />
+    <meta name="description" content="پيشگامان پودينه آتا، پيشرو در خدمات چاپ ديجيتال يا همان چاپ سابليميشن روی انواع پارچه." />
     <meta name="author" content="Babak Ashtari" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -108,28 +108,9 @@
           </div>
         </section>
         <section class="container my-4 py-4 creativity">
-                <h3 class="p-2 p-md-4 mx-2 mx-md-4 ">ایده از شما، کار از ما</h3>
-                <p class="p-2 px-md-4 pb-4 mx-2 mx-md-4 mb-4 "> اتاق خواب و نشيمن خود را آنگونه كه می پسنديد طراحی كنيد و به ما بدهيد تا برايتان توليد كنيم. پيشگامان پودينه آتا از سال <span class="Yekan">1380</span> و با بيش از <span class="Yekan">18</span> سال تجربه، طرح و الگوی شما را به صورت سفارشی دریافت و برایتان به صورت چاپ دیجیتالی روی پارچه تولید می کند.</p>
-                <table class="container px-1">
-                    <tr class="row">
-                        <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=carpet_products&product_subcategory=تابلوفرش"><img class="border border-primary" src="images/index_images/carpet_board1.jpg" alt="روتختی نمونه کار پیشگامان پودینه"></a></td>
-                        <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=living_room_products&product_subcategory=پرده"><img class="border border-primary" src="images/index_images/curtain.png" alt="پرده نمونه چاپی پیشگامان پودینه"></a></td>
-                        <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=sleeping_products"><img class="border border-primary" src="images/index_images/sleeping_products.jpg" alt="كالاي خواب شامل كوسن، روتختي و روملافه اي"></a></td>
-                    </tr>
-                    <tr class="row label">
-                        <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=carpet_products&product_subcategory=تابلوفرش">تابلوفرش</a></td>
-                        <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=living_room_products&product_subcategory=پرده">پرده </a></td>
-                        <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=sleeping_products">كالای خواب</a></td>
-                    </tr>
-                    <tr class="row">
-                        <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=carpet_products&product_subcategory=روفرشی"><img class="border border-primary" src="images/index_images/carpet3.jpg" alt="روفرشی تولید پیشگامان پودینه"></a></td>
-                        <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=living_room_products&product_subcategory=رومبلی"><img class="border border-primary" src="images/index_images/sofa_cover.jpg" alt="رومبلی تولید پیشگامان پودینه"></a></td>
-                    </tr>
-                    <tr class='row label'>
-                        <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=carpet_products&product_subcategory=روفرشی">روفرشی</a></td>
-                        <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=living_room_products&product_subcategory=رومبلی">رومبلی</a></td>
-                    </tr>
-                </table>
+          <h3 class="p-2 p-md-4 mx-2 mx-md-4 ">ایده از شما، کار از ما</h3>
+          <p class="p-2 px-md-4 pb-4 mx-2 mx-md-4 mb-4 "> اتاق خواب و نشيمن خود را آنگونه كه می پسنديد طراحی كنيد و به ما بدهيد تا برايتان توليد كنيم. پيشگامان پودينه آتا از سال <span class="Yekan">1380</span> و با بيش از <span class="Yekan">18</span> سال تجربه، طرح و الگوی شما را به صورت سفارشی دریافت و برایتان به صورت چاپ دیجیتالی روی پارچه تولید می کند.</p>
+          <?php five_photos_section(); ?>
         </section>
         <section class="cooperation">
             <div>

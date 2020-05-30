@@ -8,14 +8,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="content-security-policy" content="default-src 'none'; 
+    <meta http-equiv="content-security-policy" content="
+        default-src 'none'; 
         style-src 'self' 'unsafe-inline';
         script-src 'self' 'unsafe-inline' www.aparat.com;
         img-src 'self';
         font-src 'self';
         frame-src https://www.google.com www.aparat.com;
-        "  >
-    <meta name="description"    content="سايت رسمی ‍پیشگامان ‍پودينه آتا" />
+        ">
+    <meta name="description"    content="چاپ ديجيتال يا همان چاپ سابليميشن روی انواع پارچه و نحوه انجام آن در شركت پيشگامان پودينه آتا." />
     <meta name="author" content="Babak Ashtari" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -47,7 +48,7 @@
     <link rel="stylesheet" href="CSS/contact_us_modal.css">
     <link rel="stylesheet" href="CSS/explorer_warning.css">
     <link rel="stylesheet" href="CSS/sublimation.css">
-    <title>پيشگامان پودينه - چاپ سابلیمیشن</title>
+    <title>پيشگامان پودينه آتا - چاپ دیجیتال یا سابلیمیشن</title>
 </head>
 <body>
     <?php head(); ?>

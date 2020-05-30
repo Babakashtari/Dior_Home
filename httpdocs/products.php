@@ -15,7 +15,7 @@
         font-src 'self';
         frame-src https://www.google.com;
         "  >
-        <meta name="description"    content="کاتالوگ محصولات دیجیتالی و ساللیمیشن پیشگامان پودینه آتا، کاتالوگ محصولات به دو صورت دیجیتالی و سابلیمیشن در ابعاد متفاوت عرضه می شود" />
+        <meta name="description"    content="کاتالوگ انواع محصولات چاپ دیجیتالی يا كاتالوگ محصولات چاپ ساللیمیشن پیشگامان پودینه آتا، کاتالوگ محصولات چاپي روی پارچه در ابعاد متفاوت" />
         <meta name="author" content="Babak Ashtari" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
