@@ -15,7 +15,7 @@
         font-src 'self';
         frame-src https://www.google.com https://www.aparat.com;
         "  >
-    <meta name="description"    content="پيشگامان پودينه آتا، مركز چاپ " />
+    <meta name="description" content="صنایع نساجی پيشگامان پودينه آتا پيشرو خدمات چاپی، چاپ ديجيتال يا سابليميشن. كارخانه واقع در اردبيل و دفتر مركزی واقع در تهران است" />
     <meta name="author" content="Babak Ashtari" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
