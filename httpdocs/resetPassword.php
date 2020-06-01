@@ -6,12 +6,22 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155871160-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-155871160-2');
+</script>
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="content-security-policy" content="default-src 'none'; 
         style-src 'self' 'unsafe-inline'; 
-        script-src 'self' 'unsafe-inline';
+        script-src 'self' 'unsafe-inline' https://google-analytics.com;
         img-src 'self';
         font-src 'self';
         frame-src https://www.google.com;

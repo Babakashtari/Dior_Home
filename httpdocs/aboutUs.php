@@ -20,12 +20,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="content-security-policy" content="default-src 'none'; 
         style-src 'self' 'unsafe-inline'; 
-        script-src 'self' 'unsafe-inline' https://www.aparat.com;
-        img-src 'self' 'http:www.w3.org';
+        script-src 'self' 'unsafe-inline' https://www.aparat.com https://www.google-analytics.com;
+        img-src 'self' https://www.w3.org https://www.google.com https://www.google.com.ua https://www.google-analytics.com https://www.googletagmanager.com https://stats.g.doubleclick.net;
         font-src 'self';
         frame-src https://www.google.com https://www.aparat.com;
         "  >
-    <meta name="description" content="صنایع نساجی پيشگامان پودينه آتا پيشرو خدمات چاپی، چاپ ديجيتال يا سابليميشن. كارخانه واقع در اردبيل و دفتر مركزی واقع در تهران است" />
+    <meta name="description" content="صنایع نساجی پيشگامان پودينه آتا پيشرو خدمات چاپی، چاپ ديجيتال يا سابليميشن. كارخانه واقع در اردبيل و دفتر مركزی واقع در تهران" />
     <meta name="author" content="Babak Ashtari" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -57,7 +57,7 @@
     <link rel="stylesheet" href="CSS/contact_us_modal.css">
     <link rel="stylesheet" href="CSS/explorer_warning.css">
     <link rel="stylesheet" href="CSS/aboutUs.css">
-    <title>پيشگامان پودينه آتا - درباره ما</title>
+    <title>صنایع نساجی پيشگامان پودينه آتا - درباره ما</title>
 </head>
 <body>
     <?php head(); ?>
@@ -65,7 +65,7 @@
         <section class="image-container">
             <div>
                 <img src="images/aboutUs/about_us_header2.jpg" alt="the image header of about us page" >
-                <h3 class="text-center">به سایت رسمی پیشگامان پودینه آتا خوش آمدید.</h3>
+                <h3 class="text-center">پيشگامان پودينه مركز چاپ ديجيتال و سابليميشن</h3>
             </div>
         </section>
         <section class="description my-5">

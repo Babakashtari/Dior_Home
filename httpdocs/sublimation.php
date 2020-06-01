@@ -21,7 +21,7 @@
     <meta http-equiv="content-security-policy" content="
         default-src 'none'; 
         style-src 'self' 'unsafe-inline';
-        script-src 'self' 'unsafe-inline' www.aparat.com;
+        script-src 'self' 'unsafe-inline' www.aparat.com https://google-analytics.com;
         img-src 'self';
         font-src 'self';
         frame-src https://www.google.com www.aparat.com;
