@@ -22,7 +22,7 @@
         default-src 'none'; 
         style-src 'self' 'unsafe-inline';
         script-src 'self' 'unsafe-inline' www.aparat.com https://google-analytics.com;
-        img-src 'self';
+        img-src 'self' https://www.w3.org https://www.google.com.ua https://www.google.com https://www.google-analytics.com https://www.googletagmanager.com https://stats.g.doubleclick.net;
         font-src 'self';
         frame-src https://www.google.com www.aparat.com;
         ">
