@@ -68,7 +68,7 @@
         </section>
         <section class="description bg-light border border-primary m-5 p-1 col-10 mx-auto">
             <article class="">
-                <h3 class="text-center p-3">چاپ سابلیمیشن</h3>
+                <h3 class="text-center p-3">چاپ ديجيتال يا سابلیمیشن</h3>
                 <ul>
                     <li class="p-2 text-right iranSans">
                         <h4>سابلیمیشن به چه معناست؟</h4>
