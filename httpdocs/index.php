@@ -20,8 +20,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="content-security-policy" content="default-src 'none'; 
         style-src 'self' 'unsafe-inline'; 
-        script-src 'self' 'unsafe-inline';
-        img-src 'self' 'http://www.w3.org';
+        script-src 'self' 'unsafe-inline' https://www.google-analytics.com;
+        img-src 'self' https://www.w3.org https://www.google.com.ua https://www.google.com https://www.google-analytics.com https://www.googletagmanager.com https://stats.g.doubleclick.net;
         font-src 'self';
         frame-src https://www.google.com;
         "  >
@@ -78,7 +78,7 @@
                   <h3 class="p-3 p-md-4" id="first"> کالای اتاق پذیرایی</h3>
                   <h5 class="col-8 col-sm-10 py-2">چاپ دیجتالی انواع رومیزی، رو مبلی، كوسن و ...</h5>
                   <!-- لطفا این لینکها را به سایت هایی وصل کنید که در مورد این نوع نقاشی توضیح می دهند. برای سئو خوب است -->
-                  <a class="text-light px-3 px-md-5 py-2" href="#">بیشتر ببینید</a>
+                  <a class="text-light px-3 px-md-5 py-2" href="products.php?product_category=living_room_products">بیشتر ببینید</a>
                 </div>
               </div>
               <div class="carousel-item">
@@ -87,7 +87,7 @@
                   <h3 class="p-3 p-md-4" id="second">کالای خواب</h3>
                   <h5 class="col-8 col-sm-10 py-2">چاپ سابلیمیشن روی انواع روتختی، ملافه، رو بالشی و كوسن</h5>
                   <!-- لطفا این لینکها را به سایت هایی وصل کنید که در مورد این نوع نقاشی توضیح می دهند. برای سئو خوب است -->
-                  <a class="text-light px-3 px-md-5 py-2" href="#">بیشتر ببینید</a>
+                  <a class="text-light px-3 px-md-5 py-2" href="products.php?product_category=sleeping_products">بیشتر ببینید</a>
                 </div>
               </div>
               <div class="carousel-item">
@@ -96,7 +96,7 @@
                   <h3 class="p-3 p-md-4" id="third">روفرشی و تابلو فرش</h3>
                   <h5 class="col-8 col-sm-10 py-2"> چاپ دیجیتالی انواع فرش، روفرشی و تابلوفرش</h5>
                   <!-- لطفا این لینکها را به سایت هایی وصل کنید که در مورد این نوع نقاشی توضیح می دهند. برای سئو خوب است -->
-                  <a class="text-light px-3 px-md-5 py-2" href="#">بیشتر ببینید</a>
+                  <a class="text-light px-3 px-md-5 py-2" href="products.php?product_category=carpet_products">بیشتر ببینید</a>
                 </div>
               </div>
               <div class="carousel-item">
@@ -105,7 +105,7 @@
                   <h3 class="p-3 p-md-4" id="third">کوسن و روبالشی</h3>
                   <h5 class="col-8 col-sm-10 py-2">چاپ دیجیتالی طرح ها و الگوهای واقعی و کارتونی روی روبالشی و انواع کوسن</h5>
                   <!-- لطفا این لینکها را به سایت هایی وصل کنید که در مورد این نوع نقاشی توضیح می دهند. برای سئو خوب است -->
-                  <a class="text-light px-3 px-md-5 py-2" href="#">بیشتر ببینید</a>
+                  <a class="text-light px-3 px-md-5 py-2" href="products.php?product_category=living_room_products&product_subcategory=کوسن">بیشتر ببینید</a>
                 </div>
               </div>
             </div>
@@ -118,23 +118,23 @@
           </div>
         </section>
         <section class="container my-4 py-4 creativity">
-          <h3 class="p-2 p-md-4 mx-2 mx-md-4 ">ایده از شما، کار از ما</h3>
-          <p class="p-2 px-md-4 pb-4 mx-2 mx-md-4 mb-4 "> اتاق خواب و نشيمن خود را آنگونه كه می پسنديد طراحی كنيد و به ما بدهيد تا برايتان توليد كنيم. پيشگامان پودينه آتا از سال <span class="Yekan">1380</span> و با بيش از <span class="Yekan">18</span> سال تجربه، طرح و الگوی شما را به صورت سفارشی دریافت و برایتان به صورت چاپ دیجیتالی روی پارچه تولید می کند.</p>
+          <h3 class="p-2 p-md-4 mx-2 mx-md-4 ">مركز تخصصی چاپ ديجيتال يا سابليميشن روی پارچه</h3>
+          <p class="p-2 px-md-4 pb-4 mx-2 mx-md-4 mb-4 "> افتخار داريم كه تمامی محصولات چاپی روی پارچه مورد نياز خانوار های ايرانی را تولید می کنیم. پيشگامان پودينه آتا از سال ۱۳۸۰ و با بيش از ۳۰ سال تجربه، الگوی شما را به صورت سفارشی دریافت و برایتان در هر ابعادی که دوست دارید به صورت دیجیتالی روی پارچه چاپ می کند.</p>
           <?php five_photos_section(); ?>
         </section>
         <section class="cooperation">
             <div>
-                <h3 class="py-2 text-center">تولیدی ها و شرکت های عمده فروشی</h3>
-                <p class="px-4 pb-2 container">عمده فعالیت شركت پيشگامان پودينه آتا همکاری با شركت های عمده فروشی و توليدی های پارچه است که جهت انجام انواع چاپ های ديجيتالی و سابليميشن روی پارچه در تيراژ بالا به پیشگامان پودینه مراجعه می کنند. از جمله تسهيلات در نظر گرفته شده برای اين همكاران می توان به خدمات طاقه پيچی پارچه و ترنسفر آن به صورت طاقه اشاره کرد كه نزد مشتریان عمده فروش از اهميت بسيار بالايی برخوردار است. پيشگامان پودينه آتا همچنين طرح ها و لوگو های چاپ شده روی پارچه را به فرمت سابليميشن برای دفعات بعدی در اختيار مشتریان گرامی قرار می دهد و لذا هيچگونه تجديد چاپ الگو در پيشگامان پودينه آتا شامل هزينه مجدد طراحی نمي شود. </p>
+                <h3 class="py-2 text-center">چاپ سابليميشن يا ديجيتال جهت تولیدی های پارچه</h3>
+                <p class="px-4 pb-2 container">عمده فعالیت شركت پيشگامان پودينه آتا همکاری با شركت های عمده فروشی و توليدی های پارچه است که جهت انجام انواع چاپ های ديجيتالی و سابليميشن روی پارچه در تيراژ بالا به پیشگامان پودینه مراجعه می کنند. از جمله تسهيلات در نظر گرفته شده برای اين همكاران می توان به خدمات طاقه پيچی پارچه و ترنسفر آن به صورت طاقه اشاره کرد كه نزد مشتریان عمده فروش از اهميت بسيار بالايی برخوردار است. پيشگامان پودينه آتا همچنين طرح ها و لوگو های چاپ شده روی پارچه را به فرمت سابليميشن برای دفعات بعدی در اختيار مشتریان گرامی قرار می دهد و لذا هيچگونه تجديد چاپ الگو در پيشگامان پودينه آتا شامل هزينه مجدد طراحی نمی شود. </p>
                 <div class="container">
                     <div class="customers mx-3">
-                        <?php customers_logo_generator();customers_logo_generator();  ?>
+                        <?php customers_logo_generator(); customers_logo_generator(); ?>
                     </div>
                 </div>
             </div>
             <div class="cooperation-talented container my-4">
                 <div class="container">
-                    <h3 class="text-center pt-4 pb-2"> کادر مجرب</h3>
+                    <h3 class="text-center pt-4 pb-2">كادر مجرب پيشگامان پودينه آتا</h3>
                     <img src="images/index_images/expertise.jpg" alt="همکاری با نیروی متخصص" width="100%" height="auto">
                     <p class="text-justify py-4">
                   سرمايه پيشگامان پودينه آتا به نيروهای متخصص و خلاق آن است.  در صورتی كه در هر یک از موارد زير متخصص هستيد و تمايل به همكاری با ما به صورت دوركاری را داريد، رزومه کاری خود را همراه با نمونه کار هایتان برایمان ارسال کنید.

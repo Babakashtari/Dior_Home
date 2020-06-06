@@ -23,8 +23,8 @@
         <meta http-equiv="content-security-policy" content="
         default-src 'self'; 
         style-src 'self' 'unsafe-inline'; 
-        script-src 'self' 'unsafe-inline';
-        img-src 'self' blob:;
+        script-src 'self' 'unsafe-inline' https://google-analytics.com;
+        img-src 'self' https://www.w3.org https://www.google.com.ua https://www.google.com https://www.google-analytics.com https://www.googletagmanager.com https://stats.g.doubleclick.net blob:;
         font-src 'self';
         frame-src https://www.google.com;
         "  >

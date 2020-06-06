@@ -21,8 +21,8 @@
     <meta http-equiv="content-security-policy" content="
         default-src 'none'; 
         style-src 'self' 'unsafe-inline';
-        script-src 'self' 'unsafe-inline' www.aparat.com;
-        img-src 'self';
+        script-src 'self' 'unsafe-inline' www.aparat.com https://google-analytics.com;
+        img-src 'self' https://www.w3.org https://www.google.com.ua https://www.google.com https://www.google-analytics.com https://www.googletagmanager.com https://stats.g.doubleclick.net;
         font-src 'self';
         frame-src https://www.google.com www.aparat.com;
         ">
@@ -68,7 +68,7 @@
         </section>
         <section class="description bg-light border border-primary m-5 p-1 col-10 mx-auto">
             <article class="">
-                <h3 class="text-center p-3">چاپ سابلیمیشن</h3>
+                <h3 class="text-center p-3">چاپ ديجيتال يا سابلیمیشن</h3>
                 <ul>
                     <li class="p-2 text-right iranSans">
                         <h4>سابلیمیشن به چه معناست؟</h4>

@@ -71,6 +71,9 @@ main > section.cooperation {
   text-shadow: 1px 1px 1px black, -1px -1px 1px black;
   background-image: linear-gradient(to right, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
 }
+main > section.cooperation > div > h3 {
+  line-height: 2rem;
+}
 main > section.cooperation > div p {
   line-height: 2rem;
 }
