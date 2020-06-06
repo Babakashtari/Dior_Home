@@ -57,7 +57,7 @@
     <link rel="stylesheet" href="CSS/contact_us_modal.css">
     <link rel="stylesheet" href="CSS/explorer_warning.css">
     <link rel="stylesheet" href="CSS/index.css">
-    <title>پيشگامان پودينه - صفحه اصلي</title>
+    <title>پيشگامان پودينه - صفحه اصلی</title>
 </head>
 <body>
     <?php head(); ?>
