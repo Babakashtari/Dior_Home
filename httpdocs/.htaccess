@@ -20,3 +20,8 @@ Header set Cache-Control "max-age=86400, public"
 </filesMatch>
 
 Header set Strict-Transport-Security "max-age=31536000" env=HTTPS
+
+# cleaning products.php url:
+RewriteEngine on  
+# RewriteRule ^products/([\W]*)/([\d\W\w]*)/([a-z_]*)/([\d\W\w])/(\d\W\w)$ /products.php?product_name=$1&product_dimensions=$2&product_category=$3&product_subcategory=$4&product_description=$5& [NC,L]
+RewriteRule ^products  products.php [NC,L]
