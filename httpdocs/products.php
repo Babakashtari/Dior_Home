@@ -45,6 +45,7 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="images/fav_icon/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
+        <link rel="canonical" href="https://diorhome.ir/products.php" />
     <!-- font awesome -->
         <link rel="stylesheet" href="CSS/all.min.css">
         <link rel="stylesheet" href="CSS/bootstrap.min.css.map">
