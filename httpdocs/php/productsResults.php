@@ -410,11 +410,11 @@ function card_generators(){
             echo '<div class="col-12 text-center text-danger"><p class="my-4">هیچ نتیجه ای بر اساس معیار های جستجو یافت نشد.</p></div>';
         }else{
             while ($row = mysqli_fetch_array($query_result)) {
-                echo '<div class=" product-results col-xs-12 col-sm-6  col-lg-4 col-xl-3 p-3">';
-                echo    '<div class="card border border-primary">';
-                echo        '<img class="card-img-top" src="' . $row['product_directory']. '" alt="'. $row['product_description'] . '">';
+                echo '<div class=" product-results col-xs-12 col-sm-6  col-lg-4 col-xl-3 p-3" >';
+                echo    '<div class="card border border-primary" itemscope itemtype="https://schema.org/Product">';
+                echo        '<img class="card-img-top" src="' . $row['product_directory']. '" alt="'. $row['product_description'] . '" itemprop="image">';
                 echo        '<div class="card-body text-center ">';
-                echo            '<h6 class="card-title ">نام محصول:<span class="text-success"> ' . $row['product_name'] . '</span></h6>';
+                echo            '<h6 class="card-title ">نام محصول:<span class="text-success" itemprop="name"> ' . $row['product_name'] . '</span></h6>';
                 echo            '<table>';
                 echo            '<tr><td><p class="card-text text-right">ابعاد:</p></td><td><p><span class="text-success"> ';
                 if(!empty($row['product_dimensions'] )){
@@ -423,7 +423,7 @@ function card_generators(){
                     echo 'همه ابعاد';
                 }
                 echo            '</span></p></td></tr>';
-                echo            '<tr><td><p class="card-text text-right">دسته بندی:</p></td><td><p><span class="text-success"> ';
+                echo            '<tr><td><p class="card-text text-right">دسته بندی:</p></td><td><p><span class="text-success" itemprop="category"> ';
                 if($row['product_category'] == "sleeping_products"){
                     echo "کالای خواب";
                 } elseif($row['product_category'] == "living_room_products"){
@@ -433,7 +433,7 @@ function card_generators(){
                 }
                 echo '</span></p></td></tr>';
                 echo            '<tr><td><p class="card-text text-right">زیرمجموعه:</p></td><td><p><span class="text-success"> '. $row['product_subcategory'] .'</span></p></td></tr>';
-                echo            '<tr><td><p class="card-text text-right">توضیحات:</p></td><td><p><span class="text-success"> ';
+                echo            '<tr><td><p class="card-text text-right">توضیحات:</p></td><td><p><span class="text-success" itemprop="description"> ';
                 if(!empty($row['product_description'])){
                     echo    $row['product_description']; 
                 }else{
@@ -441,7 +441,7 @@ function card_generators(){
                 }
                 echo            '</span></p></td></tr>';
                 echo            '</table>';
-                echo            '<a href="#" class="btn btn-primary mt-4">' . 'افزودن به سبد خرید' . '</a>';
+                echo            '<a href="#" class="btn btn-primary mt-4">' . 'مشاهده و بررسی' . '</a>';
                 echo        '</div>';
                 echo    '</div>';    
                 echo '</div>';
