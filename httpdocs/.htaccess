@@ -1,8 +1,7 @@
 Options -Indexes
 
-# ErrorDocument 404 /custom_errors/404.html
-
-# ErrorDocument 403 /custom_errors/403.html
+ErrorDocument 404 /custom_errors/404.php
+# ErrorDocument 403 /custom_errors/404.php
 
 # 1 year cachability for fonts:
 <filesMatch ".(ttf|otf|woff|eot)$">
@@ -22,7 +21,7 @@ Header set Cache-Control "max-age=86400, public"
 Header set Strict-Transport-Security "max-age=31536000" env=HTTPS
 
 # cleaning products.php url:
-RewriteEngine on  
+# RewriteEngine on  
 # RewriteRule ^products/([a-z_]*)$ products.php?product_category=$1 [NC,L]
 
-RewriteRule ^products  products.php [NC,L]
+# RewriteRule ^products  products.php [NC,L]
