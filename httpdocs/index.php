@@ -28,6 +28,16 @@
     <meta name="description" content="پيشگامان پودينه آتا، پيشرو در خدمات چاپ ديجيتال يا همان چاپ سابليميشن روی انواع پارچه." />
     <meta name="author" content="Babak Ashtari" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- for SEO purposes -->
+  <!-- open graph meta tags for SEO -->
+  <meta property="og:title" content="صنایع نساجی پيشگامان پودينه آتا" />
+  <meta property="og:site_name" content="پيشگامان پودينه آتا" />
+  <meta property="og:url" content="https://diorhome.ir" />
+  <meta property="og:description"
+    content="پيشگامان پودينه آتا، پيشرو خدمات چاپ ديجيتال يا سابليميشن روی انواع پارچه" />
+  <meta property="og:locale:alternate" content="fa_IR" />
+  <meta property="og:type" content="business.business" />
+  <meta property="og:image" content="https://diorhome.ir/images/Dior_logo.jpg" />
 
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="images/fav_icon/apple-icon-60x60.png">

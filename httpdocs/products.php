@@ -46,6 +46,14 @@
         <meta name="msapplication-TileImage" content="images/fav_icon/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
         <link rel="canonical" href="https://diorhome.ir/products.php" />
+        <!-- for SEO purposes: -->
+        <meta property="og:title" content="صنايع نساجي پيشگامان پودينه آتا - محصولات">
+        <meta property="og:site_name" content="پيشگامان پودينه آتا">
+        <meta property="og:url" content="https://diorhome.ir/products.php">
+        <meta property="og:description" content="كاتالوگ انواع محصولات چاپ ديجيتالي يا كاتالوگ محولات چاپ سابليميشن پيشگامان پودينه آتا، كاتالوگ محصولات چاپي روي پارچه در ابعاد متفاوت">
+        <meta property="og:locale:alternate" content="fa_IR">
+        <meta property="og:type" content="product">
+        <meta property="og:image" content="https://diorhome.ir/images/Dior_logo.jpg">
     <!-- font awesome -->
         <link rel="stylesheet" href="CSS/all.min.css">
         <link rel="stylesheet" href="CSS/bootstrap.min.css.map">

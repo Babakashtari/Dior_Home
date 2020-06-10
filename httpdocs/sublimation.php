@@ -47,6 +47,14 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="images/fav_icon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <!-- for SEO purposes: -->
+    <meta property="og:title" content="صنايع نساجي پيشگامان پودينه آتا - چاپ سابليميشن">
+    <meta property="og:site_name" content="پيشگامان پودينه آتا">
+    <meta property="og:url" content="https://diorhome.ir/sublimation.php">
+    <meta property="og:description" content="چاپ ديجيتال يا سابليميشن انواع طرح و الگو روی پارچه">
+    <meta property="og:locale:alternate" content="fa_IR">
+    <meta property="og:image" content="https://diorhome.ir/images/Dior_logo.jpg">
+
     <!-- font awesome -->
     <link rel="stylesheet" href="CSS/all.min.css">
     <link rel="stylesheet" href="CSS/bootstrap.min.css.map">
