@@ -1,11 +1,11 @@
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 @font-face {
-    src: url(../../Fonts/IRANSansWeb_Bold.ttf);
-    font-family: "IranSans";
+  src: url(../../Fonts/IRANSansWeb_Bold.ttf);
+  font-family: "IranSans";
 }
 
 p,
@@ -16,20 +16,19 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "IranSans";
-    direction: rtl;
+  font-family: "IranSans";
+  direction: rtl;
 }
-
-div.logo-section {
-    text-align: center;
-    padding: 1rem;
+div.custom-error {
+  padding: 2rem;
+  text-align: center;
 }
-
-div.logo-section>img {
-    border-radius: 50%;
+div.custom-error > span {
+  font-size: 6rem;
 }
-
-section.error-section>h3,
-section.error-section>p {
-    text-align: center;
+div.custom-error > img {
+  border-radius: 50%;
+}
+section.error-message {
+  text-align: center;
 }

@@ -36,8 +36,6 @@
         <meta name="theme-color" content="#ffffff" />
         <!-- font awesome -->
         <link rel="stylesheet" href="CSS/all.min.css" />
-        <link rel="stylesheet" href="CSS/bootstrap.min.css.map" />
-        <link rel="stylesheet" href="CSS/bootstrap.min.css" />
         <link rel="stylesheet" href="CSS/Normalizer.css" />
         <link rel="stylesheet" href="CSS/fonts.css" />
         <link rel="stylesheet" href="https://diorhome.ir/custom_errors/CSS/404.css">
@@ -45,11 +43,12 @@
     </head>
     <body>
         <main>
-            <div class="logo-section">
+            <div class="custom-error">
+                <span>4</span>
                 <img src="../images/Dior_logo.jpg" alt="لوگوی پیشگامان پودینه آتا" width="100vw" height="auto" />
+                <span>4</span>
             </div>
-            <section class="error-section">
-                <h3>خطای 404! </h3>
+            <section class="error-message">
                 <p>صفحه مورد نظر یافت نشد. لطفا از لینک های زیر استفاده نمایید:</p>
             </section>
         </main>
