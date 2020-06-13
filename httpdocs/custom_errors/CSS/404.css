@@ -4,7 +4,7 @@
 }
 
 @font-face {
-  src: url(../../Fonts/IRANSansWeb_Bold.ttf);
+  src: url(https://diorhome.ir/Fonts/IRANSansWeb_Bold.ttf);
   font-family: "IranSans";
 }
 
@@ -19,16 +19,99 @@ h6 {
   font-family: "IranSans";
   direction: rtl;
 }
+
+body>main {
+  background-image: url(../images/404background_image3.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+
 div.custom-error {
   padding: 2rem;
   text-align: center;
 }
-div.custom-error > span {
+
+div.custom-error>span {
   font-size: 6rem;
 }
-div.custom-error > img {
-  border-radius: 50%;
-}
+
 section.error-message {
   text-align: center;
+}
+
+section.error-message {
+  padding: 2rem 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+}
+
+section.error-message>p {
+  padding: 0 0 4rem 0;
+  color: white;
+}
+
+section.error-message>a {
+  display: inline-block;
+  border-radius: 5px;
+  color: white;
+  font-family: 'iranSans';
+  background-color: teal;
+  padding: 0 0 0 1.5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+section.error-message>a::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: #c6c6c6;
+  display: none;
+  -webkit-animation-name: hover;
+  animation-name: hover;
+  -webkit-animation-duration: 250ms;
+  animation-duration: 250ms;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes hover {
+  from {
+    left: 100%;
+  }
+
+  to {
+    left: 0;
+  }
+}
+
+@keyframes hover {
+  from {
+    left: 100%;
+  }
+
+  to {
+    left: 0;
+  }
+}
+
+section.error-message>a:hover::after {
+  display: inline-block
+}
+
+section.error-message>a>i {
+  padding: 1.5rem;
+  color: white;
+  border-radius: 45%;
+  background-color: #c6c6c6;
+  transform: translateX(25%);
 }
