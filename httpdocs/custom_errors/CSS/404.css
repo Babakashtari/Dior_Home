@@ -20,7 +20,7 @@ h6 {
   direction: rtl;
 }
 
-body>main {
+body > main {
   background-image: url(../images/404background_image3.jpg);
   background-size: cover;
   width: 100%;
@@ -32,7 +32,7 @@ div.custom-error {
   text-align: center;
 }
 
-div.custom-error>span {
+div.custom-error > span {
   font-size: 6rem;
 }
 
@@ -49,31 +49,32 @@ section.error-message {
   border-radius: 15px;
 }
 
-section.error-message>p {
+section.error-message > p {
   padding: 0 0 4rem 0;
   color: white;
 }
-
-section.error-message>a {
-  display: inline-block;
+section.error-message > div {
   border-radius: 5px;
-  color: white;
-  font-family: 'iranSans';
-  background-color: teal;
-  padding: 0 0 0 1.5rem;
+  width: 30%;
   overflow: hidden;
+  background-color: teal;
+  display: flex;
+  flex-direction: row-reverse;
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-section.error-message>a::after {
-  content: "";
+section.error-message > div > div.overlayer {
   position: absolute;
-  left: 100%;
+  left: 0;
   right: 0;
   bottom: 0;
   top: 0;
+  display: flex;
+  flex-direction: row-reverse;
   background-color: #c6c6c6;
   display: none;
+  cursor: pointer;
   -webkit-animation-name: hover;
   animation-name: hover;
   -webkit-animation-duration: 250ms;
@@ -82,6 +83,27 @@ section.error-message>a::after {
   animation-timing-function: linear;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+  z-index: 1;
+}
+
+section.error-message > div > a,
+section.error-message > div > div.overlayer > a {
+  color: white;
+  padding: 0 0 0 1rem;
+  font-family: "iranSans";
+  text-decoration: none;
+  align-self: center;
+  margin-right: 1.5rem;
+}
+section.error-message > div > i,
+section.error-message > div > div.overlayer > i {
+  padding: 1rem;
+  color: white;
+  width: 15px;
+  height: 15px;
+  border-radius: 45%;
+  background-color: #c6c6c6;
+  transform: translateX(25%);
 }
 
 @-webkit-keyframes hover {
@@ -104,14 +126,6 @@ section.error-message>a::after {
   }
 }
 
-section.error-message>a:hover::after {
-  display: inline-block
-}
-
-section.error-message>a>i {
-  padding: 1.5rem;
-  color: white;
-  border-radius: 45%;
-  background-color: #c6c6c6;
-  transform: translateX(25%);
+section.error-message > div:hover > div.overlayer {
+  display: flex;
 }

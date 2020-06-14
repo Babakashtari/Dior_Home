@@ -49,7 +49,14 @@
             </div>
             <section class="error-message">
                 <p>متاسفانه صفحه مورد نظر شما یافت نشد. لطفا از لینک زیر برای بازگشت به صفحه اصلی استفاده کنید:</p>
-                <a href="https://diorhome.ir">برو به خانه<i class="fas fa-chevron-left"></i></a>
+                <div>
+                    <i class="fas fa-chevron-left"></i>
+                    <a href="https://diorhome.ir">برو به خانه</a>
+                    <div class="overlayer">
+                        <i class="fas fa-chevron-left"></i>
+                        <a href="https://diorhome.ir">برو به خانه</a>
+                    </div>
+                </div>
             </section>
         </main>
         <script src="JS/explorer_warning.js"></script>
