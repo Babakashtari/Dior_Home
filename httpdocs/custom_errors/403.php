@@ -38,7 +38,7 @@
         <link rel="stylesheet" href="https://diorhome.ir/CSS/all.min.css" />
         <link rel="stylesheet" href="CSS/Normalizer.css" />
         <link rel="stylesheet" href="CSS/fonts.css" />
-        <link rel="stylesheet" href="https://diorhome.ir/custom_errors/CSS/403.css">
+        <link rel="stylesheet" href="https://diorhome.ir/custom_errors/CSS/403.css" />
         <title>پيشگامان پودينه - صفحه اصلی</title>
     </head>
     <body>
