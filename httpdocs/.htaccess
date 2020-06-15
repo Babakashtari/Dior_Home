@@ -1,7 +1,7 @@
 Options -Indexes
 
 ErrorDocument 404 /custom_errors/404.php
-# ErrorDocument 403 /custom_errors/404.php
+ErrorDocument 403 /custom_errors/403.php
 
 # 1 year cachability for fonts:
 <filesMatch ".(ttf|otf|woff|eot)$">

@@ -38,16 +38,16 @@
         <link rel="stylesheet" href="https://diorhome.ir/CSS/all.min.css" />
         <link rel="stylesheet" href="CSS/Normalizer.css" />
         <link rel="stylesheet" href="CSS/fonts.css" />
-        <link rel="stylesheet" href="https://diorhome.ir/custom_errors/CSS/404.css">
+        <link rel="stylesheet" href="https://diorhome.ir/custom_errors/CSS/403.css">
         <title>پيشگامان پودينه - صفحه اصلی</title>
     </head>
     <body>
         <main>
             <div class="custom-error">
-                <img src="https://diorhome.ir/custom_errors/images/404_error.png" alt="404 error page image" width="30%" height="auto" >
+                <img src="https://diorhome.ir/custom_errors/images/403_error.png" alt="403 error page image" width="30%" height="auto" >
             </div>
             <section class="error-message">
-                <p>متاسفانه صفحه مورد نظر شما یافت نشد. لطفا از لینک زیر برای بازگشت به صفحه اصلی استفاده کنید:</p>
+                <p>متاسفانه دسترسی به فولدر مورد نظر شما امكان پذير نيست. لطفا از لینک زیر برای رفتن به صفحه اصلی استفاده کنید:</p>
                 <div>
                     <i class="fas fa-chevron-left"></i>
                     <a href="https://diorhome.ir">برو به خانه</a>
