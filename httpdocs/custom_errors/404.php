@@ -8,7 +8,7 @@
             http-equiv="content-security-policy"
             content="default-src 'none'; 
         style-src 'self' 'unsafe-inline'; 
-        script-src 'self' 'unsafe-inline' https://www.google-analytics.com;
+        script-src 'self' 'unsafe-inline' https://diorhome.ir https://www.google-analytics.com;
         img-src 'self' https://www.w3.org https://www.google.com.ua https://www.google.com https://www.google-analytics.com https://www.googletagmanager.com https://stats.g.doubleclick.net;
         font-src 'self';
         frame-src https://www.google.com;
@@ -36,15 +36,15 @@
         <meta name="theme-color" content="#ffffff" />
         <!-- font awesome -->
         <link rel="stylesheet" href="https://diorhome.ir/CSS/all.min.css" />
-        <link rel="stylesheet" href="CSS/Normalizer.css" />
-        <link rel="stylesheet" href="CSS/fonts.css" />
+        <link rel="stylesheet" href="https://diorhome.ir/CSS/Normalizer.css" />
+        <link rel="stylesheet" href="https://diorhome.ir/CSS/fonts.css" />
         <link rel="stylesheet" href="https://diorhome.ir/custom_errors/CSS/404.css">
         <title>پيشگامان پودينه - صفحه اصلی</title>
     </head>
     <body>
         <main>
             <div class="custom-error">
-                <img src="https://diorhome.ir/custom_errors/images/404_error.png" alt="404 error page image" width="30%" height="auto" >
+                <img src="https://diorhome.ir/custom_errors/images/404error2.png" alt="404 error page image" width="30%" height="auto" >
             </div>
             <section class="error-message">
                 <p>متاسفانه صفحه مورد نظر شما یافت نشد. لطفا از لینک زیر برای بازگشت به صفحه اصلی استفاده کنید:</p>
@@ -53,13 +53,11 @@
                     <a href="https://diorhome.ir">برو به خانه</a>
                     <div class="overlayer">
                         <i class="fas fa-chevron-left"></i>
-                        <a href="https://diorhome.ir">برو به خانه</a>
+                        <a  href="https://diorhome.ir">برو به خانه</a>
                     </div>
                 </div>
             </section>
         </main>
-        <script src="JS/explorer_warning.js"></script>
-        <script src="JS/jquery.min.js"></script>
-        <script src="JS/bootstrap.min.js"></script>
+        <script src="https://diorhome.ir/custom_errors/JS/404.js"></script>
     </body>
 </html>
