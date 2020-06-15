@@ -36,8 +36,8 @@
         <meta name="theme-color" content="#ffffff" />
         <!-- font awesome -->
         <link rel="stylesheet" href="https://diorhome.ir/CSS/all.min.css" />
-        <link rel="stylesheet" href="CSS/Normalizer.css" />
-        <link rel="stylesheet" href="CSS/fonts.css" />
+        <link rel="stylesheet" href="https://diorhome.ir/CSS/Normalizer.css" />
+        <link rel="stylesheet" href="https://diorhome.ir/CSS/fonts.css" />
         <link rel="stylesheet" href="https://diorhome.ir/custom_errors/CSS/403.css" />
         <title>پيشگامان پودينه - صفحه اصلی</title>
     </head>
@@ -58,8 +58,6 @@
                 </div>
             </section>
         </main>
-        <script src="JS/explorer_warning.js"></script>
-        <script src="JS/jquery.min.js"></script>
-        <script src="JS/bootstrap.min.js"></script>
+        <script src="https://diorhome.ir/custom_errors/JS/404.js"></script>
     </body>
 </html>
