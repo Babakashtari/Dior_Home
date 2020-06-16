@@ -80,7 +80,7 @@
                         <input type="text" class="form-control border border-primary" id="product_name" name="product_name" placeholder="نام محصول: violet" value="<?php if(isset($_GET['product_name'])){echo $_GET['product_name'];} ?>">
                     </div>
                     <div class="form-group py-1">
-                        <input type="text" class="form-control border border-primary" id="product_dimensions" name="product_dimensions" placeholder="ابعاد محصول: 40X60" value="<?php if(isset($_GET['product_dimensions'])){echo $_GET['product_dimensions'];} ?>">
+                        <input type="text" class="form-control border border-primary" id="product_dimensions" name="product_dimensions" placeholder="ابعاد محصول: دونفره" value="<?php if(isset($_GET['product_dimensions'])){echo $_GET['product_dimensions'];} ?>">
                     </div>
                     <div class="form-group py-1">
                         <select class="form-control border border-primary" id="product_category" name="product_category" onchange="subcategory_generator(this)">

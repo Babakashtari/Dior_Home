@@ -87,8 +87,12 @@
                 </div>
                 <div class="form-group py-1">
                     <label class="text-light" for="dimensions">ابعاد:</label>
-                    <input type="text" class="form-control" id="dimensions" name="dimensions" placeholder="40X60" oninput="input_validate(/^\d{1,3}[Xx*\/]\d{1,3}$/, this)">
-                    <p class="text-right displayNone p-0 m-0">ابعاد عکس خود را با "X"، "/" و یا "*" مشخص کنید.</p>
+                    <select class="form-control" id="dimensions" name="dimensions">
+                        <option value="">انتخاب کنید</option>
+                        <option value="single">يک نفره</option>
+                        <option value="double">دو نفره</option>
+                        <option value="all">فرقي نمي كند</option>
+                    </select>
                 </div>
                 <div class="form-group py-1">
                     <label class="text-light required" for="category">گروه مربوطه:</label>

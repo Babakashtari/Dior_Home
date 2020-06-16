@@ -28,7 +28,7 @@
                 }
 
                 $user_inserted_name = test_input($_POST['file_name'], "/^[a-zA-Z\d\s]{3,15}$/");
-                $file_dimension = test_input($_POST['dimensions'], "/^[0-9]{1,3}[X*\/][0-9]{1,3}$/");
+                $file_dimension = test_input($_POST['dimensions'], "/^((single)|(double)|(all))$/");
                 $category = test_input($_POST['category'], '/^(sleeping_products|living_room_products|carpet_products)$/' );
                 $sub_category = test_subcategory_input($_POST['subcategory'], '/^(کوسن|روبالشی|روتختی|ملافه|پرده|رومبلی|رومیزی|فرش|روفرشی|تابلوفرش)$/');
                 $text_area = test_subcategory_input($_POST['description'], '/[a-zA-Z0-9ا-يئءیکآ]{1,}/');
@@ -105,7 +105,7 @@
                                 $insert_query = "INSERT INTO products (product_directory, product_dimensions, product_name, product_category, product_subcategory, product_description, uploader_ID, approved) VALUES ('$file_destination', '$file_dimension', '$user_inserted_name', '$category', '$sub_category', '$text_area', '$uploader_ID', '$approved')";
                                 mysqli_query($database_connection, $insert_query);
                                 echo '<p class="text-success text-center"><span class=" p-2 fa fa-check border border-success" aria-hidden="true"></span></p>';
-                                echo "<p class='text-success text-center successful'>فایل مورد نظر با موفقیت آ‍پلود شد.</p>";
+                                echo "<p class='text-success text-center successful'>فایل مورد نظر با موفقیت آپلود شد.</p>";
                             }
                         }
                     }

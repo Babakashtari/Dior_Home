@@ -418,9 +418,14 @@ function card_generators(){
                 echo            '<table>';
                 echo            '<tr><td><p class="card-text text-right">ابعاد:</p></td><td><p><span class="text-success"> ';
                 if(!empty($row['product_dimensions'] )){
-                  echo  $row['product_dimensions']; 
-                }else{
-                    echo 'همه ابعاد';
+                    $dimension = $row['product_dimensions'];
+                    if(empty($dimension) || $dimension == "all"){
+                        echo 'همه ابعاد';
+                    }elseif($dimension == 'single'){
+                        echo 'تک نفره';
+                    }elseif($dimension == 'double'){
+                        echo 'دونفره';
+                    }
                 }
                 echo            '</span></p></td></tr>';
                 echo            '<tr><td><p class="card-text text-right">دسته بندی:</p></td><td><p><span class="text-success" itemprop="category"> ';
