@@ -38,7 +38,9 @@
   <meta property="og:locale:alternate" content="fa_IR" />
   <meta property="og:type" content="business.business" />
   <meta property="og:image" content="https://diorhome.ir/images/Dior_logo.jpg" />
-
+  <!-- twitter card: -->
+  <meta name="twitter:card" content="summary"></meta>
+  
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="images/fav_icon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/fav_icon/apple-icon-72x72.png">
