@@ -1,5 +1,7 @@
-const error = document.querySelector("body > section.background-image > fieldset > form > div.form-group > p");
-const section = document.querySelector("body > section.background-image");
+const error = document.querySelector("body > section > fieldset > form > div.form-group > p");
+const section = document.querySelector("body > section");
+
+console.log(error);
 
 const validate = (regex, input) => {
   const value = input.value;
@@ -20,11 +22,3 @@ const validate = (regex, input) => {
     error.classList.add("displayNone");
   }
 };
-const disappear = () => {
-  if (window.innerHeight < 374) {
-  } else {
-  }
-};
-
-window.addEventListener("load", disappear);
-window.addEventListener("resize", disappear);

@@ -87,12 +87,13 @@
                 </div>
                 <div class="form-group py-1">
                     <label class="text-light" for="dimensions">ابعاد:</label>
-                    <select class="form-control" id="dimensions" name="dimensions">
+                    <select class="form-control" id="dimensions" name="dimensions" onchange="select_validate(/^(single)|(double)|(all)$/, this)" >
                         <option value="">انتخاب کنید</option>
-                        <option value="single">يک نفره</option>
+                        <option value="single">یک نفره</option>
                         <option value="double">دو نفره</option>
-                        <option value="all">فرقي نمي كند</option>
+                        <option value="all">-</option>
                     </select>
+                    <p class="text-right displayNone p-0 m-0">درصورت روتختی نبودن سفارش "-" را انتخاب نمایید</p>
                 </div>
                 <div class="form-group py-1">
                     <label class="text-light required" for="category">گروه مربوطه:</label>
