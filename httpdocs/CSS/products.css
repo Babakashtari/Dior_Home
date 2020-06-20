@@ -2,7 +2,8 @@
   padding: 0;
   margin: 0;
 }
-main > section > div > div.card > img {
+
+main>section>div>div.card>img {
   width: 100%;
   height: 22rem;
   -o-object-fit: contain;
@@ -10,156 +11,195 @@ main > section > div > div.card > img {
   -o-object-position: center;
   object-position: center;
 }
-main > section > div.badge-container {
+
+main>section>div.badge-container {
   border-radius: 15px;
   border: 1px solid #007bff;
   direction: rtl;
   justify-content: center;
 }
-main > section > div.badge-container > h4 {
+
+main>section>div.badge-container>h4 {
   direction: rtl;
   color: yellow;
 }
-main > section > div.badge-container > div > div {
+
+main>section>div.badge-container>div>div {
   justify-content: space-around;
 }
-main > section > div.badge-container > div > div > p.category {
+
+main>section>div.badge-container>div>div>p.category {
   border-bottom: 1px solid #007bff;
   /* width: 95%; */
 }
-main > section.filter {
+
+main>section.filter {
   direction: rtl;
 }
-main > section.filter > div > fieldset {
+
+main>section.filter>div>fieldset {
   border-radius: 5px;
 }
+
 legend {
   width: 30%;
   font-size: 2rem;
   font-family: "iranSans";
   text-align: center;
 }
+
+.text-gray {
+  color: #6c757d;
+}
+
 form {
   direction: rtl;
   text-align: right;
   font-family: "iranSans";
 }
-main > section.filter > div > fieldset > form > div.form-group > input,
-main > section.filter > div > fieldset > form > div.form-group > select,
-main > section.filter > div > fieldset > form > div.form-group > textarea {
+
+main>section.filter>div>fieldset>form>div.form-group>input,
+main>section.filter>div>fieldset>form>div.form-group>select,
+main>section.filter>div>fieldset>form>div.form-group>textarea {
   display: inline-block;
   width: 100%;
   max-width: none;
   color: black;
 }
-main > section > div > div.card {
+
+main>section>div>div.card {
   border-radius: 15px;
   overflow: hidden;
 }
-main > section > div > div.card > div > h6.card-title {
-  border-bottom: 3px solid red;
+
+main>section>div>div.card>div>h6.card-title {
+  border-bottom: 3px solid blue;
   padding-bottom: 0.5rem;
 }
-main > section > div > div.card > div.card-body span {
-  font-style: italic;
+
+main>section>div>div.card>div.card-body span {
   font-family: "IranSans";
 }
-main > section > div > div.card > div.card-body > table {
+
+main>section>div>div.card>div.card-body>table {
   width: 100%;
   direction: rtl;
   height: 12rem;
 }
-main > section > div > div.card > div.card-body > table p {
+
+main>section>div>div.card>div.card-body>table p {
   margin-bottom: 0;
 }
-main > section > div > div.card > div.card-body > table tr > td:first-of-type {
+
+main>section>div>div.card>div.card-body>table tr>td:first-of-type {
   width: 35%;
 }
-main > section > div > div.card > div.card-body > table tr:last-of-type {
-  border-bottom: 3px solid red;
-  /* line-height: 2rem; */
+
+main>section>div>div.card>div.card-body>table tr:last-of-type {
+  border-bottom: 3px solid blue;
 }
-main > section.filter > div > fieldset > form > div.form-group.sub.displayNone {
+
+main>section.filter>div>fieldset>form>div.form-group.sub.displayNone {
   display: none !important;
 }
-main > section.products-pagination {
+
+main>section.products-pagination {
   margin-bottom: 7rem;
 }
+
 .displayNone {
   display: none !important;
 }
+
 @media screen and (max-width: 1313px) {
-  main > section > div.badge-container > div > div,
-  main > section > div.badge-container > div > div > a {
+
+  main>section>div.badge-container>div>div,
+  main>section>div.badge-container>div>div>a {
     font-size: 0.75rem;
   }
-  main > section > div.badge-container > h4 {
+
+  main>section>div.badge-container>h4 {
     font-size: 1rem;
   }
 }
+
 @media screen and (max-width: 992px) {
   legend {
     font-size: 1rem;
     width: 70%;
   }
-  main > section.filter > div > fieldset > form > div.form-group > input,
-  main > section.filter > div > fieldset > form > div.form-group > select,
-  main > section.filter > div > fieldset > form > div.form-group > textarea {
+
+  main>section.filter>div>fieldset>form>div.form-group>input,
+  main>section.filter>div>fieldset>form>div.form-group>select,
+  main>section.filter>div>fieldset>form>div.form-group>textarea {
     font-size: 0.75rem;
   }
+
   ::-webkit-input-placeholder {
     text-overflow: ellipsis;
   }
+
   ::-moz-placeholder {
     text-overflow: ellipsis;
   }
+
   :-ms-input-placeholder {
     text-overflow: ellipsis;
   }
+
   ::-ms-input-placeholder {
     text-overflow: ellipsis;
   }
+
   ::placeholder {
     text-overflow: ellipsis;
   }
 }
+
 @media screen and (max-width: 992px) {
-  main > section > div > div.card > div.card-body > table tr > td:first-of-type {
+  main>section>div>div.card>div.card-body>table tr>td:first-of-type {
     padding-right: 0.5rem;
   }
 }
+
 @media screen and (max-width: 812px) {
-  main > section > div.product-results > div.card p,
-  main > section > div.product-results > div.card h6,
-  main > section > div.product-results > div.card a {
+
+  main>section>div.product-results>div.card p,
+  main>section>div.product-results>div.card h6,
+  main>section>div.product-results>div.card a {
     font-size: 0.75rem;
     text-overflow: ellipsis;
   }
 }
+
 @media screen and (max-width: 767px) {
-  main > section > div.badge-container > div > div {
+  main>section>div.badge-container>div>div {
     justify-content: space-between;
   }
 }
+
 @media screen and (max-width: 700px) {
-  main > section > div.product-results > div.card > div.card-body table {
+  main>section>div.product-results>div.card>div.card-body table {
     height: 10rem;
   }
 }
+
 @media screen and (max-width: 576px) {
-  main > section > div.badge-container > div > div > a {
+  main>section>div.badge-container>div>div>a {
     display: inline-block;
     width: 70px;
   }
 }
+
 @media screen and (max-width: 485px) {
-  main > section > div.badge-container > div > div > a {
+  main>section>div.badge-container>div>div>a {
     display: inline-block;
     width: 70px;
   }
 }
+
 @media screen and (max-width: 347px) {
-  main > section > div.badge-container > div > div > a {
+  main>section>div.badge-container>div>div>a {
     display: inline-block;
     width: 45%;
     margin-top: 0.5rem;
