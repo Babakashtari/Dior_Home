@@ -214,12 +214,12 @@ function footer_generator(){
                     <li class="text-right py-2"><button class="text-light font-weight-italic" data-toggle="modal" data-target="#contact_us_modal">ارتباط با ما</button></li>
                     <li class="text-right py-2"><a class="text-light font-weight-italic" href="aboutUs.php">درباره ما</a></li>
                     <li class="text-right py-2"><a class="text-light font-weight-italic" href="#">مقالات و اخبار</a></li>
-                    <li class="container py-sm-3 py-md-2 pr-0">
-                        <div class="row flex-nowrap text-right py-3 py-sm-0 py-md-0">
-                            <a class=" text-light" href="https://t.me/pishgaman_poudineh_ata"><i class="col-3 fab fa-telegram"></i></a>
-                            <a class=" text-light" href="https://wa.me/989122084055"><i class="col-3 fab fa-whatsapp-square"></i></a>
-                            <a class=" text-light" href="https://instagram.com/pishgaman_poudineh"><i class="col-3 fab fa-instagram"></i></a>
-                            <a class=" text-light" href="#"><i class="col-3 fab fa-facebook"></i></a>
+                    <li class="container py-sm-3 py-md-0 pr-0">
+                        <div class="row flex-nowrap text-right py-3 py-sm-0 py-md-0 ">
+                            <a class=" text-light" href="https://t.me/pishgaman_poudineh_ata"><i class="col-3 fab fa-telegram mx-md-2 my-2"></i></a>
+                            <a class=" text-light" href="https://wa.me/989122084055"><i class="col-3 fab fa-whatsapp-square mx-md-2 my-2"></i></a>
+                            <a class=" text-light" href="https://instagram.com/pishgaman_poudineh"><i class="col-3 fab fa-instagram mx-md-2 my-2"></i></a>
+                            <a class=" text-light" href="#"><i class="col-3 fab fa-facebook mx-md-2 my-2"></i></a>
                         </div>
                     </li>
                 </ul>

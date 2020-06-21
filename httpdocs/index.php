@@ -89,7 +89,6 @@
                 <div class="carousel-caption">
                   <h3 class="p-3 p-md-4" id="first"> کالای اتاق پذیرایی</h3>
                   <h5 class="col-8 col-sm-10 py-2">چاپ دیجتالی انواع رومیزی، رو مبلی، كوسن و ...</h5>
-                  <!-- لطفا این لینکها را به سایت هایی وصل کنید که در مورد این نوع نقاشی توضیح می دهند. برای سئو خوب است -->
                   <a class="text-light px-3 px-md-5 py-2" href="products.php?product_category=living_room_products">بیشتر ببینید</a>
                 </div>
               </div>
@@ -98,7 +97,6 @@
                 <div class="carousel-caption">
                   <h3 class="p-3 p-md-4" id="second">کالای خواب</h3>
                   <h5 class="col-8 col-sm-10 py-2">چاپ سابلیمیشن روی انواع روتختی، ملافه، رو بالشی و كوسن</h5>
-                  <!-- لطفا این لینکها را به سایت هایی وصل کنید که در مورد این نوع نقاشی توضیح می دهند. برای سئو خوب است -->
                   <a class="text-light px-3 px-md-5 py-2" href="products.php?product_category=sleeping_products">بیشتر ببینید</a>
                 </div>
               </div>
@@ -107,7 +105,6 @@
                 <div class="carousel-caption">
                   <h3 class="p-3 p-md-4" id="third">روفرشی و تابلو فرش</h3>
                   <h5 class="col-8 col-sm-10 py-2"> چاپ دیجیتالی انواع فرش، روفرشی و تابلوفرش</h5>
-                  <!-- لطفا این لینکها را به سایت هایی وصل کنید که در مورد این نوع نقاشی توضیح می دهند. برای سئو خوب است -->
                   <a class="text-light px-3 px-md-5 py-2" href="products.php?product_category=carpet_products">بیشتر ببینید</a>
                 </div>
               </div>
@@ -116,7 +113,6 @@
                 <div class="carousel-caption">
                   <h3 class="p-3 p-md-4" id="third">کوسن و روبالشی</h3>
                   <h5 class="col-8 col-sm-10 py-2">چاپ دیجیتالی طرح ها و الگوهای واقعی و کارتونی روی روبالشی و انواع کوسن</h5>
-                  <!-- لطفا این لینکها را به سایت هایی وصل کنید که در مورد این نوع نقاشی توضیح می دهند. برای سئو خوب است -->
                   <a class="text-light px-3 px-md-5 py-2" href="products.php?product_category=living_room_products&product_subcategory=کوسن">بیشتر ببینید</a>
                 </div>
               </div>
