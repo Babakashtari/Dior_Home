@@ -415,8 +415,8 @@ function card_generators(){
                 echo        '<img class="card-img-top" src="' . $row['product_directory']. '" alt="'. $row['product_description'] . '" itemprop="image">';
                 echo        '<div class="card-body text-center ">';
                 echo            '<h6 class="card-title "><span class="text-gray" itemprop="name"> ' . $row['product_name'] . '</span></h6>';
-                echo            '<table>';
-                echo            '<tr><td><p class="card-text text-right">ابعاد:</p></td><td><p><span class="text-gray"> ';
+                echo            '<table itemprop="review" itemscope itemtype="http://schema.org/Review">';
+                echo            '<tr><td><p class="card-text text-right" >ابعاد:</p></td><td><p><span class="text-gray"> ';
                 if(!empty($row['product_dimensions'] )){
                     $dimension = $row['product_dimensions'];
                     if(empty($dimension) || $dimension == "all"){
