@@ -1,5 +1,7 @@
 <?php require "php/code_functions.php" ?>
 <?php require 'php/explorer_warning.php' ?>
+<?php require 'php/product_extention_result.php' ?>
+
 
 <!-- <?php session_start(); ?> -->
 <!DOCTYPE html lang="fa">
@@ -25,18 +27,19 @@
         font-src 'self';
         frame-src https://www.google.com;
         "  >
-    <meta name="description" content="چاپ ديجيتالی يا سابليميشن روی روتختی، روبالشی، فرش، روفرشی، تابلو فرش، ملافه، روميزی، روبالشی و ..." />
+    <meta name="description" content="<?php echo $product_description; ?>" />
     <meta name="author" content="Babak Ashtari" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <!-- for SEO purposes -->
   <!-- open graph meta tags for SEO -->
-  <meta property="og:title" content="صنایع نساجی پيشگامان پودينه آتا - <?php echo 'product name'; ?>" />
-  <meta property="og:site_name" content="پيشگامان پودينه آتا" />
-  <meta property="og:url" content="https://diorhome.ir" />
-  <meta property="og:description"  content="<?php echo 'product description'; ?>" />
-  <meta property="og:locale:alternate" content="fa_IR" />
-  <meta property="og:type" content="business.business" />
-  <meta property="og:image" content="https://diorhome.ir/images/products/<?php echo 'product image';  ?>" />
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="<?php echo $product_name; ?>">
+  <meta property="og:url" content="productextension.php?product_ID=<?php echo $product_ID; ?>">
+  <meta property="og:image" content="<?php echo $product_directory; ?>">
+  <meta property="og:description" content="<?php echo $product_description; ?>" >
+  <meta property="product:price:amount" content="4000000">
+  <meta property="product:price:currency" content="irr">
   <!-- twitter card: -->
   <meta name="twitter:card" content="summary"></meta>
   
@@ -68,17 +71,21 @@
     <link rel="stylesheet" href="CSS/contact_us_modal.css">
     <link rel="stylesheet" href="CSS/explorer_warning.css">
     <link rel="stylesheet" href="CSS/productextension.css">
-    <title>پيشگامان پودينه آتا - <?php echo 'product name'; ?></title>
+    <link rel="canonical" href="https://diorhome.ir/productextension.php" />
+    <title>پيشگامان پودينه آتا - <?php echo $product_name; ?></title>
 </head>
 <body>
     <?php head(); ?>
     <main>
-    
-        <?php show_warning(); ?>
+      <section class="product-info container p-3">
+        <div class="photo-section">
+          <img src="<?php echo $product_directory; ?>" alt="<?php echo $product_name; ?>">
+        </div>
+      </section>
+      <?php show_warning(); ?>
     </main>
     <?php footer_generator();?>
     <?php contact_us_modal(); ?>
-    <?php footer_generator();?>
     <?php canvas_generator(); ?>
     <script src="JS/explorer_warning.js"></script>
     <script src="JS/canvas.js"></script>
