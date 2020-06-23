@@ -446,7 +446,7 @@ function card_generators(){
                 }
                 echo            '</span></p></td></tr>';
                 echo            '</table>';
-                echo            '<a href="#" class="btn btn-primary mt-4">' . 'مشاهده و بررسی' . '</a>';
+                echo            '<a href="productextension.php?product_ID=' . $row['product_ID'] . '" class="btn btn-primary mt-4">' . 'مشاهده و بررسی' . '</a>';
                 echo        '</div>';
                 echo    '</div>';    
                 echo '</div>';
