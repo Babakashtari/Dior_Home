@@ -42,7 +42,6 @@
   <meta property="product:price:currency" content="irr">
   <!-- twitter card: -->
   <meta name="twitter:card" content="summary"></meta>
-  
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="images/fav_icon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/fav_icon/apple-icon-72x72.png">
@@ -81,6 +80,32 @@
         <div class="photo-section">
           <img src="<?php echo $product_directory; ?>" alt="<?php echo $product_name; ?>">
         </div>
+        <div class="info-section">
+          
+        </div>
+        <div class="related-tags p-md-2">
+          <p class="text-center position-relative">محصولات مرتبط:</p>
+          <ul>
+            <li class="text-right"><a href="products.php?product_category=<?php echo $product_category ?>"><?php echo $product_category_link; ?></a></li>
+            <?php 
+              if(isset($subcategories)){
+                foreach ($subcategories as $key => $value) {
+                  ?>
+                  <li class="text-right">
+                    <a href="products.php?product_subcategory=<?php echo $value; ?>"><?php echo $value; ?></a>
+                  </li>
+                  <?php
+                }
+              }else{
+                echo '<p class="error">no subcategory!!!</p>';
+              }
+            ?>
+            <li class="text-right"><a href="products.php?product_subcategory=<?php echo $second_main_category; ?>"><?php echo $second_main_category_link; ?></a></li>
+            <li class="text-right"><a href="products.php?product_subcategory=<?php echo $third_main_category; ?>"><?php echo $third_main_category_link; ?></a></li>
+
+          </ul>
+        </div>
+        <div class="clearfix"></div>
       </section>
       <?php show_warning(); ?>
     </main>
