@@ -101,8 +101,10 @@
                                 $file_new_name = $user_inserted_name. ".". $file_extension;
                                 $file_destination = "images/products/". $file_new_name;
                                 move_uploaded_file($file_TMP_name, $file_destination);
+                                // getting the timestamp of the file upload:
+                                $timestamp = date("Y-m-d H:i:s");
                                 // inserting data into database using sql:
-                                $insert_query = "INSERT INTO products (product_directory, product_dimensions, product_name, product_category, product_subcategory, product_description, uploader_ID, approved) VALUES ('$file_destination', '$file_dimension', '$user_inserted_name', '$category', '$sub_category', '$text_area', '$uploader_ID', '$approved')";
+                                $insert_query = "INSERT INTO products (product_directory, product_dimensions, product_name, product_category, product_subcategory, product_description, upload_date, uploader_ID, approved) VALUES ('$file_destination', '$file_dimension', '$user_inserted_name', '$category', '$sub_category', '$text_area', '$timestamp' , '$uploader_ID', '$approved')";
                                 mysqli_query($database_connection, $insert_query);
                                 echo '<p class="text-success text-center"><span class=" p-2 fa fa-check border border-success" aria-hidden="true"></span></p>';
                                 echo "<p class='text-success text-center successful'>فایل مورد نظر با موفقیت آپلود شد.</p>";

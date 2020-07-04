@@ -410,47 +410,55 @@ function card_generators(){
             echo '<div class="col-12 text-center text-danger"><p class="my-4">هیچ نتیجه ای بر اساس معیار های جستجو یافت نشد.</p></div>';
         }else{
             while ($row = mysqli_fetch_array($query_result)) {
-                echo '<div class=" product-results col-xs-12 col-sm-6  col-lg-4 col-xl-3 p-3" >';
-                echo    '<div class="card border border-primary" itemscope itemtype="https://schema.org/Product">';
-                echo        '<img class="card-img-top" src="' . $row['product_directory']. '" alt="'. $row['product_description'] . '" itemprop="image">';
-                echo        '<div class="card-body text-center ">';
-                echo            '<h6 class="card-title "><span class="text-gray" itemprop="name"> ' . $row['product_name'] . '</span></h6>';
-                echo            '<table itemprop="review" itemscope itemtype="http://schema.org/Review">';
-                echo            '<tr><td><p class="card-text text-right" >ابعاد:</p></td><td><p><span class="text-gray"> ';
-                if(!empty($row['product_dimensions'] )){
-                    $dimension = $row['product_dimensions'];
-                    if(empty($dimension) || $dimension == "all"){
-                        echo 'همه ابعاد';
-                    }elseif($dimension == 'single'){
-                        echo 'تک نفره';
-                    }elseif($dimension == 'double'){
-                        echo 'دونفره';
-                    }
-                }
-                echo            '</span></p></td></tr>';
-                echo            '<tr><td><p class="card-text text-right">دسته بندی:</p></td><td><p><span class="text-gray" itemprop="category"> ';
-                if($row['product_category'] == "sleeping_products"){
-                    echo "کالای خواب";
-                } elseif($row['product_category'] == "living_room_products"){
-                    echo "کالای اتاق پذیرایی";
-                }elseif($row['product_category'] == "carpet_products"){
-                    echo "فرش";
-                }
-                echo '</span></p></td></tr>';
-                echo            '<tr><td><p class="card-text text-right">زیرمجموعه:</p></td><td><p><span class="text-gray"> '. $row['product_subcategory'] .'</span></p></td></tr>';
-                echo            '<tr><td><p class="card-text text-right">توضیحات:</p></td><td><p><span class="text-gray" itemprop="description"> ';
-                if(!empty($row['product_description'])){
-                    echo    $row['product_description']; 
-                }else{
-                    echo 'ندارد';
-                }
-                echo            '</span></p></td></tr>';
-                echo            '</table>';
-                echo            '<a href="productextension.php?product_ID=' . $row['product_ID'] . '" class="btn btn-primary mt-4">' . 'مشاهده و بررسی' . '</a>';
-                echo        '</div>';
-                echo    '</div>';    
-                echo '</div>';
-            }    
+                ?>
+                <div class=" product-results col-xs-12 col-sm-6  col-lg-4 col-xl-3 p-3" >
+                    <div class="card border border-primary" itemscope itemtype="https://schema.org/Product">
+                        <img class="card-img-top" src="<?php echo $row['product_directory']; ?>" alt="<?php echo $row['product_description']; ?>" itemprop="image">
+                            <div class="card-body text-center ">
+                                <h6 class="card-title "><span class="text-gray" itemprop="name"><?php echo ucfirst($row['product_name']); ?></span></h6>
+                                <table itemprop="review" itemscope itemtype="http://schema.org/Review">
+                                    <tr><td><p class="card-text text-right" >ابعاد:</p></td><td><p><span class="text-gray">
+                                        <?php
+                                            if(!empty($row['product_dimensions'] )){
+                                                $dimension = $row['product_dimensions'];
+                                                if(empty($dimension) || $dimension == "all"){
+                                                    echo 'همه ابعاد';
+                                                }elseif($dimension == 'single'){
+                                                    echo 'تک نفره';
+                                                }elseif($dimension == 'double'){
+                                                    echo 'دونفره';
+                                                }
+                                            }
+                                        ?>
+                                    </span></p></td></tr>
+                                    <tr><td><p class="card-text text-right">دسته بندی:</p></td><td><p><span class="text-gray" itemprop="category">
+                                        <?php
+                                            if($row['product_category'] == "sleeping_products"){
+                                                echo "کالای خواب";
+                                            } elseif($row['product_category'] == "living_room_products"){
+                                                echo "کالای اتاق پذیرایی";
+                                            }elseif($row['product_category'] == "carpet_products"){
+                                                echo "فرش";
+                                            }
+                                        ?>
+                                    </span></p></td></tr>
+                                    <tr><td><p class="card-text text-right">زیرمجموعه:</p></td><td><p><span class="text-gray"><?php echo $row['product_subcategory']; ?></span></p></td></tr>
+                                    <tr><td><p class="card-text text-right">توضیحات:</p></td><td><p><span class="text-gray" itemprop="description">
+                                        <?php
+                                            if(!empty($row['product_description'])){
+                                                echo    $row['product_description']; 
+                                            }else{
+                                                echo 'ندارد';
+                                            }
+                                        ?>
+                                    </span></p></td></tr>
+                                </table>
+                                <a href="productextension.php?product_ID=<?php echo $row['product_ID']; ?>" class="btn btn-primary mt-4">مشاهده و بررسی</a>
+                            </div>
+                    </div>    
+                </div>
+                <?php
+            }   
         }
     }      
 }
