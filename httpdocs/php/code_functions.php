@@ -218,7 +218,7 @@ function footer_generator(){
                         <div class="row flex-nowrap text-right py-3 py-sm-0 py-md-0 justify-content-between">
                             <a class=" text-light py-2" href="https://t.me/pishgaman_poudineh_ata"><i class="col-3 fab fa-telegram mx-md-2 my-2"></i></a>
                             <a class=" text-light py-2" href="https://wa.me/989122084055"><i class="col-3 fab fa-whatsapp-square mx-md-2 my-2"></i></a>
-                            <a class=" text-light py-2" href="https://instagram.com/pishgaman_poudineh"><i class="col-3 fab fa-instagram mx-md-2 my-2"></i></a>
+                            <a class=" text-light py-2" href="https://instagram.com/sublimation_diorhome"><i class="col-3 fab fa-instagram mx-md-2 my-2"></i></a>
                             <a class=" text-light py-2" href="#"><i class="col-3 fab fa-facebook mx-md-2 my-2"></i></a>
                         </div>
                     </li>
@@ -520,7 +520,7 @@ function five_photos_section(){ ?>
         <tr class="row">
             <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=carpet_products&product_subcategory=تابلوفرش"><img class="border border-primary" src="images/index_images/carpet_board1.jpg" alt="روتختی نمونه کار پیشگامان پودینه"></a></td>
             <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=living_room_products&product_subcategory=پرده"><img class="border border-primary" src="images/index_images/curtain.png" alt="پرده نمونه چاپی پیشگامان پودینه"></a></td>
-            <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=sleeping_products"><img class="border border-primary" src="images/index_images/sleeping_products.jpg" alt="كالاي خواب شامل كوسن، روتختي و روملافه اي"></a></td>
+            <td class="col-3 py-2 px-2 px-md-4"><a href="products.php?product_category=sleeping_products"><img class="border border-primary" src="images/index_images/bedsheet.png" alt="كالاي خواب شامل كوسن، روتختي و روملافه اي"></a></td>
         </tr>
         <tr class="row label">
             <td class="col-6 py-2 px-2 px-md-4"><a href="products.php?product_category=carpet_products&product_subcategory=تابلوفرش">تابلوفرش</a></td>
