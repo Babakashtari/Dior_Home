@@ -53,20 +53,78 @@
 </head>
 <body>
     <header>
+        <div class="logo-section px-2 py-4">
+            <img src="https://diorhome.ir/images/Dior_logo.jpg" alt="لوگوی پیشگامان پودینه آتا">
+        </div>
     </header>
     <main>
+        <table class="table table-striped container">
+            <caption>کاربری: <?php echo $username; ?> - کد شناسایی: <?php echo $user_ID;?><caption>
+            <!-- user's general info section: -->
+            <tr>
+                <th class="col-2"><p class="m-0 py-1">نام:</p></td>
+                <th class="col-2"><p class="m-0 py-1">نام خانوادگی:</p></td>
+                <th class="col-2"><p class="m-0 py-1">سن:</p></td>
+                <th class="col-2"><p class="m-0 py-1">جنسیت:</p></td>
+                <th class="col-2"><p class="m-0 py-1">نام کاربری:</p></td>
+                <th class="col-2"><p class="m-0 py-1">رمز عبور:</p></th>
+            </tr>
+            <tr>
+                <td class="col-2"><p class="m-0 py-1"><?php echo $firstname; ?></p></td>
+                <td class="col-2"><p class="m-0 py-1"><?php echo $lastname; ?></p></td>
+                <td class="col-2"><p class="m-0 py-1"><?php echo $age; ?></p></td>
+                <td class="col-2"><p class="m-0 py-1"><?php echo $gender; ?></p></td>
+                <td class="col-2"><p class="m-0 py-1"><?php echo $username; ?></p></td>
+                <td class="col-2"><p class="m-0 py-1">تغییر رمز عبور</p></td>
+            </tr>
+            <tr>
+                <td class="col-2"><p class="m-0 py-1">وضعیت تایید:</p></td>
+                <td class="col-2"><p class="m-0 py-1">کد ثبت نام:</p></td>
+                <td class="col-2"><p class="m-0 py-1">کد فراموشی رمز:</p></td>
+                <td class="col-2"><p class="m-0 py-1">غیر فعال:</p></td>
+                <td class="col-2"><p class="m-0 py-1">خبرنامه:</p></td>
+                <td class="col-2"><p class="m-0 py-1">کاربر ادمین:</p></td>
+            </tr>
+            <tr>
+                <td class="col-2"><p class="m-0 py-1"><?php echo $verified; ?></p></td>
+                <td class="col-2"><p class="m-0 py-1"><?php echo $sign_up_token; ?></p></td>
+                <td class="col-2"><p class="m-0 py-1"><?php echo $forgot_password_token; ?></p></td>
+                <td class="col-2"><p class="m-0 py-1"><?php echo $disabled; ?></p></td>
+                <td class="col-2"><p class="m-0 py-1"><?php echo $newsletter; ?></p></td>
+                <td class="col-2"><p class="m-0 py-1"><?php echo $administrator; ?></p></td>
+
+            </tr>
+            <tr>
+                <td colspan="3" class=""><p class="m-0 py-1"> آدرس ایمیل:</p></td>
+                <td colspan="3" class=""><p class="m-0 py-1">آدرس پستی:</p></td>
+            </tr>
+            <tr>
+                <td colspan="3" class=""><p class="m-0 py-1"><?php echo $email_address; ?></p></td>
+                <td colspan="3" class=""><p class="m-0 py-1"><?php echo $home_address; ?></p></td>
+
+            </tr>
+        </table>
         <!-- in case of a delete query: -->
         <?php if(isset($delete_warning)){
-            ?>
-            <p class="text-center text-danger"><i class="fas fa-exclamation-triangle"></i></p>
-            <p class="text-center text-dark"><?php echo $delete_warning; ?></p>
-            <?php
+        ?>
+            <div class="delete-warning p-2" id="delete-warning">
+                <div class="center p-4 target">
+                    <p class="text-center text-danger m-0 icon align-items-baseline pb-2 target"><i class="fas fa-exclamation-triangle text-warning target"></i></p>
+                    <p class="text-center text-light iranSans py-2 target"><?php echo $delete_warning; ?></p>
+                    <div class="button-container d-flex justify-content-around target">
+                        <button class="btn btn-primary iranSans target" id="noclose" >بيخيال</button>
+                        <button class="btn btn-danger iranSans target">مطمئنم</button>
+                    </div>
+                </div>
+            </div>
+        <?php
         } ?>
     </main>
     <footer>
     
     </footer>
     <script src="JS/explorer_warning.js"></script>
+    <script src="JS/delete_user.js"></script>
 </body>
 <?php
     
