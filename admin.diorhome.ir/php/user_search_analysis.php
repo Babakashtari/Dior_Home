@@ -454,8 +454,8 @@ function search_result(){
                         <div class='row col-12 py-1 m-0' style='direction:ltr;'>
                             <div class='col-12 col-md-1 p-0 m-0'>
                                 <p class='text-center m-0 p-0'>
-                                    <a class='text-primary text-center px-1' href='users_modification.php?request=edit&ID=" . $ID ."'><i class='fas fa-edit'></i></a>
-                                    <a class='text-danger text-center px-1' href='users_modification.php?request=delete&ID=" . $ID . "'><i class='far fa-trash-alt'></i></a>
+                                    <a class='text-primary text-center px-1' href='user_modification.php?request=edit&ID=" . $ID ."'><i class='fas fa-edit'></i></a>
+                                    <a class='text-danger text-center px-1' href='user_modification.php?request=delete&ID=" . $ID . "'><i class='far fa-trash-alt'></i></a>
                                 </p>
                             </div>
                             <div class='p-1 col-12 col-md-1'>

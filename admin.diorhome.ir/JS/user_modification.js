@@ -1,8 +1,7 @@
 const close_btn = document.getElementById("noclose");
-const modal = document.getElementById("delete-warning");
+const modal = document.getElementById("warning");
 const modal_center = document.getElementsByClassName("center")[0];
-const click_targets = document.getElementsByClassName("target");
-console.log(click_targets);
+
 const close = () => {
   modal.classList.add("displayNone");
 };
