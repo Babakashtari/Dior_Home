@@ -1,6 +1,6 @@
-<?php require "php/admin_expiration.php" ?>
-<?php require "php/explorer_warning.php" ?>
-<?php require 'php/user_search_analysis.php' ?>
+<?php require "php/admin_expiration.php"; ?>
+<?php require "php/explorer_warning.php"; ?>
+<?php require 'php/user_search_analysis.php'; ?>
 
 <?php 
     session_start();
@@ -133,25 +133,33 @@
         <h3 class="iranSans">جستجوی محصولات</h3>
             <div class="search_criteria row text-right p-1">
                 <h5 class="text-center col-12 iranSans">جستجو بر اساس:</h5>
-                <div class="iranSans col-12 col-md-2">
+                <div class="iranSans col-12 col-sm-4">
                     <span class="iranSans"><input type="checkbox" name="product_name" id="product_name">نام </span>
                 </div>
-                <div class="iranSans col-12 col-md-2">
+                <div class="iranSans col-12 col-sm-4">
                     <span class="iranSans"><input type="checkbox" name="product_dimensions" id="product_dimensions">ابعاد</span>
                 </div>
-                <div class="iranSans col-12 col-md-2">
+                <div class="iranSans col-12 col-sm-4">
                     <span class="iranSans"><input type="checkbox" name="product_category" id="product_category">دسته بندی</span>
                 </div>
-                <div class="iranSans col-12 col-md-2">
+                <div class="iranSans col-12 col-sm-4">
                     <span class="iranSans"><input type="checkbox" name="product_subcategory" id="product_subcategory">زیرمجموعه</span>
                 </div>
-                <div class="iranSans col-12 col-md-2">
+                <div class="iranSans col-12 col-sm-4">
                     <span class="iranSans"><input type="checkbox" name="product_description" id="product_description">توضیحات</span>
                 </div>
-                <div class="iranSans col-12 col-md-2">
+                <div class="iranSans col-12 col-sm-4">
                     <span class="iranSans"><input type="checkbox" name="uploader_ID" id="uploader_ID">ارسال کننده</span>
                 </div>
-
+                <div class="iranSans col-12 col-sm-4">
+                    <span class="iranSans"><input type="checkbox" name="upload_date" id="upload_date">تاریخ ارسال</span>
+                </div>
+                <div class="iranSans col-12 col-sm-4">
+                    <span class="iranSans"><input type="checkbox" name="approved" id="approved">وضعیت تایید</span>
+                </div>
+                <div class="iranSans col-12 col-sm-4">
+                    <span class="iranSans"><input type="checkbox" name="number_of_likes" id="number_of_likes">تعداد لایک</span>
+                </div>
             </div>
             <form class="row my-2 p-2 text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                 <div class="form-group col-12 displayNone">
@@ -172,7 +180,16 @@
                 <div class="form-group col-12 displayNone">
                     <input type="text" class="form-control" id="uploader_ID" name="uploader_ID" placeholder="نام شخص ارسال کننده">
                 </div>
-                <input type="submit" class="iranSans btn btn-primary displayNone" value="جستجو"></input>
+                <div class="form-group col-12 displayNone">
+                    <input type="text" class="form-control" id="upload_date" name="upload_date" placeholder="تاریخ ارسال ex: 22 Jan 2000">
+                </div>
+                <div class="form-group col-12 displayNone">
+                    <input type="text" class="form-control" id="approved" name="approved" placeholder="وضعیت تایید محصول">
+                </div>
+                <div class="form-group col-12 displayNone">
+                    <input type="text" class="form-control" id="number_of_likes" name="number_of_likes" placeholder="تعداد لایک های محصول">
+                </div>
+                <input type="submit" class="iranSans btn btn-primary displayNone" name="product_search" value="جستجو"></input>
             </form> 
         </section>
     </main>
