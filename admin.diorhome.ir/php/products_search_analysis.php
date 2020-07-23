@@ -1,6 +1,10 @@
 <?php 
-if(isset($_POST['product_search'])){
-    function test_input($data, $regex) {
+// اگر در سرچ محصولی جستجو شد و یا از طریق منوی پیجینیشن به صفحه بعدی محصولات رفتیم:
+if(isset($_POST['page_number'])){
+    echo "the post array is: <br>";
+    print_r($_POST);
+    echo "<br>";
+    function product_test_input($data, $regex) {
         $data = trim($data);
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
@@ -9,6 +13,19 @@ if(isset($_POST['product_search'])){
             return $data;
         }else{
             return $data = "";
+        }
+    }
+    function test_date($date){
+        $date = trim($date);
+        $date = stripslashes($date);
+        $date = htmlspecialchars($date);
+        $date = strtotime($date);
+        // if the user date input isn't valid strtotime() will return 0:
+        if($date){
+            $date = date("Y-m-d H:i:s", $date);
+            return $date;
+        }else{
+            return $date = "";
         }
     }
     // as subcategory values are in Persian there is no need for strtolower() function for validation:
@@ -23,461 +40,364 @@ if(isset($_POST['product_search'])){
         }        
     }
     $inputs_arr = [];
+    $hidden_inputs = [];
+    $errors = [];
     if(!empty($_POST['product_name'])){
-        $product_name = test_input($_POST['product_name'], "/^[a-zA-Z\d\s]{1,15}$/");
+        $product_name = product_test_input($_POST['product_name'], "/^[a-zA-Z\d\s]{1,15}$/");
         if(!empty($product_name)){
             array_push($inputs_arr, "product_name like '%$product_name%'");
+            $hidden_inputs['product_name'] = $product_name;
+        }else{
+            array_push($errors, "نام محصول فقط باید لاتین باشد و می تواند فاصله و عدد داشته باشد.");
         }
     }
     if(!empty($_POST['product_dimensions'])){
-        $product_dimensions = test_input($_POST['product_dimensions'], "/^(double|single|all)$/");
+        $product_dimensions = product_test_input($_POST['product_dimensions'], "/^(double|single|all)$/");
         if(!empty($product_dimensions)){
             array_push($inputs_arr, "product_dimensions='$product_dimensions'");
+            $hidden_inputs['product_dimensions'] = $product_dimensions;
+        }else{
+            array_push($errors, "ابعاد محصول فقط می تواند تک نفره، دونفره یا هر دو باشد.");
         }
     }
     if(!empty($_POST['product_category'])){
-        $product_category = test_input($_POST['product_category'], '/^(sleeping_products|living_room_products|carpet_products)$/' );
+        $product_category = product_test_input($_POST['product_category'], '/^(sleeping_products|living_room_products|carpet_products)$/' );
         if(!empty($product_category)){
             array_push($inputs_arr, "product_category='$product_category'");
+            $hidden_inputs['product_category'] = $product_category;
+        }else{
+            array_push($errors, "دسته بندی محصول درست انتخاب نشده است.");
         }
     }
     if(!empty($_POST['product_subcategory'])){
         $product_subcategory = test_subcategory_input($_POST['product_subcategory'], '/^(کوسن|روبالشی|روتختی|ملافه|پرده|رومبلی|رومیزی|فرش|روفرشی|تابلوفرش)$/');
         if(!empty($product_subcategory)){
             array_push($inputs_arr, "product_subcategory='$product_subcategory'");
+            $hidden_inputs['product_subcategory'] = $product_subcategory;
+        }else{
+            array_push($errors, "زیرمجموعه محصول درست انتخاب نشده است.");
         }
     }
     if(!empty($_POST['product_description'])){
         $product_description = test_subcategory_input($_POST['product_description'], '/[a-zA-Z0-9ا-يئءیکآ]{1,}/');
         if(!empty($product_description)){
             array_push($inputs_arr, "product_description='$product_description'");
-        }
-    }
-    if(!empty($_POST['uploader_ID'])){
-        $uploader_ID = test_input($_POST['uploader_ID'], '/^\d{1,4}$/');
-        if(!empty($uploader_ID)){
-            array_push($inputs_arr, "uploader_ID='$uploader_ID'");
-        }
-    }
-    if(!empty($_POST['upload_date'])){
-        $timestamp = strtotime($_POST['upload_date']);
-        $upload_date = date("Y-m-d H:i:s", $timestamp);
-
-        // $upload_date = test_input($_POST['upload_date'], '/^\d{1,4}$/');
-        // if(!empty($upload_date)){
-        //     array_push($inputs_arr, "upload_date='$upload_date'");
-        // }
-    }
-
-}
-    
-
-    $query = " SELECT * FROM products WHERE ";
-    for($l=0;$l<count($inputs_arr); $l++){
-        if($l == 0){
-            $query .= " " . $inputs_arr[$l];
+            $hidden_inputs['product_description'] = $product_description;
         }else{
-            $query .= " AND" . " ". $inputs_arr[$l];
+            array_push($errors, "توضیحات محصول درست وارد نشده است.");
         }
     }
-// getting the total number of pages:
-require "database_connection.php";
-if(!$database_connection){
-    die('connection failed:'.mysqli_connect_error());
-}else{
-    $query_result = mysqli_query($database_connection, $query);
-    $total_number_of_rows = mysqli_num_rows($query_result);
-    $number_of_rows_per_page = 12;
-    $total_number_of_pages = ceil($total_number_of_rows / $number_of_rows_per_page);
-    if(!empty($_GET['page_number'])){
-        $page_number = $_GET['page_number'];
-    }else{
-        $page_number = 1;
-    }
-    // show only $number_of_rows_per_page and start from $page_number -1 * number_of_rows_per_page:
-    $offset = ($page_number - 1) * $number_of_rows_per_page;
-    $query .= " LIMIT " . $offset . "," . $number_of_rows_per_page;
-}
-
-function pagination(){
-    if(isset($GLOBALS['product_name'])){
-        $product_name = $GLOBALS['product_name'];
-    }else{
-        $product_name = null;
-    }
-    $page_number = $GLOBALS['page_number'];
-    $total_number_of_rows = $GLOBALS['total_number_of_rows'];
-    $total_number_of_pages = $GLOBALS['total_number_of_pages'];
-    $total_number_of_rows_per_page = $GLOBALS['number_of_rows_per_page'];
-    $inputs_arr = $GLOBALS['inputs_arr'];
-    $href='';
-
-    foreach ($inputs_arr as $key => $value){
-        if($value == "product_name like '%$product_name%'"){
-            $href .= '&' . "product_name=$product_name";
-        }else{
-            $href .= '&' . $value;
-        }
-    }
-    $href = str_replace("'", "", $href);
-
-    // صفحه اول:
-    if($page_number == 1){
-        // اگر هیچ نتیجه ای یافت نشد:
-        if($total_number_of_rows<=0){
-            $from = 0;
-            // اگر نتیجه ای یافت شد:
-        }else{
-            $from = 1;
-        }
-        // اگر نتایج یافت شده کمتر از 12 بود:
-        if($total_number_of_rows< $total_number_of_rows_per_page){
-            $to = $total_number_of_rows;
-            // اگر نتایج یافت شده بیشتر از 12 بود:
-        }else{
-            $to = $total_number_of_rows_per_page;
-        }
-        // صفحه آخر:
-    }elseif($page_number == $total_number_of_pages){
-        $from = ($page_number -1) * $total_number_of_rows_per_page;
-        $to = $total_number_of_rows;
-        // صفحات وسطی:
-    }else{
-        $from = ($page_number -1) * $total_number_of_rows_per_page;
-        $to = $from + $total_number_of_rows_per_page;
-    }
-
-    if($total_number_of_rows > 0){
-        echo '<p class="text-light text-center">نمایش نتایج <span class="Yekan">' . $from . '</span> تا  <span class="Yekan">' . $to . '</span> از <span class="Yekan">' . $total_number_of_rows . '</span> مورد یافت شده</p>';
-    }
-    echo '<ul class="pagination justify-content-center">';
-
-    if($total_number_of_pages<=3){
-        for($m = 1 ; $m<=$total_number_of_pages ; $m++){
-            if($m == $page_number){
-                echo '<li class="page-item active"><a class="page-link Yekan" href="#">'. $m.'</a></li>';
+    if(!empty($_POST['uploader_username'])){
+        $uploader_username = product_test_input($_POST['uploader_username'], '/^[A-Z][a-z0-9]{2,}$/');
+        if(!empty($uploader_username)){
+            require "../httpdocs/php/database_connection.php";
+            if(!$database_connection){
+                die('connection failed:'.mysqli_connect_error());
             }else{
-                echo '<li class="page-item"><a class="page-link Yekan" href="?page_number='. $m. $href. '">'. $m.'</a></li>';
-            }
-        }
-    }else{
-        if($page_number<=1){
-            echo    '                    
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&raquo;</span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                </li>
-                    ';
-            for($m = 1 ; $m<=3 ; $m++){
-                if($m == $page_number){
-                    echo '<li class="page-item active"><a class="page-link Yekan" href="#">'. $m.'</a></li>';
+                $uploader_username_query = "SELECT ID FROM users WHERE username = '$uploader_username' ";
+                $uploader_ID = mysqli_query($database_connection, $uploader_username_query);
+                if(mysqli_num_rows($uploader_ID)>0){
+                    $uploader_ID_arr = mysqli_fetch_assoc($uploader_ID);
+                    $uploaderID = $uploader_ID_arr['ID'];
+                    array_push($inputs_arr, "uploader_ID='$uploaderID'");
+                    $hidden_inputs['uploader_username'] = $uploader_username;
                 }else{
-                    echo '<li class="page-item"><a class="page-link Yekan" href="?page_number='. $m. $href .'">'. $m.'</a></li>';
+                    array_push($errors, "کاربری $uploader_username یافت نشد");
                 }
             }
-            echo    '
-                <li class="page-item">
-                    <a class="page-link Yekan" href="?page_number='.$total_number_of_pages. $href. '" aria-label="Next">
-                        <span aria-hidden="true">&laquo;</span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </li>
-                    ';
-        }elseif($page_number>= $total_number_of_pages){
-            echo    '
-                <li class="page-item">
-                    <a class="page-link" href="?page_number=1'. $href. '" aria-label="Previous">
-                        <span aria-hidden="true">&raquo;</span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                </li>
-                    ';
-            for($m = $total_number_of_pages - 2 ; $m<=$total_number_of_pages ; $m++){
-                if($m == $page_number){
-                    echo '<li class="page-item active"><a class="page-link Yekan" href="#">'. $m.'</a></li>';
-                }else{
-                    echo '<li class="page-item"><a class="page-link Yekan" href="?page_number='. $m. $href. '">'. $m.'</a></li>';
-                }
-            }
-            echo    '
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&laquo;</span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </li>
-                    ';
         }else{
-            echo    '
-                <li class="page-item">
-                    <a class="page-link Yekan" href="?page_number=1'. $href .'" aria-label="Previous">
-                        <span aria-hidden="true">&raquo;</span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                </li>
-                    ';
-            for($m = $page_number - 1 ; $m<=$page_number + 1 ; $m++){
-                if($m == $page_number){
-                    echo '<li class="page-item active"><a class="page-link Yekan" href="#">'. $m.'</a></li>';
-                }else{
-                    echo '<li class="page-item"><a class="page-link Yekan" href="?page_number='. $m. $href .'">'. $m.'</a></li>';
-                }
+            array_push($errors, "نام کاربری شخص ارسال کننده درست وارد نشده است.");
+        }
+    }
+    if(!empty($_POST['before_upload_date'])){
+        $before_upload_date = test_date($_POST['before_upload_date']);
+        if(!empty($before_upload_date)){
+            array_push($inputs_arr, "upload_date <= '$before_upload_date'");
+            $hidden_inputs['before_upload_date'] = $_POST['before_upload_date'];
+        }else{
+            array_push($errors, "'قبل از تاریخ' ارسال درست وارد نشده است. لطفا به لاتین تاریخ وارد کنید.");
+        }
+    }
+    if(!empty($_POST['after_upload_date'])){
+        $after_upload_date = test_date($_POST['after_upload_date']);
+        if(!empty($after_upload_date)){
+            array_push($inputs_arr, "upload_date >= '$after_upload_date'");
+            $hidden_inputs['after_upload_date'] = $_POST['after_upload_date'];
+        }else{
+            array_push($errors, "'بعد از تاریخ' ارسال درست وارد نشده است. لطفا به لاتین تاریخ وارد کنید.");
+        }
+    }
+    if(!empty($_POST['approved'])){
+        $approved = product_test_input($_POST['approved'], '/^YES|NO$/');
+        if(!empty($approved)){
+            array_push($inputs_arr, "approved='$approved'");
+            $hidden_inputs['approved'] = $approved;
+        }else{
+            array_push($errors, "وضعیت تایید' درست انتخاب نشده است'.");
+        }
+    }
+    if(!empty($_POST['less_number_of_likes'])){
+        $less_number_of_likes = product_test_input($_POST['less_number_of_likes'], '/^\d{1,}$/');
+        if(!empty($less_number_of_likes)){
+            array_push($inputs_arr, "number_of_likes < '$less_number_of_likes'");
+            $hidden_inputs['less_number_of_likes'] = $less_number_of_likes;
+        }else{
+            array_push($errors, "لایک کمتر از' فقط می تواند عدد باشد'.");
+        }
+    }
+    if(!empty($_POST['more_number_of_likes'])){
+        $more_number_of_likes = product_test_input($_POST['more_number_of_likes'], '/^\d{1,}$/');
+        if(!empty($more_number_of_likes)){
+            array_push($inputs_arr, "number_of_likes > '$more_number_of_likes'");
+            $hidden_inputs['more_number_of_likes'] = $more_number_of_likes;
+        }else{
+            array_push($errors, "لایک بیشتر از' فقط می تواند عدد باشد'.");
+        }
+    }
+    
+    // preparing the search query:
+    if(!empty($inputs_arr)){
+        $query = " SELECT * FROM products WHERE ";
+        for($l = 0; $l < count($inputs_arr); $l++){
+            if($l == 0){
+                $query .= $inputs_arr[$l];
+            }else{
+                $query .= " AND " . $inputs_arr[$l];
             }
-            echo    '
-                <li class="page-item">
-                    <a class="page-link" href="?page_number='. $total_number_of_pages . $href . '" aria-label="Next">
-                        <span aria-hidden="true">&laquo;</span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </li>
-                    ';
         }
+    }else{
+        $query = "SELECT * FROM products";
     }
-    echo '</ul>';
-}
+    echo " the query is: " . $query;
+    // getting the total number of pages:
+    require "../httpdocs/php/database_connection.php";
+    if(!$database_connection){
+        die('connection failed:'.mysqli_connect_error());
+    }else{
+        $query_result = mysqli_query($database_connection, $query);
 
+        echo "<br>"; 
 
-function category_option_generator(){
-$values = ['sleeping_products', 'living_room_products', 'carpet_products'];
-$value_names = ['کالای خواب', 'کالای اتاق پذیرایی', 'فرش'];
+        $total_number_of_rows = mysqli_num_rows($query_result);
+        echo "<br> total number of rows is:  $total_number_of_rows ";
+        $number_of_rows_per_page = 12;
+        $total_number_of_pages = ceil($total_number_of_rows / $number_of_rows_per_page);
+        echo "<br> total number of pages is:  $total_number_of_pages ";
 
-    for($i = 0; $i<count($values); $i++){
-        echo '<option value="' . $values[$i]. '"';
-        if(isset($_GET['product_category']) && $_GET['product_category'] == $values[$i]){
-            echo 'selected = "selected" ';
+        echo "<br> the post variable array is: " ; print_r($_POST);
+        if(isset($_POST['page_number'])){
+            $page_number = $_POST['page_number'];
+            if($page_number == "جستجو" || $page_number == "<"){
+                $page_number = 1;
+            }elseif($page_number == ">"){
+                $page_number = $total_number_of_pages;
+            }
+            echo "<br> page number is:  $page_number";
         }
-        echo '>'. $value_names[$i] . '</option>';
+        // show only $number_of_rows_per_page and start from $page_number -1 * number_of_rows_per_page:
+        $offset = ($page_number - 1) * $number_of_rows_per_page;
+        $query .= " LIMIT $offset , $number_of_rows_per_page ";
+        echo "<br>" . $query;
     }
-}
-
-function subcategory_option_generator(){
-if(!empty($_GET['product_subcategory']) ){
-    $subcategories = ['روبالشی', 'روتختی', 'ملافه', 'کوسن', 'پرده', 'رومبلی', 'رومیزی', 'فرش', 'روفرشی', 'تابلوفرش'];
-    if(in_array($_GET['product_subcategory'], $subcategories)){
-        echo '<option value="' . $_GET['product_subcategory']. '"' . ' selected="selected">' . $_GET['product_subcategory'] . '</option>';
-    }
-}
-}
-
-function card_generators(){
-$number_of_rows_per_page = $GLOBALS['number_of_rows_per_page'];
-
-$query = $GLOBALS['query'];
-require "database_connection.php";
-if(!$database_connection){
-    die('connection failed:'.mysqli_connect_error());
-}else{
-
-    // --- queries for the badges ---
-
-    $bedsheet_query = "SELECT * FROM products WHERE product_category = 'sleeping_products' AND product_subcategory = 'روتختی' AND approved = 'YES' ";
-    $bedsheet_query_result = mysqli_query($database_connection, $bedsheet_query);
-    $bedsheet_number = mysqli_num_rows($bedsheet_query_result);
-
-    $pillow_query = "SELECT * FROM products WHERE product_category = 'sleeping_products' AND product_subcategory = 'روبالشی' AND approved = 'YES' ";
-    $pillow_query_result = mysqli_query($database_connection, $pillow_query);
-    $pillow_number = mysqli_num_rows($pillow_query_result);
-
-    $bedroom_cushion_query = "SELECT * FROM products WHERE product_category = 'sleeping_products' AND product_subcategory = 'کوسن' AND approved = 'YES' ";
-    $bedroom_cushion_query_result = mysqli_query($database_connection, $bedroom_cushion_query);
-    $bedroom_cushion_number = mysqli_num_rows($bedroom_cushion_query_result);
-
-    $bedcover_query = "SELECT * FROM products WHERE product_category = 'sleeping_products' AND product_subcategory = 'ملافه' AND approved = 'YES' ";
-    $bedcover_query_result = mysqli_query($database_connection, $bedcover_query);
-    $bedcover_number = mysqli_num_rows($bedcover_query_result);
-
-    $table_cloth_query = "SELECT * FROM products WHERE product_category = 'living_room_products' AND product_subcategory = 'رومیزی' AND approved = 'YES' ";
-    $table_cloth_query_result = mysqli_query($database_connection, $table_cloth_query);
-    $table_cloth_number = mysqli_num_rows($table_cloth_query_result);
-
-    $curtain_query = "SELECT * FROM products WHERE product_category = 'living_room_products' AND product_subcategory = 'پرده' AND approved = 'YES' ";
-    $curtain_query_result = mysqli_query($database_connection, $curtain_query);
-    $curtain_number = mysqli_num_rows($curtain_query_result);
-
-    $livingroom_cushion_query = "SELECT * FROM products WHERE product_category = 'living_room_products' AND product_subcategory = 'کوسن' AND approved = 'YES' ";
-    $livingroom_cushion_query_result = mysqli_query($database_connection, $livingroom_cushion_query);
-    $livingroom_cushion_number = mysqli_num_rows($livingroom_cushion_query_result);
-
-    $sofacover_query = "SELECT * FROM products WHERE product_category = 'living_room_products' AND product_subcategory = 'رومبلی' AND approved = 'YES' ";
-    $sofacover_query_result = mysqli_query($database_connection, $sofacover_query);
-    $sofacover_number = mysqli_num_rows($sofacover_query_result);
-
-    $carpet_query = "SELECT * FROM products WHERE product_category = 'carpet_products' AND product_subcategory = 'فرش' AND approved = 'YES' ";
-    $carpet_query_result = mysqli_query($database_connection, $carpet_query);
-    $carpet_carpet_number = mysqli_num_rows($carpet_query_result);
-
-    $carpet_cover_query = "SELECT * FROM products WHERE product_category = 'carpet_products' AND product_subcategory = 'روفرشی' AND approved = 'YES' ";
-    $carpet_cover_query_result = mysqli_query($database_connection, $carpet_cover_query);
-    $carpet_cover_number = mysqli_num_rows($carpet_cover_query_result);
-
-    $carpetboard_query = "SELECT * FROM products WHERE product_category = 'carpet_products' AND product_subcategory = 'تابلوفرش' AND approved = 'YES' ";
-    $carpetboard_query_result = mysqli_query($database_connection, $carpetboard_query);
-    $carpetboard_number = mysqli_num_rows($carpetboard_query_result);
-
-    // --- html for the badges ---
-    if(!empty($_GET['product_category'])){
-        $product_category = $_GET['product_category'];
-    }else{
-        $product_category = null;
-    }
-    if(!empty($_GET['product_subcategory'])){
-        $product_subcategory = $_GET['product_subcategory'];
-    }else{
-        $product_subcategory = null;
-    }
-
-    echo    '
-    <div class="container-fluid row badge-container mx-3 pb-2">
-        <h4 class="col-12 text-light text-center access-header py-4">کاتالوگ محصولات - دسترسی سریع</h4>
-        <div class="col-12  col-md-6 col-lg-4 p-2 ">
-            <div class="row p-2">
-                <p class="text-light category text-center col-sm-12 col-md-11 py-2">کالای خواب:</p>
-                <a href="products.php?product_category=sleeping_products&product_subcategory=روتختی" type="button" class="btn';
-                if($product_category == "sleeping_products" && $product_subcategory == "روتختی"){
-                    echo ' btn-success ';
-                }else{
-                    echo ' btn-primary ';
-                } 
-                echo '   col-sm-2 col-lg-3"><span class="badge badge-light Yekan">' . $bedsheet_number . '</span><br>روتختی</a>
-                <a href="products.php?product_category=sleeping_products&product_subcategory=روبالشی" type="button" class="btn';
-                if($product_category == "sleeping_products" && $product_subcategory == "روبالشی"){
-                    echo ' btn-success ';
-                }else{
-                    echo ' btn-primary ';
-                }
-                echo '   col-sm-2 col-lg-3"><span class="badge badge-light Yekan">'. $pillow_number .'</span><br>روبالشی</a>
-
-                <a href="products.php?product_category=sleeping_products&product_subcategory=ملافه" type="button" class="btn';
-                if($product_category == "sleeping_products" && $product_subcategory == "ملافه" ){
-                    echo " btn-success ";
-                }else{
-                    echo " btn-primary ";
-                }
-                echo '   col-sm-2 col-lg-3"><span class="badge badge-light Yekan">' . $bedcover_number . '</span><br> ملافه </a>
-            </div>
-        </div>
-        <div class="col-12  col-md-6 col-lg-4 p-2 ">
-            <div class="row p-2">
-                <p class="text-light category text-center col-sm-12 col-md-11 py-2">  کالای اتاق پذیرایی:</p>
-                <a href="products.php?product_category=living_room_products&product_subcategory=رومیزی" type="button" class="btn';
-                if($product_category == "living_room_products" && $product_subcategory == "رومیزی"){
-                    echo ' btn-success';
-                }else{
-                    echo ' btn-primary ';
-                }
-                echo '  col-sm-2"><span class="badge badge-light Yekan">' . $table_cloth_number . '</span><br> رومیزی </a>
-                <a href="products.php?product_category=living_room_products&product_subcategory=پرده" type="button" class="btn';
-                if($product_category == "living_room_products" && $product_subcategory == "پرده" ){
-                    echo ' btn-success';
-                }else{
-                    echo ' btn-primary';
-                }
-                echo '  col-sm-2"><span class="badge badge-light Yekan">' . $curtain_number . '</span><br> پرده </a>
-                <a href="products.php?product_category=living_room_products&product_subcategory=کوسن" type="button" class="btn';
-                if($product_category == "living_room_products" && $product_subcategory == "کوسن"){
-                    echo ' btn-success ';
-                }else{
-                    echo ' btn-primary ';
-                }
-                echo '  col-sm-2"><span class="badge badge-light Yekan">' . $livingroom_cushion_number . ' </span><br> کوسن </a>
-                <a href="products.php?product_category=living_room_products&product_subcategory=رومبلی" type="button" class="btn';
-                if($product_category="living_rom_products" && $product_subcategory == "رومبلی"){
-                    echo ' btn-success ';
-                }else{
-                    echo ' btn-primary ';
-                }
-                echo '  col-sm-2"><span class="badge badge-light Yekan">' . $sofacover_number . '</span><br> رومبلی </a>
-            </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4 p-2 ">
-            <div class="row p-2">
-                <p class="text-light category text-center col-sm-12 col-md-11 py-2">  کالای فرش:</p>
-                <a href="products.php?product_category=carpet_products&product_subcategory=فرش" type="button" class="btn';
-                if($product_category="carpet_products" && $product_subcategory == "فرش"){
-                    echo ' btn-success ';
-                }else{
-                    echo ' btn-primary ';
-                }
-                echo ' col-sm-2 col-lg-3"><span class="badge badge-light Yekan">' . $carpet_carpet_number . '</span><br> فرش </a>
-                <a href="products.php?product_category=carpet_products&product_subcategory=روفرشی" type="button" class="btn';
-                if($product_category="carpet_products" && $product_subcategory == "روفرشی"){
-                    echo ' btn-success ';
-                }else{
-                    echo ' btn-primary ';
-                }
-                echo ' col-sm-2 col-lg-3"><span class="badge badge-light Yekan">' . $carpet_cover_number . '</span><br> روفرشی </a>
-                <a href="products.php?product_category=carpet_products&product_subcategory=تابلوفرش" type="button" class="btn';
-                if($product_category="carpet_products" && $product_subcategory == "تابلوفرش"){
-                    echo ' btn-success';
-                }else{
-                    echo ' btn-primary ';
-                }
-                echo ' col-sm-2 col-lg-3"><span class="badge badge-light Yekan">' . $carpetboard_number . '</span><br> تابلوفرش </a>
-            </div>
-        </div>
-    </div>
-    ';
-
-
-
-    $query_result = mysqli_query($database_connection, $query);
-    $total_number_of_rows = mysqli_num_rows($query_result);
-    if($total_number_of_rows<=0){
-        echo '<div class="col-12 text-center text-danger"><p class="my-4">هیچ نتیجه ای بر اساس معیار های جستجو یافت نشد.</p></div>';
-    }else{
-        while ($row = mysqli_fetch_array($query_result)) {
+    function pagination(){
+        $page_number = $GLOBALS['page_number'];
+        $total_number_of_rows = $GLOBALS['total_number_of_rows'];
+        $total_number_of_pages = $GLOBALS['total_number_of_pages'];
+        $total_number_of_rows_per_page = $GLOBALS['number_of_rows_per_page'];
+        $inputs_arr = $GLOBALS['inputs_arr'];
+        $hidden_inputs = $GLOBALS['hidden_inputs'];
+        
+        // صفحه اول:
+        if($page_number == 1){
+            // اگر هیچ نتیجه ای یافت نشد:
+            if($total_number_of_rows<=0){
+                $from = 0;
+                // اگر نتیجه ای یافت شد:
+            }else{
+                $from = 1;
+            }
+            // اگر نتایج یافت شده کمتر از 12 بود:
+            if($total_number_of_rows< $total_number_of_rows_per_page){
+                $to = $total_number_of_rows;
+                // اگر نتایج یافت شده بیشتر از 12 بود:
+            }else{
+                $to = $total_number_of_rows_per_page;
+            }
+            // صفحه آخر:
+        }elseif($page_number == $total_number_of_pages){
+            $from = ($page_number -1) * $total_number_of_rows_per_page;
+            $to = $total_number_of_rows;
+            // صفحات وسطی:
+        }else{
+            $from = ($page_number -1) * $total_number_of_rows_per_page;
+            $to = $from + $total_number_of_rows_per_page;
+        }
+        if($total_number_of_rows > 0){ 
             ?>
-            <div class=" product-results col-xs-12 col-sm-6  col-lg-4 col-xl-3 p-3" >
-                <div class="card border border-primary" itemscope itemtype="https://schema.org/Product">
-                    <img class="card-img-top" src="<?php echo $row['product_directory']; ?>" alt="<?php echo $row['product_description']; ?>" itemprop="image">
-                        <div class="card-body text-center ">
-                            <h6 class="card-title "><span class="text-gray" itemprop="name"><?php echo ucfirst($row['product_name']); ?></span></h6>
-                            <table itemprop="review" itemscope itemtype="http://schema.org/Review">
-                                <tr><td><p class="card-text text-right" >ابعاد:</p></td><td><p><span class="text-gray">
-                                    <?php
-                                        if(!empty($row['product_dimensions'] )){
-                                            $dimension = $row['product_dimensions'];
-                                            if(empty($dimension) || $dimension == "all"){
-                                                echo 'همه ابعاد';
-                                            }elseif($dimension == 'single'){
-                                                echo 'تک نفره';
-                                            }elseif($dimension == 'double'){
-                                                echo 'دونفره';
-                                            }
-                                        }
-                                    ?>
-                                </span></p></td></tr>
-                                <tr><td><p class="card-text text-right">دسته بندی:</p></td><td><p><span class="text-gray" itemprop="category">
-                                    <?php
-                                        if($row['product_category'] == "sleeping_products"){
-                                            echo "کالای خواب";
-                                        } elseif($row['product_category'] == "living_room_products"){
-                                            echo "کالای اتاق پذیرایی";
-                                        }elseif($row['product_category'] == "carpet_products"){
-                                            echo "فرش";
-                                        }
-                                    ?>
-                                </span></p></td></tr>
-                                <tr><td><p class="card-text text-right">زیرمجموعه:</p></td><td><p><span class="text-gray"><?php echo $row['product_subcategory']; ?></span></p></td></tr>
-                                <tr><td><p class="card-text text-right">توضیحات:</p></td><td><p><span class="text-gray" itemprop="description">
-                                    <?php
-                                        if(!empty($row['product_description'])){
-                                            echo    $row['product_description']; 
-                                        }else{
-                                            echo 'ندارد';
-                                        }
-                                    ?>
-                                </span></p></td></tr>
-                            </table>
-                            <a href="productextension.php?product_ID=<?php echo $row['product_ID']; ?>" class="btn btn-primary mt-4">مشاهده و بررسی</a>
-                        </div>
-                </div>    
-            </div>
+            <p class="text-dark iranSans text-center">نمایش نتایج <span class="Yekan"><?php echo $from; ?></span> تا  <span class="Yekan"><?php echo $to; ?></span> از <span class="Yekan"><?php echo $total_number_of_rows; ?></span> مورد یافت شده</p>
             <?php
-        }   
+        }
+        ?>
+            <ul class="pagination justify-content-center">
+        <?php
+        // اگر تعداد صفحاتمون کمتر از 3 صفحه بود
+        if($total_number_of_pages<=3){
+            for($m = 1 ; $m<=$total_number_of_pages ; $m++){
+                ?>
+                <li class="page-item <?php if($m == $page_number) echo "active" ?>"><input type="submit" class="page-link Yekan " name="page_number" value="<?php echo $m; ?>" /></li>
+                <?php
+            }
+        //  اگر تعداد صفحاتمون بیشتر از 3 صفحه بود
+        }else{
+            // اگر صفحه اول بودیم:
+            if($page_number<=1){
+                ?>         
+                <!-- دکمه برو به صفحه اول: -->
+                <li class="page-item disabled">
+                    <input type="submit" class="page-link" aria-label="Previous" name="page_number" value="<" />
+                </li>
+                <?php
+                // دکمه صفحات وسطی:
+                for($m = 1 ; $m<=3 ; $m++){
+                ?>
+                    <li class="page-item <?php if($m == $page_number) echo "active" ?>"><input type="submit" class="page-link Yekan " name="page_number" value="<?php echo $m; ?>" /></li>
+                    <?php
+                }
+                // دکمه برو به صفحه آخر:
+                ?>
+                <li class="page-item">
+                    <input type="submit" class="page-link" aria-label="Next" name="page_number" value=">" />
+                </li>
+                <?php
+            // اگر صفحه آخر بودیم:
+            }elseif($page_number>= $total_number_of_pages){
+                ?>
+                <!-- دکمه برو به صفحه اول: -->
+                <li class="page-item ">
+                    <input type="submit" class="page-link" aria-label="Previous" name="page_number" value="<" />
+                </li>
+                <?php
+                // دکمه صفحات وسطی:
+                for($m = $total_number_of_pages - 2 ; $m<=$total_number_of_pages ; $m++){
+                    ?>
+                    <li class="page-item <?php if($m == $page_number) echo 'active' ?>"><input type="submit" class="page-link Yekan" name="page_number" value="<?php echo $m; ?>" /></li>
+                    <?php
+                }
+                // دکمه برو به صفحه آخر:
+                ?>
+                <li class="page-item disabled">
+                    <input type="submit" class="page-link" aria-label="Next" name="page_number" value=">" />
+                </li>
+                <?php
+            // اگر صفحات وسطی بودیم $page_number>0 && $page_number < $total_number_of_pages:
+            }else{
+                ?>
+                <!-- دکمه برو به صفحه اول: -->
+                <li class="page-item">
+                    <input type="submit" class="page-link"  aria-label="Previous" name="page_number" value="<" />
+                </li>
+                <?php
+                // دکمه های صفحات وسطی:
+                for($m = $page_number - 1 ; $m<=$page_number + 1 ; $m++){
+                    ?>
+                    <li class="page-item <?php if($m == $page_number) echo "active"; ?>"><input type="submit" class="page-link Yekan" name="page_number" value="<?php echo $m; ?>" /></li>
+                    <?php
+                }
+                // دکمه برو به صفحه آخر:
+                ?>
+                <li class="page-item">
+                    <input type="submit" class="page-link" aria-label="Next" name="page_number" value=">" />
+                </li>
+                <?php
+            }
+        }
+        ?>
+        </ul>
+        <?php
     }
-}      
+    function card_generators(){
+        $number_of_rows_per_page = $GLOBALS['number_of_rows_per_page'];
+        
+        $query = $GLOBALS['query'];
+        require "../httpdocs/php/database_connection.php";
+        if(!$database_connection){
+            die('connection failed:'.mysqli_connect_error());
+        }else{
+            $query_result = mysqli_query($database_connection, $query);
+            $total_number_of_rows = mysqli_num_rows($query_result);
+            if($total_number_of_rows<=0){
+                ?>
+                    <div class="col-12 text-center text-danger"><p class="my-4">هیچ نتیجه ای بر اساس معیار های جستجو یافت نشد.</p></div>
+                <?php
+            }else{
+                while ($row = mysqli_fetch_array($query_result)) {
+                    ?>
+                    <div class="product-results col-xs-12 col-sm-6  col-lg-4 col-xl-3 p-3" >
+                        <div class="card border border-primary" itemscope itemtype="https://schema.org/Product">
+                            <img class="card-img-top" src="https://diorhome.ir/<?php echo $row['product_directory']; ?>" alt="<?php echo $row['product_description']; ?>" itemprop="image">
+                            <div class="card-body text-center ">
+                                <h6 class="card-title "><span class="text-gray" itemprop="name"><?php echo ucfirst($row['product_name']); ?></span></h6>
+                                <table class="iranSans" itemprop="review" itemscope itemtype="http://schema.org/Review">
+                                    <tr>
+                                        <td><p class="card-text text-right" >ابعاد:</p></td>
+                                        <td><p><span class="text-gray">
+                                        <?php
+                                            if(!empty($row['product_dimensions'] )){
+                                                $dimension = $row['product_dimensions'];
+                                                if(empty($dimension) || $dimension == "all"){
+                                                    echo 'همه ابعاد';
+                                                }elseif($dimension == 'single'){
+                                                    echo 'تک نفره';
+                                                }elseif($dimension == 'double'){
+                                                    echo 'دونفره';
+                                                }
+                                            }
+                                        ?>
+                                        </span></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="card-text text-right">دسته بندی:</p></td><td><p><span class="text-gray" itemprop="category">
+                                            <?php
+                                                if($row['product_category'] == "sleeping_products"){
+                                                    echo "کالای خواب";
+                                                } elseif($row['product_category'] == "living_room_products"){
+                                                    echo "کالای اتاق پذیرایی";
+                                                }elseif($row['product_category'] == "carpet_products"){
+                                                    echo "فرش";
+                                                }
+                                            ?>
+                                        </span></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="card-text text-right">زیرمجموعه:</p></td><td><p><span class="text-gray"><?php echo $row['product_subcategory']; ?></span></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="card-text text-right">توضیحات:</p></td><td><p><span class="text-gray" itemprop="description">
+                                            <?php
+                                                if(!empty($row['product_description'])){
+                                                    echo    $row['product_description']; 
+                                                }else{
+                                                    echo 'ندارد';
+                                                }
+                                            ?>
+                                        </span></p></td>
+                                    </tr>
+                                </table>
+                                    <a href="productEdit.php?product_ID=<?php echo $row['product_ID']; ?>" class="btn btn-primary mt-4"><i class="fas fa-edit"></i></a>
+                                    <a href="productDelete.php?product_ID=<?php echo $row['product_ID']; ?>" class="btn btn-danger mt-4"><i class="far fa-trash-alt"></i></a>
+                                </div>
+                        </div>    
+                    </div>
+                    <?php
+                }   
+            }
+        }      
+    }
+
+    
 }
+
+
+
+
 ?>

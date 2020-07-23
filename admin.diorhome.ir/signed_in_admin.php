@@ -1,6 +1,7 @@
 <?php require "php/admin_expiration.php"; ?>
 <?php require "php/explorer_warning.php"; ?>
 <?php require 'php/user_search_analysis.php'; ?>
+<?php require 'php/products_search_analysis.php'; ?>
 
 <?php 
     session_start();
@@ -134,63 +135,126 @@
             <div class="search_criteria row text-right p-1">
                 <h5 class="text-center col-12 iranSans">جستجو بر اساس:</h5>
                 <div class="iranSans col-12 col-sm-4">
-                    <span class="iranSans"><input type="checkbox" name="product_name" id="product_name">نام </span>
+                    <span class="iranSans"><input type="checkbox" name="product_name" id="product_name" <?php if(isset($product_name) && !empty($product_name)) echo "checked"; ?> >نام </span>
                 </div>
                 <div class="iranSans col-12 col-sm-4">
-                    <span class="iranSans"><input type="checkbox" name="product_dimensions" id="product_dimensions">ابعاد</span>
+                    <span class="iranSans"><input type="checkbox" name="product_dimensions" id="product_dimensions" <?php if(isset($product_dimensions) && !empty($product_dimensions)) echo "checked"; ?> >ابعاد</span>
                 </div>
                 <div class="iranSans col-12 col-sm-4">
-                    <span class="iranSans"><input type="checkbox" name="product_category" id="product_category">دسته بندی</span>
+                    <span class="iranSans"><input type="checkbox" name="product_category" id="product_category" <?php if(isset($product_category) && !empty($product_category)) echo "checked"; ?> >دسته بندی</span>
                 </div>
                 <div class="iranSans col-12 col-sm-4">
-                    <span class="iranSans"><input type="checkbox" name="product_subcategory" id="product_subcategory">زیرمجموعه</span>
+                    <span class="iranSans"><input type="checkbox" name="product_subcategory" id="product_subcategory" <?php if(isset($product_subcategory) && !empty($product_subcategory)) echo "checked"; ?> >زیرمجموعه</span>
                 </div>
                 <div class="iranSans col-12 col-sm-4">
-                    <span class="iranSans"><input type="checkbox" name="product_description" id="product_description">توضیحات</span>
+                    <span class="iranSans"><input type="checkbox" name="product_description" id="product_description" <?php if(isset($product_description) && !empty($product_description)) echo "checked"; ?> >توضیحات</span>
                 </div>
                 <div class="iranSans col-12 col-sm-4">
-                    <span class="iranSans"><input type="checkbox" name="uploader_ID" id="uploader_ID">ارسال کننده</span>
+                    <span class="iranSans"><input type="checkbox" name="uploader_ID" id="uploader_ID" <?php if(isset($uploader_ID) && !empty($uploader_ID)) echo "checked"; ?> >ارسال کننده</span>
                 </div>
                 <div class="iranSans col-12 col-sm-4">
-                    <span class="iranSans"><input type="checkbox" name="upload_date" id="upload_date">تاریخ ارسال</span>
+                    <span class="iranSans"><input type="checkbox" name="before_upload_date" id="before_upload_date" <?php if(isset($before_upload_date) && !empty($before_upload_date)) echo "checked"; ?> >قبل از تاریخ</span>
                 </div>
                 <div class="iranSans col-12 col-sm-4">
-                    <span class="iranSans"><input type="checkbox" name="approved" id="approved">وضعیت تایید</span>
+                    <span class="iranSans"><input type="checkbox" name="after_upload_date" id="after_upload_date" <?php if(isset($after_upload_date) && !empty($after_upload_date)) echo "checked"; ?> >بعد از تاریخ</span>
                 </div>
                 <div class="iranSans col-12 col-sm-4">
-                    <span class="iranSans"><input type="checkbox" name="number_of_likes" id="number_of_likes">تعداد لایک</span>
+                    <span class="iranSans"><input type="checkbox" name="approved" id="approved" <?php if(isset($approved) && !empty($approved)) echo "checked"; ?> >وضعیت تایید</span>
+                </div>
+                <div class="iranSans col-12 col-sm-4">
+                    <span class="iranSans"><input type="checkbox" name="less_number_of_likes" id="less_number_of_likes" <?php if(isset($less_number_of_likes) && !empty($less_number_of_likes)) echo "checked"; ?> >لایک کمتر از</span>
+                </div>
+                <div class="iranSans col-12 col-sm-4">
+                    <span class="iranSans"><input type="checkbox" name="more_number_of_likes" id="more_number_of_likes" <?php if(isset($more_number_of_likes) && !empty($more_number_of_likes)) echo "checked"; ?> >لایک بیشتر از</span>
                 </div>
             </div>
             <form class="row my-2 p-2 text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                 <div class="form-group col-12 displayNone">
-                    <input type="text" class="form-control" id="product_name" name="product_name" placeholder="نام محصول">
+                    <input type="text" class="form-control" id="product_name" name="product_name" placeholder="نام محصول" value="<?php if(isset($product_name) && !empty($product_name)) echo $product_name; ?>">
                 </div>
                 <div class="form-group col-12 displayNone">
-                    <input type="text" class="form-control" id="product_dimensions" name="product_dimensions" placeholder="ابعاد">
+                    <select class="form-control" id="product_dimensions" name="product_dimensions">
+                        <option value="" <?php if(isset($product_dimensions) && empty($product_dimensions)) echo "selected"; ?>>انتخاب ابعاد محصول</option>
+                        <option value="single" <?php if(isset($product_dimensions) && $product_dimensions == "single") echo "selected"; ?>>یک نفره</option>
+                        <option value="double" <?php if(isset($product_dimensions) && $product_dimensions == "double") echo "selected"; ?>>دو نفره</option>
+                        <option value="all" <?php if(isset($product_dimensions) && $product_dimensions == "all") echo "selected"; ?>>فرقی نمی کند</option>
+                    </select>
                 </div>
                 <div class="form-group col-12 displayNone">
-                    <input type="text" class="form-control" id="product_category" name="product_category" placeholder="دسته بندی">
+                    <select class="form-control" id="product_category" name="product_category">
+                        <option value="" <?php if(isset($product_category) && empty($product_category)) echo "selected"; ?>>انتخاب دسته بندی</option>
+                        <option value="sleeping_products" <?php if(isset($product_category) && $product_category == "sleeping_products") echo "selected"; ?>>کالای خواب</option>
+                        <option value="living_room_products" <?php if(isset($product_category) && $product_category == "living_room_products") echo "selected"; ?>>کالای اتاق پذیرایی</option>
+                        <option value="carpet_products" <?php if(isset($product_category) && $product_category == "carpet_products") echo "selected"; ?>>فرش</option>
+                    </select>
                 </div>
                 <div class="form-group col-12 displayNone">
-                    <input type="text" class="form-control" id="product_subcategory" name="product_subcategory" placeholder="زیرمجموعه">
+                    <select class="form-control" id="product_subcategory" name="product_subcategory">
+                        <option value="" <?php if(isset($product_subcategory) && empty($product_subcategory)) echo "selected"; ?>>انتخاب زیرمجموعه</option>
+                        <option value="کوسن" <?php if(isset($product_subcategory) && $product_subcategory == "کوسن") echo "selected"; ?> >کوسن</option>
+                        <option value="روبالشی" <?php if(isset($product_subcategory) && $product_subcategory == "روبالشی") echo "selected"; ?>>روبالشی</option>
+                        <option value="روتختی" <?php if(isset($product_subcategory) && $product_subcategory == "روتختی") echo "selected"; ?>>روتختی</option>
+                        <option value="ملافه" <?php if(isset($product_subcategory) && $product_subcategory == "ملافه") echo "selected"; ?>>ملافه</option>
+                        <option value="پرده" <?php if(isset($product_subcategory) && $product_subcategory == "پرده") echo "selected"; ?>>پرده</option>
+                        <option value="رومبلی" <?php if(isset($product_subcategory) && $product_subcategory == "رومبلی") echo "selected"; ?>>رومبلی</option>
+                        <option value="رومیزی" <?php if(isset($product_subcategory) && $product_subcategory == "رومیزی") echo "selected"; ?>>رومیزی</option>
+                        <option value="فرش" <?php if(isset($product_subcategory) && $product_subcategory == "فرش") echo "selected"; ?>>فرش</option>
+                        <option value="روفرشی"> <?php if(isset($product_subcategory) && $product_subcategory == "روفرشی") echo "selected"; ?>روفرشی</option>
+                        <option value="تابلوفرش" <?php if(isset($product_subcategory) && $product_subcategory == "تابلوفرش") echo "selected"; ?>>تابلوفرش</option>    
+                    </select>
                 </div>
                 <div class="form-group col-12 displayNone">
-                    <input type="text" class="form-control" id="product_description" name="product_description" placeholder="توضیحات">
+                    <textarea class="p-1" name="product_description" id="product_description" placeholder="توضیحات مربوط به محصول"><?php if(isset($product_description) && !empty($product_description)) echo $product_description; ?></textarea>
                 </div>
                 <div class="form-group col-12 displayNone">
-                    <input type="text" class="form-control" id="uploader_ID" name="uploader_ID" placeholder="نام شخص ارسال کننده">
+                    <input type="text" class="form-control" id="uploader_username" name="uploader_username" placeholder="نام شخص ارسال کننده" value="<?php if(isset($uploader_username) && !empty($uploader_username)) echo $uploader_username; ?>">
                 </div>
                 <div class="form-group col-12 displayNone">
-                    <input type="text" class="form-control" id="upload_date" name="upload_date" placeholder="تاریخ ارسال ex: 22 Jan 2000">
+                    <input type="text" class="form-control" id="before_upload_date" name="before_upload_date" placeholder="ارسال قبل از تاریخ ex: 22 Jan 2000" value="<?php if(isset($before_upload_date) && !empty($before_upload_date)) echo $before_upload_date; ?>">
                 </div>
                 <div class="form-group col-12 displayNone">
-                    <input type="text" class="form-control" id="approved" name="approved" placeholder="وضعیت تایید محصول">
+                    <input type="text" class="form-control" id="after_upload_date" name="after_upload_date" placeholder="ارسال بعد از تاریخ ex: 22 Jan 2000" value="<?php if(isset($after_upload_date) && !empty($after_upload_date)) echo $after_upload_date; ?>">
                 </div>
                 <div class="form-group col-12 displayNone">
-                    <input type="text" class="form-control" id="number_of_likes" name="number_of_likes" placeholder="تعداد لایک های محصول">
+                    <select type="text" class="form-control" id="approved" name="approved">
+                        <option value="" <?php if(isset($approved) && empty($approved)) echo "selected"; ?>>انتخاب وضعیت تایید</option>
+                        <option value="YES" <?php if(isset($approved) && $approved == "YES") echo "selected"; ?>>تایید شده</option>
+                        <option value="NO" <?php if(isset($approved) && $approved == "NO") echo "selected"; ?>>تایید نشده</option>
+                    </select>
                 </div>
-                <input type="submit" class="iranSans btn btn-primary displayNone" name="product_search" value="جستجو"></input>
+                <div class="form-group col-12 displayNone">
+                    <input type="text" class="form-control" id="less_number_of_likes" name="less_number_of_likes" placeholder="پست با لایک کمتر از ex:100" value="<?php if(isset($less_number_of_likes) && !empty($less_number_of_likes)) echo $less_number_of_likes; ?>">
+                </div>
+                <div class="form-group col-12 displayNone">
+                    <input type="text" class="form-control" id="more_number_of_likes" name="more_number_of_likes" placeholder="پست با لایک بیشتر از ex:100" value="<?php if(isset($more_number_of_likes) && !empty($more_number_of_likes)) echo $more_number_of_likes; ?>">
+                </div>
+                <input type="submit" class="iranSans btn btn-primary displayNone" name="page_number" value="جستجو"></input>
             </form> 
+            <div class="result container-fluid">
+                <div class="row justify-content-center <?php if(isset($_POST['page_number'])) echo "py-5"; ?>">
+                    <?php if(isset($_POST['page_number'])) card_generators(); ?>
+                </div>
+
+                <!-- pagination section: -->
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+                    <input type="hidden" name="product_name" value="<?php if(!empty($product_name)) echo $product_name; ?>">
+                    <input type="hidden" name="product_dimensions" value="<?php if(!empty($product_dimensions)) echo $product_dimensions; ?>">
+                    <input type="hidden" name="product_category" value="<?php if(!empty($product_category)) echo $product_category; ?>">
+                    <input type="hidden" name="product_subcategory" value="<?php if(!empty($product_subcategory)) echo $product_subcategory; ?>">
+                    <input type="hidden" name="product_description" value="<?php if(!empty($product_description)) echo $product_description; ?>">
+                    <input type="hidden" name="uploader_username" value="<?php if(!empty($uploader_username)) echo $uploader_username; ?>">
+                    <input type="hidden" name="before_upload_date" value="<?php if(!empty($before_upload_date)) echo $before_upload_date; ?>">
+                    <input type="hidden" name="after_upload_date" value="<?php if(!empty($after_upload_date)) echo $after_upload_date; ?>">
+                    <input type="hidden" name="approved" value="<?php if(!empty($approved)) echo $approved; ?>">
+                    <input type="hidden" name="less_number_of_likes" value="<?php if(!empty($less_number_of_likes)) echo $less_number_of_likes; ?>">
+                    <input type="hidden" name="more_number_of_likes" value="<?php if(!empty($more_number_of_likes)) echo $more_number_of_likes; ?>">
+
+                    <div class="pagination-section">
+                        <!-- if product_search submit button either in the original form or in the pagination itself is pressed load the pagination section -->
+                        <?php if(isset($_POST['page_number'])) pagination(); ?>
+                    </div>
+                </form>
+            </div>
         </section>
     </main>
     <script src="JS/signed_in_admin.js"></script>

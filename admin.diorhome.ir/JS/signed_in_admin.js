@@ -12,18 +12,7 @@ const users_inputs = document.querySelectorAll("main>section.users-info>form>div
 const users_search_result_div = document.querySelector("main>section.users-info>div.result");
 
 // ظاهر شدن فیلد سرچ مربوطه در فرم بعد از تیک زدن چک باکس مربوطه در قسمت جستجوی کاربر:
-const user_search_input_appear = event => {
-    for (let i = 0; i < users_top_div_checkboxes.length; i++) {
-        if (event.target === users_top_div_checkboxes[i]) {
-            if (event.target.checked) {
-                users_search_form_divs[i].classList.remove("displayNone");
-            } else {
-                users_search_form_divs[i].classList.add("displayNone");
-            }
-        }
-    }
-};
-const user_search_input_appear2 = () => {
+const user_search_input_appear = () => {
     for (let i = 0; i < users_top_div_checkboxes.length; i++) {
         if (users_top_div_checkboxes[i].checked) {
             users_search_form_divs[i].classList.remove("displayNone");
@@ -33,7 +22,7 @@ const user_search_input_appear2 = () => {
     }
 };
 
-user_search_input_appear2();
+user_search_input_appear();
 // ظاهر شدن دکمه جستجو بعد از فعال شدن حداقل یک فیلد توسط کاربر ادمین:
 const users_form_submit_button_appear = () => {
     let message = "";
@@ -52,26 +41,26 @@ const users_form_submit_button_appear = () => {
 };
 users_form_submit_button_appear();
 
-const function_loader = event => {
-    user_search_input_appear(event);
+const function_loader = () => {
+    user_search_input_appear();
     users_form_submit_button_appear();
 };
 for (let s = 0; s < users_top_div_checkboxes.length; s++) {
     users_top_div_checkboxes[s].addEventListener("change", function_loader);
 }
 
-// ظاهر شدن فیلد سرچ مربوطه در فرم بعد از تیک زدن چک باکس مربوطه در قسمت جستجوی محصول:
-const products_search_input_appear = event => {
+
+const products_search_input_appear = () => {
     for (let i = 0; i < products_search_top_div_boxes.length; i++) {
-        if (event.target === products_search_top_div_boxes[i]) {
-            if (event.target.checked) {
-                products_search_form_divs[i].classList.remove("displayNone");
-            } else {
-                products_search_form_divs[i].classList.add("displayNone");
-            }
+        if (products_search_top_div_boxes[i].checked) {
+            products_search_form_divs[i].classList.remove("displayNone");
+        } else {
+            products_search_form_divs[i].classList.add("displayNone");
         }
     }
 };
+
+products_search_input_appear();
 
 // ظاهر شدن دکمه جستجو بعد از فعال شدن حداقل یک فیلد توسط کاربر ادمین:
 const products_form_submit_button_appear = () => {
@@ -89,9 +78,10 @@ const products_form_submit_button_appear = () => {
         products_search_form_container.style.boxShadow = "none";
     }
 };
+products_form_submit_button_appear();
 
-const function_loader2 = event => {
-    products_search_input_appear(event);
+const function_loader2 = () => {
+    products_search_input_appear();
     products_form_submit_button_appear();
 };
 for (let s = 0; s < products_search_top_div_boxes.length; s++) {
