@@ -112,13 +112,11 @@ if(isset($_GET['product_ID'])){
                 }
             }
             $update_query .= " WHERE product_ID = '$product_ID' ";
-            echo $update_query . "<br>";
             $update_query_result = mysqli_query($database_connection, $update_query);
 
         }else{
             array_push($errors, "<p class='text-center text-primary iranSans'>تمامی فیلد ها ثابت بودند. تغییری ثبت نشد.</p>");
         }
-        print_R($updates);
     }
 
 }else{

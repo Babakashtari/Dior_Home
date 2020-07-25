@@ -1,9 +1,16 @@
 <?php 
 // اگر در سرچ محصولی جستجو شد و یا از طریق منوی پیجینیشن به صفحه بعدی محصولات رفتیم:
 if(isset($_POST['page_number'])){
-    echo "the post array is: <br>";
-    print_r($_POST);
-    echo "<br>";
+    function nolowercase_test_input($data, $regex){
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        if(preg_match($regex, $data)){
+            return $data;
+        }else{
+            return $data = "";
+        }
+    }
     function product_test_input($data, $regex) {
         $data = trim($data);
         $data = stripslashes($data);
@@ -81,20 +88,21 @@ if(isset($_POST['page_number'])){
     if(!empty($_POST['product_description'])){
         $product_description = test_subcategory_input($_POST['product_description'], '/[a-zA-Z0-9ا-يئءیکآ]{1,}/');
         if(!empty($product_description)){
-            array_push($inputs_arr, "product_description='$product_description'");
+            array_push($inputs_arr, "product_description LIKE '%$product_description%'");
             $hidden_inputs['product_description'] = $product_description;
         }else{
             array_push($errors, "توضیحات محصول درست وارد نشده است.");
         }
     }
     if(!empty($_POST['uploader_username'])){
-        $uploader_username = product_test_input($_POST['uploader_username'], '/^[A-Z][a-z0-9]{2,}$/');
+        $uploader_username = nolowercase_test_input($_POST['uploader_username'], '/^[A-Z][a-z0-9]{2,}$/');
         if(!empty($uploader_username)){
             require "../httpdocs/php/database_connection.php";
             if(!$database_connection){
                 die('connection failed:'.mysqli_connect_error());
             }else{
                 $uploader_username_query = "SELECT ID FROM users WHERE username = '$uploader_username' ";
+                // echo 'uploader_username_query is ' . $uploader_username_query;
                 $uploader_ID = mysqli_query($database_connection, $uploader_username_query);
                 if(mysqli_num_rows($uploader_ID)>0){
                     $uploader_ID_arr = mysqli_fetch_assoc($uploader_ID);
@@ -128,7 +136,7 @@ if(isset($_POST['page_number'])){
         }
     }
     if(!empty($_POST['approved'])){
-        $approved = product_test_input($_POST['approved'], '/^YES|NO$/');
+        $approved = nolowercase_test_input($_POST['approved'], '/^YES|NO$/');
         if(!empty($approved)){
             array_push($inputs_arr, "approved='$approved'");
             $hidden_inputs['approved'] = $approved;
@@ -168,7 +176,6 @@ if(isset($_POST['page_number'])){
     }else{
         $query = "SELECT * FROM products";
     }
-    echo " the query is: " . $query;
     // getting the total number of pages:
     require "../httpdocs/php/database_connection.php";
     if(!$database_connection){
@@ -179,12 +186,9 @@ if(isset($_POST['page_number'])){
         echo "<br>"; 
 
         $total_number_of_rows = mysqli_num_rows($query_result);
-        echo "<br> total number of rows is:  $total_number_of_rows ";
         $number_of_rows_per_page = 12;
         $total_number_of_pages = ceil($total_number_of_rows / $number_of_rows_per_page);
-        echo "<br> total number of pages is:  $total_number_of_pages ";
 
-        echo "<br> the post variable array is: " ; print_r($_POST);
         if(isset($_POST['page_number'])){
             $page_number = $_POST['page_number'];
             if($page_number == "جستجو" || $page_number == "<"){
@@ -192,12 +196,10 @@ if(isset($_POST['page_number'])){
             }elseif($page_number == ">"){
                 $page_number = $total_number_of_pages;
             }
-            echo "<br> page number is:  $page_number";
         }
         // show only $number_of_rows_per_page and start from $page_number -1 * number_of_rows_per_page:
         $offset = ($page_number - 1) * $number_of_rows_per_page;
         $query .= " LIMIT $offset , $number_of_rows_per_page ";
-        echo "<br>" . $query;
     }
     function pagination(){
         $page_number = $GLOBALS['page_number'];
@@ -327,7 +329,7 @@ if(isset($_POST['page_number'])){
             $total_number_of_rows = mysqli_num_rows($query_result);
             if($total_number_of_rows<=0){
                 ?>
-                    <div class="col-12 text-center text-danger"><p class="my-4">هیچ نتیجه ای بر اساس معیار های جستجو یافت نشد.</p></div>
+                    <div class="col-12 text-center text-danger"><p class="my-4 iranSans">هیچ نتیجه ای بر اساس معیار های جستجو یافت نشد.</p></div>
                 <?php
             }else{
                 while ($row = mysqli_fetch_array($query_result)) {
