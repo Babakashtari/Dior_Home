@@ -2,6 +2,7 @@
 <?php require "php/explorer_warning.php"; ?>
 <?php require 'php/user_search_analysis.php'; ?>
 <?php require 'php/products_search_analysis.php'; ?>
+<?php require 'php/signed_in_admin_general_info.php'; ?>
 
 <?php 
     session_start();
@@ -53,7 +54,56 @@
     <title>Admin Panel</title>
 </head>
 <body>
-    <main class="p-md-3">
+    <main class=" p-md-3">
+        <div class="logo-section text-center py-1 py-3">
+            <img src="https://diorhome.ir/images/Dior_logo.jpg" alt="لوگوی پیشگامان پودینه آتا">
+            <p class="text-dark iranSans p-2 m-0">
+                <?php echo $_SESSION['username']; ?> عزیز به پنل ادمین خوش آمدید. برای خروج <a class="text-danger" href="php/session_destroyer.php">اینجا</a> کلیک کنید.
+            </p>
+        </div>
+        <table class="users-general-info table table-striped iranSans text-center col-10 mx-auto border border-primary">
+            <thead class="bg-dark text-light">
+                <tr>
+                    <td colspan="4">تعداد کاربران</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-3">کل</td>
+                    <td class="col-3">ادمین</td>
+                    <td class="col-3">تاییدشده</td>
+                    <td class="col-3">مسدودشده</td>
+                </tr>
+                <tr>
+                    <td class="col-3"><?php echo $number_of_users; ?></td>
+                    <td class="col-3"><?php echo $number_of_admin_users; ?></td>
+                    <td class="col-3"><?php echo $number_of_not_verified_users; ?></td>
+                    <td class="col-3"><?php echo $number_of_disabled_users; ?></td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="products-general-info table table-striped iranSans text-center col-10 mx-auto border border-primary">
+            <thead class="bg-dark text-light">
+                <tr>
+                    <td colspan="4">درباره محصولات</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-3">تعداد کل</td>
+                    <td class="col-3">کالای خواب</td>
+                    <td class="col-3">کالای اتاق پذیرایی</td>
+                    <td class="col-3">کالای فرش</td>
+                </tr>
+                <tr>
+                    <td class="col-3"><?php echo $number_of_products; ?></td>
+                    <td class="col-3"><?php echo $number_of_sleeping_products; ?></td>
+                    <td class="col-3"><?php echo $number_of_living_room_products; ?></td>
+                    <td class="col-3"><?php echo $number_of_carpet_products; ?></td>
+                </tr>
+            </tbody>
+        </table>
+
         <section class="users-info">
             <h3 class="iranSans">جستجوی کاربران</h3>
             <div class="search_criteria row text-right p-1">

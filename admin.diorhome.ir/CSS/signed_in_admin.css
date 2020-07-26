@@ -71,6 +71,11 @@ input {
     color: black !important;
 }
 
+main>table.users-general-info,
+main>table.products-general-info {
+    direction: rtl;
+}
+
 main>section {
     padding: 2rem;
     box-shadow: 1px 1px 8px black;
@@ -175,6 +180,11 @@ main>section.products-info>form>div.form-group>textarea {
     height: 60px;
 }
 
+main>div.logo-section>img {
+    border-radius: 50%;
+    width: 10%;
+}
+
 @media screen and (max-width: 840px) {
     main>section.users-info>div.result>form>div>button {
         font-size: 0.8rem;
@@ -210,6 +220,12 @@ main>section.products-info>form>div.form-group>textarea {
 
     main>section.users-info>div.search_criteria>h5 {
         font-size: 1rem;
+    }
+}
+
+@media screen and (max-width:350px) {
+    main>section.products-info>div.search_criteria>div {
+        font-size: 1rem !important;
     }
 }
 
@@ -303,5 +319,13 @@ div.card>div.card-body>table tr:last-of-type {
 @media screen and (max-width: 700px) {
     div.card>div.card-body table {
         height: 10rem;
+    }
+}
+
+@media screen and (max-width: 442px) {
+
+    main>table.products-general-info,
+    main>table.users-general-info {
+        font-size: 0.75rem;
     }
 }

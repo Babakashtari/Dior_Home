@@ -248,7 +248,7 @@ function footer_generator(){
                 <ul>
                     <li class="text-right py-2"><p class="text-light text-right"><i class="fas fa-address-card pl-2"></i>اردبیل، ميدان ايثار، شهرك صنعتی فاز <span class="Yekan">1</span>  خيابان پنج شرقی پيشگامان پودينه آتا</p></li>
                     <li class="text-right py-2 "><p class="text-light text-right"><i class="fas fa-phone pl-2"></i> <span class="Yekan">55637991 </span>- <span class="Yekan">09122084055 </span></p></li>
-                    <li class="text-right py-2"><p class="text-light text-right"><i class="fas fa-envelope pl-2"></i>factory@diorhome.com</p></li>
+                    <li class="text-right py-2"><p class="text-light text-right"><i class="fas fa-envelope pl-2"></i>support@diorhome.ir</p></li>
                 </ul>
             </div>
             <div class="col-12 col-md-6">
@@ -256,7 +256,7 @@ function footer_generator(){
                 <ul>
                     <li class="text-right py-2"><p class="text-light text-right"><i class="fas fa-address-card pl-2"></i>تهران، بازار بزرگ، سرای آزادی، طبقه اول پلاک <span class="Yekan">48</span></p></li>
                     <li class="text-right py-2 "><p class="text-light text-right"><i class="fas fa-phone pl-2"></i> <span class="Yekan">55615148 </span>- <span class="Yekan"><span class="Yekan">55983072</span></span> - <span class="Yekan"><span class="Yekan"><span class="Yekan"><span class="Yekan">09121158204</span></span></span></span></p></li>
-                    <li class="text-right py-2"><p class="text-light text-right"><i class="fas fa-envelope pl-2"></i>burreau@diorhome.com</p></li>
+                    <li class="text-right py-2"><p class="text-light text-right"><i class="fas fa-envelope pl-2"></i>info@diorhome.ir</p></li>
                 </ul>
             </div>
         </div>
