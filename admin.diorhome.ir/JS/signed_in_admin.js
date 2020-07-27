@@ -80,9 +80,24 @@ const products_form_submit_button_appear = () => {
 };
 products_form_submit_button_appear();
 
-const function_loader2 = () => {
+const products_value_checker = (e) => {
+    if (!e.target.checked) {
+        const checkbox_name = event.target.getAttribute('name');
+        for (let i = 0; i < products_search_top_div_boxes.length; i++) {
+            const input_field_name = products_search_form_divs[i].children[0].getAttribute('name');
+            if (checkbox_name === input_field_name) {
+                products_search_form_divs[i].children[0].value = "";
+            }
+        }
+
+    }
+}
+
+const function_loader2 = (event) => {
     products_search_input_appear();
     products_form_submit_button_appear();
+    const e = event;
+    products_value_checker(e);
 };
 for (let s = 0; s < products_search_top_div_boxes.length; s++) {
     products_search_top_div_boxes[s].addEventListener("change", function_loader2);
