@@ -41,14 +41,30 @@ const users_form_submit_button_appear = () => {
 };
 users_form_submit_button_appear();
 
-const function_loader = () => {
+const users_value_checker = (e) => {
+    if (!e.target.checked) {
+        const checkbox_name = e.target.getAttribute("name");
+        for (let i = 0; i < users_top_div_checkboxes.length; i++) {
+            const input_field_name = users_search_form_divs[i].children[0].getAttribute("name");
+            if (checkbox_name === input_field_name) {
+                users_search_form_divs[i].children[0].value = "";
+                users_search_form_divs[i].children[0].classList.remove("passed");
+                users_search_form_divs[i].children[0].classList.remove("failed");
+                const error_message = users_search_form_divs[i].querySelector("p");
+                error_message.classList.add("displayNone");
+            }
+        }
+    }
+};
+
+const function_loader = (event) => {
     user_search_input_appear();
     users_form_submit_button_appear();
+    users_value_checker(event);
 };
 for (let s = 0; s < users_top_div_checkboxes.length; s++) {
     users_top_div_checkboxes[s].addEventListener("change", function_loader);
 }
-
 
 const products_search_input_appear = () => {
     for (let i = 0; i < products_search_top_div_boxes.length; i++) {
@@ -82,22 +98,24 @@ products_form_submit_button_appear();
 
 const products_value_checker = (e) => {
     if (!e.target.checked) {
-        const checkbox_name = event.target.getAttribute('name');
+        const checkbox_name = event.target.getAttribute("name");
         for (let i = 0; i < products_search_top_div_boxes.length; i++) {
-            const input_field_name = products_search_form_divs[i].children[0].getAttribute('name');
+            const input_field_name = products_search_form_divs[i].children[0].getAttribute("name");
             if (checkbox_name === input_field_name) {
                 products_search_form_divs[i].children[0].value = "";
+                products_search_form_divs[i].children[0].classList.remove("passed");
+                products_search_form_divs[i].children[0].classList.remove("failed");
+                // const error_message = products_search_form_divs[i].querySelector("p");
+                // error_message.classList.add("displayNone");
             }
         }
-
     }
-}
+};
 
 const function_loader2 = (event) => {
     products_search_input_appear();
     products_form_submit_button_appear();
-    const e = event;
-    products_value_checker(e);
+    products_value_checker(event);
 };
 for (let s = 0; s < products_search_top_div_boxes.length; s++) {
     products_search_top_div_boxes[s].addEventListener("change", function_loader2);
