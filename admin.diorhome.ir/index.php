@@ -54,7 +54,7 @@
     <main class=" row d-flex justify-content-center align-items-center">
         <section class="col-7 col-sm-6 col-md-5 col-lg-4 col-xl-3">
             <div class="text-center py-1 pt-3">
-                <img src="https://diorhome.ir/images/Dior_logo.jpg" alt="لوگوی پیشگامان پودینه آتا">
+                <img src="https://diorhome.ir/images/Dior_logo.jpg" alt="لوگوی پیشگامان پودینه">
             </div>
             <h5 class="iranSans text-center px-1 py-2">پنل ادمین</h5>
             <form class="pb-2" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">

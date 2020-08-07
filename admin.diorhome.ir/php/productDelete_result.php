@@ -1,8 +1,9 @@
 <?php
+print_r($_POST);
 $results = [];
-// when admin user came to this page:
-    if(isset($_GET['product_ID'])){
-        $product_ID = $_GET['product_ID'];
+// اگر کاربر ادمین از صفحه جستجو به این صفحه آمد یا بر روی گزینه دیلیت کلیک کرد:
+    if(isset($_POST['go_to_delete_page']) || isset($_POST['delete'])){
+        $product_ID = $_POST['product_ID'];
         require "../httpdocs/php/database_connection.php";
         if(!$database_connection){
             die('connection failed:'.mysqli_connect_error());

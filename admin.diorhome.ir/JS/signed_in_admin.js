@@ -7,8 +7,8 @@ const users_search_form_container = document.querySelector("main>section.users-i
 const products_search_form_container = document.querySelector("main>section.products-info>form");
 const products_search_top_div_boxes = document.querySelectorAll('main>section.products-info>div.search_criteria>div>span>input[type="checkbox"]');
 const products_search_form_divs = document.querySelectorAll("main>section.products-info>form>div.form-group");
-const users_error_messages = document.querySelectorAll("main>section.users-info>form>div.form-group>p");
-const users_inputs = document.querySelectorAll("main>section.users-info>form>div.form-group>input");
+const error_messages = document.querySelectorAll("div.form-group>p");
+const inputs = document.querySelectorAll("div.form-group>input");
 const users_search_result_div = document.querySelector("main>section.users-info>div.result");
 
 // ظاهر شدن فیلد سرچ مربوطه در فرم بعد از تیک زدن چک باکس مربوطه در قسمت جستجوی کاربر:
@@ -122,22 +122,22 @@ for (let s = 0; s < products_search_top_div_boxes.length; s++) {
 }
 
 const validate = (regex, input) => {
-    for (let i = 0; i < users_error_messages.length; i++) {
-        if (input === users_inputs[i]) {
+    for (let i = 0; i < error_messages.length; i++) {
+        if (input === inputs[i]) {
             if (input.value === "") {
                 input.classList.remove("passed");
                 input.classList.remove("failed");
-                users_error_messages[i].classList.add("displayNone");
+                error_messages[i].classList.add("displayNone");
             } else {
                 const validation_result = regex.test(input.value);
                 if (validation_result) {
                     input.classList.add("passed");
                     input.classList.remove("failed");
-                    users_error_messages[i].classList.add("displayNone");
+                    error_messages[i].classList.add("displayNone");
                 } else {
                     input.classList.add("failed");
                     input.classList.remove("passed");
-                    users_error_messages[i].classList.remove("displayNone");
+                    error_messages[i].classList.remove("displayNone");
                 }
             }
         }

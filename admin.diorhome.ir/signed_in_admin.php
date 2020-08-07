@@ -16,9 +16,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="content-security-policy" content="default-src 'none'; 
-        style-src 'self' 'unsafe-inline'; 
-        script-src 'self' 'unsafe-inline';
-        img-src 'self' https://diorhome.ir;
+        style-src 'self' 'unsafe-inline' https://www.gstatic.com; 
+        script-src 'self' 'unsafe-inline'  https://www.gstatic.com;
+        img-src 'self' https://diorhome.ir https://www.gstatic.com;
         font-src 'self' diorhome.ir;
         frame-src https://www.google.com;
         "  >
@@ -49,7 +49,112 @@
     <link rel="stylesheet" href="CSS/Normalizer.css">
     <link rel="stylesheet" href="CSS/fonts.css">
     <link rel="stylesheet" href="CSS/explorer_warning.css">
+    <link rel="stylesheet" href="CSS/google_charts_styles.css">
     <link rel="stylesheet" href="CSS/signed_in_admin.css">
+
+
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {
+          'packages':['corechart']
+      });
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawPieChart);
+      google.charts.setOnLoadCallback(drawAreaChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawPieChart() {
+
+        // Create the data table.
+        var data = new google.visualization.arrayToDataTable([
+          ['کاربر', 'تعداد'],
+          ['ادمین',     2],
+          ['عضوخبرنامه',  6],
+          ['تایید نشده',      2],
+          ['مسدود', 1],
+          ['وبسایت داران',    3]
+        ]);
+
+        // Set chart options
+        var options = {
+            legend:{
+                position:'labeled'
+            },
+            legendTextStyle:{
+                    color:'blue',
+                    fontSize:15,
+                    fontName: 'iranSans'
+            },
+            title:'آمار کاربران پیشگامان پودینه آتا',
+            titleTextStyle:{ 
+                color: 'gray',
+                fontName: 'iranSans',
+                fontSize: 15,
+                bold: true,
+                width:"100%"
+            },
+            is3D: true,
+            // pieHole: 0.4,
+            pieSliceText: 'percentage',
+            // backgroundColor: 'red',
+            slices: {  
+                2: {offset: 0.2},
+                3: {offset: 0.4},
+                // 14: {offset: 0.4},
+                // 15: {offset: 0.5},
+            },
+            // pieStartAngle: 50,
+            tooltip:{
+                textStyle:{
+                    color:"blue",
+                    fontName:"iranSans"
+                },
+                showColorCode:true,
+                isHTML:true,
+                ignoreBounds:true
+
+            },
+            // width:650,
+            // height:600,
+            colors:['blue','lightgray','orange','red', 'rgb(0, 128, 0)'],
+            chartArea: {
+                left:'25%',
+                top:20,
+                width: '50%',
+                height:150
+            }
+        }
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('pie-chart'));
+        chart.draw(data, options);
+      }
+      function drawAreaChart(){
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses'],
+          ['2013',  1000,      400],
+          ['2014',  1170,      460],
+          ['2015',  660,       1120],
+          ['2016',  1030,      540]
+        ]);
+
+        var options = {
+          title: 'Company Performance',
+          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('AreaChart'));
+        chart.draw(data, options);
+
+      }
+    </script>
 
     <title>Admin Panel</title>
 </head>
@@ -61,6 +166,12 @@
                 <?php echo $_SESSION['username']; ?> عزیز به پنل ادمین خوش آمدید. برای خروج <a class="text-danger" href="php/session_destroyer.php">اینجا</a> کلیک کنید.
             </p>
         </div>
+         <!--Divs that will hold the charts-->
+         <section class="charts-section row mx-0 my-2 mb-4">
+            <div class="col-12 col-md-6 p-2" id="pie-chart"></div>
+            <div class="col-12 col-md-6 p-2" id="AreaChart"></div>
+         </section>
+
         <table class="users-general-info table table-striped iranSans text-center col-10 mx-auto border border-primary">
             <thead class="bg-dark text-light">
                 <tr>
@@ -69,16 +180,16 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="col-3">کل</td>
-                    <td class="col-3">ادمین</td>
-                    <td class="col-3">تاییدشده</td>
-                    <td class="col-3">مسدودشده</td>
+                    <td class="">تعداد کل</td>
+                    <td class="">ادمین</td>
+                    <td class="">تاییدشده</td>
+                    <td class="">مسدودشده</td>
                 </tr>
                 <tr>
-                    <td class="col-3"><?php echo $number_of_users; ?></td>
-                    <td class="col-3"><?php echo $number_of_admin_users; ?></td>
-                    <td class="col-3"><?php echo $number_of_not_verified_users; ?></td>
-                    <td class="col-3"><?php echo $number_of_disabled_users; ?></td>
+                    <td class=""><?php echo $number_of_users; ?></td>
+                    <td class=""><?php echo $number_of_admin_users; ?></td>
+                    <td class=""><?php echo $number_of_not_verified_users; ?></td>
+                    <td class=""><?php echo $number_of_disabled_users; ?></td>
                 </tr>
             </tbody>
         </table>
@@ -90,16 +201,16 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="col-3">تعداد کل</td>
-                    <td class="col-3">کالای خواب</td>
-                    <td class="col-3">کالای اتاق پذیرایی</td>
-                    <td class="col-3">کالای فرش</td>
+                    <td class="">تعداد کل</td>
+                    <td class="">کالای خواب</td>
+                    <td class="">کالای اتاق پذیرایی</td>
+                    <td class="">کالای فرش</td>
                 </tr>
                 <tr>
-                    <td class="col-3"><?php echo $number_of_products; ?></td>
-                    <td class="col-3"><?php echo $number_of_sleeping_products; ?></td>
-                    <td class="col-3"><?php echo $number_of_living_room_products; ?></td>
-                    <td class="col-3"><?php echo $number_of_carpet_products; ?></td>
+                    <td class=""><?php echo $number_of_products; ?></td>
+                    <td class=""><?php echo $number_of_sleeping_products; ?></td>
+                    <td class=""><?php echo $number_of_living_room_products; ?></td>
+                    <td class=""><?php echo $number_of_carpet_products; ?></td>
                 </tr>
             </tbody>
         </table>
@@ -113,17 +224,15 @@
             <form class="row my-2 p-2 text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                 <div class="form-group col-12 displayNone">
                     <input type="text" class="form-control" name="first_name" id="first_name" value="<?php if(isset($_POST['first_name']) && !empty($_POST['first_name'])){echo htmlentities($_POST['first_name']) ;} ?>" placeholder="نام" oninput="validate(/^[A-Z][a-z]{2,}$/, this)">
-                    <p class="displayNone text-danger iranSans">نام باید به لاتين باشد با حرف بزنگ آغاز شود و حداقل 3 کاراکتر داشته باشد.</p>
+                    <p class="displayNone text-danger iranSans">نام باید به لاتين باشد با حرف بزرگ آغاز شود و حداقل 3 کاراکتر داشته باشد.</p>
                 </div>
                 <div class="form-group col-12 displayNone">
                     <input type="text" class="form-control" name="last_name" id="last_name" value="<?php if(isset($_POST['last_name']) && !empty($_POST['last_name'])){echo htmlentities($_POST['last_name']) ;} ?>" placeholder="نام خانوادگی" oninput="validate(/^[A-Z][a-z]{2,}$/, this)">
-                    <p class="displayNone text-danger iranSans">نام خانوادگی باید با حروف بزنگ آغاز شود و حداقل 3 کاراکتر داشته باشد.</p>
-
+                    <p class="displayNone text-danger iranSans">نام خانوادگی باید با حروف بزرگ آغاز شود و حداقل 3 کاراکتر داشته باشد.</p>
                 </div>
                 <div class="form-group col-12 displayNone">
-                    <input type="number" class="form-control" name="age" id="age" value="<?php if(isset($_POST['age']) && !empty($_POST['age'])){echo htmlentities($_POST['age']) ;} ?>" placeholder="سن" oninput="validate(/^(([1][2-9])|([2-7][0-9]))$/, this)">
+                    <input type="text" class="form-control" name="age" id="age" value="<?php if(isset($_POST['age']) && !empty($_POST['age'])){echo htmlentities($_POST['age']) ;} ?>" placeholder="سن" oninput="validate(/^(([1][2-9])|([2-7][0-9]))$/, this)">
                     <p class="displayNone text-danger iranSans">تنها اعداد بین 12 و 80 قابل قبول هستند.</p>
-
                 </div>
                 <div class="form-group col-12 displayNone">
                     <select class="p-1 col-12 iranSans" name="gender" id="gender" value="<?php if(isset($_POST['gender']) && !empty($_POST['gender'])){echo htmlentities($_POST['gender']) ;} ?>" onchange="validate(/^(male)|(female)$/, this)">
@@ -141,8 +250,7 @@
                     <p class='displayNone text-danger iranSans'>آدرس ایمیل معتبر نیست.</p>
                 </div>
                 <div class="form-group col-12 displayNone">
-                    <input type="text" class="form-control" name="home_address" id="home_address" value="<?php if(isset($_POST['home_address']) && !empty($_POST['home_address'])){echo htmlentities($_POST['home_address']) ;} ?>" placeholder="آدرس منزل" oninput="validate(/.*/, this)">
-                    <p class="displayNone text-danger iranSans"></p>
+                    <textarea class="form-control" name="home_address" id="home_address" placeholder="آدرس منزل"><?php if(isset($_POST['home_address']) && !empty($_POST['home_address'])){echo htmlentities($_POST['home_address']) ;} ?></textarea>
                 </div>
                 <div class="form-group col-12 displayNone">
                     <input type="text" class="form-control" name="landline" id="landline" value="<?php if(isset($_POST['landline']) && !empty($_POST['landline'])){echo htmlentities($_POST['landline']) ;} ?>" placeholder="تلفن ثابت" oninput="validate(/^0[0-9]{7,}$/, this)">
@@ -220,7 +328,8 @@
             </div>
             <form class="row my-2 p-2 text-center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                 <div class="form-group col-12 displayNone">
-                    <input type="text" class="form-control" id="product_name" name="product_name" placeholder="نام محصول" value="<?php if(isset($product_name) && !empty($product_name)) echo $product_name; ?>">
+                    <input type="text" class="form-control" id="product_name" name="product_name" placeholder="نام محصول" value="<?php if(isset($product_name) && !empty($product_name)) echo $product_name; ?>" oninput="validate(/^[a-zA-Z\d\s]{3,15}$/, this)">
+                    <p class='displayNone text-danger iranSans text-right'>نام محصول باید یک کلمه ای و بین 3 تا 15 کاراکتر باشد.</p>
                 </div>
                 <div class="form-group col-12 displayNone">
                     <select class="form-control" id="product_dimensions" name="product_dimensions">
@@ -257,13 +366,16 @@
                     <textarea class="p-1" name="product_description" id="product_description" placeholder="توضیحات مربوط به محصول"><?php if(isset($product_description) && !empty($product_description)) echo $product_description; ?></textarea>
                 </div>
                 <div class="form-group col-12 displayNone">
-                    <input type="text" class="form-control" id="uploader_username" name="uploader_username" placeholder="نام شخص ارسال کننده" value="<?php if(isset($uploader_username) && !empty($uploader_username)) echo $uploader_username; ?>">
+                    <input type="text" class="form-control" id="uploader_username" name="uploader_username" placeholder="نام شخص ارسال کننده" value="<?php if(isset($uploader_username) && !empty($uploader_username)) echo $uploader_username; ?>" oninput="validate(/^[A-Z][a-z0-9]{2,}$/, this)">
+                    <p class='displayNone text-danger iranSans text-right'>نام کاربر آپلود کننده باید به لاتین باشد، حداقل 3 حرف داشته باشد و با حروف بزرگ آغاز شود.</p>
                 </div>
                 <div class="form-group col-12 displayNone">
-                    <input type="text" class="form-control" id="before_upload_date" name="before_upload_date" placeholder="ارسال قبل از تاریخ ex: 22 Jan 2000" value="<?php if(isset($before_upload_date) && !empty($before_upload_date)) echo $before_upload_date; ?>">
+                    <input type="text" class="form-control" id="before_upload_date" name="before_upload_date" placeholder="ارسال قبل از تاریخ ex: 22 Jan 2000" value="<?php if(isset($before_upload_date) && !empty($before_upload_date)) echo $before_upload_date; ?>" oninput="validate(/^[a-zA-Z\d]{3,}$/, this)">
+                    <p class='displayNone text-danger iranSans text-right'>به لاتین زمان بنویسید مانند : yesterday, tomorrow, today, February 25 2020,...</p>
                 </div>
                 <div class="form-group col-12 displayNone">
-                    <input type="text" class="form-control" id="after_upload_date" name="after_upload_date" placeholder="ارسال بعد از تاریخ ex: 22 Jan 2000" value="<?php if(isset($after_upload_date) && !empty($after_upload_date)) echo $after_upload_date; ?>">
+                    <input type="text" class="form-control" id="after_upload_date" name="after_upload_date" placeholder="ارسال بعد از تاریخ ex: 22 Jan 2000" value="<?php if(isset($after_upload_date) && !empty($after_upload_date)) echo $after_upload_date; ?>" oninput="validate(/^[a-zA-Z\d]{3,}$/, this)">
+                    <p class='displayNone text-danger iranSans text-right'>به لاتین زمان بنویسید مانند : yesterday, tomorrow, today, February 25 2020,...</p>
                 </div>
                 <div class="form-group col-12 displayNone">
                     <select type="text" class="form-control" id="approved" name="approved">
@@ -273,18 +385,19 @@
                     </select>
                 </div>
                 <div class="form-group col-12 displayNone">
-                    <input type="text" class="form-control" id="less_number_of_likes" name="less_number_of_likes" placeholder="پست با لایک کمتر از ex:100" value="<?php if(isset($less_number_of_likes) && !empty($less_number_of_likes)) echo $less_number_of_likes; ?>">
+                    <input type="text" class="form-control" id="less_number_of_likes" name="less_number_of_likes" placeholder="پست با لایک کمتر از ex:100" value="<?php if(isset($less_number_of_likes) && !empty($less_number_of_likes)) echo $less_number_of_likes; ?>" oninput="validate(/^[\d]{1,6}$/, this)">
+                    <p class='displayNone text-danger iranSans text-right'>لطفا فقط عدد وارد کنید. تا 6 رقم.</p>
                 </div>
                 <div class="form-group col-12 displayNone">
-                    <input type="text" class="form-control" id="more_number_of_likes" name="more_number_of_likes" placeholder="پست با لایک بیشتر از ex:100" value="<?php if(isset($more_number_of_likes) && !empty($more_number_of_likes)) echo $more_number_of_likes; ?>">
+                    <input type="text" class="form-control" id="more_number_of_likes" name="more_number_of_likes" placeholder="پست با لایک بیشتر از ex:100" value="<?php if(isset($more_number_of_likes) && !empty($more_number_of_likes)) echo $more_number_of_likes; ?>" oninput="validate(/^[\d]{1,6}$/, this)">
+                    <p class='displayNone text-danger iranSans text-right'>لطفا فقط عدد وارد کنید. تا 6 رقم</p>
                 </div>
                 <input type="submit" class="iranSans btn btn-primary displayNone" name="page_number" value="جستجو"></input>
             </form> 
             <div class="result container-fluid">
-                <div class="row justify-content-center <?php if(isset($_POST['page_number'])) echo "py-5"; ?>">
-                    <?php if(isset($_POST['page_number'])) card_generators(); ?>
+                <div class="row justify-content-center <?php if(isset($_POST['page_number']) || isset($_POST['back_to_signed_in_admin_page'])) echo "py-5"; ?>">
+                    <?php if(isset($_POST['page_number']) || isset($_POST['back_to_signed_in_admin_page'])) card_generators(); ?>
                 </div>
-
                 <!-- pagination section: -->
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                     <input type="hidden" name="product_name" value="<?php if(!empty($product_name)) echo $product_name; ?>">
@@ -301,7 +414,7 @@
 
                     <div class="pagination-section">
                         <!-- if product_search submit button either in the original form or in the pagination itself is pressed load the pagination section -->
-                        <?php if(isset($_POST['page_number'])) pagination(); ?>
+                        <?php if(isset($_POST['page_number']) || isset($_POST['back_to_signed_in_admin_page'])) pagination(); ?>
                     </div>
                 </form>
             </div>

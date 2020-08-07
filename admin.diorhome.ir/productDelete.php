@@ -63,59 +63,92 @@
         </div>
         <div class="product-result col-xs-12 col-sm-6 mx-auto  col-lg-4 col-xl-3 p-3" >
             <div class="card border border-primary" itemscope itemtype="https://schema.org/Product">
-            <img class="card-img-top" src="https://diorhome.ir/<?php echo $product_directory; ?>" alt="<?php echo $product_description; ?>" itemprop="image">
-            <div class="card-body text-center ">
-                <h6 class="card-title "><span class="text-gray" itemprop="name"><?php echo ucfirst($product_name); ?></span></h6>
-                <table class="iranSans" itemprop="review" itemscope itemtype="http://schema.org/Review">
-                    <tr>
-                        <td><p class="card-text text-right" >ابعاد:</p></td>
-                        <td><p><span class="text-gray">
-                        <?php
-                            if(!empty($product_dimensions )){
-                                if(empty($product_dimensions) || $product_dimensions == "all"){
-                                    echo 'همه ابعاد';
-                                }elseif($product_dimensions == 'single'){
-                                    echo 'تک نفره';
-                                }elseif($product_dimensions == 'double'){
-                                    echo 'دونفره';
-                                }
-                            }
-                        ?>
-                        </span></p></td>
-                    </tr>
-                    <tr>
-                        <td><p class="card-text text-right">دسته بندی:</p></td><td><p><span class="text-gray" itemprop="category">
+                <img class="card-img-top" src="https://diorhome.ir/<?php echo $product_directory; ?>" alt="<?php echo $product_description; ?>" itemprop="image">
+                <div class="card-body text-center ">
+                    <h6 class="card-title "><span class="text-gray" itemprop="name"><?php echo ucfirst($product_name); ?></span></h6>
+                    <table class="iranSans" itemprop="review" itemscope itemtype="http://schema.org/Review">
+                        <tr>
+                            <td><p class="card-text text-right" >ابعاد:</p></td>
+                            <td><p><span class="text-gray">
                             <?php
-                                if($product_category == "sleeping_products"){
-                                    echo "کالای خواب";
-                                } elseif($product_category == "living_room_products"){
-                                    echo "کالای اتاق پذیرایی";
-                                }elseif($product_category == "carpet_products"){
-                                    echo "فرش";
+                                if(!empty($product_dimensions )){
+                                    if(empty($product_dimensions) || $product_dimensions == "all"){
+                                        echo 'همه ابعاد';
+                                    }elseif($product_dimensions == 'single'){
+                                        echo 'تک نفره';
+                                    }elseif($product_dimensions == 'double'){
+                                        echo 'دونفره';
+                                    }
                                 }
                             ?>
-                        </span></p></td>
-                    </tr>
-                    <tr>
-                        <td><p class="card-text text-right">زیرمجموعه:</p></td><td><p><span class="text-gray"><?php echo $product_subcategory; ?></span></p></td>
-                    </tr>
-                    <tr>
-                        <td><p class="card-text text-right">توضیحات:</p></td><td><p><span class="text-gray" itemprop="description">
-                            <?php
-                                if(!empty($product_description)){
-                                    echo $product_description; 
-                                }else{
-                                    echo 'ندارد';
-                                }
-                            ?>
-                        </span></p></td>
-                    </tr>
-                </table>
-                    <form action="deleteMessage.php" method="POST">
-                        <input type="hidden" name="product_ID" value="<?php if(isset($product_ID)) echo $product_ID; ?>">
-                        <button type="submit" class="btn btn-danger mt-4 iranSans" name="delete">مطمئنم</button>
-                        <a href="signed_in_admin.php" class="btn btn-primary mt-4 iranSans">بیخیال </a>
-                    </form>
+                            </span></p></td>
+                        </tr>
+                        <tr>
+                            <td><p class="card-text text-right">دسته بندی:</p></td><td><p><span class="text-gray" itemprop="category">
+                                <?php
+                                    if($product_category == "sleeping_products"){
+                                        echo "کالای خواب";
+                                    } elseif($product_category == "living_room_products"){
+                                        echo "کالای اتاق پذیرایی";
+                                    }elseif($product_category == "carpet_products"){
+                                        echo "فرش";
+                                    }
+                                ?>
+                                </span></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><p class="card-text text-right">زیرمجموعه:</p></td><td><p><span class="text-gray"><?php echo $product_subcategory; ?></span></p></td>
+                        </tr>
+                        <tr>
+                            <td><p class="card-text text-right">توضیحات:</p></td><td><p><span class="text-gray" itemprop="description">
+                                <?php
+                                    if(!empty($product_description)){
+                                        echo $product_description; 
+                                    }else{
+                                        echo 'ندارد';
+                                    }
+                                ?>
+                                </span></p>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="row">
+                        <form class="col-6" action="deleteMessage.php" method="POST">
+                            <!-- آیدی محصول مورد نظر جهت دیلیت: -->
+                            <input type="hidden" name="product_ID" value="<?php if(isset($product_ID)) echo $product_ID; ?>">
+                            <!-- اطلاعات فیلد های سرچ محصولات: -->
+                            <input type="hidden" name="search_page_number" value="<?php if(isset($_POST['search_page_number'])) echo $_POST['search_page_number']; ?>">
+                            <input type="hidden" name="search_product_name" value="<?php if(isset($_POST['search_product_name'])) echo $_POST['search_product_name']; ?>">
+                            <input type="hidden" name="search_product_dimensions" value="<?php if(isset($_POST['search_product_dimensions'])) echo $_POST['search_product_dimensions']; ?>">
+                            <input type="hidden" name="search_product_category" value="<?php if(isset($_POST['search_product_category'])) echo $_POST['search_product_category']; ?>">
+                            <input type="hidden" name="search_product_subcategory" value="<?php if(isset($_POST['search_product_subcategory'])) echo $_POST['search_product_subcategory']; ?>">
+                            <input type="hidden" name="search_product_description" value="<?php if(isset($_POST['search_product_description'])) echo $_POST['search_product_description']; ?>">
+                            <input type="hidden" name="search_uploader_username" value="<?php if(isset($_POST['search_uploader_username'])) echo $_POST['search_uploader_username']; ?>">
+                            <input type="hidden" name="search_before_upload_date" value="<?php if(isset($_POST['search_before_upload_date'])) echo $_POST['search_before_upload_date']; ?>">
+                            <input type="hidden" name="search_after_upload_date" value="<?php if(isset($_POST['search_after_upload_date'])) echo $_POST['search_after_upload_date']; ?>">
+                            <input type="hidden" name="search_approved" value="<?php if(isset($_POST['search_approved'])) echo $_POST['search_approved']; ?>">
+                            <input type="hidden" name="search_less_number_of_likes" value="<?php if(isset($_POST['search_less_number_of_likes'])) echo $_POST['search_less_number_of_likes']; ?>">
+                            <input type="hidden" name="search_more_number_of_likes" value="<?php if(isset($_POST['search_more_number_of_likes'])) echo $_POST['search_more_number_of_likes']; ?>">
+                            <button type="submit" class="btn btn-danger mt-4 iranSans" name="delete">مطمئنم</button>
+                        </form>
+                        <form action="signed_in_admin.php" method="POST" class="col-6">
+                            <!-- اطلاعات فیلد های سرچ محصولات: -->
+                            <input type="hidden" name="search_page_number" value="<?php if(isset($_POST['search_page_number'])) echo $_POST['search_page_number']; ?>">
+                            <input type="hidden" name="search_product_name" value="<?php if(isset($_POST['search_product_name'])) echo $_POST['search_product_name']; ?>">
+                            <input type="hidden" name="search_product_dimensions" value="<?php if(isset($_POST['search_product_dimensions'])) echo $_POST['search_product_dimensions']; ?>">
+                            <input type="hidden" name="search_product_category" value="<?php if(isset($_POST['search_product_category'])) echo $_POST['search_product_category']; ?>">
+                            <input type="hidden" name="search_product_subcategory" value="<?php if(isset($_POST['search_product_subcategory'])) echo $_POST['search_product_subcategory']; ?>">
+                            <input type="hidden" name="search_product_description" value="<?php if(isset($_POST['search_product_description'])) echo $_POST['search_product_description']; ?>">
+                            <input type="hidden" name="search_uploader_username" value="<?php if(isset($_POST['search_uploader_username'])) echo $_POST['search_uploader_username']; ?>">
+                            <input type="hidden" name="search_before_upload_date" value="<?php if(isset($_POST['search_before_upload_date'])) echo $_POST['search_before_upload_date']; ?>">
+                            <input type="hidden" name="search_after_upload_date" value="<?php if(isset($_POST['search_after_upload_date'])) echo $_POST['search_after_upload_date']; ?>">
+                            <input type="hidden" name="search_approved" value="<?php if(isset($_POST['search_approved'])) echo $_POST['search_approved']; ?>">
+                            <input type="hidden" name="search_less_number_of_likes" value="<?php if(isset($_POST['search_less_number_of_likes'])) echo $_POST['search_less_number_of_likes']; ?>">
+                            <input type="hidden" name="search_more_number_of_likes" value="<?php if(isset($_POST['search_more_number_of_likes'])) echo $_POST['search_more_number_of_likes']; ?>">
+                            <button type="submit" class="btn btn-primary mt-4 iranSans" name="back_to_signed_in_admin_page">بازگشت</button>
+                        </form>
+                    </div>
                 </div>
             </div>    
         </div>

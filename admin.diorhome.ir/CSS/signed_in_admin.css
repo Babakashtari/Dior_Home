@@ -9,6 +9,7 @@
     font-family: "IranSans";
 }
 
+
 /* -------- styles for user search results:  -------- */
 .displayNone {
     display: none;
@@ -71,9 +72,16 @@ input {
     color: black !important;
 }
 
+
 main>table.users-general-info,
 main>table.products-general-info {
     direction: rtl;
+    table-layout: fixed;
+}
+
+main>table.users-general-info td,
+main>table.products-general-info td {
+    width: 25%;
 }
 
 main>section {
@@ -92,10 +100,6 @@ main>section>h3 {
 main>section>div {
     border-radius: 5px;
     box-shadow: 1px 1px 5px black;
-}
-
-main>section>div+div {
-    margin-top: 3rem;
 }
 
 main>section.users-info>div.search-criteria {

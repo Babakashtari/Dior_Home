@@ -17,6 +17,7 @@
     $get_number_of_disabled_results = mysqli_query($database_connection, $get_number_of_disabled_query);
     $number_of_disabled_users = mysqli_num_rows($get_number_of_disabled_results);
 
+
     $get_number_of_products_query = "SELECT * FROM products";
     $get_number_of_products_result = mysqli_query($database_connection, $get_number_of_products_query);
     $number_of_products = mysqli_num_rows($get_number_of_products_result);

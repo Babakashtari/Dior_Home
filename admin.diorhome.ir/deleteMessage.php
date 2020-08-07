@@ -72,8 +72,22 @@
                     <?php
                     echo $result_paragraph;
                 }
-                echo $return_link;
-            ?>
+                ?>
+            <form action="signed_in_admin.php" method="post">
+                <input type="hidden" name="search_page_number" value="<?php if(isset($_POST['search_page_number'])) echo $_POST['search_page_number']; ?>">
+                <input type="hidden" name="search_product_name" value="<?php if(isset($_POST['search_product_name'])) echo $_POST['search_product_name']; ?>">
+                <input type="hidden" name="search_product_dimensions" value="<?php if(isset($_POST['search_product_dimensions'])) echo $_POST['search_product_dimensions']; ?>">
+                <input type="hidden" name="search_product_category" value="<?php if(isset($_POST['search_product_category'])) echo $_POST['search_product_category']; ?>">
+                <input type="hidden" name="search_product_subcategory" value="<?php if(isset($_POST['search_product_subcategory'])) echo $_POST['search_product_subcategory']; ?>">
+                <input type="hidden" name="search_product_description" value="<?php if(isset($_POST['search_product_description'])) echo $_POST['search_product_description']; ?>">
+                <input type="hidden" name="search_uploader_username" value="<?php if(isset($_POST['search_uploader_username'])) echo $_POST['search_uploader_username']; ?>">
+                <input type="hidden" name="search_before_upload_date" value="<?php if(isset($_POST['search_before_upload_date'])) echo $_POST['search_before_upload_date']; ?>">
+                <input type="hidden" name="search_after_upload_date" value="<?php if(isset($_POST['search_after_upload_date'])) echo $_POST['search_after_upload_date']; ?>">
+                <input type="hidden" name="search_approved" value="<?php if(isset($_POST['search_approved'])) echo $_POST['search_approved']; ?>">
+                <input type="hidden" name="search_less_number_of_likes" value="<?php if(isset($_POST['search_less_number_of_likes'])) echo $_POST['search_less_number_of_likes']; ?>">
+                <input type="hidden" name="search_more_number_of_likes" value="<?php if(isset($_POST['search_more_number_of_likes'])) echo $_POST['search_more_number_of_likes']; ?>">
+                <button type="submit" class="text-center text-primary iranSans" name="back_to_signed_in_admin_page" style="background-color:transparent;border:none;text-decoration:underline;">بازگشت</button>
+            </form>
         </div>
     </main>
 <script src="JS/explorer_warning.js"></script>

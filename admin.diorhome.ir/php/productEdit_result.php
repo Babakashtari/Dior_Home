@@ -2,9 +2,9 @@
 $errors = [];
 $result = [];
 require "../httpdocs/php/database_connection.php";
-if(isset($_GET['product_ID'])){
+if(isset($_POST['go_to_edit_page'])){
     array_push($result, "<p class='text-center text-dark iranSans'>در زیر می توانید اطلاعات محصول را اصلاح کنید:</p>");
-    $product_ID = $_GET['product_ID'];
+    $product_ID = $_POST['product_ID'];
     if(!$database_connection){
         die('connection failed:'.mysqli_connect_error());
     }else{
@@ -18,7 +18,6 @@ if(isset($_GET['product_ID'])){
             $product_category = $row['product_category'];
             $product_subcategory = $row['product_subcategory'];
             $product_description = $row['product_description'];
-
         }
     }
 }elseif(isset($_POST['edit'])){
@@ -45,11 +44,11 @@ if(isset($_GET['product_ID'])){
         }        
     }
     $product_ID = $_POST['product_ID'];
-    $product_name = test_input($_POST['product_name'], "/^[a-zA-Z\d\s]{3,15}$/");
-    $product_dimensions = test_input($_POST['product_dimensions'], "/^(single|double|all)$/");
-    $product_category = test_input($_POST['product_category'], "/^(sleeping_products|living_room_products|carpet_products)$/" );
-    $product_subcategory = test_subcategory_input($_POST['product_subcategory'], "/^(کوسن|روبالشی|روتختی|ملافه|پرده|رومبلی|رومیزی|فرش|روفرشی|تابلوفرش)$/");
-    $product_description = test_subcategory_input($_POST['product_description'], '/[a-zA-Z0-9ا-يئءیکآ]{1,}/');
+    $product_name = test_input($_POST['product_name_edit'], "/^[a-zA-Z\d\s]{3,15}$/");
+    $product_dimensions = test_input($_POST['product_dimensions_edit'], "/^(single|double|all)$/");
+    $product_category = test_input($_POST['product_category_edit'], "/^(sleeping_products|living_room_products|carpet_products)$/" );
+    $product_subcategory = test_subcategory_input($_POST['product_subcategory_edit'], "/^(کوسن|روبالشی|روتختی|ملافه|پرده|رومبلی|رومیزی|فرش|روفرشی|تابلوفرش)$/");
+    $product_description = test_subcategory_input($_POST['product_description_edit'], '/[a-zA-Z0-9ا-يئءیکآ]{1,}/');
     $product_directory = $_POST['product_directory'];
 
     if(empty($product_ID)){
@@ -113,13 +112,12 @@ if(isset($_GET['product_ID'])){
             }
             $update_query .= " WHERE product_ID = '$product_ID' ";
             $update_query_result = mysqli_query($database_connection, $update_query);
-
         }else{
             array_push($errors, "<p class='text-center text-primary iranSans'>تمامی فیلد ها ثابت بودند. تغییری ثبت نشد.</p>");
         }
     }
-
 }else{
+    // if the user accidentally entered the page:
     header('location:signed_in_admin.php');
 }
 
