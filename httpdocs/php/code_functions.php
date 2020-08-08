@@ -215,11 +215,11 @@ function footer_generator(){
                     <li class="text-right py-2"><a class="text-light font-weight-italic" href="aboutUs.php">درباره ما</a></li>
                     <li class="text-right py-2"><a class="text-light font-weight-italic" href="#">مقالات و اخبار</a></li>
                     <li class="container py-sm-3 py-md-0 pr-0">
-                        <div class="row flex-nowrap text-right py-3 py-sm-0 py-md-0 justify-content-between">
-                            <a class=" text-light py-2" href="https://t.me/pishgaman_poudineh_ata"><i class="col-3 fab fa-telegram mx-md-2 my-2"></i></a>
-                            <a class=" text-light py-2" href="https://wa.me/989122084055"><i class="col-3 fab fa-whatsapp-square mx-md-2 my-2"></i></a>
-                            <a class=" text-light py-2" href="https://instagram.com/sublimation_diorhome"><i class="col-3 fab fa-instagram mx-md-2 my-2"></i></a>
-                            <a class=" text-light py-2" href="#"><i class="col-3 fab fa-facebook mx-md-2 my-2"></i></a>
+                        <div class="row flex-nowrap text-right py-3 py-sm-0 py-md-0 justify-content-start">
+                            <a class=" text-light py-0 py-md-2 displayNone" href="https://t.me/pishgaman_poudineh_ata"><i class="col-3 fab fa-telegram mx-md-2"></i></a>
+                            <a class=" text-light py-0 py-md-2" href="https://wa.me/989122084055"><i class="col-3 fab fa-whatsapp mx-md-2"></i></a>
+                            <a class=" text-light py-0 py-md-2" href="https://instagram.com/sublimation_diorhome"><i class="col-3 fab fa-instagram mx-md-2"></i></a>
+                            <a class=" text-light py-0 py-md-2 displayNone" href="#"><i class="col-3 fab fa-facebook mx-md-2"></i></a>
                         </div>
                     </li>
                 </ul>

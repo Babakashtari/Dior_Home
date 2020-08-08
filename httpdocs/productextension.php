@@ -44,6 +44,7 @@
       "@context": "https://schema.org/",
       "@type": "Product",
       "name": "<?php echo $product_name; ?>",
+      "author": "<?php echo $uploader_name; ?>"
       "image": [
         "<?php echo 'https://diorhome.ir/' . $product_directory; ?>"
        ],

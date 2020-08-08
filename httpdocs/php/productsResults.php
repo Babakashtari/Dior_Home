@@ -410,6 +410,17 @@ function card_generators(){
             echo '<div class="col-12 text-center text-danger"><p class="my-4">هیچ نتیجه ای بر اساس معیار های جستجو یافت نشد.</p></div>';
         }else{
             while ($row = mysqli_fetch_array($query_result)) {
+                // getting the uploader info:
+                $uploader_ID = $row['uploader_ID'];
+                $get_uploader_name_query = "SELECT * FROM users WHERE ID = '$uploader_ID' ";
+                $uploader_name_query_result = mysqli_query($database_connection, $get_uploader_name_query);
+                $uploader_name_array = mysqli_fetch_array($uploader_name_query_result);
+                $administrator = $uploader_name_array['administrator'];
+                if($administrator == 'YES'){
+                    $uploader_name = 'کاربر ادمین';
+                }else{
+                    $uploader_name = $uploader_name_array['username'];
+                }
                 ?>
                 <div class=" product-results col-xs-12 col-sm-6  col-lg-4 col-xl-3 p-3" >
                     <div class="card border border-primary" itemscope itemtype="https://schema.org/Product">
@@ -452,6 +463,10 @@ function card_generators(){
                                             }
                                         ?>
                                     </span></p></td></tr>
+                                    <tr>
+                                        <td><p class="card-text text-right">توسط:</p></td>
+                                        <td><p class="text-gray" itemprop="author"><?php echo $uploader_name; ?></p></td>
+                                    </tr>
                                 </table>
                                 <a href="productextension.php?product_ID=<?php echo $row['product_ID']; ?>" class="btn btn-primary mt-4">مشاهده و بررسی</a>
                             </div>
