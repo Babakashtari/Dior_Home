@@ -85,7 +85,7 @@
             </ol>
             <div class="carousel-inner" role="listbox">
               <div class="carousel-item active">
-                <img class="rotate-img" src="images/index_images/photoslider/table_cloth.jpg" alt="رومیزی">
+                <img class="rotate-img" src="images/index_images/photoslider/curtain-animal.jpg" alt="پرده" >
                 <div class="carousel-caption">
                   <h3 class="p-3 p-md-4" id="first"> کالای اتاق پذیرایی</h3>
                   <h5 class="col-8 col-sm-10 py-2">چاپ دیجتالی انواع رومیزی، رو مبلی، كوسن و ...</h5>
