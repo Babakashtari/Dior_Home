@@ -51,7 +51,7 @@
     if(!empty($_GET['product_description'])){
         $product_description = test_subcategory_input($_GET['product_description'], '/[a-zA-Z0-9ا-يئءیکآ]{1,}/');
         if(!empty($product_description)){
-            array_push($inputs_arr, "product_description='$product_description'");
+            array_push($inputs_arr, "product_description REGEXP '$product_description' ");
         }
     }
         $query = " SELECT * FROM products WHERE ";
