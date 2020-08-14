@@ -161,9 +161,9 @@ function search_menu_generator(){
                 <div class="modal-closable modal_box hidden position-absolute py-5 px-5">
                     <span class="close position-absolute text-red">&times;</span>
                     <div class="modal-closable modal_content">
-                        <form class="modal-closable form-inline" action="#" method="get">
-                            <input class="modal-closable form-control col-11" type="search" name="search" placeholder="جستجو">
-                            <button class="modal-closable col-1 text-left" type="submit"><i class="modal-closable fa fa-search"></i></button>
+                        <form class="modal-closable form-inline" action="products.php" method="POST">
+                            <input class="modal-closable form-control col-11" type="search" name="search_criterion" placeholder="جستجو" pattern="[a-zA-Z0-9ا-يئگءیکآ]{1,}" title="لطفا حداقل یک کلمه به فارسی تایپ کنید">
+                            <button class="modal-closable col-1 text-left" type="submit" name="search_button" value="search"><i class="modal-closable fa fa-search"></i></button>
                         </form>
                         <div class="modal-closable products_gallery d-flex flex-wrap pt-2 justify-content-around">
          ';

@@ -54,6 +54,16 @@
             array_push($inputs_arr, "product_description REGEXP '$product_description' ");
         }
     }
+    // اگر در قسمت سرچ هدر چیزی سرچ شده بود:
+    if(isset($_POST['search_button'])){
+        $search_criterion = $_POST['search_criterion'];
+        if(!empty($search_criterion)){
+            $product_description = test_subcategory_input($_POST['search_criterion'], '/[a-zA-Z0-9ا-يئءیکآ]{1,}/');
+            if(!empty($product_description)){
+                array_push($inputs_arr, "product_description REGEXP '$product_description' ");
+            }       
+        }
+    }
         $query = " SELECT * FROM products WHERE ";
         for($l=0;$l<count($inputs_arr); $l++){
             if($l == 0){

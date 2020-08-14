@@ -95,7 +95,7 @@
                         </select>
                     </div>
                     <div class="form-group py-1 col-12 ">
-                        <textarea id="product_description" name="product_description" class="form-control border border-primary" placeholder="توضیحات" ><?php if(isset($_GET['product_description'])){echo $_GET['product_description'];} ?></textarea>
+                        <textarea id="product_description" name="product_description" class="form-control border border-primary" placeholder="توضیحات" ><?php if(isset($_GET['product_description'])){echo $_GET['product_description'];} if(isset($_POST['search_criterion'])){echo $_POST['search_criterion'];}?></textarea>
                     </div>
                     <div class="form-group col-12 py-1">
                         <input class="btn btn-primary text-light col-12 border border-primary" id="submit" name="submit" type="submit" value="جستجو کن">
