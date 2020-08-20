@@ -27,7 +27,7 @@ var products_collapse_card_body_links = products_collapse_menu.querySelectorAll(
 var products_collapse_card_body_list_items = products_collapse_menu.querySelectorAll("div.card>div.card-body>ul>li");
 var products_collapse_card_header_links = products_collapse_menu.querySelectorAll("div.card > div.card-header>a"); // for closing the products menu:
 
-(function() {
+(function () {
     for (var i = 0; i < products_collapse_card_body_links.length; i++) {
         products_collapse_card_body_links[i].classList.add("products-closable");
         products_collapse_card_body_list_items[i].classList.add("products-closable");
@@ -38,10 +38,11 @@ var products_collapse_card_header_links = products_collapse_menu.querySelectorAl
     }
 })(); // for closing the search modal box:
 
+
 var search_modal_box_close = function search_modal_box_close() {
     if (!modal_box.classList.contains("hidden")) {
         modal_box.classList.remove("modal_box_scale");
-        setTimeout(function() {
+        setTimeout(function () {
             modal_box.classList.add("hidden");
             search_li.style.visibility = "visible";
         }, 1000);
@@ -49,6 +50,7 @@ var search_modal_box_close = function search_modal_box_close() {
         footer.classList.remove("hidden");
     }
 }; // for opening/closing the products small screens hamburger menu:
+
 
 var activate_hamburger_menu = function activate_hamburger_menu() {
     if (hamburger_spans[0].classList.contains("clicked")) {
@@ -82,7 +84,7 @@ var activate_hamburger_menu = function activate_hamburger_menu() {
         hamburger_opened_menu.classList.add("appear");
 
         var _loop = function _loop(_x) {
-            setTimeout(function() {
+            setTimeout(function () {
                 hamburger_opened_menu_li[_x].style.visibility = "visible";
             }, 500);
         };
@@ -104,13 +106,15 @@ var activate_hamburger_menu = function activate_hamburger_menu() {
             }
         } // closing search modal box when hamburger button is clicked:
 
+
         search_modal_box_close();
     }
 }; // hamburger button for small screens animation generator:
 
+
 hamburger_button.addEventListener("click", activate_hamburger_menu); // search modal open click generator:
 
-(function() {
+(function () {
     var modal_search_generator = function modal_search_generator() {
         if (modal_box.classList.contains("hidden")) {
             modal_box.classList.remove("hidden");
@@ -120,7 +124,7 @@ hamburger_button.addEventListener("click", activate_hamburger_menu); // search m
 
             main.classList.add("hidden");
             footer.classList.add("hidden");
-            setTimeout(function() {
+            setTimeout(function () {
                 modal_box.classList.add("modal_box_scale");
             }, 1); // close the products hamburger menu if already opened:
 
@@ -133,10 +137,11 @@ hamburger_button.addEventListener("click", activate_hamburger_menu); // search m
     search_input.addEventListener("click", modal_search_generator);
     search_link.addEventListener("click", modal_search_generator); // X button in the search modal_box for closing event:
 
-    search_close_span.addEventListener("click", function() {
+    search_close_span.addEventListener("click", function () {
         search_modal_box_close();
     });
 })(); // scroll event:
+
 
 var showLogo = function showLogo() {
     var scrolled_amount = window.scrollY;
@@ -179,16 +184,11 @@ window.addEventListener("load", page_loaded);
 window.addEventListener("scroll", showLogo);
 window.addEventListener("resize", no_sticky_top); //products menu background-image hover effect
 
-(function() {
-    var menu_images_src = [
-        "images/products_menu_images/bedroom.jpg",
-        "images/products_menu_images/living_room5.jpg",
-        "images/products_menu_images/carpet.jpg",
-        "images/products_menu_images/taghe3.jpg"
-    ];
+(function () {
+    var menu_images_src = ["images/products_menu_images/bedroom.jpg", "images/products_menu_images/living_room5.jpg", "images/products_menu_images/carpet.jpg", "images/products_menu_images/taghe3.jpg"];
 
     for (var i = 0; i < products_collapse_cards.length; i++) {
-        products_collapse_cards[i].addEventListener("mouseenter", function(event) {
+        products_collapse_cards[i].addEventListener("mouseenter", function (event) {
             for (var s = 0; s < products_collapse_cards.length; s++) {
                 if (event.currentTarget === products_collapse_cards[s]) {
                     products_collapse_menu.style.backgroundImage = "url(" + menu_images_src[s] + ")";
@@ -203,23 +203,20 @@ window.addEventListener("resize", no_sticky_top); //products menu background-ima
     }
 })(); // closing events on outside clicks:
 
-window.addEventListener("click", function(event) {
+
+window.addEventListener("click", function (event) {
     // Products menu closing event:
-    if (
-        !event.target.classList.contains("products-closable") &&
-        !event.target.classList.contains("card") &&
-        !event.target.classList.contains("card-body") &&
-        !event.target.classList.contains("card-header") &&
-        event.target !== products_opening_tab
-    ) {
+    if (!event.target.classList.contains("products-closable") && !event.target.classList.contains("card") && !event.target.classList.contains("card-body") && !event.target.classList.contains("card-header") && event.target !== products_opening_tab) {
         products_collapse_menu.classList.remove("show");
         products_opening_tab.setAttribute("aria-expanded", false);
         products_opening_tab.classList.add("collapsed");
     } //  search modal div closing event:
 
+
     if (!event.target.classList.contains("modal-closable")) {
         search_modal_box_close();
     } // products hamburger menu for small screens closing event:
+
 
     if (!event.target.classList.contains("hamburger-close") && hamburger_spans[0].classList.contains("clicked")) {
         activate_hamburger_menu();

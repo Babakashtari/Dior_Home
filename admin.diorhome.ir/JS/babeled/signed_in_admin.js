@@ -9,30 +9,11 @@ var users_search_form_container = document.querySelector("main>section.users-inf
 var products_search_form_container = document.querySelector("main>section.products-info>form");
 var products_search_top_div_boxes = document.querySelectorAll('main>section.products-info>div.search_criteria>div>span>input[type="checkbox"]');
 var products_search_form_divs = document.querySelectorAll("main>section.products-info>form>div.form-group");
-var users_error_messages = document.querySelectorAll("main>section.users-info>form>div.form-group>p");
-var users_inputs = document.querySelectorAll("main>section.users-info>form>div.form-group>input");
-var users_search_result_div = document.querySelector("main>section.users-info>div.result"); // ریفرش کردن صفحه برای اینکه متغیر های سیشن کار کنند:
+var error_messages = document.querySelectorAll("div.form-group>p");
+var inputs = document.querySelectorAll("div.form-group>input");
+var users_search_result_div = document.querySelector("main>section.users-info>div.result"); // ظاهر شدن فیلد سرچ مربوطه در فرم بعد از تیک زدن چک باکس مربوطه در قسمت جستجوی کاربر:
 
-window.onload = function () {
-    if (!window.location.hash) {
-        window.location = window.location + "#loaded";
-        window.location.reload();
-    }
-}; // ظاهر شدن فیلد سرچ مربوطه در فرم بعد از تیک زدن چک باکس مربوطه در قسمت جستجوی کاربر:
-
-var user_search_input_appear = function user_search_input_appear(event) {
-    for (var i = 0; i < users_top_div_checkboxes.length; i++) {
-        if (event.target === users_top_div_checkboxes[i]) {
-            if (event.target.checked) {
-                users_search_form_divs[i].classList.remove("displayNone");
-            } else {
-                users_search_form_divs[i].classList.add("displayNone");
-            }
-        }
-    }
-};
-
-var user_search_input_appear2 = function user_search_input_appear2() {
+var user_search_input_appear = function user_search_input_appear() {
     for (var i = 0; i < users_top_div_checkboxes.length; i++) {
         if (users_top_div_checkboxes[i].checked) {
             users_search_form_divs[i].classList.remove("displayNone");
@@ -42,7 +23,7 @@ var user_search_input_appear2 = function user_search_input_appear2() {
     }
 };
 
-user_search_input_appear2(); // ظاهر شدن دکمه جستجو بعد از فعال شدن حداقل یک فیلد توسط کاربر ادمین:
+user_search_input_appear(); // ظاهر شدن دکمه جستجو بعد از فعال شدن حداقل یک فیلد توسط کاربر ادمین:
 
 var users_form_submit_button_appear = function users_form_submit_button_appear() {
     var message = "";
@@ -64,26 +45,45 @@ var users_form_submit_button_appear = function users_form_submit_button_appear()
 
 users_form_submit_button_appear();
 
+var users_value_checker = function users_value_checker(e) {
+    if (!e.target.checked) {
+        var checkbox_name = e.target.getAttribute("name");
+
+        for (var i = 0; i < users_top_div_checkboxes.length; i++) {
+            var input_field_name = users_search_form_divs[i].children[0].getAttribute("name");
+
+            if (checkbox_name === input_field_name) {
+                users_search_form_divs[i].children[0].value = "";
+                users_search_form_divs[i].children[0].classList.remove("passed");
+                users_search_form_divs[i].children[0].classList.remove("failed");
+                var error_message = users_search_form_divs[i].querySelector("p");
+                error_message.classList.add("displayNone");
+            }
+        }
+    }
+};
+
 var function_loader = function function_loader(event) {
-    user_search_input_appear(event);
+    user_search_input_appear();
     users_form_submit_button_appear();
+    users_value_checker(event);
 };
 
 for (var s = 0; s < users_top_div_checkboxes.length; s++) {
     users_top_div_checkboxes[s].addEventListener("change", function_loader);
-} // ظاهر شدن فیلد سرچ مربوطه در فرم بعد از تیک زدن چک باکس مربوطه در قسمت جستجوی محصول:
+}
 
-var products_search_input_appear = function products_search_input_appear(event) {
+var products_search_input_appear = function products_search_input_appear() {
     for (var i = 0; i < products_search_top_div_boxes.length; i++) {
-        if (event.target === products_search_top_div_boxes[i]) {
-            if (event.target.checked) {
-                products_search_form_divs[i].classList.remove("displayNone");
-            } else {
-                products_search_form_divs[i].classList.add("displayNone");
-            }
+        if (products_search_top_div_boxes[i].checked) {
+            products_search_form_divs[i].classList.remove("displayNone");
+        } else {
+            products_search_form_divs[i].classList.add("displayNone");
         }
     }
-}; // ظاهر شدن دکمه جستجو بعد از فعال شدن حداقل یک فیلد توسط کاربر ادمین:
+};
+
+products_search_input_appear(); // ظاهر شدن دکمه جستجو بعد از فعال شدن حداقل یک فیلد توسط کاربر ادمین:
 
 var products_form_submit_button_appear = function products_form_submit_button_appear() {
     var message = "";
@@ -103,9 +103,29 @@ var products_form_submit_button_appear = function products_form_submit_button_ap
     }
 };
 
+products_form_submit_button_appear();
+
+var products_value_checker = function products_value_checker(e) {
+    if (!e.target.checked) {
+        var checkbox_name = event.target.getAttribute("name");
+
+        for (var i = 0; i < products_search_top_div_boxes.length; i++) {
+            var input_field_name = products_search_form_divs[i].children[0].getAttribute("name");
+
+            if (checkbox_name === input_field_name) {
+                products_search_form_divs[i].children[0].value = "";
+                products_search_form_divs[i].children[0].classList.remove("passed");
+                products_search_form_divs[i].children[0].classList.remove("failed"); // const error_message = products_search_form_divs[i].querySelector("p");
+                // error_message.classList.add("displayNone");
+            }
+        }
+    }
+};
+
 var function_loader2 = function function_loader2(event) {
-    products_search_input_appear(event);
+    products_search_input_appear();
     products_form_submit_button_appear();
+    products_value_checker(event);
 };
 
 for (var _s = 0; _s < products_search_top_div_boxes.length; _s++) {
@@ -113,23 +133,23 @@ for (var _s = 0; _s < products_search_top_div_boxes.length; _s++) {
 }
 
 var validate = function validate(regex, input) {
-    for (var i = 0; i < users_error_messages.length; i++) {
-        if (input === users_inputs[i]) {
+    for (var i = 0; i < error_messages.length; i++) {
+        if (input === inputs[i]) {
             if (input.value === "") {
                 input.classList.remove("passed");
                 input.classList.remove("failed");
-                users_error_messages[i].classList.add("displayNone");
+                error_messages[i].classList.add("displayNone");
             } else {
                 var validation_result = regex.test(input.value);
 
                 if (validation_result) {
                     input.classList.add("passed");
                     input.classList.remove("failed");
-                    users_error_messages[i].classList.add("displayNone");
+                    error_messages[i].classList.add("displayNone");
                 } else {
                     input.classList.add("failed");
                     input.classList.remove("passed");
-                    users_error_messages[i].classList.remove("displayNone");
+                    error_messages[i].classList.remove("displayNone");
                 }
             }
         }
