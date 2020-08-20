@@ -85,15 +85,15 @@
             </ol>
             <div class="carousel-inner" role="listbox">
               <div class="carousel-item active">
-                <img class="rotate-img" src="images/index_images/photoslider/curtain-animal.jpg" alt="پرده" >
+                <img class="rotate-img" src="images/index_images/photoslider/curtain2.jpg" alt="پرده" >
                 <div class="carousel-caption">
-                  <h3 class="p-3 p-md-4" id="first"> کالای اتاق پذیرایی</h3>
-                  <h5 class="col-8 col-sm-10 py-2">چاپ دیجتالی انواع رومیزی، رو مبلی، كوسن و ...</h5>
-                  <a class="text-light px-3 px-md-5 py-2" href="products.php?product_category=living_room_products">بیشتر ببینید</a>
+                  <h3 class="p-3 p-md-4" id="first"> چاپ پرده طرحدار</h3>
+                  <h5 class="col-8 col-sm-10 py-2">چاپ دیجیتالی انواع طرح و الگو روی پرده در ابعاد مختلف ...</h5>
+                  <a class="text-light px-3 px-md-5 py-2" href="products.php?product_category=living_room_products&product_subcategory=پرده">بیشتر ببینید</a>
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="images/index_images/photoslider/bed2.jpg" alt="كالای خواب" width="100%" height="100%">
+                <img src="images/index_images/photoslider/feather.jpg" alt="كالای خواب">
                 <div class="carousel-caption">
                   <h3 class="p-3 p-md-4" id="second">کالای خواب</h3>
                   <h5 class="col-8 col-sm-10 py-2">چاپ سابلیمیشن روی انواع روتختی، ملافه، رو بالشی و كوسن</h5>
@@ -101,7 +101,7 @@
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="images/index_images/photoslider/sea_carpet_board.jpg" alt="کالای فرش">
+                <img src="images/index_images/photoslider/carpetboard3.jpg" alt="کالای فرش">
                 <div class="carousel-caption">
                   <h3 class="p-3 p-md-4" id="third">روفرشی و تابلو فرش</h3>
                   <h5 class="col-8 col-sm-10 py-2"> چاپ دیجیتالی انواع فرش، روفرشی و تابلوفرش</h5>
