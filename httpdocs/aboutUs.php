@@ -61,7 +61,7 @@
     <link rel="stylesheet" href="CSS/bootstrap.min.css.map">
     <link rel="stylesheet" href="CSS/bootstrap.min.css"/>
     <link rel="stylesheet" href="CSS/Normalizer.css">
-    <link rel="stylesheet" href="Css/fonts.css">
+    <link rel="preload" href="Css/fonts.css" as="style">
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/footer.css">
     <link rel="stylesheet" href="CSS/contact_us_modal.css">

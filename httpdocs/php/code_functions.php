@@ -157,21 +157,23 @@ function Search_card_generator(){
 }
 
 function search_menu_generator(){
-    echo '    <!-- search modal -->
-                <div class="modal-closable modal_box hidden position-absolute py-5 px-5">
-                    <span class="close position-absolute text-red">&times;</span>
-                    <div class="modal-closable modal_content">
-                        <form class="modal-closable form-inline" action="products.php" method="POST">
-                            <input class="modal-closable form-control col-11" type="search" name="search_criterion" placeholder="جستجو" pattern="[a-zA-Z0-9ا-يئگءیکآ]{1,}" title="لطفا حداقل یک کلمه به فارسی تایپ کنید">
-                            <button class="modal-closable col-1 text-left" type="submit" name="search_button" value="search"><i class="modal-closable fa fa-search"></i></button>
-                        </form>
-                        <div class="modal-closable products_gallery d-flex flex-wrap pt-2 justify-content-around">
-         ';
+    ?>
+    <!-- search modal -->
+        <div class="modal-closable modal_box hidden position-absolute py-5 px-5">
+            <span class="close position-absolute text-red">&times;</span>
+                <div class="modal-closable modal_content">
+                    <form class="modal-closable form-inline" action="products.php" method="POST">
+                        <input class="modal-closable form-control col-11" type="search" name="search_criterion" placeholder=" جستجو در توضیحات محصول" pattern="[a-zA-Z0-9ا-يئگءیکآ]{1 ,}" title="لطفا حداقل یک کلمه به فارسی تایپ کنید">
+                        <button class="modal-closable col-1 text-left" type="submit" name="search_button" value="search"><i class="modal-closable fa fa-search"></i></button>
+                    </form>
+                    <div class="modal-closable products_gallery d-flex flex-wrap pt-2 justify-content-around">
+    <?php
                         search_card_generator();
-    echo '              </div>            
-                    </div>
+    ?>
+                    </div>            
                 </div>
-         ';
+        </div>
+    <?php
 }
 
 function head(){
@@ -215,11 +217,13 @@ function footer_generator(){
                     <li class="text-right py-2"><a class="text-light font-weight-italic" href="aboutUs.php">درباره ما</a></li>
                     <li class="text-right py-2"><a class="text-light font-weight-italic" href="#">مقالات و اخبار</a></li>
                     <li class="container py-sm-3 py-md-0 pr-0">
-                        <div class="row flex-nowrap text-right py-3 py-sm-0 py-md-0 justify-content-start">
-                            <a class=" text-light py-0 py-md-2 displayNone" href="https://t.me/pishgaman_poudineh_ata"><i class="col-3 fab fa-telegram mx-md-2"></i></a>
-                            <a class=" text-light py-0 py-md-2" href="https://wa.me/989122084055"><i class="col-3 fab fa-whatsapp mx-md-2"></i></a>
-                            <a class=" text-light py-0 py-md-2" href="https://instagram.com/sublimation_diorhome"><i class="col-3 fab fa-instagram mx-md-2"></i></a>
-                            <a class=" text-light py-0 py-md-2 displayNone" href="#"><i class="col-3 fab fa-facebook mx-md-2"></i></a>
+                        <div class="row flex-nowrap text-right py-3 py-sm-0 py-md-0 justify-content-start" itemscope itemtype="http://schema.org/Organization">
+                            <span itemprop="name" class="displayNone">صنایع نساجی پیشگامان پودینه آتا</span>
+                            <link itemprop="url" href="diorhome.ir"></link>
+                            <a class=" text-light py-0 py-md-2 displayNone" itemprop="sameAs" href="https://t.me/pishgaman_poudineh_ata"><i class="col-3 fab fa-telegram mx-md-2"></i></a>
+                            <a class=" text-light py-0 py-md-2" itemprop="sameAs" href="https://wa.me/989122084055"><i class="col-3 fab fa-whatsapp mx-md-2"></i></a>
+                            <a class=" text-light py-0 py-md-2" itemprop="sameAs" href="https://instagram.com/sublimation_diorhome"><i class="col-3 fab fa-instagram mx-md-2"></i></a>
+                            <a class=" text-light py-0 py-md-2 displayNone" itemprop="sameAs" href="#"><i class="col-3 fab fa-facebook mx-md-2"></i></a>
                         </div>
                     </li>
                 </ul>

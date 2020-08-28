@@ -47,7 +47,7 @@
                 <img src="https://diorhome.ir/custom_errors/images/404error2.png" alt="404 error page image" width="30%" height="auto" >
             </div>
             <section class="error-message">
-                <p>متاسفانه صفحه مورد نظر شما یافت نشد. لطفا از لینک زیر برای بازگشت به صفحه اصلی استفاده کنید:</p>
+                <p>متاسفانه صفحه مورد نظر شما یافت نشد. لطفا از دکمه زیر برای بازگشت به صفحه اصلی استفاده کنید:</p>
                 <div>
                     <i class="fas fa-chevron-left"></i>
                     <a href="https://diorhome.ir">برو به خانه</a>

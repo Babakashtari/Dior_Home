@@ -51,7 +51,7 @@
     <link rel="stylesheet" href="CSS/bootstrap.min.css.map">
     <link rel="stylesheet" href="CSS/bootstrap.min.css"/>
     <link rel="stylesheet" href="CSS/Normalizer.css">
-    <link rel="stylesheet" href="Css/fonts.css">
+    <link rel="preload" href="Css/fonts.css" as="style">
     <link rel="stylesheet" href="CSS/explorer_warning.css">
     <link rel="stylesheet" href="CSS/copy_right.css">
     <link rel="stylesheet" href="CSS/emailActivation.css">
