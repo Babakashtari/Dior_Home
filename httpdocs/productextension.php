@@ -14,6 +14,12 @@
 
   gtag('config', 'UA-155871160-2');
 </script>
+    <!-- preloads: -->
+    <link rel="preload" href="Fonts/IRANSansWeb_Bold.ttf" as="font" type="font/ttf" crossorigin> 
+    <link rel="preload" href="Fonts/yekannumbers-regular.woff" as="font" type="font/woff" crossorigin> 
+    <link rel="preload" href="CSS/all.min.css" as="style" crossorigin>
+    <link rel="preload" href="images/Dior_logo.jpg" as="image" type="image/jpg" crossorigin>
+    <link rel="preload" href="<?php echo $product_directory; ?>" type="image/<?php echo $product_extension; ?>" as="image" crossorigin>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +30,7 @@
         img-src 'self' https://www.w3.org https://www.google.com.ua https://www.google.com https://www.google-analytics.com https://www.googletagmanager.com https://stats.g.doubleclick.net;
         font-src 'self';
         frame-src https://www.google.com;
+        connect-src https://www.google-analytics.com https://stats.g.doubleclick.net;
         "  >
     <meta name="description" content="<?php echo $product_description; ?>" />
     <meta name="author" content="Babak Ashtari" />
@@ -97,10 +104,10 @@
     <meta name="theme-color" content="#ffffff">
     <!-- font awesome -->
     <link rel="stylesheet" href="CSS/all.min.css">
-    <link rel="stylesheet" href="CSS/bootstrap.min.css.map">
+    <link rel="stylesheet" type="application/octet-stream" href="CSS/bootstrap.min.css.map">
     <link rel="stylesheet" href="CSS/bootstrap.min.css"/>
     <link rel="stylesheet" href="CSS/Normalizer.css">
-    <link rel="stylesheet" href="Css/fonts.css">
+    <link rel="stylesheet" href="CSS/fonts.css">
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/footer.css">
     <link rel="stylesheet" href="CSS/contact_us_modal.css">
@@ -139,9 +146,11 @@
       </section>
       <section class="product-info row p-3 pb-5 mb-5 flex-row-reverse mx-auto bg-light">
         <div class="breadcrumb p-1 mx-auto m-md-0">
-          <p class="p-0 m-0">
-            <span class="p-2 bg-primary"><a class="text-light" href="products.php?product_category=<?php echo $product_category; ?>"><?php echo $product_category_link; ?></a></span> > 
-            <span class="p-2 bg-primary"><a class="text-light" href="products.php?product_subcategory=<?php echo $product_subcategory; ?>"><?php echo $product_subcategory; ?></span></a> > 
+          <p class="p-0 m-0 row align-items-baseline">
+            <span class="p-2 bg-primary"><a class="text-light" href="products.php?product_category=<?php echo $product_category; ?>"><?php echo $product_category_link; ?></a></span>
+            <span class="p-2"> > </span> 
+            <span class="p-2 bg-primary"><a class="text-light" href="products.php?product_subcategory=<?php echo $product_subcategory; ?>"><?php echo $product_subcategory; ?></span></a>
+            <span class="p-2"> > </span>
             <span class="p-2 bg-secondary text-light"><?php echo $product_name; ?></span>
           </p>
         </div>

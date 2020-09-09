@@ -1,1 +1,0 @@
-"use strict";var footer=document.querySelector("body>div.links"),disappear=function disappear(){window.innerHeight<374?footer.style.display="none":footer.style.display="block"};window.addEventListener("load",disappear),window.addEventListener("resize",disappear);

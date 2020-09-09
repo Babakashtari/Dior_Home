@@ -15,6 +15,13 @@
   gtag('config', 'UA-155871160-2');
 </script>
 
+<!-- preloadings: -->
+<link rel="preload" href="Fonts/IRANSansWeb_Bold.ttf" as="font" type="font/ttf" crossorigin> 
+<link rel="preload" href="Fonts/yekannumbers-regular.woff" as="font" type="font/woff" crossorigin> 
+<link rel="preload" href="CSS/all.min.css" as="style" crossorigin>
+<link rel="preload" href="images/Dior_logo.jpg" as="image" type="image/jpg" crossorigin>
+<link rel="preload" href="images/index_images/photoslider/curtain2.jpg" as="image" type="image/jpg" crossorigin>
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -30,7 +37,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- for SEO purposes -->
   <!-- open graph meta tags for SEO -->
-  <meta property="og:title" content="صنایع نساجی پيشگامان پودينه آتا" />
+  <meta property="og:title" content="چاپخانه دیجیتال پيشگامان پودينه آتا" />
   <meta property="og:site_name" content="پيشگامان پودينه آتا" />
   <meta property="og:url" content="https://diorhome.ir" />
   <meta property="og:description"
@@ -63,13 +70,13 @@
     <link rel="stylesheet" href="CSS/bootstrap.min.css.map">
     <link rel="stylesheet" href="CSS/bootstrap.min.css"/>
     <link rel="stylesheet" href="CSS/Normalizer.css">
-    <link rel="preload"    href="Css/fonts.css" as="style">
+    <link rel="stylesheet" href="CSS/fonts.css">
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/footer.css">
     <link rel="stylesheet" href="CSS/contact_us_modal.css">
     <link rel="stylesheet" href="CSS/explorer_warning.css">
     <link rel="stylesheet" href="CSS/index.css">
-    <title>پيشگامان پودينه - صفحه اصلی</title>
+    <title>چاپخانه دیجیتال پيشگامان پودينه آتا - صفحه اصلی</title>
 </head>
 <body>
     <?php head(); ?>
@@ -87,15 +94,15 @@
               <div class="carousel-item active">
                 <img class="rotate-img" src="images/index_images/photoslider/curtain2.jpg" alt="پرده" >
                 <div class="carousel-caption">
-                  <h3 class="p-3 p-md-4" id="first"> چاپ پرده طرحدار</h3>
-                  <h5 class="col-8 col-sm-10 py-2">چاپ دیجیتالی انواع طرح و الگو روی پرده در ابعاد مختلف ...</h5>
+                  <h3 class="p-3 p-md-4" id="first">چاپ دیجیتالی پرده</h3>
+                  <h5 class="col-8 col-sm-10 py-2">چاپ سابلیمیشن انواع طرح و الگو روی پرده در ابعاد مختلف ...</h5>
                   <a class="text-light px-3 px-md-5 py-2" href="products.php?product_category=living_room_products&product_subcategory=پرده">بیشتر ببینید</a>
                 </div>
               </div>
               <div class="carousel-item">
                 <img src="images/index_images/photoslider/feather.jpg" alt="كالای خواب">
                 <div class="carousel-caption">
-                  <h3 class="p-3 p-md-4" id="second">کالای خواب</h3>
+                  <h3 class="p-3 p-md-4" id="second">چاپ دیجیتال کالای خواب</h3>
                   <h5 class="col-8 col-sm-10 py-2">چاپ سابلیمیشن روی انواع روتختی، ملافه، رو بالشی و كوسن</h5>
                   <a class="text-light px-3 px-md-5 py-2" href="products.php?product_category=sleeping_products">بیشتر ببینید</a>
                 </div>
@@ -103,16 +110,16 @@
               <div class="carousel-item">
                 <img src="images/index_images/photoslider/carpetboard3.jpg" alt="کالای فرش">
                 <div class="carousel-caption">
-                  <h3 class="p-3 p-md-4" id="third">روفرشی و تابلو فرش</h3>
-                  <h5 class="col-8 col-sm-10 py-2"> چاپ دیجیتالی انواع فرش، روفرشی و تابلوفرش</h5>
+                  <h3 class="p-3 p-md-4" id="third">چاپ دیجیتال روفرشی و تابلو فرش</h3>
+                  <h5 class="col-8 col-sm-10 py-2"> چاپ سابلیمیشن انواع فرش، روفرشی و تابلوفرش</h5>
                   <a class="text-light px-3 px-md-5 py-2" href="products.php?product_category=carpet_products">بیشتر ببینید</a>
                 </div>
               </div>
               <div class="carousel-item">
                 <img src="images/index_images/photoslider/cushion3.jpg" alt="کوسن و رو بالشی">
                 <div class="carousel-caption">
-                  <h3 class="p-3 p-md-4" id="third">کوسن و روبالشی</h3>
-                  <h5 class="col-8 col-sm-10 py-2">چاپ دیجیتالی طرح ها و الگوهای واقعی و کارتونی روی روبالشی و انواع کوسن</h5>
+                  <h3 class="p-3 p-md-4" id="third">چاپ دیجیتال کوسن و روبالشی</h3>
+                  <h5 class="col-8 col-sm-10 py-2">چاپ سابلیمیشن طرح ها و الگوهای واقعی و کارتونی روی روبالشی و انواع کوسن</h5>
                   <a class="text-light px-3 px-md-5 py-2" href="products.php?product_category=living_room_products&product_subcategory=کوسن">بیشتر ببینید</a>
                 </div>
               </div>
@@ -126,14 +133,17 @@
           </div>
         </section>
         <section class="container my-4 py-4 creativity">
-          <h3 class="p-2 p-md-4 mx-2 mx-md-4 ">مركز تخصصی چاپ ديجيتال يا سابليميشن روی پارچه</h3>
-          <p class="p-2 px-md-4 pb-4 mx-2 mx-md-4 mb-4 "> افتخار داريم كه تمامی محصولات چاپی روی پارچه مورد نياز خانوار های ايرانی را تولید می کنیم. پيشگامان پودينه آتا از سال ۱۳۸۰ و با بيش از ۳۰ سال تجربه، الگوی شما را به صورت سفارشی دریافت و برایتان در هر ابعادی که دوست دارید به صورت دیجیتالی روی پارچه چاپ می کند.</p>
+          <h3 class="p-2 p-md-4 mx-2 mx-md-4 ">مركز تخصصی چاپ ديجيتال روی پارچه</h3>
+          <p class="p-2 px-md-4 pb-4 mx-2 mx-md-4 mb-4 "> افتخار داريم كه تمامی محصولات مورد نیاز مربوط به چاپ پارچه تولیدی ها، پارچه فروشی ها، مزون ها و کالای خواب فروشی های عمده سراسر ایران را تامین می کنیم. پيشگامان پودينه آتا از سال ۱۳۸۰ و با بيش از ۳۰ سال تجربه، الگوی شما را به صورت سفارشی دریافت و برایتان در هر ابعاد به صورت دیجیتالی روی پارچه چاپ می کند.</p>
           <?php five_photos_section(); ?>
         </section>
         <section class="cooperation">
             <div>
-                <h3 class="py-2 text-center">چاپ سابليميشن يا ديجيتال جهت تولیدی های پارچه</h3>
-                <p class="px-4 pb-2 container">عمده فعالیت شركت پيشگامان پودينه آتا همکاری با شركت های عمده فروشی و توليدی های پارچه است که جهت انجام انواع چاپ های ديجيتالی و سابليميشن روی پارچه در تيراژ بالا به پیشگامان پودینه مراجعه می کنند. از جمله تسهيلات در نظر گرفته شده برای اين همكاران می توان به خدمات طاقه پيچی پارچه و ترنسفر آن به صورت طاقه اشاره کرد كه نزد مشتریان عمده فروش از اهميت بسيار بالايی برخوردار است. پيشگامان پودينه آتا همچنين طرح ها و لوگو های چاپ شده روی پارچه را به فرمت سابليميشن برای دفعات بعدی در اختيار مشتریان گرامی قرار می دهد و لذا هيچگونه تجديد چاپ الگو در پيشگامان پودينه آتا شامل هزينه مجدد طراحی نمی شود. </p>
+                <h3 class="py-2 text-center">عمده فروشی پارچه چاپی</h3>
+                <p class="px-4 pb-2 container">
+                از جمله فعالیت های اصلی پیشگامان پودینه آتا، خدمات عمده چاپ دیجیتال روی پارچه است. دستگاه های چاپ سابلیمیشن ما در روز می توانند تا 5000 متر پارچه چاپی تولید کنند. پارچه تولیدی توسط خود شرکت طاقه پیچی و عدل بندی می شود و مستلزم هزینه اضافه از سوی مشتری نیست. شرکت همچنین قادر است تا تمامی خدمات گرافیکی و دیجیتالی مورد نیاز مشتریان عمده فروش را تامین کند و لذا هر طرح و الگویی روی پارچه به دلخواه مشتری قابل پیاده سازی است. چاپخانه در اردبیل و دفتر مرکزی در تهران بوده و لذا هزینه باربری که به عهده مشتری است برای تولیدی ها و عمده فروشان این دو کلان شهر به صرفه تر است. در صورت نیاز به ارسال محصولات به شهر های دیگر، نیز پیشگامان پودینه آتا، با تمامی باربری های کشور همکاری دارد و در صورت تمایل مشتری، با ذکر اطلاعات بارنامه، سفارشات چاپی آماده شده را به سراسر ایران ارسال می کنیم.
+                </p>
+                <p class="px-4 pb-2 container">از جمله مشتریان ثابت پیشگامان پودینه آتا عبارتند از:</p>
                 <div class="container">
                     <div class="customers mx-3">
                         <?php customers_logo_generator(); customers_logo_generator(); ?>
@@ -145,7 +155,7 @@
                     <h3 class="text-center pt-4 pb-2">كادر مجرب پيشگامان پودينه آتا</h3>
                     <img src="images/index_images/expertise.jpg" alt="همکاری با نیروی متخصص" width="100%" height="auto">
                     <p class="text-justify py-4">
-                  سرمايه پيشگامان پودينه آتا به نيروهای متخصص و خلاق آن است.  در صورتی كه در هر یک از موارد زير متخصص هستيد و تمايل به همكاری با ما به صورت دوركاری را داريد، رزومه کاری خود را همراه با نمونه کار هایتان برایمان ارسال کنید.
+                  سرمايه پيشگامان پودينه آتا به نيروهای متخصص و خلاق آن است.  در صورتی كه در هر یک از موارد زير متخصص هستيد و تمايل به همكاری داريد، لطفا رزومه خود را همراه با نمونه کار به آدرس <a class="text-light" href="mailto:info@diorhome.ir?subject=job_inquiry">info@diorhome.ir</a> ایمیل کنید.
                     </p>
                     <ul class="row">
                         <li class=" col-xs-12 col-sm-6 col-md-3 ">نقاشی</li>

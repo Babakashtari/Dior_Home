@@ -1,17 +1,24 @@
 
 <?php
 function jumbotron_generator(){
-    echo '      <?php session_start(); ?>
-                <div class="jumbotron mb-0 mx-sm-0 bg-light text-dark">
-                <h1 class="mx-0 px-0 ">پیشگامان پودینه آتا</h1>
-                <p class="mx-0 px-0 ">';
+    ?>
+        <?php session_start(); ?>
+        <div class="jumbotron mb-0 mx-sm-0 bg-light text-dark">
+        <h1 class="mx-0 px-0 ">پیشگامان پودینه آتا</h1>
+        <h2 class="mx-0 px-0 mb-3" style="font-size:1rem;">
+    <?php
     user_name_show();
-    echo '
-                به سایت رسمی شرکت پیشگامان پودینه آتا خوش آمدید.</p>';
+    ?>
+        به چاپخانه دیجیتال پارچه پیشگامان پودینه آتا خوش آمدید.</h2>
+    <?php
     if(!empty($_SESSION['user_username'])){
-        echo '<p class="mx-0 px-0"><a class="text-danger" href="php/session_destroyer.php">از اينجا خارج شويد!</a></p>';
+    ?>
+        <p class="mx-0 px-0"><a class="text-danger" href="php/session_destroyer.php">از اينجا خارج شويد!</a></p>
+    <?php
     }else{
-        echo '<p class="mx-0 px-0"><a class="text-primary" href="login.php">از اينجا وارد شويد!</a></p>';
+    ?>
+        <p class="mx-0 px-0"><a class="text-primary" href="login.php">از اينجا وارد شويد!</a></p>
+    <?php
     }
     echo            '<div itemscope itemtype="https://schema.org/LocalBusiness">
                     <p itemprop="name">
