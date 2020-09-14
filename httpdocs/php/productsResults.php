@@ -64,11 +64,14 @@
             }       
         }
     }
+        // in order to sort results according to their date of upload:
+        array_push($inputs_arr, "ORDER BY product_ID DESC");
         $query = " SELECT * FROM products WHERE ";
         for($l=0;$l<count($inputs_arr); $l++){
-            if($l == 0){
+            if($l <= 0 ||  $l>= count($inputs_arr) - 1){
                 $query .= " " . $inputs_arr[$l];
-            }else{
+            }
+            else{
                 $query .= " AND" . " ". $inputs_arr[$l];
             }
         }
