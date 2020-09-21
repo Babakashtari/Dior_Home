@@ -155,7 +155,7 @@
           </p>
         </div>
         <!-- title: name of the product -->
-        <h1 class="text-center text-dark p-2 col-12 dancingScript m-0 mb-1"><?php echo $product_name; ?></h1>
+        <h1 class="text-center text-dark p-2 col-12 iranSans m-0 mb-1"><?php echo $product_description; ?></h1>
         <div class="photo-section col-12 col-sm-6 col-md-4 px-0">
           <div class="photo-container">
             <a href="<?php echo 'productextension.php?product_ID=' . $product_ID ; ?>">

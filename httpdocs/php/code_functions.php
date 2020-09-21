@@ -264,7 +264,7 @@ function footer_generator(){
                     <p class="text-light text-right font-weight-bold"><span>نقشه کارخانه :</span></p>
                     <div class="my-2" id="map">
                         <a href="https://www.google.com/maps/place/%D9%BE%D9%8A%D8%B4%DA%AF%D8%A7%D9%85%D8%A7%D9%86+%D9%BE%D9%88%D8%AF%D9%8A%D9%86%D9%87+%D8%A2%D8%AA%D8%A7%E2%80%AD/@35.6730548,51.4207958,18z/data=!4m5!3m4!1s0x3f8e01bb8e939549:0xca7c6bafb1e2040c!8m2!3d35.6732989!4d51.4216058?hl=en">
-                            <img src="images/map_location.jpg" width="100%" height="auto" />
+                            <img src="images/map_location.jpg" alt="نقشه محل دفتر مرکزی شرکت پیشگامان پودینه آتا" width="100%" height="auto" />
                         </a>
                     </div>
                 </div>
