@@ -51,10 +51,10 @@
       "@context": "https://schema.org/",
       "@type": "Product",
       "name": "<?php echo $product_name; ?>",
-      "author": "<?php echo $uploader_name; ?>"
+      "author": "<?php echo $uploader_name; ?>",
       "image": [
         "<?php echo 'https://diorhome.ir/' . $product_directory; ?>"
-       ],
+      ],
       "description": "<?php echo $product_description; ?>",
       "sku": "0446310786",
       "mpn": "925872",
@@ -113,7 +113,6 @@
     <link rel="stylesheet" href="CSS/contact_us_modal.css">
     <link rel="stylesheet" href="CSS/explorer_warning.css">
     <link rel="stylesheet" href="CSS/productextension.css">
-    <!-- <link rel="canonical" href="https://diorhome.ir/productextension.php" /> -->
     <title>پيشگامان پودينه آتا - <?php echo $product_name; ?></title>
 </head>
 <body>
