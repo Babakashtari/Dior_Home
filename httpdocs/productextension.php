@@ -52,9 +52,7 @@
       "@type": "Product",
       "name": "<?php echo $product_name; ?>",
       "author": "<?php echo $uploader_name; ?>",
-      "image": [
-        "<?php echo 'https://diorhome.ir/' . $product_directory; ?>"
-      ],
+      "image": "<?php echo 'https://diorhome.ir/' . $product_directory; ?>",
       "description": "<?php echo $product_description; ?>",
       "sku": "0446310786",
       "mpn": "925872",
