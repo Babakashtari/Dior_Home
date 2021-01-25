@@ -51,14 +51,27 @@
     if(!empty($_GET['product_description'])){
         $product_description = test_subcategory_input($_GET['product_description'], '/[a-zA-Z0-9ا-يئءیکآ]{1,}/');
         if(!empty($product_description)){
-            array_push($inputs_arr, "product_description='$product_description'");
+            array_push($inputs_arr, "product_description REGEXP '$product_description' ");
         }
     }
+    // اگر در قسمت سرچ هدر چیزی سرچ شده بود:
+    if(isset($_POST['search_button'])){
+        $search_criterion = $_POST['search_criterion'];
+        if(!empty($search_criterion)){
+            $product_description = test_subcategory_input($_POST['search_criterion'], '/[a-zA-Z0-9ا-يئءیکآ]{1,}/');
+            if(!empty($product_description)){
+                array_push($inputs_arr, "product_description REGEXP '$product_description' ");
+            }       
+        }
+    }
+        // in order to sort results according to their date of upload:
+        array_push($inputs_arr, "ORDER BY product_ID DESC");
         $query = " SELECT * FROM products WHERE ";
         for($l=0;$l<count($inputs_arr); $l++){
-            if($l == 0){
+            if($l <= 0 ||  $l>= count($inputs_arr) - 1){
                 $query .= " " . $inputs_arr[$l];
-            }else{
+            }
+            else{
                 $query .= " AND" . " ". $inputs_arr[$l];
             }
         }
@@ -410,6 +423,17 @@ function card_generators(){
             echo '<div class="col-12 text-center text-danger"><p class="my-4">هیچ نتیجه ای بر اساس معیار های جستجو یافت نشد.</p></div>';
         }else{
             while ($row = mysqli_fetch_array($query_result)) {
+                // getting the uploader info:
+                $uploader_ID = $row['uploader_ID'];
+                $get_uploader_name_query = "SELECT * FROM users WHERE ID = '$uploader_ID' ";
+                $uploader_name_query_result = mysqli_query($database_connection, $get_uploader_name_query);
+                $uploader_name_array = mysqli_fetch_array($uploader_name_query_result);
+                $administrator = $uploader_name_array['administrator'];
+                if($administrator == 'YES'){
+                    $uploader_name = 'کاربر ادمین';
+                }else{
+                    $uploader_name = $uploader_name_array['username'];
+                }
                 ?>
                 <div class=" product-results col-xs-12 col-sm-6  col-lg-4 col-xl-3 p-3" >
                     <div class="card border border-primary" itemscope itemtype="https://schema.org/Product">
@@ -452,6 +476,10 @@ function card_generators(){
                                             }
                                         ?>
                                     </span></p></td></tr>
+                                    <tr>
+                                        <td><p class="card-text text-right">توسط:</p></td>
+                                        <td><p class="text-gray" itemprop="author"><?php echo $uploader_name; ?></p></td>
+                                    </tr>
                                 </table>
                                 <a href="productextension.php?product_ID=<?php echo $row['product_ID']; ?>" class="btn btn-primary mt-4">مشاهده و بررسی</a>
                             </div>

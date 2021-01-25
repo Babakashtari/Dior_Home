@@ -1,0 +1,26 @@
+header>div.logo-section {
+    text-align: center;
+}
+
+header>div.logo-section>img {
+    border-radius: 50%;
+    width: 150px;
+    height: auto;
+}
+
+main>div.result>p {
+    direction: rtl;
+}
+
+main>div.result>p>span {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.tick {
+    font-size: 2rem;
+}
+
+.displayNone {
+    display: none;
+}

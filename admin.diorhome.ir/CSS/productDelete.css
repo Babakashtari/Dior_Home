@@ -1,0 +1,84 @@
+div.result div.card {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+div.result div.card>img {
+    width: 100%;
+    height: 22rem;
+    -o-object-fit: contain;
+    object-fit: contain;
+    -o-object-position: center;
+    object-position: center;
+}
+
+div.product-result div.card>div>h6.card-title {
+    border-bottom: 3px solid blue;
+    padding-bottom: 0.5rem;
+    color: gray;
+}
+
+div.card>div.card-body span {
+    font-family: "IranSans";
+    color: gray;
+}
+
+div.card>div.card-body>table {
+    width: 100%;
+    direction: rtl;
+    height: 12rem;
+}
+
+div.card>div.card-body>table p {
+    margin-bottom: 0;
+}
+
+div.card>div.card-body>table tr>td:first-of-type {
+    width: 35%;
+}
+
+div.card>div.card-body>table tr:last-of-type {
+    border-bottom: 3px solid blue;
+}
+
+::-webkit-input-placeholder {
+    text-overflow: ellipsis;
+}
+
+::-moz-placeholder {
+    text-overflow: ellipsis;
+}
+
+:-ms-input-placeholder {
+    text-overflow: ellipsis;
+}
+
+::-ms-input-placeholder {
+    text-overflow: ellipsis;
+}
+
+::placeholder {
+    text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 992px) {
+    div.card>div.card-body>table tr>td:first-of-type {
+        padding-right: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 812px) {
+
+    div.card p,
+    div.card h6,
+    div.card a {
+        font-size: 0.75rem;
+        text-overflow: ellipsis;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    div.card>div.card-body table {
+        height: 10rem;
+    }
+}

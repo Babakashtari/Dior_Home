@@ -19,40 +19,40 @@ function test_home_address($data){
 function users_search_criteria(){
 echo    '
 <div class="iranSans col-6 col-sm-4 col-md-3 col-lg-2">
-    <span class="iranSans"><input type="checkbox" name="" id=""'; if(isset($_POST['first_name']) && !empty($_POST['first_name'])){echo "checked";} echo    '> نام</span>
+    <span class="iranSans"><input type="checkbox" name="first_name" id="first_name"'; if(isset($_POST['first_name']) && !empty($_POST['first_name'])){echo "checked";} echo    '> نام</span>
 </div>
 <div class="iranSans col-6 col-sm-4 col-md-3 col-lg-2">
-    <span class="iranSans"><input type="checkbox" name="" id=""'; if(isset($_POST['last_name']) && !empty($_POST['last_name'])){echo "checked";} echo    '>نام خانوادگی</span>
+    <span class="iranSans"><input type="checkbox" name="last_name" id="last_name"'; if(isset($_POST['last_name']) && !empty($_POST['last_name'])){echo "checked";} echo    '>نام خانوادگی</span>
 </div>
 <div class="iranSans col-6 col-sm-4 col-md-3 col-lg-2">
-    <span class="iranSans"><input type="checkbox" name="" id=""'; if(isset($_POST['age']) && !empty($_POST['age'])){echo "checked";} echo    '>سن</span>
+    <span class="iranSans"><input type="checkbox" name="age" id="age"'; if(isset($_POST['age']) && !empty($_POST['age'])){echo "checked";} echo    '>سن</span>
 </div>
 <div class="iranSans col-6 col-sm-4 col-md-3 col-lg-2">
-    <span class="iranSans"><input type="checkbox" name="" id="" '; if(isset($_POST['gender']) && !empty($_POST['gender'])){echo "checked";} echo    '>جنسیت</span>
+    <span class="iranSans"><input type="checkbox" name="gender" id="gender" '; if(isset($_POST['gender']) && !empty($_POST['gender'])){echo "checked";} echo    '>جنسیت</span>
 </div>
 <div class="iranSans col-6 col-sm-4 col-md-3 col-lg-2">
-    <span class="iranSans"><input type="checkbox" name="" id="" '; if(isset($_POST['username']) && !empty($_POST['username'])){echo "checked";} echo    '>نام کاربری</span>
+    <span class="iranSans"><input type="checkbox" name="username" id="username" '; if(isset($_POST['username']) && !empty($_POST['username'])){echo "checked";} echo    '>نام کاربری</span>
 </div>
 <div class="iranSans col-6 col-sm-4 col-md-3 col-lg-2">
-    <span class="iranSans"><input type="checkbox" name="" id="" '; if(isset($_POST['email']) && !empty($_POST['email'])){echo "checked";} echo    '>ایمیل</span>
+    <span class="iranSans"><input type="checkbox" name="email" id="email" '; if(isset($_POST['email']) && !empty($_POST['email'])){echo "checked";} echo    '>ایمیل</span>
 </div>
 <div class="iranSans col-6 col-sm-4 col-md-3 col-lg-2">
-    <span class="iranSans"><input type="checkbox" name="" id="" '; if(isset($_POST['home_address']) && !empty($_POST['home_address'])){echo "checked";} echo    '>آدرس منزل</span>
+    <span class="iranSans"><input type="checkbox" name="home_address" id="home_address" '; if(isset($_POST['home_address']) && !empty($_POST['home_address'])){echo "checked";} echo    '>آدرس منزل</span>
 </div>
 <div class="iranSans col-6 col-sm-4 col-md-3 col-lg-2">
-    <span class="iranSans"><input type="checkbox" name="" id="" '; if(isset($_POST['landline']) && !empty($_POST['landline'])){echo "checked";} echo    '>تلفن ثابت</span>
+    <span class="iranSans"><input type="checkbox" name="landline" id="landline" '; if(isset($_POST['landline']) && !empty($_POST['landline'])){echo "checked";} echo    '>تلفن ثابت</span>
 </div>
 <div class="iranSans col-6 col-sm-4 col-md-3 col-lg-2">
-    <span class="iranSans"><input type="checkbox" name="" id="" '; if(isset($_POST['mobile_phone']) && !empty($_POST['mobile_phone'])){echo "checked";} echo    '>شماره موبایل</span>
+    <span class="iranSans"><input type="checkbox" name="mobile_phone" id="mobile_phone" '; if(isset($_POST['mobile_phone']) && !empty($_POST['mobile_phone'])){echo "checked";} echo    '>شماره موبایل</span>
 </div>
 <div class="iranSans col-6 col-sm-4 col-md-3 col-lg-2">
-    <span class="iranSans users-checkboxes"><input type="checkbox" name="" id="" '; if(isset($_POST['verified']) && !empty($_POST['verified'])){echo "checked";} echo    '>تایید ایمیل</s>
+    <span class="iranSans users-checkboxes"><input type="checkbox" name="verified" id="verified" '; if(isset($_POST['verified']) && !empty($_POST['verified'])){echo "checked";} echo    '>تایید ایمیل</s>
 </div>
 <div class="iranSans col-6 col-sm-4 col-md-3 col-lg-2">
-    <span class="iranSans users-checkboxes"><input type="checkbox" name="" id="" '; if(isset($_POST['newsletter']) && !empty($_POST['newsletter'])){echo "checked";} echo    '>خبرنامه</s>
+    <span class="iranSans users-checkboxes"><input type="checkbox" name="newsletter" id="newsletter" '; if(isset($_POST['newsletter']) && !empty($_POST['newsletter'])){echo "checked";} echo    '>خبرنامه</s>
 </div>
 <div class="iranSans col-6 col-sm-4 col-md-3 col-lg-2">
-    <span class="iranSans users-checkboxes"><input type="checkbox" name="" id="" '; if(isset($_POST['administrator']) && !empty($_POST['administrator'])){echo "checked";} echo    '>کاربر ادمین</s>
+    <span class="iranSans users-checkboxes"><input type="checkbox" name="administrator" id="administrator" '; if(isset($_POST['administrator']) && !empty($_POST['administrator'])){echo "checked";} echo    '>کاربر ادمین</s>
 </div>
         ';
 }
@@ -454,8 +454,8 @@ function search_result(){
                         <div class='row col-12 py-1 m-0' style='direction:ltr;'>
                             <div class='col-12 col-md-1 p-0 m-0'>
                                 <p class='text-center m-0 p-0'>
-                                    <a class='text-primary text-center px-1' href='users_modification.php?request=edit&ID=" . $ID ."'><i class='fas fa-edit'></i></a>
-                                    <a class='text-danger text-center px-1' href='users_modification.php?request=delete&ID=" . $ID . "'><i class='far fa-trash-alt'></i></a>
+                                    <a class='text-primary text-center px-1' href='user_modification.php?request=edit&ID=" . $ID ."'><i class='fas fa-edit'></i></a>
+                                    <a class='text-danger text-center px-1' href='user_modification.php?request=delete&ID=" . $ID . "'><i class='far fa-trash-alt'></i></a>
                                 </p>
                             </div>
                             <div class='p-1 col-12 col-md-1'>

@@ -15,6 +15,9 @@
                 $product = mysqli_fetch_assoc($query_result);
                 if($product['approved'] == 'YES'){
                     $product_directory = $product['product_directory'];
+                    $name_array = explode('.', $product_directory);
+                    $product_extension = strtolower(end($name_array));
+
                     $product_name = ucfirst($product['product_name']);
                     $product_category = $product['product_category'];
                     $product_dimensions = $product['product_dimensions'];

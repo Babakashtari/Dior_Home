@@ -47,7 +47,7 @@
                 <img src="https://diorhome.ir/custom_errors/images/403_error.png" alt="403 error page image" width="30%" height="auto" >
             </div>
             <section class="error-message">
-                <p>متاسفانه دسترسی به فولدر مورد نظر شما امكان پذير نيست. لطفا از لینک زیر برای رفتن به صفحه اصلی استفاده کنید:</p>
+                <p>متاسفانه دسترسی به فولدر مورد نظر شما امكان پذير نيست. لطفا از دکمه زیر برای رفتن به صفحه اصلی استفاده کنید:</p>
                 <div>
                     <i class="fas fa-chevron-left"></i>
                     <a href="https://diorhome.ir">برو به خانه</a>

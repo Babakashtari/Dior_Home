@@ -5,27 +5,18 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155871160-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-155871160-2');
-</script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="content-security-policy" content="default-src 'none'; 
         style-src 'self' 'unsafe-inline'; 
-        script-src 'self' 'unsafe-inline' https://google-analytics.com;
+        script-src 'self' 'unsafe-inline';
         img-src 'self' https://www.w3.org https://www.google.com.ua https://www.google.com https://www.google-analytics.com https://www.googletagmanager.com https://stats.g.doubleclick.net;
         font-src 'self';
         frame-src https://www.google.com;
         "  >
-    <meta name="description"    content="فعالسازی ایمیل وبسايت رسمی پيشگامان پودينه آتا جهت بهره بری از خدمات مجازی از جمله خبرنامه شرکت" />
+    <meta name="description"    content="فعالسازی ایمیل وبسايت رسمی چاپخانه پيشگامان پودينه آتا جهت بهره بری از خدمات مجازی از جمله خبرنامه شرکت" />
     <meta name="author" content="Babak Ashtari" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -55,7 +46,7 @@
     <link rel="stylesheet" href="CSS/explorer_warning.css">
     <link rel="stylesheet" href="CSS/copy_right.css">
     <link rel="stylesheet" href="CSS/emailActivation.css">
-    <title>پیشگامان پودینه - تایید ایمیل</title>
+    <title>چاپخانه دیجیتال پیشگامان پودینه آتا - تایید ایمیل</title>
 </head>
 <body>
     <section class="result-section d-flex justify-content-center py-1 pt-sm-3">

@@ -34,11 +34,11 @@ var container_fluid_generator = function container_fluid_generator() {
     }
 };
 
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
     margin_generator();
     container_fluid_generator();
 });
-window.addEventListener("resize", function() {
+window.addEventListener("resize", function () {
     margin_generator();
     container_fluid_generator();
 });
@@ -51,7 +51,7 @@ var footer_tab_changer = function footer_tab_changer() {
             footer_tab_menus[i].style.display = "none";
         }
 
-        footer_tabs[i].addEventListener("click", function(e) {
+        footer_tabs[i].addEventListener("click", function (e) {
             for (var s = 0; s < footer_tabs.length; s++) {
                 if (e.currentTarget === footer_tabs[s]) {
                     footer_tabs[s].classList.add("bg-primary");

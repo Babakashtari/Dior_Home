@@ -15,19 +15,29 @@
   gtag('config', 'UA-155871160-2');
 </script>
 
+    <!-- preloads: -->
+    <link rel="preload" href="Fonts/IRANSansWeb_Bold.ttf" as="font" type="font/ttf" crossorigin> 
+    <link rel="preload" href="Fonts/yekannumbers-regular.woff" as="font" type="font/woff" crossorigin> 
+    <link rel="preload" href="CSS/all.min.css" as="style" crossorigin>
+    <link rel="preload" href="images/Dior_logo.jpg" as="image" type="image/jpg" crossorigin>
+    <link rel="preload" href="JS/products.js" as="script" type="text/javascript" crossorigin>
+
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta http-equiv="content-security-policy" content="default-src 'self'; 
         style-src 'self' 'unsafe-inline'; 
-        script-src 'self' 'unsafe-inline' https://www.google-analytics.com;
+        script-src 'self' 'unsafe-inline' https://www.google-analytics.com https://www.googletagmanager.com;
         img-src 'self' https://www.w3.org https://www.google.com.ua https://www.google.com https://www.google-analytics.com https://www.googletagmanager.com https://stats.g.doubleclick.net;
         font-src 'self';
         frame-src https://www.google.com;
+        connect-src https://www.google-analytics.com https://stats.g.doubleclick.net;
         "  >
+
         <meta name="description"    content="کاتالوگ انواع محصولات چاپ دیجیتالی يا كاتالوگ محصولات چاپ ساللیمیشن پیشگامان پودینه آتا، کاتالوگ محصولات چاپي روی پارچه در ابعاد متفاوت" />
         <meta name="author" content="Babak Ashtari" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="images/fav_icon/apple-icon-60x60.png">
         <link rel="apple-touch-icon" sizes="72x72" href="images/fav_icon/apple-icon-72x72.png">
@@ -95,7 +105,7 @@
                         </select>
                     </div>
                     <div class="form-group py-1 col-12 ">
-                        <textarea id="product_description" name="product_description" class="form-control border border-primary" placeholder="توضیحات" ><?php if(isset($_GET['product_description'])){echo $_GET['product_description'];} ?></textarea>
+                        <textarea id="product_description" name="product_description" class="form-control border border-primary" placeholder="توضیحات" ><?php if(isset($_GET['product_description'])){echo $_GET['product_description'];} if(isset($_POST['search_criterion'])){echo $_POST['search_criterion'];}?></textarea>
                     </div>
                     <div class="form-group col-12 py-1">
                         <input class="btn btn-primary text-light col-12 border border-primary" id="submit" name="submit" type="submit" value="جستجو کن">

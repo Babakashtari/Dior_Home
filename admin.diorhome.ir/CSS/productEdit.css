@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+}
+
+input+p,
+select+p {
+    font-size: 0.75rem;
+}
+
+.displayNone {
+    display: none;
+}
+
+.failed {
+    border: 2px solid red !important;
+}
+
+.passed {
+    border: 2px solid green !important;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}

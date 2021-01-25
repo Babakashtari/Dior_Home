@@ -15,39 +15,37 @@
 <!DOCTYPE html lang="fa">
 <html lang="fa">
     <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155871160-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-155871160-2');
-</script>
+        <!-- preloads: -->
+        <link rel="preload" href="Fonts/IRANSansWeb_Bold.ttf" as="font" type="font/ttf" crossorigin> 
+        <link rel="preload" href="Fonts/yekannumbers-regular.woff" as="font" type="font/woff" crossorigin> 
+        <link rel="preload" href="CSS/all.min.css" as="style" crossorigin>
+        <link rel="preload" href="images/Dior_logo.jpg" as="image" type="image/jpg" crossorigin>
+        <link rel="preload" href="images/login_page_images/signin_main_image2.jpg" as="image" type="image/jpg" crossorigin>
+        <link rel="preload" href="JS/login.js" as="script" type="text/javascript" crossorigin>
 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta http-equiv="content-security-policy" content="default-src 'self'; 
         style-src 'self' 'unsafe-inline'; 
-        script-src 'self' 'unsafe-inline' https://google-analytics.com;
-        img-src 'self' https://www.w3.org https://www.google.com.ua https://www.google.com https://www.google-analytics.com https://www.googletagmanager.com https://stats.g.doubleclick.net;
+        script-src 'self' 'unsafe-inline';
+        img-src 'self' https://www.w3.org https://www.google.com.ua https://www.google.com https://www.google-analytics.com https://stats.g.doubleclick.net;
         font-src 'self';
         frame-src https://www.google.com;
         "  >
-        <meta name="description"    content="جهت ثبت سفارش، خريد كالا و يا درخواست خدمات در سايت پيشگامان پودينه آتا ثبت نام كنيد" />
+        <meta name="description"    content="جهت ثبت سفارش، خريد كالا و يا درخواست خدمات در وبسايت چاپخانه دیجیتال پيشگامان پودينه آتا ثبت نام كنيد" />
         <meta name="author" content="Babak Ashtari" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <!-- for SEO purposes -->
         <!-- open graph meta tags for SEO -->
-        <meta property="og:title" content="پيشگامان پودينه آتا - ورود" />
+        <meta property="og:title" content="چاپخانه دیجیتال پيشگامان پودينه آتا - ورود" />
         <meta property="og:site_name" content="پيشگامان پودينه آتا" />
-        <meta property="og:url" content="..." />
-        <meta property="og:description"    content="ثبت نام كاربران جهت ثبت سفارش،‌خريد كالا و درخواست خدمات در سايت پيشگامان پودينه آتا" />
+        <meta property="og:url" content="diorhome.ir/login.php" />
+        <meta property="og:description"    content="ثبت نام كاربران جهت ثبت سفارش، ‌خريد كالا و درخواست خدمات در وبسایت چاپخانه دیجیتال پيشگامان پودينه آتا" />
         <meta property="og:locale:alternate" content="fa_IR" />
         <meta property="og:type" content="product" />
-        <meta property="og:image" content="..." />
+        <meta property="og:image" content="diorhome.ir/images/Dior_logo.jpg" />
 
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="images/fav_icon/apple-icon-60x60.png">
@@ -77,14 +75,14 @@
         <link rel="stylesheet" href="CSS/contact_us_modal.css">
         <link rel="stylesheet" href="CSS/explorer_warning.css">
         <link rel="stylesheet" href="CSS/login.css">
-        <title>پيشگامان پودينه - ورود</title>
+        <title>چاپخانه دیجیتال پيشگامان پودينه آتا - ورود</title>
     </head>
 <body>
     <?php head(); ?>
     <main class="pb-5">
         <section class="photo-container d-flex align-items-center justify-content-center">
             <img src="images/login_page_images/signin_main_image2.jpg" alt="ورود به سایت با نام کاربری" >
-            <div><p class="text-center px-3 py-4 m-0">ثبت نام کنید تا از خدمات مجازی سایت پیشگامان پودینه آتا بهره مند شوید.</p></div>
+            <div><h1 class="text-center px-3 py-4 m-0">به سامانه ورود - ثبت نام کاربران چاپخانه دیجیتال پیشگامان پودینه آتا خوش آمدید</h1></div>
         </section>
         <section class="welcome py-4 px-2">
             <div class="container pt-5">

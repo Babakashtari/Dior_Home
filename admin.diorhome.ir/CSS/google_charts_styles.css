@@ -1,0 +1,5 @@
+div#pie-chart {
+    /* width: 500px;
+    height: 400px; */
+    direction: rtl !important;
+}

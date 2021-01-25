@@ -1,0 +1,1 @@
+"use strict";for(var warning=document.querySelector("section.warning"),browser_array=["MSIE","Trident","Edge"],user_agent=navigator.userAgent,b=0;b<browser_array.length;b++)if(user_agent.indexOf(browser_array[b])>-1){warning.classList.remove("displayNone");break}
