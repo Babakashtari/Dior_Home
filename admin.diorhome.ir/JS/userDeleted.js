@@ -1,13 +1,1 @@
-const spinner = document.getElementsByClassName('spinner-border')[0];
-const tick = document.getElementsByClassName('tick')[0];
-const delete_message = document.getElementsByClassName('delete-message')[0];
-
-const tick_animation = () => {
-    setTimeout(() => {
-        spinner.classList.add('displayNone');
-        tick.classList.remove('displayNone');
-        delete_message.classList.remove('displayNone');
-    }, 1000);
-}
-
-tick_animation();
+"use strict";var spinner=document.getElementsByClassName("spinner-border")[0],tick=document.getElementsByClassName("tick")[0],delete_message=document.getElementsByClassName("delete-message")[0],tick_animation=function tick_animation(){setTimeout((function(){spinner.classList.add("displayNone"),tick.classList.remove("displayNone"),delete_message.classList.remove("displayNone")}),1e3)};tick_animation();

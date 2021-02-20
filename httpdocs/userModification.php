@@ -2,7 +2,6 @@
 <?php require "php/expiration.php" ?>
 <?php require 'php/explorer_warning.php' ?>
 <?php 
-    session_start(); 
     expiration_check();
 ?>
 <!DOCTYPE html lang="fa">

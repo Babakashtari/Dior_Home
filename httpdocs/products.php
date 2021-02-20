@@ -1,7 +1,6 @@
 <?php require "php/code_functions.php" ?>
 <?php require 'php/productsResults.php' ?>
 <?php require 'php/explorer_warning.php' ?>
-<?php session_start(); ?>
 <!DOCTYPE html lang="fa">
 <html lang="fa">
     <head>

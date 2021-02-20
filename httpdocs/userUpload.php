@@ -2,7 +2,7 @@
 <?php require "php/uploadResult.php" ?>
 <?php require "php/expiration.php" ?>
 <?php require 'php/explorer_warning.php' ?>
-<?php session_start();
+<?php
     expiration_check();
 ?>
 <!DOCTYPE html lang="fa">

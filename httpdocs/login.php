@@ -1,7 +1,6 @@
 <?php require "php/code_functions.php" ?>
 <?php require 'php/explorer_warning.php' ?>
 <?php 
-    session_start();
 
     // when user is headed towards login.php page via another page which requires logging in:
     if(!empty($_SESSION['user_username']) && !empty($_SESSION['location'])){
