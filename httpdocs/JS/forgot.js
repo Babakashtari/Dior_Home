@@ -1,8 +1,5 @@
-const error = document.querySelector("body > section > fieldset > form > div.form-group > p");
-const section = document.querySelector("body > section");
-
-console.log(error);
-
+const error = document.querySelector("body > section.background-image > fieldset > form > div.form-group > p");
+const section = document.querySelector("body > section.background-image");
 const validate = (regex, input) => {
   const value = input.value;
   // if the input value is not empty:

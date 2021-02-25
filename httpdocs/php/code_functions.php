@@ -1,8 +1,9 @@
 
 <?php
+    session_start();
+
 function jumbotron_generator(){
     ?>
-        <?php session_start(); ?>
         <div class="jumbotron mb-0 mx-sm-0 bg-light text-dark">
             <h1 class="mx-0 px-0 ">پیشگامان پودینه آتا</h1>
             <h2 class="mx-0 px-0 mb-3" style="font-size:1rem;">

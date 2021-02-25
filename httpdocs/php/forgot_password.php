@@ -1,7 +1,8 @@
 <?php 
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
 
 if(isset($_POST['submit'])){
     if(empty($_POST['email_address'])){
@@ -71,18 +72,28 @@ if(isset($_POST['submit'])){
                     require 'PHPMailer/src/SMTP.php';
 
                     $mail_config = new PHPMailer(true);
+                    //in case we want to enable SMTP debugging:
+                    // $mail_config->SMTPDebug = 3;
                     try{
+                        // setting email to use SMTP:
                         $mail_config->CharSet = 'UTF-8';
                         $mail_config->isSMTP();
                         $mail_config->Host = "mail.diorhome.ir";
                         $mail_config->SMTPAuth = true;
                         $mail_config->Username = 'info@diorhome.ir';
                         $mail_config->Password = 'joli1366';
+                        // in case we want to require port number and tls security;
+                        // $mail_config->SMTPSecure = "tls";
+                        // $mail_config->Port = 25; 
+
+                        // content of the email:
                         $mail_config->addAddress($to);
                         $mail_config->Subject = $subject;
                         $mail_config->Body = $message;
                         $mail_config->setFrom('info@diorhome.ir', ' گروه پشتیبانی پیشگامان پودینه آتا');
                         $mail_config->isHTML(true);
+
+                        // sending the message command:
                         $mail_config->send();
                             echo    '<p class="text-success text-center pt-4 pb-1"><span class=" fa fa-check" aria-hidden="true"></span></p>';
                             echo    '<p style="direction:rtl;text-align:right" class="text-center text-success pb-2">لطفا ایمیل خود را چک کنید.</p>';        
