@@ -291,6 +291,14 @@ function footer_generator(){
                 </div>
             </div>
         </section>
+        <section class="copy-right">
+            <p class="text-center text-light p-0 " >طراحی و توسعه توسط  
+                <a href="#" >وب پردازان پارس</a> 
+            </p>
+            <p class="text-center text-light " style="direction:ltr;">
+                &copy; 2018 - <?php echo date('Y'); ?>
+            </p>
+        </section>
     </footer>
 <?php
 }

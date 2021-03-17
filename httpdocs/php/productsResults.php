@@ -64,8 +64,10 @@
             }       
         }
     }
+
         // in order to sort results according to their date of upload:
         array_push($inputs_arr, "ORDER BY product_ID DESC");
+
         $query = " SELECT * FROM products WHERE ";
         for($l=0;$l<count($inputs_arr); $l++){
             if($l <= 0 ||  $l>= count($inputs_arr) - 1){
@@ -143,94 +145,115 @@
         }
 
         if($total_number_of_rows > 0){
-            echo '<p class="text-light text-center">نمایش نتایج <span class="Yekan">' . $from . '</span> تا  <span class="Yekan">' . $to . '</span> از <span class="Yekan">' . $total_number_of_rows . '</span> مورد یافت شده</p>';
+            ?>
+                <p class="text-light text-center">نمایش نتایج <span class="Yekan"> <?php echo $from; ?></span> تا  <span class="Yekan"><?php echo $to; ?></span> از <span class="Yekan"><?php echo $total_number_of_rows; ?></span> مورد یافت شده</p>
+            <?php
         }
-        echo '<ul class="pagination justify-content-center">';
-
+        ?>
+            <ul class="pagination justify-content-center">
+        <?php
         if($total_number_of_pages<=3){
             for($m = 1 ; $m<=$total_number_of_pages ; $m++){
                 if($m == $page_number){
-                    echo '<li class="page-item active"><a class="page-link Yekan" href="#">'. $m.'</a></li>';
+                    ?>
+                        <li class="page-item active"><a class="page-link Yekan" href="#"><?php echo $m; ?></a></li>
+                    <?php
                 }else{
-                    echo '<li class="page-item"><a class="page-link Yekan" href="?page_number='. $m. $href. '">'. $m.'</a></li>';
+                    ?>
+                        <li class="page-item"><a class="page-link Yekan" href="?page_number=<?php echo $m . $href; ?>"><?php echo $m; ?></a></li>
+                    <?php
                 }
             }
         }else{
             if($page_number<=1){
-                echo    '                    
+                ?>                   
                     <li class="page-item disabled">
                         <a class="page-link" href="#" aria-label="Previous">
                             <span aria-hidden="true">&raquo;</span>
                             <span class="sr-only">Previous</span>
                         </a>
                     </li>
-                        ';
+                <?php
                 for($m = 1 ; $m<=3 ; $m++){
                     if($m == $page_number){
-                        echo '<li class="page-item active"><a class="page-link Yekan" href="#">'. $m.'</a></li>';
+                        ?>
+                            <li class="page-item active"><a class="page-link Yekan" href="#"><?php echo $m; ?></a></li>
+                        <?php
                     }else{
-                        echo '<li class="page-item"><a class="page-link Yekan" href="?page_number='. $m. $href .'">'. $m.'</a></li>';
+                        ?>
+                            <li class="page-item"><a class="page-link Yekan" href="?page_number=<?php echo $m. $href; ?>"><?php echo $m; ?></a></li>
+                        <?php
                     }
                 }
-                echo    '
+                ?>
                     <li class="page-item">
-                        <a class="page-link Yekan" href="?page_number='.$total_number_of_pages. $href. '" aria-label="Next">
+                        <a class="page-link Yekan" href="?page_number= <?php echo $total_number_of_pages. $href; ?>" aria-label="Next">
                             <span aria-hidden="true">&laquo;</span>
                             <span class="sr-only">Next</span>
                         </a>
                     </li>
-                        ';
+                <?php
             }elseif($page_number>= $total_number_of_pages){
-                echo    '
+                ?>
                     <li class="page-item">
-                        <a class="page-link" href="?page_number=1'. $href. '" aria-label="Previous">
+                        <a class="page-link" href="?page_number=1<?php echo $href; ?>" aria-label="Previous">
                             <span aria-hidden="true">&raquo;</span>
                             <span class="sr-only">Previous</span>
                         </a>
                     </li>
-                        ';
+                <?php
                 for($m = $total_number_of_pages - 2 ; $m<=$total_number_of_pages ; $m++){
                     if($m == $page_number){
-                        echo '<li class="page-item active"><a class="page-link Yekan" href="#">'. $m.'</a></li>';
+                        ?>
+                            <li class="page-item active"><a class="page-link Yekan" href="#"><?php echo $m; ?></a></li>
+                        <?php
                     }else{
-                        echo '<li class="page-item"><a class="page-link Yekan" href="?page_number='. $m. $href. '">'. $m.'</a></li>';
+                        ?>
+                            <li class="page-item"><a class="page-link Yekan" href="?page_number=<?php echo $m. $href; ?>"><?php echo $m; ?></a></li>
+                        <?php
                     }
                 }
-                echo    '
+                ?>
                     <li class="page-item disabled">
                         <a class="page-link" href="#" aria-label="Next">
                             <span aria-hidden="true">&laquo;</span>
                             <span class="sr-only">Next</span>
                         </a>
                     </li>
-                        ';
+                <?php
             }else{
-                echo    '
+                ?>
                     <li class="page-item">
-                        <a class="page-link Yekan" href="?page_number=1'. $href .'" aria-label="Previous">
+                        <a class="page-link Yekan" href="?page_number=1<?php echo $href; ?>" aria-label="Previous">
                             <span aria-hidden="true">&raquo;</span>
                             <span class="sr-only">Previous</span>
                         </a>
                     </li>
-                        ';
+                <?php
                 for($m = $page_number - 1 ; $m<=$page_number + 1 ; $m++){
                     if($m == $page_number){
-                        echo '<li class="page-item active"><a class="page-link Yekan" href="#">'. $m.'</a></li>';
+                        ?>
+                            <li class="page-item active"><a class="page-link Yekan" href="#"><?php echo $m; ?></a></li>
+                        <?php
                     }else{
-                        echo '<li class="page-item"><a class="page-link Yekan" href="?page_number='. $m. $href .'">'. $m.'</a></li>';
+                        ?>
+                            <li class="page-item"><a class="page-link Yekan" href="?page_number=<?php echo $m. $href ;?>"><?php echo $m; ?></a></li>
+                        <?php
                     }
                 }
-                echo    '
+                ?>
                     <li class="page-item">
-                        <a class="page-link" href="?page_number='. $total_number_of_pages . $href . '" aria-label="Next">
+                        <a class="page-link" href="?page_number=<?php echo $total_number_of_pages . $href; ?>" aria-label="Next">
                             <span aria-hidden="true">&laquo;</span>
                             <span class="sr-only">Next</span>
                         </a>
                     </li>
-                        ';
+                <?php
             }
         }
-        echo '</ul>';
+        ?>
+            </ul>
+        <?php
     }
 
 
@@ -239,7 +262,9 @@ function category_option_generator(){
     $value_names = ['کالای خواب', 'کالای اتاق پذیرایی', 'فرش'];
 
         for($i = 0; $i<count($values); $i++){
-            echo '<option value="' . $values[$i]. '"';
+            ?>
+                <option value="<?php echo $values[$i]; ?>"
+            <?php
             if(isset($_GET['product_category']) && $_GET['product_category'] == $values[$i]){
                 echo 'selected = "selected" ';
             }
@@ -251,7 +276,9 @@ function subcategory_option_generator(){
     if(!empty($_GET['product_subcategory']) ){
         $subcategories = ['روبالشی', 'روتختی', 'ملافه', 'کوسن', 'پرده', 'رومبلی', 'رومیزی', 'فرش', 'روفرشی', 'تابلوفرش'];
         if(in_array($_GET['product_subcategory'], $subcategories)){
-            echo '<option value="' . $_GET['product_subcategory']. '"' . ' selected="selected">' . $_GET['product_subcategory'] . '</option>';
+            ?>
+                <option value="<?php echo $_GET['product_subcategory']; ?>" selected="selected"><?php echo $_GET['product_subcategory']; ?></option>
+            <?php
         }
     }
 }
@@ -323,106 +350,132 @@ function card_generators(){
             $product_subcategory = null;
         }
 
-        echo    '
+        ?>
         <div class="container-fluid row badge-container mx-3 pb-2">
             <h4 class="col-12 text-light text-center access-header py-4">کاتالوگ محصولات - دسترسی سریع</h4>
             <div class="col-12  col-md-6 col-lg-4 p-2 ">
                 <div class="row p-2">
                     <p class="text-light category text-center col-sm-12 col-md-11 py-2">کالای خواب:</p>
-                    <a href="products.php?product_category=sleeping_products&product_subcategory=روتختی" type="button" class="btn';
+                    <a href="products.php?product_category=sleeping_products&product_subcategory=روتختی" type="button" class="btn
+                    <?php
                     if($product_category == "sleeping_products" && $product_subcategory == "روتختی"){
                         echo ' btn-success ';
                     }else{
                         echo ' btn-primary ';
                     } 
-                    echo '   col-sm-2 col-lg-3"><span class="badge badge-light Yekan">' . $bedsheet_number . '</span><br>روتختی</a>
-                    <a href="products.php?product_category=sleeping_products&product_subcategory=روبالشی" type="button" class="btn';
+                    ?>
+                        col-sm-2 col-lg-3"><span class="badge badge-light Yekan"><?php echo $bedsheet_number; ?></span><br>روتختی</a>
+                    <a href="products.php?product_category=sleeping_products&product_subcategory=روبالشی" type="button" class="btn
+                    <?php
                     if($product_category == "sleeping_products" && $product_subcategory == "روبالشی"){
                         echo ' btn-success ';
                     }else{
                         echo ' btn-primary ';
                     }
-                    echo '   col-sm-2 col-lg-3"><span class="badge badge-light Yekan">'. $pillow_number .'</span><br>روبالشی</a>
-
-                    <a href="products.php?product_category=sleeping_products&product_subcategory=ملافه" type="button" class="btn';
+                    ?>
+                        col-sm-2 col-lg-3"><span class="badge badge-light Yekan"><?php echo $pillow_number; ?></span><br>روبالشی</a>
+                    <a href="products.php?product_category=sleeping_products&product_subcategory=ملافه" type="button" class="btn
+                    <?php
                     if($product_category == "sleeping_products" && $product_subcategory == "ملافه" ){
                         echo " btn-success ";
                     }else{
                         echo " btn-primary ";
                     }
-                    echo '   col-sm-2 col-lg-3"><span class="badge badge-light Yekan">' . $bedcover_number . '</span><br> ملافه </a>
+                    ?>
+                        col-sm-2 col-lg-3"><span class="badge badge-light Yekan"><?php echo $bedcover_number; ?></span><br> ملافه </a>
                 </div>
             </div>
             <div class="col-12  col-md-6 col-lg-4 p-2 ">
                 <div class="row p-2">
                     <p class="text-light category text-center col-sm-12 col-md-11 py-2">  کالای اتاق پذیرایی:</p>
-                    <a href="products.php?product_category=living_room_products&product_subcategory=رومیزی" type="button" class="btn';
+                    <a href="products.php?product_category=living_room_products&product_subcategory=رومیزی" type="button" class="btn
+                    <?php
                     if($product_category == "living_room_products" && $product_subcategory == "رومیزی"){
                         echo ' btn-success';
                     }else{
                         echo ' btn-primary ';
                     }
-                    echo '  col-sm-2"><span class="badge badge-light Yekan">' . $table_cloth_number . '</span><br> رومیزی </a>
-                    <a href="products.php?product_category=living_room_products&product_subcategory=پرده" type="button" class="btn';
+                    ?>
+                        col-sm-2"><span class="badge badge-light Yekan"><?php echo $table_cloth_number; ?></span><br> رومیزی </a>
+                    <a href="products.php?product_category=living_room_products&product_subcategory=پرده" type="button" class="btn
+                    <?php
                     if($product_category == "living_room_products" && $product_subcategory == "پرده" ){
                         echo ' btn-success';
                     }else{
                         echo ' btn-primary';
                     }
-                    echo '  col-sm-2"><span class="badge badge-light Yekan">' . $curtain_number . '</span><br> پرده </a>
-                    <a href="products.php?product_category=living_room_products&product_subcategory=کوسن" type="button" class="btn';
+                    ?>
+                        col-sm-2"><span class="badge badge-light Yekan"><?php echo $curtain_number; ?></span><br> پرده </a>
+                    <a href="products.php?product_category=living_room_products&product_subcategory=کوسن" type="button" class="btn
+                    <?php
                     if($product_category == "living_room_products" && $product_subcategory == "کوسن"){
                         echo ' btn-success ';
                     }else{
                         echo ' btn-primary ';
                     }
-                    echo '  col-sm-2"><span class="badge badge-light Yekan">' . $livingroom_cushion_number . ' </span><br> کوسن </a>
-                    <a href="products.php?product_category=living_room_products&product_subcategory=رومبلی" type="button" class="btn';
+                    ?>
+                        col-sm-2"><span class="badge badge-light Yekan"><?php echo $livingroom_cushion_number; ?></span><br> کوسن </a>
+                    <a href="products.php?product_category=living_room_products&product_subcategory=رومبلی" type="button" class="btn
+                    <?php
                     if($product_category="living_rom_products" && $product_subcategory == "رومبلی"){
                         echo ' btn-success ';
                     }else{
                         echo ' btn-primary ';
                     }
-                    echo '  col-sm-2"><span class="badge badge-light Yekan">' . $sofacover_number . '</span><br> رومبلی </a>
+                    ?>
+                        col-sm-2"><span class="badge badge-light Yekan"> <?php echo $sofacover_number; ?></span><br> رومبلی </a>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4 p-2 ">
                 <div class="row p-2">
                     <p class="text-light category text-center col-sm-12 col-md-11 py-2">  کالای فرش:</p>
-                    <a href="products.php?product_category=carpet_products&product_subcategory=فرش" type="button" class="btn';
+                    <a href="products.php?product_category=carpet_products&product_subcategory=فرش" type="button" class="btn
+                    <?php
                     if($product_category="carpet_products" && $product_subcategory == "فرش"){
                         echo ' btn-success ';
                     }else{
                         echo ' btn-primary ';
                     }
-                    echo ' col-sm-2 col-lg-3"><span class="badge badge-light Yekan">' . $carpet_carpet_number . '</span><br> فرش </a>
-                    <a href="products.php?product_category=carpet_products&product_subcategory=روفرشی" type="button" class="btn';
+                    ?>
+                        col-sm-2 col-lg-3"><span class="badge badge-light Yekan"><?php echo $carpet_carpet_number; ?></span><br> فرش </a>
+                    <a href="products.php?product_category=carpet_products&product_subcategory=روفرشی" type="button" class="btn
+                    <?php
                     if($product_category="carpet_products" && $product_subcategory == "روفرشی"){
                         echo ' btn-success ';
                     }else{
                         echo ' btn-primary ';
                     }
-                    echo ' col-sm-2 col-lg-3"><span class="badge badge-light Yekan">' . $carpet_cover_number . '</span><br> روفرشی </a>
-                    <a href="products.php?product_category=carpet_products&product_subcategory=تابلوفرش" type="button" class="btn';
+                    ?>
+                        col-sm-2 col-lg-3"><span class="badge badge-light Yekan"><?php echo $carpet_cover_number; ?></span><br> روفرشی </a>
+                    <a href="products.php?product_category=carpet_products&product_subcategory=تابلوفرش" type="button" class="btn
+                    <?php
                     if($product_category="carpet_products" && $product_subcategory == "تابلوفرش"){
                         echo ' btn-success';
                     }else{
                         echo ' btn-primary ';
                     }
-                    echo ' col-sm-2 col-lg-3"><span class="badge badge-light Yekan">' . $carpetboard_number . '</span><br> تابلوفرش </a>
+                    ?>
+                    col-sm-2 col-lg-3"><span class="badge badge-light Yekan"><?php echo $carpetboard_number;?></span><br> تابلوفرش </a>
                 </div>
             </div>
         </div>
-        ';
-
-
-
+        <?php
         $query_result = mysqli_query($database_connection, $query);
         $total_number_of_rows = mysqli_num_rows($query_result);
         if($total_number_of_rows<=0){
-            echo '<div class="col-12 text-center text-danger"><p class="my-4">هیچ نتیجه ای بر اساس معیار های جستجو یافت نشد.</p></div>';
+            ?>
+                <div class="col-12 text-center text-danger"><p class="my-4">هیچ نتیجه ای بر اساس معیار های جستجو یافت نشد.</p></div>
+            <?php
         }else{
             while ($row = mysqli_fetch_array($query_result)) {
+                // getting the upload date:
+                $upload_date = strtotime($row['upload_date']);
+                $upload_year = date('Y', $upload_date);
+                if($upload_year < date('Y')){
+                    $archived = 'YES';
+                }else{
+                    $archived =NULL;
+                }
                 // getting the uploader info:
                 $uploader_ID = $row['uploader_ID'];
                 $get_uploader_name_query = "SELECT * FROM users WHERE ID = '$uploader_ID' ";
@@ -436,7 +489,7 @@ function card_generators(){
                 }
                 ?>
                 <div class=" product-results col-xs-12 col-sm-6  col-lg-4 col-xl-3 p-3" >
-                    <div class="card border border-primary" itemscope itemtype="https://schema.org/Product">
+                    <div class="card border border-primary pt-3 <?php if($archived){ echo 'bg-warning';} ?>" itemscope itemtype="https://schema.org/Product">
                         <img class="card-img-top" src="<?php echo $row['product_directory']; ?>" alt="<?php echo $row['product_description']; ?>" itemprop="image">
                             <div class="card-body text-center ">
                                 <h6 class="card-title "><span class="text-gray" itemprop="name"><?php echo ucfirst($row['product_name']); ?></span></h6>
@@ -480,12 +533,16 @@ function card_generators(){
                                         <td><p class="card-text text-right">توسط:</p></td>
                                         <td><p class="text-gray" itemprop="author"><?php echo $uploader_name; ?></p></td>
                                     </tr>
+                                    <tr>
+                                        <td><p class="card-text text-right">آرشیو:</p></td>
+                                        <td><p class="text-gray Yekan" itemprop="datePublished"><?php echo $upload_year; ?></p></td>
+                                    </tr>
                                 </table>
                                 <a href="productextension.php?product_ID=<?php echo $row['product_ID']; ?>" class="btn btn-primary mt-4">مشاهده و بررسی</a>
                             </div>
                     </div>    
                 </div>
-                <?php
+            <?php
             }   
         }
     }      
