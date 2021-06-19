@@ -140,7 +140,7 @@ function mailing_report(){
             $mail_config->SMTPAuth = true;
             // فرستنده اصلی که ایمیل از پنل آن ارسال می شود
             $mail_config->Username = 'noreply@diorhome.ir';
-            $mail_config->Password = '09353899182joli1366';
+            $mail_config->Password = 'joli1366';
             $mail_config->addAddress($to);
             // اضافه کردن میل های سی سی:
             if(isset($array_of_cc_mails) && !empty($array_of_cc_mails)){

@@ -54,6 +54,35 @@
             array_push($inputs_arr, "product_description REGEXP '$product_description' ");
         }
     }
+    if(isset($_GET['upload_date'])){
+        if($_GET['upload_date'] === "more_than_4_years_ago"){
+            $upload_date = date('Y') - 5;
+        }else{
+            $upload_date = test_subcategory_input($_GET['upload_date'], '/^\d+$/');
+        }
+        if(!empty($upload_date)){
+            $date = date('Y');
+            $four_years_ago = date('Y') - 4;
+            $three_years_ago = date('Y') - 3;
+            $two_years_ago = date('Y') - 2;
+            $last_year = date('Y') - 1;
+    
+            if($upload_date < $four_years_ago){
+                array_push($inputs_arr, "upload_date < '$four_years_ago-0-0' ");
+            }elseif($upload_date < $three_years_ago && $upload_date >= $four_years_ago){
+                array_push($inputs_arr, "upload_date < '$three_years_ago-0-0' AND upload_date >= '$four_years_ago-0-0' ");
+            }elseif($upload_date < $two_years_ago && $upload_date >= $three_years_ago){
+                array_push($inputs_arr, "upload_date < '$two_years_ago-0-0' AND upload_date >= '$three_years_ago-0-0' ");
+            }elseif($upload_date < $last_year && $upload_date >= $two_years_ago){
+                array_push($inputs_arr, "upload_date < '$last_year-0-0' AND upload_date >= '$two_years_ago-0-0' ");
+            }elseif($upload_date < $date && $upload_date >= $last_year){
+                array_push($inputs_arr, "upload_date < '$date-0-0' AND upload_date >= '$last_year-0-0' ");
+            }else{
+                array_push($inputs_arr, "upload_date >= '$date-0-0' ");
+            }
+        }
+    }
+
     // اگر در قسمت سرچ هدر چیزی سرچ شده بود:
     if(isset($_POST['search_button'])){
         $search_criterion = $_POST['search_criterion'];
@@ -77,6 +106,7 @@
                 $query .= " AND" . " ". $inputs_arr[$l];
             }
         }
+
     // getting the total number of pages:
     require "database_connection.php";
     if(!$database_connection){
@@ -112,12 +142,19 @@
         foreach ($inputs_arr as $key => $value){
             if($value == "product_name like '%$product_name%'"){
                 $href .= '&' . "product_name=$product_name";
+            }elseif(strpos($value, 'upload_date') !== false){
+                if($_GET['upload_date'] === "more_than_4_years_ago"){
+                    $upload_date = date('Y') - 5;
+                    $href .= '&' . "upload_date=$upload_date";
+                }else{
+                    $href .= '&' . "upload_date=" . $_GET['upload_date'];
+                }
             }else{
                 $href .= '&' . $value;
             }
         }
         $href = str_replace("'", "", $href);
-
+        $href = str_replace("-0-0", "", $href);
         // صفحه اول:
         if($page_number == 1){
             // اگر هیچ نتیجه ای یافت نشد:
@@ -338,6 +375,36 @@ function card_generators(){
         $carpetboard_query_result = mysqli_query($database_connection, $carpetboard_query);
         $carpetboard_number = mysqli_num_rows($carpetboard_query_result);
     
+        $date = date('Y');
+        $four_years_ago = date('Y') - 4;
+        $three_years_ago = date('Y') - 3;
+        $two_years_ago = date('Y') - 2;
+        $last_year = date('Y') - 1;
+
+        $archived_five_years_ago_query = "SELECT * FROM products WHERE upload_date <= '$four_years_ago-0-0' ";
+        $archived_five_years_ago_query_result = mysqli_query($database_connection, $archived_five_years_ago_query);
+        $five_years_ago_archived_number = mysqli_num_rows($archived_five_years_ago_query_result);
+
+        $archived_four_years_ago_query = "SELECT * FROM products WHERE upload_date <= '$three_years_ago-0-0' AND upload_date > '$four_years_ago-0-0' ";
+        $archived_four_years_ago_query_result = mysqli_query($database_connection, $archived_four_years_ago_query);
+        $four_years_ago_archived_number = mysqli_num_rows($archived_four_years_ago_query_result);
+
+        $archived_three_years_ago_query = "SELECT * FROM products WHERE upload_date <= '$two_years_ago-0-0' AND upload_date > '$three_years_ago-0-0' ";
+        $archived_three_years_ago_query_result = mysqli_query($database_connection, $archived_three_years_ago_query);
+        $three_years_ago_archived_number = mysqli_num_rows($archived_three_years_ago_query_result);
+
+        $archived_two_years_ago_query = "SELECT * FROM products WHERE upload_date <= '$last_year-0-0' AND upload_date > '$two_years_ago-0-0' ";
+        $archived_two_years_ago_query_result = mysqli_query($database_connection, $archived_two_years_ago_query);
+        $two_years_ago_archived_number = mysqli_num_rows($archived_two_years_ago_query_result);
+
+        $archived_last_year_query = "SELECT * FROM products WHERE upload_date <= '$date-0-0' AND upload_date > '$last_year-0-0' ";
+        $archived_last_year_query_result = mysqli_query($database_connection, $archived_last_year_query);
+        $last_year_archived_number = mysqli_num_rows($archived_last_year_query_result);
+
+        $this_year_query = "SELECT * FROM products WHERE upload_date >= '$date-0-0' ";
+        $this_year_query_result = mysqli_query($database_connection, $this_year_query);
+        $this_year_archived_number = mysqli_num_rows($this_year_query_result);
+
         // --- html for the badges ---
         if(!empty($_GET['product_category'])){
             $product_category = $_GET['product_category'];
@@ -353,6 +420,65 @@ function card_generators(){
         ?>
         <div class="container-fluid row badge-container mx-3 pb-2">
             <h4 class="col-12 text-light text-center access-header py-4">کاتالوگ محصولات - دسترسی سریع</h4>
+            <div class="col-12 mx-auto">
+                <div class="row p-2">
+                    <p class="text-light category text-center col-sm-12 col-md-11 py-2">مرتب سازی بر اساس تاریخ:</p>
+                    <a href="products.php?archived=YES&upload_date=more_than_4_years_ago" type="button" class="btn
+                    <?php
+                    if(isset($_GET['upload_date']) && $_GET['upload_date'] === "more_than_4_years_ago"){
+                        echo ' btn-success ';
+                    }else{
+                        echo ' btn-primary ';
+                    } 
+                    ?>
+                       col-3 col-md-1 m-1"><span class="badge badge-light Yekan"><?php echo $five_years_ago_archived_number; ?></span><br>  <?php echo "قبل از " . $four_years_ago; ?></a>
+                        <a href="products.php?archived=YES&upload_date=<?php echo $four_years_ago; ?>" type="button" class="btn
+                    <?php
+                    if(isset($_GET['upload_date']) && $_GET['upload_date'] == $four_years_ago){
+                        echo ' btn-success ';
+                    }else{
+                        echo ' btn-primary ';
+                    } 
+                    ?>
+                       col-3 col-md-1 m-1"><span class="badge badge-light Yekan"><?php echo $four_years_ago_archived_number; ?></span><br>  <?php echo $four_years_ago; ?></a>
+                        <a href="products.php?archived=YES&upload_date=<?php echo "$three_years_ago"; ?>" type="button" class="btn
+                    <?php
+                    if(isset($_GET['upload_date']) && $_GET['upload_date'] == $three_years_ago){
+                        echo ' btn-success ';
+                    }else{
+                        echo ' btn-primary ';
+                    } 
+                    ?>
+                       col-3 col-md-1 m-1"><span class="badge badge-light Yekan"><?php echo $three_years_ago_archived_number; ?></span><br>  <?php echo $three_years_ago; ?></a>
+                        <a href="products.php?archived=YES&upload_date=<?php echo "$two_years_ago"; ?>" type="button" class="btn
+                    <?php
+                    if(isset($_GET['upload_date']) && $_GET['upload_date'] == $two_years_ago){
+                        echo ' btn-success ';
+                    }else{
+                        echo ' btn-primary ';
+                    } 
+                    ?>
+                      col-3 col-md-1 m-1"><span class="badge badge-light Yekan"><?php echo $two_years_ago_archived_number; ?></span><br>  <?php echo $two_years_ago; ?></a>
+                        <a href="products.php?archived=YES&upload_date=<?php echo $last_year; ?>" type="button" class="btn
+                    <?php
+                    if(isset($_GET['upload_date']) && $_GET['upload_date'] == $last_year){
+                        echo ' btn-success ';
+                    }else{
+                        echo ' btn-primary ';
+                    } 
+                    ?>
+                      col-3 col-md-1 m-1"><span class="badge badge-light Yekan"><?php echo $last_year_archived_number; ?></span><br>  <?php echo $last_year; ?></a>
+                        <a href="products.php?archived=NO&upload_date=<?php echo $date; ?>" type="button" class="btn
+                    <?php
+                    if(isset($_GET['upload_date']) && $_GET['upload_date'] == $date){
+                        echo ' btn-success ';
+                    }else{
+                        echo ' btn-primary ';
+                    } 
+                    ?>
+                      col-3 col-md-1 m-1"><span class="badge badge-light Yekan"><?php echo $this_year_archived_number; ?></span><br> <?php echo 'امسال'; ?></a>
+                </div>
+            </div>
             <div class="col-12  col-md-6 col-lg-4 p-2 ">
                 <div class="row p-2">
                     <p class="text-light category text-center col-sm-12 col-md-11 py-2">کالای خواب:</p>
@@ -489,7 +615,7 @@ function card_generators(){
                 }
                 ?>
                 <div class=" product-results col-xs-12 col-sm-6  col-lg-4 col-xl-3 p-3" >
-                    <div class="card border border-primary pt-3 <?php if($archived){ echo 'bg-warning';} ?>" itemscope itemtype="https://schema.org/Product">
+                    <div class="card border border-primary pt-3 <?php if($archived){ echo 'archived';} ?>" itemscope itemtype="https://schema.org/Product">
                         <img class="card-img-top" src="<?php echo $row['product_directory']; ?>" alt="<?php echo $row['product_description']; ?>" itemprop="image">
                             <div class="card-body text-center ">
                                 <h6 class="card-title "><span class="text-gray" itemprop="name"><?php echo ucfirst($row['product_name']); ?></span></h6>

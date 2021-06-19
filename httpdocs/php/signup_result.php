@@ -100,6 +100,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         $mail_config->isSMTP();
                         $mail_config->Host = "mail.diorhome.ir";
                         $mail_config->SMTPAuth = true;
+                        // $mail_config->Port = 2525;
                         $mail_config->Username = 'info@diorhome.ir';
                         $mail_config->Password = 'joli1366';
                         $mail_config->addAddress($to);

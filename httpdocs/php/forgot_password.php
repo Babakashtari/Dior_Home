@@ -83,8 +83,8 @@ if(isset($_POST['submit'])){
                         $mail_config->Username = 'info@diorhome.ir';
                         $mail_config->Password = 'joli1366';
                         // in case we want to require port number and tls security;
-                        // $mail_config->SMTPSecure = "tls";
-                        // $mail_config->Port = 25; 
+                        // $mail_config->SMTPSecure = "ssl";
+                        // $mail_config->Port = 2525; 
 
                         // content of the email:
                         $mail_config->addAddress($to);
